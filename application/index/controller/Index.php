@@ -120,7 +120,7 @@ class Index extends Common
        return $this->view->fetch();
     }
 
-    //todo site_map 地图
+    // site_map 地图
     public function site_map(){
         return $this->view->fetch();
     }
