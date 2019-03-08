@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-03-04 17:54:59
+Date: 2019-03-08 19:10:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,15 +21,19 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `aninfo`;
 CREATE TABLE `aninfo` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `a_id` int(10) unsigned NOT NULL COMMENT '案例 id',
+  `a_id` int(10) unsigned NOT NULL COMMENT '关联案例 id ',
   `img` varchar(255) NOT NULL COMMENT '详情页面案例图',
+  `imgs` varchar(255) NOT NULL COMMENT '缩略图',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='关联 anli_table表展示图';
 
 -- ----------------------------
 -- Records of aninfo
 -- ----------------------------
+INSERT INTO `aninfo` VALUES ('0000000001', '1', '/static/upload/9a82e073f4e82472/141f07709be58507.jpg', '/static/upload/08c56996813fb414/dfa4b54b330f45af.jpg', '2019-03-06 11:24:43');
+INSERT INTO `aninfo` VALUES ('0000000002', '2', '/static/upload/ceaa85920523799f/09801e47d81e140a.jpg', '/static/upload/a579bef1eb351eae/25180dc592a9fb81.jpg', '2019-03-06 11:24:57');
+INSERT INTO `aninfo` VALUES ('0000000003', '1', '/static/upload/9661549dfeee96f4/968df3e83f1a40f2.jpg', '/static/upload/a579bef1eb351eae/25180dc592a9fb81.jpg', '2019-03-06 11:26:22');
 
 -- ----------------------------
 -- Table structure for `anli`
@@ -77,11 +81,13 @@ CREATE TABLE `anli_table` (
   `reinfo` text NOT NULL COMMENT '案例介绍',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of anli_table
 -- ----------------------------
+INSERT INTO `anli_table` VALUES ('0000000001', '1', '1', '1', '/static/upload/9a82e073f4e82472/141f07709be58507.jpg', 'ECE Stadtgalerie', '德国施韦因富特', 'Schweinfurt市中心的购物和休闲中心没有什么不可取的。约。STADTGALERIE的230米长的光线充足的玻璃屋顶是购物，散步和休闲活动的高品质场所。', '2019-03-06 10:11:27');
+INSERT INTO `anli_table` VALUES ('0000000002', '1', '1', '2', '/static/upload/ceaa85920523799f/09801e47d81e140a.jpg', '恩波里亚', '瑞典马尔默', '恩波里亚不仅仅是任何购物中心。这里有三个楼层的200家商店，销售面积68,000平方米，平均每天25,000名游客，是斯堪的纳维亚最大的购物中心之一。', '2019-03-06 10:26:57');
 
 -- ----------------------------
 -- Table structure for `banner`
@@ -163,6 +169,41 @@ INSERT INTO `category` VALUES ('16', '204', '4', '团队魔训', '2018-12-29 10:
 INSERT INTO `category` VALUES ('17', '205', '4', '海岛生存', '2018-12-29 10:15:25');
 
 -- ----------------------------
+-- Table structure for `category_es`
+-- ----------------------------
+DROP TABLE IF EXISTS `category_es`;
+CREATE TABLE `category_es` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '产品系列分类名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='产品对比模块中中的产品表';
+
+-- ----------------------------
+-- Records of category_es
+-- ----------------------------
+INSERT INTO `category_es` VALUES ('0000000001', 'emco DIPLOMAT带橡胶衬垫');
+INSERT INTO `category_es` VALUES ('0000000002', 'emco DIPLOMAT带橡胶嵌件和刷条');
+INSERT INTO `category_es` VALUES ('0000000003', 'emco DIPLOMAT带卡式刷');
+INSERT INTO `category_es` VALUES ('0000000004', 'emco MARSCHALL带橡胶嵌件和卡式刷');
+INSERT INTO `category_es` VALUES ('0000000005', 'emco PLAZA带橡胶嵌件');
+
+-- ----------------------------
+-- Table structure for `clear_color`
+-- ----------------------------
+DROP TABLE IF EXISTS `clear_color`;
+CREATE TABLE `clear_color` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `ltid` int(10) unsigned NOT NULL COMMENT '对应clear_t中的产品id',
+  `img` varchar(255) NOT NULL COMMENT '颜色图',
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
+
+-- ----------------------------
+-- Records of clear_color
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `clear_image`
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_image`;
@@ -178,6 +219,22 @@ CREATE TABLE `clear_image` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `clear_shiping`
+-- ----------------------------
+DROP TABLE IF EXISTS `clear_shiping`;
+CREATE TABLE `clear_shiping` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `ltid` int(10) unsigned NOT NULL COMMENT '对应clear_t中的产品id',
+  `img` varchar(255) NOT NULL COMMENT '颜色图',
+  `title` varchar(255) NOT NULL COMMENT '名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
+
+-- ----------------------------
+-- Records of clear_shiping
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `clear_t`
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_t`;
@@ -187,13 +244,31 @@ CREATE TABLE `clear_t` (
   `title` varchar(255) NOT NULL COMMENT '清理 标题',
   `small_title` varchar(255) NOT NULL COMMENT '二级标题',
   `img` varchar(255) NOT NULL COMMENT '展示图',
-  `shuju` text NOT NULL COMMENT '清理 技术数据',
-  `wenshu` text NOT NULL COMMENT '清理 招标文书',
+  `shigong` varchar(100) NOT NULL COMMENT '施工',
+  `jiban` varchar(100) NOT NULL COMMENT '堆在基板上面	',
+  `jicai` varchar(100) NOT NULL COMMENT '基材材料	',
+  `beichun` varchar(100) NOT NULL COMMENT '背衬材料	',
+  `zhuangkg` varchar(100) NOT NULL COMMENT '桩重/纤维重量	',
+  `zongkg` varchar(100) NOT NULL COMMENT '总重量',
+  `height` varchar(100) NOT NULL COMMENT '总高',
+  `cuimi` varchar(100) NOT NULL COMMENT '簇密度/平方米	',
+  `shao` varchar(100) NOT NULL COMMENT '燃烧',
+  `shushi` varchar(100) NOT NULL COMMENT '舒适价值	',
+  `fanghua` varchar(100) NOT NULL COMMENT '防滑性',
+  `zhengshu` varchar(100) NOT NULL COMMENT '证书',
+  `juan` varchar(255) NOT NULL COMMENT '作为卷提供	',
+  `dian` varchar(255) NOT NULL COMMENT '作为垫子提供	',
+  `chanp` varchar(100) NOT NULL COMMENT '产品特性	',
+  `pushe` varchar(255) NOT NULL COMMENT '铺设',
+  `tetra` varchar(255) NOT NULL COMMENT '清洁的',
+  `pai` varchar(100) CHARACTER SET utf8 COLLATE utf8_roman_ci NOT NULL COMMENT '牌子',
   `wenshu_pdf` varchar(255) NOT NULL COMMENT '文书pdf',
   `zhanpiao_pdf` varchar(255) NOT NULL COMMENT '招标文件文本',
   `clear_pdf` varchar(255) NOT NULL COMMENT '3区清洁pdf ',
   `shouce_pdf` varchar(255) NOT NULL COMMENT '手册',
   `pro_pdf` varchar(255) NOT NULL COMMENT '产品数据表',
+  `model` varchar(255) NOT NULL COMMENT '模型',
+  `lianxi` varchar(255) NOT NULL COMMENT '联系',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -274,102 +349,13 @@ CREATE TABLE `contact` (
   `info` varchar(255) NOT NULL COMMENT '备注信息',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=130 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of contact
 -- ----------------------------
-INSERT INTO `contact` VALUES ('0000000028', '点点点', '3', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', 'dddddddddd', '2019-03-02 11:18:42');
-INSERT INTO `contact` VALUES ('0000000027', '点点点', '3', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', 'dddddddddd', '2019-03-02 11:18:42');
-INSERT INTO `contact` VALUES ('0000000026', '点点点', '3', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', 'dddddddddd', '2019-03-02 11:18:42');
-INSERT INTO `contact` VALUES ('0000000057', '武汉', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '额鹅鹅鹅', '2019-03-02 11:47:17');
-INSERT INTO `contact` VALUES ('0000000051', '江苏南京', '0', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '对对对对', '2019-03-02 11:46:19');
-INSERT INTO `contact` VALUES ('0000000044', '江苏南京', '0', null, null, '', '', '', '0', null, '', '45789@qq.com', '457899666', '111', '2019-03-02 11:43:25');
-INSERT INTO `contact` VALUES ('0000000050', '江苏南京', '0', null, '好赞', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 11:46:18');
-INSERT INTO `contact` VALUES ('0000000022', '点点点', '1', '2', null, '11', '1111', '111', '111', null, '中国', '732345907@qq.com', '186725558999', '222222222', '2019-03-02 11:13:58');
-INSERT INTO `contact` VALUES ('0000000052', '江苏南京', '0', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '对对对对', '2019-03-02 11:46:20');
-INSERT INTO `contact` VALUES ('0000000053', '江苏南京', '0', null, null, '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '对对对对', '2019-03-02 11:46:20');
-INSERT INTO `contact` VALUES ('0000000043', '江苏南京', '0', null, null, '', '', '', '0', null, '', '45789@qq.com', '457899666', '111', '2019-03-02 11:43:23');
-INSERT INTO `contact` VALUES ('0000000042', '江苏南京', '0', null, '', '', '', '', '0', null, '', '45789@qq.com', '457899666', '', '2019-03-02 11:43:23');
-INSERT INTO `contact` VALUES ('0000000033', '澳门', '0', null, '', '', '', '', '0', null, '', 'zhangfeiyanhu@yahu.com', '4225896', '', '2019-03-02 11:28:36');
-INSERT INTO `contact` VALUES ('0000000056', '武汉', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '额鹅鹅鹅', '2019-03-02 11:47:16');
-INSERT INTO `contact` VALUES ('0000000055', '武汉', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '额鹅鹅鹅', '2019-03-02 11:47:16');
-INSERT INTO `contact` VALUES ('0000000054', '武汉', '0', null, '', '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 11:47:16');
-INSERT INTO `contact` VALUES ('0000000045', '江苏南京', '0', null, null, '', '', '', '0', null, '', '45789@qq.com', '457899666', '111', '2019-03-02 11:43:26');
-INSERT INTO `contact` VALUES ('0000000046', '45564645', '0', null, '', '', '', '', '0', null, '', '456546546@qq.com', '456456879879', '', '2019-03-02 11:44:40');
-INSERT INTO `contact` VALUES ('0000000047', '45564645', '0', null, '', '', '', '', '0', null, '', '456546546@qq.com', '456456879879', '', '2019-03-02 11:45:33');
-INSERT INTO `contact` VALUES ('0000000048', '45564645', '0', null, '', '', '', '', '0', null, '', '456546546@qq.com', '456456879879', '', '2019-03-02 11:45:36');
-INSERT INTO `contact` VALUES ('0000000049', '点点点', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 11:45:48');
-INSERT INTO `contact` VALUES ('0000000058', '武汉', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '额鹅鹅鹅', '2019-03-02 11:51:53');
-INSERT INTO `contact` VALUES ('0000000059', '不止', '0', null, null, '', '', '', '0', null, '', '45678879@qq.com', '458974123', '456546', '2019-03-02 11:53:08');
-INSERT INTO `contact` VALUES ('0000000060', '不止', '0', null, null, '', '', '', '0', null, '', '45678879@qq.com', '458974123', '456546', '2019-03-02 11:53:08');
-INSERT INTO `contact` VALUES ('0000000061', '不止', '0', null, null, '', '', '', '0', null, '', '45678879@qq.com', '458974123', '456546', '2019-03-02 11:53:09');
-INSERT INTO `contact` VALUES ('0000000062', '不止', '0', null, '', '', '', '', '0', null, '', '45678879@qq.com', '458974123', '', '2019-03-02 11:53:09');
-INSERT INTO `contact` VALUES ('0000000063', '点点点', '0', null, '', '', '', '', '0', null, '', '456546564@qq.com', 'eeeee', '', '2019-03-02 11:56:24');
-INSERT INTO `contact` VALUES ('0000000064', '点点点', '0', null, null, '', '', '', '0', null, '', '456546564@qq.com', 'eeeee', 'eee', '2019-03-02 11:56:24');
-INSERT INTO `contact` VALUES ('0000000065', '点点点', '0', null, null, '', '', '', '0', null, '', '456546564@qq.com', 'eeeee', 'eee', '2019-03-02 11:56:24');
-INSERT INTO `contact` VALUES ('0000000066', '点点点', '0', null, null, '', '', '', '0', null, '', '456546564@qq.com', 'eeeee', 'eee', '2019-03-02 11:56:25');
-INSERT INTO `contact` VALUES ('0000000067', '点点点', '0', null, null, '', '', '', '0', null, '', '4556489789@qq.com', '4567892', '11111', '2019-03-02 11:58:03');
-INSERT INTO `contact` VALUES ('0000000068', '点点点', '0', null, '', '', '', '', '0', null, '', '4556489789@qq.com', '4567892', '', '2019-03-02 11:58:03');
-INSERT INTO `contact` VALUES ('0000000069', '点点点', '0', null, null, '', '', '', '0', null, '', '4556489789@qq.com', '4567892', '11111', '2019-03-02 11:58:04');
-INSERT INTO `contact` VALUES ('0000000070', '点点点', '0', null, null, '', '', '', '0', null, '', '4556489789@qq.com', '4567892', '11111', '2019-03-02 11:58:04');
-INSERT INTO `contact` VALUES ('0000000071', '点点点', '0', null, null, '', '', '', '0', null, '', '4556489789@qq.com', '4567892', '11111', '2019-03-02 11:58:06');
-INSERT INTO `contact` VALUES ('0000000072', '点点点', '0', null, '', '', '', '', '0', null, '', '54546@qq.com', '4587963', '', '2019-03-02 11:59:12');
-INSERT INTO `contact` VALUES ('0000000073', '点点点', '0', null, null, '', '', '', '0', null, '', '54546@qq.com', '4587963', '5555', '2019-03-02 11:59:12');
-INSERT INTO `contact` VALUES ('0000000074', '点点点', '0', null, null, '', '', '', '0', null, '', '54546@qq.com', '4587963', '5555', '2019-03-02 11:59:13');
-INSERT INTO `contact` VALUES ('0000000075', '点点点', '0', null, null, '', '', '', '0', null, '', '54546@qq.com', '4587963', '5555', '2019-03-02 11:59:13');
-INSERT INTO `contact` VALUES ('0000000076', '点点点', '0', null, '', '', '', '', '0', null, '', '54546@qq.com', '4587963', '', '2019-03-02 11:59:34');
-INSERT INTO `contact` VALUES ('0000000077', '', '0', null, '', '', '', '', '0', null, '', '', '', '', '2019-03-02 12:00:29');
-INSERT INTO `contact` VALUES ('0000000078', 'shanghai', '0', null, '', '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 12:00:38');
-INSERT INTO `contact` VALUES ('0000000079', 'shanghai', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', 'eeee', '2019-03-02 12:00:39');
-INSERT INTO `contact` VALUES ('0000000080', 'shanghai', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', 'eeee', '2019-03-02 12:00:39');
-INSERT INTO `contact` VALUES ('0000000081', 'shanghai', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', 'eeee', '2019-03-02 12:00:39');
-INSERT INTO `contact` VALUES ('0000000082', '点点点', '0', null, '', '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 12:01:43');
-INSERT INTO `contact` VALUES ('0000000083', '2', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 12:02:58');
-INSERT INTO `contact` VALUES ('0000000084', '1111', '0', null, '', '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 12:03:23');
-INSERT INTO `contact` VALUES ('0000000085', '1111', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '1111', '2019-03-02 12:03:24');
-INSERT INTO `contact` VALUES ('0000000086', '1111', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '1111', '2019-03-02 12:03:24');
-INSERT INTO `contact` VALUES ('0000000087', '1111', '0', null, null, '', '1111', '', '111', null, '中国', '732345907@qq.com', '186725558999', '1111', '2019-03-02 12:03:24');
-INSERT INTO `contact` VALUES ('0000000088', '', '0', null, '', '', '', '', '0', null, '', '', '', '', '2019-03-02 12:03:52');
-INSERT INTO `contact` VALUES ('0000000089', '1111', '0', null, '', '', '', '', '0', null, '', '2222222@yahu.com', '456546546', '', '2019-03-02 12:04:17');
-INSERT INTO `contact` VALUES ('0000000090', '1111', '0', null, null, '', '', '', '0', null, '', '2222222@yahu.com', '456546546', '546564564', '2019-03-02 12:04:18');
-INSERT INTO `contact` VALUES ('0000000091', '1111', '0', null, null, '', '', '', '0', null, '', '2222222@yahu.com', '456546546', '546564564', '2019-03-02 12:04:19');
-INSERT INTO `contact` VALUES ('0000000092', '1111', '0', null, null, '', '', '', '0', null, '', '2222222@yahu.com', '456546546', '546564564', '2019-03-02 12:04:19');
-INSERT INTO `contact` VALUES ('0000000093', '11111', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 12:08:41');
-INSERT INTO `contact` VALUES ('0000000094', '22', '0', null, '', '', '', '', '0', null, '', '2256988@qq.com', '18675555', '', '2019-03-02 12:10:31');
-INSERT INTO `contact` VALUES ('0000000095', '1111', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 13:23:25');
-INSERT INTO `contact` VALUES ('0000000096', '111', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 13:24:16');
-INSERT INTO `contact` VALUES ('0000000097', '11111111111', '0', null, '', '', '点点点', '', '438200', null, '中国', '732345907@qq.com', '186725558999', '', '2019-03-02 13:25:30');
-INSERT INTO `contact` VALUES ('0000000098', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:06');
-INSERT INTO `contact` VALUES ('0000000099', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:06');
-INSERT INTO `contact` VALUES ('0000000100', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:06');
-INSERT INTO `contact` VALUES ('0000000101', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:37');
-INSERT INTO `contact` VALUES ('0000000102', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:37');
-INSERT INTO `contact` VALUES ('0000000103', '', null, null, '111', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '3333333', '2019-03-02 14:12:37');
-INSERT INTO `contact` VALUES ('0000000104', '', null, null, '吃鸡', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '55555', '2019-03-02 14:13:25');
-INSERT INTO `contact` VALUES ('0000000105', '', null, null, '吃鸡', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '55555', '2019-03-02 14:13:25');
-INSERT INTO `contact` VALUES ('0000000106', '', null, null, '好赞', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '1111', '2019-03-02 14:20:04');
-INSERT INTO `contact` VALUES ('0000000107', '', null, null, '好赞', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '1111', '2019-03-02 14:20:04');
-INSERT INTO `contact` VALUES ('0000000108', '', null, null, '吃鸡', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '555555', '2019-03-02 14:22:15');
-INSERT INTO `contact` VALUES ('0000000109', '', null, null, '吃鸡', null, null, null, null, null, null, '732345907@qq.com', '11111111111', '555555', '2019-03-02 14:22:16');
-INSERT INTO `contact` VALUES ('0000000110', '', null, null, '111', null, null, null, null, null, null, '2256988@qq.com', '222222', '4444444', '2019-03-02 14:25:33');
-INSERT INTO `contact` VALUES ('0000000111', '', null, null, '111', null, null, null, null, null, null, '2256988@qq.com', '222222', '4444444', '2019-03-02 14:25:33');
-INSERT INTO `contact` VALUES ('0000000112', '', null, null, '好赞', null, null, null, null, null, null, 'buzhidao@qq.com', '458722', '2222', '2019-03-02 14:26:38');
-INSERT INTO `contact` VALUES ('0000000113', '', null, null, '好赞', null, null, null, null, null, null, 'buzhidao@qq.com', '458722', '2222', '2019-03-02 14:26:39');
-INSERT INTO `contact` VALUES ('0000000114', '', null, null, '好赞', null, null, null, null, null, null, 'buzhidao@qq.com', '458722', '2222', '2019-03-02 14:26:40');
-INSERT INTO `contact` VALUES ('0000000115', '', null, null, '好赞', null, null, null, null, null, null, 'buzhidao@qq.com', '458722', '2222', '2019-03-02 14:26:40');
-INSERT INTO `contact` VALUES ('0000000116', '', null, null, 'bbuzd', null, null, null, null, null, null, 'budhi@qq.com', '4567898', '5555', '2019-03-02 14:27:20');
-INSERT INTO `contact` VALUES ('0000000117', '', null, null, 'bbuzd', null, null, null, null, null, null, 'budhi@qq.com', '4567898', '5555', '2019-03-02 14:27:21');
-INSERT INTO `contact` VALUES ('0000000118', '', null, null, 'bbuzd', null, null, null, null, null, null, 'budhi@qq.com', '4567898', '5555', '2019-03-02 14:27:21');
-INSERT INTO `contact` VALUES ('0000000119', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '666666', '2019-03-02 14:30:51');
-INSERT INTO `contact` VALUES ('0000000120', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '666666', '2019-03-02 14:30:51');
-INSERT INTO `contact` VALUES ('0000000121', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '666666', '2019-03-02 14:30:52');
-INSERT INTO `contact` VALUES ('0000000122', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '44444', '2019-03-02 14:31:54');
-INSERT INTO `contact` VALUES ('0000000123', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '44444', '2019-03-02 14:31:54');
-INSERT INTO `contact` VALUES ('0000000124', '', null, null, 'bbuzd', null, null, null, null, null, null, '732345907@qq.com', '186725558999', '44444', '2019-03-02 14:31:55');
-INSERT INTO `contact` VALUES ('0000000125', '', null, null, '', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '3333', '2019-03-02 14:34:00');
-INSERT INTO `contact` VALUES ('0000000126', '', null, null, '', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '3333', '2019-03-02 14:34:00');
-INSERT INTO `contact` VALUES ('0000000127', '', null, null, '', null, null, null, null, null, null, '732345907@qq.com', '18672536007', '3333', '2019-03-02 14:34:01');
+INSERT INTO `contact` VALUES ('0000000129', '江苏南京', '2', null, '', '', '', '', '0', null, '', '463015578@qq.com', '186752369997', '', '2019-03-05 10:42:22');
+INSERT INTO `contact` VALUES ('0000000128', '湖北武汉', '1', null, '', '', '', '', '0', null, '', '732345907@qq.com', '186725558999', '', '2019-03-05 10:34:21');
 
 -- ----------------------------
 -- Table structure for `county`
@@ -482,6 +468,47 @@ INSERT INTO `dt_dian` VALUES ('0000000003', '图片样式', '/static/upload/5e0c
 INSERT INTO `dt_dian` VALUES ('0000000004', '图像户外', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '', '', '', '');
 
 -- ----------------------------
+-- Table structure for `fanche`
+-- ----------------------------
+DROP TABLE IF EXISTS `fanche`;
+CREATE TABLE `fanche` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL COMMENT '翻车类别名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of fanche
+-- ----------------------------
+INSERT INTO `fanche` VALUES ('0000000001', '轮椅');
+INSERT INTO `fanche` VALUES ('0000000002', '童车');
+INSERT INTO `fanche` VALUES ('0000000003', '轻便购物手推车');
+INSERT INTO `fanche` VALUES ('0000000004', '手推车');
+INSERT INTO `fanche` VALUES ('0000000005', '汽车');
+INSERT INTO `fanche` VALUES ('0000000006', '托盘搬运车');
+INSERT INTO `fanche` VALUES ('0000000007', 'HGV（最高7.5吨）');
+
+-- ----------------------------
+-- Table structure for `foots`
+-- ----------------------------
+DROP TABLE IF EXISTS `foots`;
+CREATE TABLE `foots` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '脚步声名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of foots
+-- ----------------------------
+INSERT INTO `foots` VALUES ('0000000001', '每日人流量高达400');
+INSERT INTO `foots` VALUES ('0000000002', '每日人流量高达400');
+INSERT INTO `foots` VALUES ('0000000003', '每日人流量高达1000');
+INSERT INTO `foots` VALUES ('0000000004', '每日人流量在2000以上');
+INSERT INTO `foots` VALUES ('0000000005', '每日足迹达5000或以上');
+INSERT INTO `foots` VALUES ('0000000006', '每日客流量高达800');
+
+-- ----------------------------
 -- Table structure for `goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
@@ -545,11 +572,19 @@ CREATE TABLE `heights` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL COMMENT '高度类别设置',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of heights
 -- ----------------------------
+INSERT INTO `heights` VALUES ('0000000001', '22毫米');
+INSERT INTO `heights` VALUES ('0000000002', '25毫米');
+INSERT INTO `heights` VALUES ('0000000003', '27毫米');
+INSERT INTO `heights` VALUES ('0000000004', '35毫米');
+INSERT INTO `heights` VALUES ('0000000005', '37毫米');
+INSERT INTO `heights` VALUES ('0000000006', '45毫米');
+INSERT INTO `heights` VALUES ('0000000007', '12毫米');
+INSERT INTO `heights` VALUES ('0000000008', '14.5毫米');
 
 -- ----------------------------
 -- Table structure for `heres`
@@ -664,7 +699,7 @@ CREATE TABLE `order_contact` (
 -- ----------------------------
 -- Records of order_contact
 -- ----------------------------
-INSERT INTO `order_contact` VALUES ('0000000004', '1', '杨不悔', '光明顶45号', '光明顶45号', '520仿', '438200', '湖北武汉', '732345907@qq.com', '186725558999', 'Architects文件夹,入口垫系统,emco清理,地毯垫,游泳池栅格,滚动和线性网格,', '2019-03-04 12:02:18');
+INSERT INTO `order_contact` VALUES ('0000000004', '0', '杨不悔', '光明顶45号', '光明顶45号', '520仿', '438200', '湖北武汉', '732345907@qq.com', '186725558999', 'Architects文件夹,入口垫系统,emco清理,地毯垫,游泳池栅格,滚动和线性网格,', '2019-03-05 10:42:51');
 
 -- ----------------------------
 -- Table structure for `partner`
@@ -699,13 +734,133 @@ CREATE TABLE `protucts` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `ptitle` varchar(255) NOT NULL COMMENT '产品类别',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='参考模块中的产品表';
 
 -- ----------------------------
 -- Records of protucts
 -- ----------------------------
 INSERT INTO `protucts` VALUES ('0000000001', '入口消光系统');
 INSERT INTO `protucts` VALUES ('0000000002', '游泳池格栅');
+
+-- ----------------------------
+-- Table structure for `protuct_cates`
+-- ----------------------------
+DROP TABLE IF EXISTS `protuct_cates`;
+CREATE TABLE `protuct_cates` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '产品对比类别',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of protuct_cates
+-- ----------------------------
+INSERT INTO `protuct_cates` VALUES ('0000000001', '户外区域的入口垫系统');
+INSERT INTO `protuct_cates` VALUES ('0000000002', '室内区域的入口垫系统');
+
+-- ----------------------------
+-- Table structure for `protuct_image`
+-- ----------------------------
+DROP TABLE IF EXISTS `protuct_image`;
+CREATE TABLE `protuct_image` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `pinfo_id` int(10) unsigned NOT NULL COMMENT '对应产品对比详情表id',
+  `img` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of protuct_image
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `protuct_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `protuct_info`;
+CREATE TABLE `protuct_info` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned NOT NULL COMMENT '产品类别id',
+  `cid` int(10) unsigned NOT NULL COMMENT '产品系列id',
+  `img` varchar(255) NOT NULL COMMENT '产品图',
+  `color_img` varchar(255) NOT NULL COMMENT '颜色图',
+  `title` varchar(100) NOT NULL COMMENT '产品标题',
+  `beizhu` varchar(200) CHARACTER SET utf8 COLLATE utf8_latvian_ci NOT NULL COMMENT '备注信息',
+  `model` varchar(255) NOT NULL COMMENT '模型',
+  `miaoshu` varchar(255) NOT NULL COMMENT '描述',
+  `load` varchar(255) NOT NULL COMMENT '加载',
+  `holder` varchar(255) NOT NULL COMMENT '脚步',
+  `fanche` varchar(255) NOT NULL COMMENT '翻车和翻车功能',
+  `jixiang` varchar(255) NOT NULL COMMENT '机箱',
+  `lianjie` varchar(255) NOT NULL COMMENT '连接',
+  `mm_max` char(100) NOT NULL COMMENT '最大。单个部分的宽度/轮廓长度',
+  `mm_order` char(100) NOT NULL COMMENT '各个部分的深度/行走深度',
+  `kg` char(50) NOT NULL COMMENT '重量',
+  `dianzi` varchar(255) NOT NULL COMMENT '垫子按工厂标准或客户规格划分',
+  `fuhe` varchar(255) NOT NULL COMMENT '固定符合',
+  `taimian` varchar(255) NOT NULL COMMENT '胎面',
+  `zidong` varchar(255) NOT NULL COMMENT '自动门',
+  `fanghua` varchar(255) NOT NULL COMMENT '防滑性',
+  `fanghuo` varchar(255) NOT NULL COMMENT '防火',
+  `color` varchar(100) CHARACTER SET utf8 COLLATE utf8_icelandic_ci NOT NULL COMMENT '颜色',
+  `lianxi` varchar(255) CHARACTER SET utf8 COLLATE utf8_slovenian_ci NOT NULL COMMENT '联系',
+  `fuwu` longtext CHARACTER SET utf8 COLLATE utf8_romanian_ci NOT NULL COMMENT '服务列表',
+  `zhaobiao_text` varchar(255) NOT NULL COMMENT '招标文件文本',
+  `zhaobiao` varchar(255) NOT NULL COMMENT '招标文本',
+  `wuye` varchar(255) NOT NULL COMMENT '建筑物业主信息',
+  `clear` varchar(255) NOT NULL COMMENT '3区清洁',
+  `shouce` varchar(255) NOT NULL COMMENT '手册',
+  `now` varchar(255) NOT NULL COMMENT '装修现代化',
+  `protuct_table` varchar(255) NOT NULL COMMENT '产品数据表',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='产品对比模块下的产品详情表';
+
+-- ----------------------------
+-- Records of protuct_info
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `shi_cates`
+-- ----------------------------
+DROP TABLE IF EXISTS `shi_cates`;
+CREATE TABLE `shi_cates` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '饰品分类名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of shi_cates
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `shi_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `shi_info`;
+CREATE TABLE `shi_info` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `pinfo_id` int(10) unsigned NOT NULL COMMENT '对应产品对比详情id',
+  `s_id` int(10) unsigned NOT NULL COMMENT '对应饰品分类id',
+  `img` varchar(255) NOT NULL COMMENT '饰品展示图',
+  `title` varchar(255) NOT NULL COMMENT '饰品标题',
+  `tuzhi` varchar(255) NOT NULL COMMENT '技术图纸',
+  `miaoshu` varchar(255) NOT NULL COMMENT '描述',
+  `houdu` varchar(20) NOT NULL COMMENT '厚度 ',
+  `zhinan` varchar(255) NOT NULL COMMENT '安装指南',
+  `model` varchar(200) NOT NULL COMMENT '模型',
+  `lianxi` varchar(255) NOT NULL COMMENT '联系',
+  `zhaobiao` varchar(255) NOT NULL COMMENT '招标文本',
+  `zhaobiao_text` varchar(255) NOT NULL COMMENT '招标文件文本',
+  `shouce` varchar(255) NOT NULL COMMENT '手册',
+  `wuye` varchar(255) NOT NULL COMMENT '箭镞物业主的信息',
+  `protuct_table` varchar(255) NOT NULL COMMENT '产品数据表',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of shi_info
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `swingcates`
@@ -715,11 +870,16 @@ CREATE TABLE `swingcates` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL COMMENT '游泳池栅格类别名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of swingcates
 -- ----------------------------
+INSERT INTO `swingcates` VALUES ('0000000001', '饰品');
+INSERT INTO `swingcates` VALUES ('0000000002', '游泳池格栅');
+INSERT INTO `swingcates` VALUES ('0000000003', '地板格栅');
+INSERT INTO `swingcates` VALUES ('0000000004', '卫生垫');
+INSERT INTO `swingcates` VALUES ('0000000005', '覆盖光栅');
 
 -- ----------------------------
 -- Table structure for `swingdang`
@@ -729,11 +889,14 @@ CREATE TABLE `swingdang` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL COMMENT '游泳池档案运行类类别',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of swingdang
 -- ----------------------------
+INSERT INTO `swingdang` VALUES ('0000000001', '卷帘游泳池光栅，光栅棒与泳池边缘成直角');
+INSERT INTO `swingdang` VALUES ('0000000002', '刚性游泳池光栅，光栅棒与泳池边缘平行');
+INSERT INTO `swingdang` VALUES ('0000000003', '刚性游泳池光栅，光栅棒与泳池边缘成直角');
 
 -- ----------------------------
 -- Table structure for `swingother`
@@ -747,6 +910,76 @@ CREATE TABLE `swingother` (
 
 -- ----------------------------
 -- Records of swingother
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `swing_banner`
+-- ----------------------------
+DROP TABLE IF EXISTS `swing_banner`;
+CREATE TABLE `swing_banner` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `sid` int(10) unsigned NOT NULL COMMENT '对应产品表的产品id',
+  `img` varchar(255) NOT NULL COMMENT '产品轮播图(大图)',
+  `small_img` varchar(255) NOT NULL COMMENT '产品轮播图(小图)',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='产品轮播表';
+
+-- ----------------------------
+-- Records of swing_banner
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `swing_protucts`
+-- ----------------------------
+DROP TABLE IF EXISTS `swing_protucts`;
+CREATE TABLE `swing_protucts` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `s_id` int(10) unsigned NOT NULL COMMENT '关联产品分类id',
+  `title` varchar(100) NOT NULL COMMENT '产品名称',
+  `miaoshu` varchar(200) NOT NULL COMMENT '描述',
+  `color` varchar(255) NOT NULL COMMENT '颜色（多个以，号分割）',
+  `te_color` varchar(255) NOT NULL COMMENT '特殊颜色',
+  `lianxi` varchar(255) NOT NULL COMMENT '联系',
+  `fuwu` varchar(255) NOT NULL COMMENT '服务信息（多个以，号分割）',
+  `zhanbiao` varchar(255) NOT NULL COMMENT '招标文本',
+  `shouce` varchar(255) NOT NULL COMMENT '手册',
+  `jiage` varchar(255) NOT NULL COMMENT '价目表',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of swing_protucts
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `swing_pro_cates`
+-- ----------------------------
+DROP TABLE IF EXISTS `swing_pro_cates`;
+CREATE TABLE `swing_pro_cates` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '用泳池产品分类标题',
+  `img` varchar(255) NOT NULL COMMENT '分类展示图',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of swing_pro_cates
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `swing_shi`
+-- ----------------------------
+DROP TABLE IF EXISTS `swing_shi`;
+CREATE TABLE `swing_shi` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '饰品类别名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of swing_shi
 -- ----------------------------
 
 -- ----------------------------
@@ -855,7 +1088,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -1104,6 +1337,13 @@ INSERT INTO `system_log` VALUES ('241', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('242', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-01 15:02:00');
 INSERT INTO `system_log` VALUES ('243', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-02 14:36:36');
 INSERT INTO `system_log` VALUES ('244', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-04 09:19:12');
+INSERT INTO `system_log` VALUES ('245', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-05 09:43:01');
+INSERT INTO `system_log` VALUES ('246', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-05 16:39:40');
+INSERT INTO `system_log` VALUES ('247', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-06 10:01:45');
+INSERT INTO `system_log` VALUES ('248', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-06 17:18:07');
+INSERT INTO `system_log` VALUES ('249', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-07 18:23:44');
+INSERT INTO `system_log` VALUES ('250', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-08 09:58:59');
+INSERT INTO `system_log` VALUES ('251', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-08 15:02:59');
 
 -- ----------------------------
 -- Table structure for `system_menu`
@@ -1124,7 +1364,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -1175,22 +1415,32 @@ INSERT INTO `system_menu` VALUES ('151', '147', '案例列表', '', '', '/tuanj/
 INSERT INTO `system_menu` VALUES ('152', '147', '案例详情页面展示图', '', '', '/tuanj/aninfo/index', '', '_self', '0', '1', '0', '2019-02-28 11:37:06');
 INSERT INTO `system_menu` VALUES ('153', '147', '案例详情页综合案例图', '', '', '/tuanj/zhong/index', '', '_self', '0', '1', '0', '2019-02-28 11:37:41');
 INSERT INTO `system_menu` VALUES ('154', '117', '清理系统', '', '', '#', '', '_self', '0', '1', '0', '2019-02-28 13:26:07');
-INSERT INTO `system_menu` VALUES ('155', '154', '清理产品', '', '', '/tuanj/clear/index', '', '_self', '0', '1', '0', '2019-02-28 13:27:02');
 INSERT INTO `system_menu` VALUES ('156', '117', '下载管理', '', '', '#', '', '_self', '0', '1', '0', '2019-03-01 16:37:45');
 INSERT INTO `system_menu` VALUES ('157', '156', '下载小册子', '', '', '/tuanj/brochures/index', '', '_self', '0', '1', '0', '2019-03-01 16:39:23');
-INSERT INTO `system_menu` VALUES ('158', '117', '网站产品类别设置', '', '', '#', '', '_self', '0', '1', '0', '2019-03-01 17:48:25');
-INSERT INTO `system_menu` VALUES ('159', '158', '游泳池栅格类别', '', '', '/tuanj/swingcates/index', '', '_self', '0', '1', '0', '2019-03-01 17:52:37');
-INSERT INTO `system_menu` VALUES ('160', '158', '游泳池档案运行类别', '', '', '/tuanj/swingdang/index', '', '_self', '0', '1', '0', '2019-03-01 17:53:36');
+INSERT INTO `system_menu` VALUES ('158', '117', '网站公共类别设置', '', '', '#', '', '_self', '0', '1', '0', '2019-03-01 17:48:25');
 INSERT INTO `system_menu` VALUES ('161', '158', '高度设置类别', '', '', '/tuanj/heights/index', '', '_self', '0', '1', '0', '2019-03-01 17:54:41');
-INSERT INTO `system_menu` VALUES ('162', '158', '游泳池其他产品类别', '', '', '/tuanj/swingother/index', '', '_self', '0', '1', '0', '2019-03-01 18:04:29');
-INSERT INTO `system_menu` VALUES ('163', '158', '入口垫类别', '', '', '/tuanj/rukoucates/index', '', '_self', '0', '1', '0', '2019-03-01 18:19:24');
 INSERT INTO `system_menu` VALUES ('164', '158', '脚步声类别', '', '', '/tuanj/foots/index', '', '_self', '0', '1', '0', '2019-03-01 18:19:54');
 INSERT INTO `system_menu` VALUES ('165', '158', '翻车类别', '', '', '/tuanj/fanche/index', '', '_self', '0', '1', '0', '2019-03-01 18:20:23');
-INSERT INTO `system_menu` VALUES ('166', '158', '入口垫其他类别', '', '', '/tuanj/othercates/index', '', '_self', '0', '1', '0', '2019-03-01 18:22:58');
 INSERT INTO `system_menu` VALUES ('167', '139', '订购信息材料联系', '', '', '/tuanj/infocontact/index', '', '_self', '0', '1', '0', '2019-03-02 14:45:18');
 INSERT INTO `system_menu` VALUES ('168', '158', '专家级别类别', '', '', '/tuanj/zhuan/index', '', '_self', '0', '1', '0', '2019-03-02 14:57:25');
-INSERT INTO `system_menu` VALUES ('169', '158', '清理系统类别', '', '', '/tuanj/clearcate/index', '', '_self', '0', '1', '0', '2019-03-04 14:01:13');
-INSERT INTO `system_menu` VALUES ('170', '154', '清理展示页面小图', '', '', '/tuanj/clearimage/index', '', '_self', '0', '1', '0', '2019-03-04 14:57:19');
+INSERT INTO `system_menu` VALUES ('171', '154', '清理系统类别', '', '', '/tuanj/clearcate/index', '', '_self', '0', '1', '0', '2019-03-05 11:28:42');
+INSERT INTO `system_menu` VALUES ('172', '117', '游泳池管理', '', '', '#', '', '_self', '0', '1', '0', '2019-03-05 11:30:38');
+INSERT INTO `system_menu` VALUES ('173', '172', '游泳池栅格类别', '', '', '/tuanj/swingcates/index', '', '_self', '0', '1', '0', '2019-03-05 11:31:37');
+INSERT INTO `system_menu` VALUES ('174', '172', '游泳池档案运行类别', '', '', '/tuanj/swingdang/index', '', '_self', '0', '1', '0', '2019-03-05 11:32:20');
+INSERT INTO `system_menu` VALUES ('175', '117', '产品对比', '', '', '#', '', '_self', '0', '1', '0', '2019-03-05 11:38:23');
+INSERT INTO `system_menu` VALUES ('176', '175', '产品类别', '', '', '/tuanj/protuct/index', '', '_self', '0', '1', '0', '2019-03-05 11:39:44');
+INSERT INTO `system_menu` VALUES ('178', '175', '产品系列分类', '', '', '/tuanj/category/index', '', '_self', '0', '1', '0', '2019-03-05 13:28:27');
+INSERT INTO `system_menu` VALUES ('179', '175', '产品型号详情', '', '', '/tuanj/protuctinfo/index', '', '_self', '0', '1', '0', '2019-03-05 13:30:30');
+INSERT INTO `system_menu` VALUES ('180', '175', '产品对比详情页面小图', '', '', '/tuanj/protuctimage/index', '', '_self', '0', '1', '0', '2019-03-05 15:36:47');
+INSERT INTO `system_menu` VALUES ('181', '175', '饰品分类', '', '', '/tuanj/shicates/index', '', '_self', '0', '1', '0', '2019-03-05 16:49:40');
+INSERT INTO `system_menu` VALUES ('182', '175', '产品详情对应饰品详情', '', '', '/tuanj/shinfo/index', '', '_self', '0', '1', '0', '2019-03-05 17:16:18');
+INSERT INTO `system_menu` VALUES ('184', '154', '清理产品图标', '', '', '/tuanj/clearimage/index', '', '_self', '0', '1', '0', '2019-03-06 11:40:17');
+INSERT INTO `system_menu` VALUES ('185', '154', '清理系统产品', '', '', '/tuanj/clear/index', '', '_self', '0', '1', '0', '2019-03-06 14:09:18');
+INSERT INTO `system_menu` VALUES ('186', '154', '清理详情页颜色设置', '', '', '/tuanj/clearcolor/index', '', '_self', '0', '1', '0', '2019-03-06 17:20:24');
+INSERT INTO `system_menu` VALUES ('187', '154', '清理详情页饰品设置', '', '', '/tuanj/clearshi/index', '', '_self', '0', '1', '0', '2019-03-06 17:39:34');
+INSERT INTO `system_menu` VALUES ('188', '172', '游泳池产品分类设置', '', '', '/tuanj/protuctswing/index', '', '_self', '0', '1', '0', '2019-03-08 10:07:15');
+INSERT INTO `system_menu` VALUES ('189', '172', '游泳池产品设置', '', '', '/tuanj/swingprotucts/index', '', '_self', '0', '1', '0', '2019-03-08 10:35:23');
+INSERT INTO `system_menu` VALUES ('190', '172', '产品详情页轮播图', '', '', '/tuanj/swingbanner/index', '', '_self', '0', '1', '0', '2019-03-08 10:36:01');
 
 -- ----------------------------
 -- Table structure for `system_node`
@@ -1332,17 +1582,41 @@ INSERT INTO `tuandui` VALUES ('9', '0', '汤姆•克鲁斯', '/static/upload/19
 INSERT INTO `tuandui` VALUES ('10', '0', '尼古拉斯·凯奇', '/static/upload/efde1ce2a23c4d26/1a12ec0ec2ccba97.jpg', '团建教练', '1982年，17岁的尼古拉斯·凯奇进入电影行业，出演影片《开放的美国学府》。1984年，凯奇主演了影片《鸟人》。1988年，他出演了《吸血鬼之吻》。1992年，他凭借影片《我心狂野》中的表演，获得了第43届戛纳电影节金棕榈大奖。1996年，他主演的动作片《勇闯夺命岛》，并凭借《离开拉斯维加斯》中的酒鬼一角获得当年奥斯卡最佳男主角奖。而后出演《变脸》、《空中监狱》等动作片。', '#', '2018-12-25 15:55:30');
 
 -- ----------------------------
+-- Table structure for `zhuan`
+-- ----------------------------
+DROP TABLE IF EXISTS `zhuan`;
+CREATE TABLE `zhuan` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL COMMENT '专家标题',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zhuan
+-- ----------------------------
+INSERT INTO `zhuan` VALUES ('0000000001', '大型项目咨询');
+INSERT INTO `zhuan` VALUES ('0000000002', '入口垫');
+INSERT INTO `zhuan` VALUES ('0000000003', '地毯垫');
+INSERT INTO `zhuan` VALUES ('0000000004', '游泳池栅格');
+
+-- ----------------------------
 -- Table structure for `zong`
 -- ----------------------------
 DROP TABLE IF EXISTS `zong`;
 CREATE TABLE `zong` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
   `a_id` int(10) unsigned NOT NULL COMMENT '案例id',
+  `title` varchar(255) NOT NULL COMMENT '标题',
   `img` varchar(255) NOT NULL COMMENT '综合产品图',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zong
 -- ----------------------------
+INSERT INTO `zong` VALUES ('0000000001', '1', 'hahhah', '/static/upload/88bb60bbab7f582f/3d6936310ca50161.jpg', '2019-03-06 10:39:34');
+INSERT INTO `zong` VALUES ('0000000002', '2', '1111', '/static/upload/aa20ce51d01b36da/dfffc8a7c427c311.jpg', '2019-03-06 10:40:13');
+INSERT INTO `zong` VALUES ('0000000003', '1', '22222', '/static/upload/c5759267f3a03050/ec0fc4b46b4ed981.jpg', '2019-03-06 10:40:28');
+INSERT INTO `zong` VALUES ('0000000004', '2', '222', '/static/upload/c5759267f3a03050/ec0fc4b46b4ed981.jpg', '2019-03-06 10:41:17');
+INSERT INTO `zong` VALUES ('0000000005', '2', 'buzhi', '/static/upload/aa20ce51d01b36da/dfffc8a7c427c311.jpg', '2019-03-06 10:41:35');
