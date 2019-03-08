@@ -1,0 +1,489 @@
+{include file="public/header" /}
+
+
+<div class="w1">
+    <div class="breadcrumb-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><span>你在这里</span></li>
+                        <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                        <li><a href="{:url('index/entrance_mats')}">制品</a></li>
+                        <li class="last active"><span>游泳池栅格</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div><!--TYPO3SEARCH_begin-->
+    <div id="c2052" class="csc-default">
+        <section class="lightcolor-banner ">
+            <img title="Swimming pool grates safe, hygienic and durable"
+                 alt="Swimming pool grates safe, hygienic and durable"
+                 src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/schwimmbadroste-von-emco.jpg"
+                 width="1280" height="600"/>
+            <div class="caption-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="caption"><h1>游泳池格栅</h1>
+                                <h2>安全，卫生，耐用</h2>
+                                <p class="bodytext">
+                                    emco游泳池格栅有效收集溢出的水，脚部温和，并提供卓越的安全和卫生标准。实际上每种形状都是可能的。我们的格栅具有安全型密封和安全认证。emco代表着“德国制造”的优质产品和专业技术。
+                                </p>
+                                <a href="{:url('index/swimming')}" class='btn btn-default'>
+                                    <span>更多关于游泳池栅格</span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="c827" class="csc-default">
+        <div class="tx-sz-comdbproducts">
+            <div class="categories-holder init product-view" style="display:;">
+                <form class="categories-form facet-form">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>产品搜索器</h2></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="post"><strong class="pull-right numFound-holder"><span
+                                        class="numFound">18</span>结果</strong>
+                                    <a href="#" class="facet-reset btn-more pull-right">重置所有过滤器</a></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder same-height-left" style="height: 25px;">
+                                    <label>请选择...</label></div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
+                                        class="isFirst jcf-hidden" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU">
+                                    <option value="">请选择...</option>
+                                        {volist name="swings" id="vo"}
+                                    <option value="{$vo.id}" data-value="{$vo.title}">{$vo.title}</option>
+                                        {/volist}
+                                </select>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder" style="height: 25px;"><label>档案运行</label></div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="STABVERLAUF_SEL_SR_BAU">
+                                        <option value="">请选择...</option>
+                                        {volist name="swing" id="vos"}
+                                        <option value="{$vos.id}" data-value="{$vos.title}">{$vos.title}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder same-height-right" style="height: 25px;"><label>高度（mm）</label></div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="HOEHE_SEL_SR_BAU">
+                                        <option value="">请选择...</option>
+                                        {volist name="heights" id="gao" }
+                                        <option value="{$gao.id}" data-value="{$gao.title}">{$gao.title}</option>
+                                        {/volist}
+                                    </select>
+                                    <!--
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="HOEHE_SEL_SR_BAU">
+                                    <option value=""><font style="vertical-align: inherit;"><font
+                                            style="vertical-align: inherit;">请选择...</font></font></option>
+                                    <option value="85161" data-value="22 mm"><font
+                                            style="vertical-align: inherit;"><font
+                                            style="vertical-align: inherit;">22毫米</font></font></option>
+                                    <option value="85162" data-value="25 mm"><font
+                                            style="vertical-align: inherit;"><font
+                                            style="vertical-align: inherit;">25毫米</font></font></option>
+                                    <option value="85163" data-value="27 mm"><font
+                                            style="vertical-align: inherit;"><font
+                                            style="vertical-align: inherit;">27毫米</font></font></option>
+                                    <option value="85164" data-value="35 mm">35毫米</option>
+                                    <option value="85165" data-value="37 mm">37毫米</option>
+                                    <option value="85166" data-value="45 mm">45毫米</option>
+                                    <option value="85167" data-value="12 mm">12毫米</option>
+                                    <option value="85168" data-value="14.5 mm">14.5毫米</option>
+                                </select>
+                                     -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <section class="listenseite-post comdbproducts-loader" style=" display:none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">
+                            <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif"
+                                width="66"
+                                height="66" alt=""/>
+                            <h3>加载产品 ...</h3></div>
+                    </div>
+                </div>
+            </section>
+            <div class="comdbproducts-holder" data-detailpid="214" data-listpid="6" data-language="1"
+                 data-category="104" data-teaser="433" data-attribute="" data-trusticon="" data-facet-name=""
+                 data-facet-value="" data-facet-multiple="0" data-facet-stepbystep="" data-pictogram="7144">
+                <section class="listenseite-post listenseite-post-results" data-product="210" data-variant="385">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image">
+                                    <a class="animation-neg"
+                                       href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-corner-solution-1/gehrungsecke-en.html">
+                                        <img alt="emco swimming pool grates Corner solution"
+                                             src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Eckloesung_Aufsicht__104873_20345f27a7.jpg"
+                                             width="475" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-corner-solution-1/gehrungsecke-en.html">emco游泳池格栅角落解决方案
+                                    </a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-corner-solution-1/gehrungsecke-en.html">
+                                            <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image">
+                                    <a class="animation-neg"
+                                       href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-installation-frame-1/780-en.html">
+                                        <img alt="780"
+                                             src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_emco_780_Einbaurahmen_2__131659_86e9675d25.jpg"
+                                             width="477" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-installation-frame-1/780-en.html">
+                                        emco游泳池格栅安装框架</a></h2>
+                                    <div class="meta"><strong class="comments">780</strong></div>
+                                    <p></p>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-installation-frame-1/780-en.html">
+                                            <span>学到更多</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-angled-profiles-1/780-en-1.html"><img
+                                        alt="780"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_emco_780_Winkelprofil_2__131661_f259fc72cc.jpg"
+                                        width="477" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details">
+                                    <h2>
+                                        <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-angled-profiles-1/780-en-1.html">emco游泳池格栅倾斜的配置文件
+                                </a></h2>
+                                    <div class="meta"><strong class="comments">780</strong></div>
+                                    <p></p>
+                                    <div class="btn-holder"><a class="btn btn-default"
+                                                               href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-angled-profiles-1/780-en-1.html">
+                                        <span>学到更多</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results" data-product="213" data-variant="391">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-labels-1/hinweisschilder-en.html"><img
+                                        alt="emco swimming pool grates Labels"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Hinweisschilder__182683_9d0ba87114.jpg"
+                                        width="555" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2><a
+                                        href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-labels-1/hinweisschilder-en.html">emco游泳池格栅标签</a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有2种产品可供选择
+                                        variants</strong></div>
+                                    <div class="btn-holder"><a class="btn btn-default"
+                                                               href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-labels-1/hinweisschilder-en.html">
+                                        <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results" data-product="214" data-variant="392">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-720-1/72022-en.html"><img
+                                        alt="emco swimming pool grates Model 720"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_4SR_Typ720_jpg__26446_a38aa70791.jpg"
+                                        width="468" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-720-1/72022-en.html">emco游泳池格栅模型720
+                                </a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-720-1/72022-en.html">
+                                            <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results" data-product="215" data-variant="396">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-723-1/72322-en.html"><img
+                                        alt="emco swimming pool grates Model 723"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_723_SR__26442_1129bc996b.jpg"
+                                        width="493" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details">
+                                    <h2>
+                                        <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-723-1/72322-en.html">emco游泳池格栅模型723
+                                </a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-723-1/72322-en.html">
+                                            <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results" data-product="216" data-variant="400">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-721-1/72122-en.html"><img
+                                        alt="emco swimming pool grates Model 721"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_4SR_Typ721_771_jpg__26444_2368574332.jpg"
+                                        width="504" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-721-1/72122-en.html">
+                                    emco游泳池格栅模型721</a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-721-1/72122-en.html">
+                                            <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results" data-product="217" data-variant="404">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image">
+                                    <a class="animation-neg"
+                                       href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-724-1/72422-en.html">
+                                        <img alt="emco swimming pool grates Model 724"
+                                             src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_4SR_Typ724_275_jpg__26440_84893d8aca.jpg"
+                                             width="504" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-724-1/72422-en.html">
+                                        emco游泳池格栅724型
+                                    </a></h2>
+                                    <p></p>
+                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-724-1/72422-en.html">
+                                            <span>发现产品变体</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-760-1/760-en.html"><img
+                                        alt="760"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_760_sr__75842_201df17146.jpg"
+                                        width="477" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2><a
+                                        href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-760-1/760-en.html">emco游泳池格栅模型760</a></h2>
+                                    <div class="meta"><strong class="comments">760</strong></div>
+                                    <p></p>
+                                    <div class="btn-holder"><a class="btn btn-default"
+                                                               href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-model-760-1/760-en.html">
+                                        <span>学到更多</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image"><a class="animation-neg"
+                                                                  href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-1/760-e-en.html"><img
+                                        alt="760 E"
+                                        src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_760E_sr__75840_30df0e04a6.jpg"
+                                        width="477" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2><a
+                                        href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-1/760-e-en.html">emco游泳池格栅</a></h2>
+                                    <div class="meta"><strong class="comments">760 E</strong></div>
+                                    <p></p>
+                                    <div class="btn-holder"><a class="btn btn-default"
+                                                               href="products/swimming-pool-grates/detail/product/show/emco-swimming-pool-grates-1/760-e-en.html">
+                                        <span>学到更多</span></a>
+                                    </div>
+                                    <div class="icons-holder">
+                                        <ul class="icon-frames">
+                                            <li><img
+                                                    title="Non-slip properties in acc. with DIN 51097, classification C, angle of inclination ≥ 24°"
+                                                    alt="Icon "
+                                                    src="__STATIC__/index/fileadmin/_processed_/csm_emco_bau_Klass_C_emco_bau__70758_af1b87afdf.jpg"
+                                                    width="44" height="44"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row pagination-wrapper" style="display: none;">
+                <div class="col-xs-12">
+                    <div class="pagination-holder">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="active"><span>1</span></li>
+                                <li class="page-2"><a
+                                        href="products/swimming-pool-grates/products-page/2.html">2</a></li>
+                                <li class="last next"><a
+                                        href="products/swimming-pool-grates/products-page/2.html">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--TYPO3SEARCH_end--></div>
+<div id="c2906" class="csc-default">
+    <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+         data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+         data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+
+        {include file="public/menu" /}
+
+    </div>
+</div>
+
+{include file="public/footer" /}
+</body>
+</html>

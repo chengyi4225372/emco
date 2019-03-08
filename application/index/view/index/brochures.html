@@ -1,0 +1,57 @@
+   {include file="public/header" /}
+
+    <div class="w1">
+        <div class="breadcrumb-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><span>你在这里</span></li>
+                            <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                            <li><a href="{:url('index/entrance_mats_service')}">服务</a></li>
+                            <li><a href="{:url('index/downloads')}">下载</a></li>
+                            <li class="last active"><span>小册子</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--TYPO3SEARCH_begin-->
+        <section class="posts-holder ">
+            <div class="container col-4-layout">
+                <div class="row">
+                    {volist name="dta" id="vo"}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <article class="post">
+                            <a href="{$vo.pdf}"
+                                title="download now" target="_blank" class=animation>
+                                <img title="{$vo.title}"
+                                alt="emco entrance mat systems - Technical brochure"
+                                 src="{$vo.img}"
+                                width="595" height="842"/></a>
+                            <div class="text-block"><strong class="promotion-h2">
+                                <a href="{$vo.pdf}"
+                                    title="download now" target="_blank">emco{$vo.title}</a></strong>
+                                <p class="bodytext">{$vo.info?$vo.info:'技术手册'}</p>
+                                <a href="{$vo.pdf}" title="download now" target="_blank" class='btn-more'>现在下载</a></div>
+                        </article>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </section><!--TYPO3SEARCH_end--></div>
+    <div id="c2906" class="csc-default">
+        <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+             data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+             data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+
+            {include file="public/menu" /}
+
+        </div>
+    </div>
+
+
+
+          {include file="public/footer" /}
+
+</body>
+</html>

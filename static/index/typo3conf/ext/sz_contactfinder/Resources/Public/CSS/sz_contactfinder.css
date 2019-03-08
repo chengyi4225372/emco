@@ -1,0 +1,51 @@
+#szCfFlyoutButton,
+.input-group-addon.szCfGeolocation {
+	background:#fff;
+	position:absolute;
+	left:auto;
+	right:1px;
+	border: none;
+	cursor: pointer;
+	height: 44px;
+    width: auto;
+}
+#szCfFlyoutButton:after,
+.input-group-addon.szCfGeolocation:before {
+	background:#fff;
+	position:relative;
+	top: 6px;
+	content:"\e601";
+	color:#666;
+	font-family:icomoon;
+	line-height:20px;
+	font-size:20px
+}
+
+.contactus-holder .form-group.textarea-holder {
+	height: 103px;
+}
+
+.contactus-holder .form-group textarea {
+	height: 98px;
+}
+.szCfGeocheck .input-group-addon.szCfGeolocation:before {
+
+}
+.szCfGeocheck .form-control {
+    padding-left: 37px;
+}
+.szCfGeocheck .input-group-addon.szCfGeolocation {
+    left: 0;
+    right: auto;
+}
+.gm-style-iw address {
+    margin: 0;
+}
+.gm-style-iw p.bodytext {
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.gm-style-iw p.link-holder a {
+    display: block;
+    margin-bottom: 0;
+}

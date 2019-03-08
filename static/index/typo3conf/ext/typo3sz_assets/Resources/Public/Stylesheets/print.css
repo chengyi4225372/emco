@@ -1,0 +1,10 @@
+*{
+	color: #000;
+}
+
+.tx-revoslider,
+.top-bar,
+#footer,
+form {
+	display: none;
+}

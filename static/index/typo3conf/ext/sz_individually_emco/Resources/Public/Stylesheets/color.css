@@ -1,0 +1,298 @@
+.top-nav li a:hover,
+.language-dropdown > li a:hover,
+.language-dropdown .dropdown-menu li a:hover {
+	color: #d22008;
+}
+
+.jcf-select .jcf-select-text,
+.jcf-list .jcf-option,
+.same-height-holder label {
+	letter-spacing: 0px;
+}
+
+#szCfFlyoutButton, .input-group-addon.szCfGeolocation {
+	background: #ffffff;
+}
+
+#szCfFlyoutButton:after {
+	top: 4px;
+}
+
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) { @media
+{
+	.nav-active .contact-popup .contact-opener:after{
+		margin-right: 0px !important;
+		-webkit-transform:rotate(-90deg);
+	}
+
+	#szCfFlyout .contact-opener.partner:hover span:before,
+	#szCfFlyout .contact-opener.dealer:hover span:before,
+	#szCfFlyout .contact-opener.zip:hover span:before {
+		-webkit-transform: scale(1.2) rotate(90deg);
+	}
+
+	.tx-revoslider .tp-leftarrow.default {
+		-webkit-transform: rotate(180deg);
+	}
+}}
+
+/* ComDB - Quickoverview */
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_DIPLOMAT,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_DIPLOMATE,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_DIPLOMAAT {
+    background: #99ccff;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_MARSCHALL,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_MARECHAL {
+    background: #6699cc;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_SENATOR {
+    background: #cc99cc;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_ECOLINE_PIONIER,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_ECOLINE_PIONEER {
+    background: #339933;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_GS17,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_GS_FERM,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_GS_17,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_GS517 {
+    background: #CC9999;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_X-TREME {
+    background: #FFD22E;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_PLAZA {
+    background: #999999;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_RADIAL,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_RADIAAL{
+    background: #CCCC99;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_KADETT,
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_CADET {
+    background: #99CC66;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_CONSUL {
+    background: #009999;
+}
+
+/* Teaser Produktanfrage */
+#teaserProductRequest {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display: none;
+	z-index: 1000;
+}
+
+#teaserProductRequest > .w1 {
+	/*margin: 0 auto;*/
+	padding: 20px;
+}
+
+#teaserProductRequest .teaser-holder {
+	float: right;
+	position: relative;
+	background: #d22008;
+	padding: 10px 10px 10px 70px;
+	border-right: 60px solid #ffffff;
+}
+
+#teaserProductRequest .teaser-holder:before {
+	content: ' ';
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	left: 20px;
+	top: 15px;
+	background: url(../Images/icon-tools.svg) no-repeat center center;
+
+	-webkit-animation-name: spaceboots-2;
+	-webkit-animation-duration: 5s;
+	/*-webkit-transform-origin:50% 50%;*/
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	animation-name: spaceboots-2;
+	animation-duration: 5s;
+	/*transform-origin:50% 50%;*/
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes spaceboots-2 {
+	/*0% { left: 20px; }*/
+	3% {
+		left: 22px;
+		-ms-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	6% {
+		left: 18px;
+		-ms-transform: rotate(-8deg);
+		-webkit-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	9% {
+		left: 22px;
+		-ms-transform: rotate(-12deg);
+		-webkit-transform: rotate(-12deg);
+		transform: rotate(-12deg);
+	}
+	12% {
+		left: 18px;
+		-ms-transform: rotate(-8deg);
+		-webkit-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	15% {
+		left: 22px;
+		-ms-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	18% {
+		left: 18px;
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	21% {
+		left: 20px;
+		-ms-transform: rotate(4deg);
+		-webkit-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+	24% {
+		left: 18px;
+		-ms-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	27% {
+		left: 20px;
+		-ms-transform: rotate(12deg);
+		-webkit-transform: rotate(12deg);
+		transform: rotate(12deg);
+	}
+	30% {
+		left: 18px;
+		-ms-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	33% {
+		left: 20px;
+		-ms-transform: rotate(4deg);
+		-webkit-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+	36% {
+		left: 20px;
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+@-webkit-keyframes spaceboots-2 {
+	/*0% { left: 20px; }*/
+	3% {
+		left: 22px;
+		-ms-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	6% {
+		left: 18px;
+		-ms-transform: rotate(-8deg);
+		-webkit-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	9% {
+		left: 22px;
+		-ms-transform: rotate(-12deg);
+		-webkit-transform: rotate(-12deg);
+		transform: rotate(-12deg);
+	}
+	12% {
+		left: 18px;
+		-ms-transform: rotate(-8deg);
+		-webkit-transform: rotate(-8deg);
+		transform: rotate(-8deg);
+	}
+	15% {
+		left: 22px;
+		-ms-transform: rotate(-4deg);
+		-webkit-transform: rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+	18% {
+		left: 18px;
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	21% {
+		left: 20px;
+		-ms-transform: rotate(4deg);
+		-webkit-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+	24% {
+		left: 18px;
+		-ms-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	27% {
+		left: 20px;
+		-ms-transform: rotate(12deg);
+		-webkit-transform: rotate(12deg);
+		transform: rotate(12deg);
+	}
+	30% {
+		left: 18px;
+		-ms-transform: rotate(8deg);
+		-webkit-transform: rotate(8deg);
+		transform: rotate(8deg);
+	}
+	33% {
+		left: 20px;
+		-ms-transform: rotate(4deg);
+		-webkit-transform: rotate(4deg);
+		transform: rotate(4deg);
+	}
+	36% {
+		left: 20px;
+		-ms-transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+
+#teaserProductRequest .teaser-holder span.text-wrapper {
+	width: 150px;
+	display: inline-block;
+}
+
+.language-it #teaserProductRequest .teaser-holder span.text-wrapper,
+.language-tr #teaserProductRequest .teaser-holder span.text-wrapper {
+	width: 175px;
+}
+
+.language-ru #teaserProductRequest .teaser-holder span.text-wrapper {
+	width: 275px;
+}
+
+#teaserProductRequest .teaser-holder a {
+	color: #ffffff;
+}
+
+#teaserProductRequest .teaser-holder a.closer {
+	position: absolute;
+	right: -50px;
+	height: 40px;
+	width: 40px;
+	background: url(../Images/icon-close.svg) no-repeat center center;
+}

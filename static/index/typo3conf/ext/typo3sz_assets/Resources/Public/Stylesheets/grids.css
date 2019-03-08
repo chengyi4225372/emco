@@ -1,0 +1,41 @@
+/* Grid Definitions */
+.grid {
+	clear: left;
+}
+
+.grid .csc-default {
+	padding-right: 20px;
+}
+
+.grid .column {
+	float: left;
+}
+
+
+/* Grid 50:50 */
+.grid-50-50 .column {
+	width: 50%;
+}
+
+/* Grid 70:30 */
+.grid-70-30 .left {
+	width: 70%;
+}
+.grid-70-30 .right {
+	width: 30%;
+}
+
+/* Grid 30:70 */
+.grid-30-70 .left {
+	width: 30%;
+}
+.grid-30-70 .right {
+	width: 70%;
+}
+
+.grid-33-33-33 .column {
+	width: 33%;
+}
+.grid-33-33-33 .mid {
+	width: 34%;
+}

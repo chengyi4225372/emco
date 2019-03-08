@@ -1,0 +1,102 @@
+{include file="public/header" /}
+
+
+    <div class="w1">
+        <div class="breadcrumb-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><span>你在这里</span></li>
+                            <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                            <li><a href="{:url('index/entrance_mats_service')}">服务</a>
+                            </li>
+                            <li class="last active"><span>往来</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--TYPO3SEARCH_begin-->
+        <div id="c1256" class="csc-default">
+            <div class="tx-sz-contactfinder">
+                <div id="szCfList" class="szCfMapList szCfTriggerUpdate" data-storage="72" data-geolocation="1"
+                     data-search="partner" data-transnational="0" data-sortby="" data-map="" data-maptype="dynamic"
+                     data-latitude="" data-longitude="">
+                    <section class="darkcolor-banner">
+                        <img src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/service-von-emco.jpg" width="1280"
+                            height="540" alt=""/>
+                        <div class="caption-holder">
+                            <div class="container">
+                                <div class="posts">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="caption">
+                                                <form name="filter" class="szCfSearchform"
+                                                      action="en/service/contacts.html?tx_szcontactfinder_flyout%5Baction%5D=ajax&amp;tx_szcontactfinder_flyout%5Bcontroller%5D=Contact&amp;cHash=c11cb90e82d727fe4887202a67677bb4"
+                                                      method="post">
+                                                    <div>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@extension]" value="SzContactfinder"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@vendor]" value="Sunzinet"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@controller]" value="Contact"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@action]" value="list"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][arguments]" value="YTowOnt992d941e392ee730a9873a61b27721f5daf9e87db"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@request]" value="a:4:{s:10:&quot;@extension&quot;;s:15:&quot;SzContactfinder&quot;;s:11:&quot;@controller&quot;;s:7:&quot;Contact&quot;;s:7:&quot;@action&quot;;s:4:&quot;list&quot;;s:7:&quot;@vendor&quot;;s:8:&quot;Sunzinet&quot;;}b9dab31c0695a5dd4aa0faee8a317ba302f79718"/>
+                                                        <input type="hidden" name="tx_szcontactfinder_flyout[__trustedProperties]" value="a:1:{s:6:&quot;filter&quot;;a:9:{s:10:&quot;storagePid&quot;;i:1;s:16:&quot;searchStoragePid&quot;;i:1;s:3:&quot;lat&quot;;i:1;s:3:&quot;lng&quot;;i:1;s:7:&quot;country&quot;;i:1;s:7:&quot;contact&quot;;i:1;s:6:&quot;search&quot;;i:1;s:13:&quot;transnational&quot;;i:1;s:10:&quot;searchTerm&quot;;i:1;}}73812369df4f2d0e21bfc6010c1124aade400598"/>
+                                                    </div>
+                                                    <input type="hidden" name="tx_szcontactfinder_flyout[filter][storagePid]" value="72"/>
+                                                    <input type="hidden" name="tx_szcontactfinder_flyout[filter][searchStoragePid]" value=""/>
+                                                    <input class="szCfLat" type="hidden" name="tx_szcontactfinder_flyout[filter][lat]" value=""/>
+                                                    <input class="szCfLng" type="hidden" name="tx_szcontactfinder_flyout[filter][lng]" value=""/>
+                                                    <input class="szCfCountry" type="hidden" name="tx_szcontactfinder_flyout[filter][country]" value=""/>
+                                                    <input class="szCfContact" type="hidden" name="tx_szcontactfinder_flyout[filter][contact]" value=""/>
+                                                    <input type="hidden" name="tx_szcontactfinder_flyout[filter][search]" value="partner"/>
+                                                    <input type="hidden" name="tx_szcontactfinder_flyout[filter][transnational]" value="0"/>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                            <h1>找到你的联系人</h1>
+                                                            <div class="form-group">
+                                                                <input placeholder="Enter zip / city..." class="form-control szCfAutocomplete" type="text" name="tx_szcontactfinder_flyout[filter][searchTerm]"/><a
+                                                                    class="input-group-addon szCfGeolocation"
+                                                                    title="Find location"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="map-holder">
+                        <div id="szCfListMap" class="map" style="width: 100%; height: 500px;"></div>
+                    </div>
+                    <section class="events-posts">
+                        <div class="container">
+                            <div class="posts">
+                                <div class="csc-header csc-header-n1">
+                                    <h1 class="csc-firstHeader">找到您所在地区的合适联系人！</h1>
+                                </div>
+                                <div id="szCfListContacts" class="row results-holder"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div><!--TYPO3SEARCH_end--></div>
+    <div id="c2906" class="csc-default">
+        <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+             data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+             data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+
+            {include file="public/menu" /}
+
+
+        </div>
+    </div>
+
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,0 +1,148 @@
+{include file="public/header" /}
+
+<div class="w1">
+    <div class="breadcrumb-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><span>你在这里</span></li>
+                        <li class="first"><a href="designing-clean-entrances.html">emco bau</a></li>
+                        <li><a href="products/entrance-mats.html">制品</a></li>
+                        <li class="last active">地毯垫<span></span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div><!--TYPO3SEARCH_begin-->
+    <div id="c2049" class="csc-default">
+        <section class="lightcolor-banner ">
+            <img title="emco carpet mats bespoke shape and motif"
+                 alt="emco carpet mats bespoke shape and motif"
+                 src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/teppichmatten-von-emco.jpg"
+                 width="1280" height="600"/>
+            <div class="caption-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="caption"><h1>emco地毯垫</h1>
+                                <h2>定制的形状和图案</h2>
+                                <p class="bodytext">
+                                    多年来，emco的地毯垫代表了高级工艺和最大的个性。除了标准格式外，形状垫可以几乎任何格式组成。除了45种明亮的标准颜色外，我们还可以根据您的要求打印特殊颜色。甚至细节也可以在图案中清晰地看到。
+                                </p>
+                                <p class="bodytext">emco设计垫：与您一样个性化！</p>
+                                <a href="{:url('index/carpet_mats_info')}"
+                                   class='btn btn-default'><span>更多关于地毯垫</span></a></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="c806" class="csc-default">
+        <div class="tx-sz-comdbproducts">
+            <div class="categories-holder init product-view" style="">
+                <form class="categories-form facet-form">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>产品搜索</h2></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="post"><strong class="pull-right numFound-holder">
+                                    <span class="numFound">4</span>结果</strong>
+                                    <a href="#" class="facet-reset btn-more pull-right">重置所有过滤器</a></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder"><label>请选择...</label></div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="isFirst jcf-hidden" id="ditan_id" name="ditan_id">
+                                    <option value="">请选择...</option>
+                                        {volist name="dtmats" id="vo"}
+                                    <option value="{$vo.id}" data-value="{$vo.names}">emco{$vo.names}</option>
+                                        {/volist}
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- todo 显示图片加载-->
+             <section class="listenseite-post comdbproducts-loader" style="display:none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">
+                            <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
+                                height="66" alt=""/>
+                            <h3>加载产品 ...</h3></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- end -->
+            <div class="comdbproducts-holder" data-detailpid="213" data-listpid="37" data-language="1" data-category="99" data-teaser="398" data-attribute="" data-trusticon="" data-facet-name=""
+                 data-facet-value="" data-facet-multiple="0" data-facet-stepbystep="" data-pictogram="">
+                <!-- todo 显示样式-->
+                {volist name="dtmats" id="vo"}
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image">
+                                    <a class="animation-neg" href="{:url('index/carpet_mats_info_list')}?id={$vo.id}">
+                                        <img alt="Classic" src="{$vo.img}" width="337" height="336"/></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details">
+                                    <h2><a href="{:url('index/carpet_mats_info_list')}?id={$vo.id}">emco{$vo.names}</a></h2>
+                                    <div class="meta"><strong class="comments">{$vo.names}</strong></div>
+                                    <p></p>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default" href="{:url('index/carpet_mats_info_list')}?id={$vo.id}"><span>学到更多</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                 {/volist}
+                <!-- end -->
+            </div>
+        </div>
+    </div><!--TYPO3SEARCH_end--></div>
+<div id="c2906" class="csc-default">
+    <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+         data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+         data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+        {include file="public/menu" /}
+    </div>
+</div>
+
+{include file="public/footer" /}
+<script>
+   $("#ditan_id").change(function(){
+       var id= $('#ditan_id').val();
+
+       $.ajax({
+           type:'post',
+           url:"{:url('index/carpet_mats')}",
+           data:{id:id},
+           dataType:'json',
+           success:function(result){
+              if(result.code ==400){
+                  alert('请求失败')
+              }
+             if(result.code==200){
+
+             }
+           }
+       })
+   })
+</script>
+
+
+</body>
+</html>

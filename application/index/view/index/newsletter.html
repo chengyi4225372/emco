@@ -1,0 +1,123 @@
+{include file="public/header" /}
+<!-- todo 这里下面的表单没有 提交到后台-->
+    <div class="w1">
+        <div class="breadcrumb-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><span>你在这里</span></li>
+                            <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                            <li class="last active"><span>通讯</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--TYPO3SEARCH_begin-->
+        <div id="c227" class="csc-default">
+            <section class="contactus-holder">
+                <div class="container">
+                    <div class="posts">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-left"><h2>订阅emco时事通讯</h2>
+                                    <div class="tx-sznlsubscribers-pi1">
+                                        <form id="tt_address_form" name="tt_address_form" method="post"
+                                              action="https://emco.emco-bau.com/en/service/newsletter.html?"
+                                              class="form contact-form directmail-subscribe"
+                                              data-parsley-validate="data-parsley-validate" data-validate="html5">
+                                            <fieldset class="ir_form">
+                                                <div class="formWrap tx-powermail">
+                                                    <div class="powermail_fieldwrap form-group">
+                                                        <select id="anrede" name="FE[tt_address][gender]" class="select_bestellform"
+                                                                data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}">
+                                                        <option value="">招呼</option>
+                                                        <option value="m">先生.</option>
+                                                        <option value="f">太太.</option>
+                                                    </select></div>
+                                                    <div class="powermail_fieldwrap form-group">
+                                                        <input type="text" name="FE[tt_address][first_name]" class="form-control powermail_field powermail_input" placeholder="名字"/>
+                                                    </div>
+                                                    <div class="powermail_fieldwrap form-group">
+                                                        <input type="text" name="FE[tt_address][last_name]" class="form-control powermail_field powermail_input" placeholder="姓氏"/>
+                                                    </div>
+                                                    <div class="powermail_fieldwrap form-group">
+                                                        <input required="required" type="email" data-parsley-required-message="Please fill out this field!"
+                                                               data-parsley-type-message="请已填写邮箱地址！"
+                                                            name="FE[tt_address][email]" value="{$email}"
+                                                            class="form-control powermail_field powermail_input"
+                                                            placeholder="Email *"/></div>
+                                                    <p class="required">标有*的所有字段均为必填项。</p>
+                                                    <h3>根据欧盟GDPR第6条和第7条要求接受隐私政策</h3>
+                                                    <p>您提供的信息始终是自愿的。您可以随时发送消息至datenschutz@emco.de撤销您的同意。</p>
+                                                    <p>您的数据将仅根据公布的目的进行处理，不会被修改或传递给第三方。
+                                                        <br/>请阅读我们的 <a
+                                                                href="{:url('index/private_policy')}" target="_blank"
+                                                                class="internal-link">隐私声明</a> 了解更多.</p>
+                                                    <div class="powermail_fieldwrap">
+                                                        <div class="checkbox"><label>
+                                                            <input type="checkbox" name="privacy" required="required" data-parsley-required-message="Please fill out this field!" value="1"/>
+                                                            我已阅读隐私声明并同意处理这些数据以处理我的查询。
+                                                        </label></div>
+                                                    </div>
+                                                    <div class="powermail_fieldwrap powermail_fieldwrap_submit">
+                                                        <button type="submit"
+                                                                class="btn powermail_field powermail_submit"><span>现在订阅</span>
+                                                        </button>
+                                                    </div>
+                                                    <input type="hidden" id="html"
+                                                           name="FE[tt_address][module_sys_dmail_html]" value="1"/>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-right">
+                                    <div class="editNewsletter"><h2>编辑简报简介</h2>
+                                        <p>如果您想编辑您的新闻简报或取消订阅，请单击
+                                            <a href="https://emco.emco-bau.com/en/service/newsletter.html?&cmd=infomail&backURL=https%3A%2F%2Femco.emco-bau.com%2Fen%2Fservice%2Fnewsletter.html%3F"
+                                               class="internal-link" title="Edit newsletter profile">此处</a>.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script type="text/javascript">/*<![CDATA[*/
+            updateForm('tt_address_form', 'FE[tt_address][pid]', '');
+            updateForm('tt_address_form', 'FE[tt_address][hidden]', '1');
+            updateForm('tt_address_form', 'FE[tt_address][gender]', '');
+            updateForm('tt_address_form', 'FE[tt_address][name]', '');
+            updateForm('tt_address_form', 'FE[tt_address][first_name]', '');
+            updateForm('tt_address_form', 'FE[tt_address][middle_name]', '');
+            updateForm('tt_address_form', 'FE[tt_address][last_name]', '');
+            updateForm('tt_address_form', 'FE[tt_address][title]', '');
+            updateForm('tt_address_form', 'FE[tt_address][address]', '');
+            updateForm('tt_address_form', 'FE[tt_address][building]', '');
+            updateForm('tt_address_form', 'FE[tt_address][room]', '');
+            updateForm('tt_address_form', 'FE[tt_address][birthday]', '');
+            updateForm('tt_address_form', 'FE[tt_address][phone]', '');
+            updateForm('tt_address_form', 'FE[tt_address][fax]', '');
+            updateForm('tt_address_form', 'FE[tt_address][mobile]', '');
+            updateForm('tt_address_form', 'FE[tt_address][www]', '');
+            updateForm('tt_address_form', 'FE[tt_address][email]', '');
+            updateForm('tt_address_form', 'FE[tt_address][city]', '');
+            updateForm('tt_address_form', 'FE[tt_address][zip]', '');
+            updateForm('tt_address_form', 'FE[tt_address][company]', '');
+            updateForm('tt_address_form', 'FE[tt_address][region]', '');
+            updateForm('tt_address_form', 'FE[tt_address][country]', '');
+            updateForm('tt_address_form', 'FE[tt_address][image]', '');
+            updateForm('tt_address_form', 'FE[tt_address][description]', '');/*]]>*/</script>
+        </div><!--TYPO3SEARCH_end--></div>
+    <div id="c2906" class="csc-default">
+        <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+             data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+             data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+             {include file="public/menu" /}
+        </div>
+    </div>
+{include file="public/footer" /}
+</body>
+</html>

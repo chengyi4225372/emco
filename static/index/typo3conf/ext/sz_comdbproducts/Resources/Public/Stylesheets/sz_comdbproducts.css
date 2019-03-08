@@ -1,0 +1,279 @@
+.no-padding {
+    padding: 0 !important;
+}
+.no-border {
+    border: none !important;
+}
+.no-margin {
+    margin: 0 !important;
+}
+
+.accordion-tags .image-list-no-margin {
+    margin-bottom: -27px;
+}
+
+.tx-sz-comdbproducts .comdbproducts-downloader,
+.powermail_form .comdbproducts-loader {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0.8;
+    background: #fff;
+    z-index: 1;
+}
+.powermail_form fieldset {
+	position: relative;
+}
+.powermail_form .comdbproducts-loader .image-wrapper {
+	position: relative;
+	top: 50%;
+	margin-top: -33px;
+}
+.comdbproducts-loader .image-wrapper,
+.comdbproducts-downloader .image-wrapper,
+.comdbproducts-powermailer .image-wrapper {
+	text-align: center;
+}
+
+.tx-sz-comdbproducts .product-details .icons-holder h2 { margin-bottom: 25px; }
+.tx-sz-comdbproducts .product-details .icon-frames li {
+	margin: 0 22px 22px 0;
+}
+.tx-sz-comdbproducts .categories-form h2 {
+    margin-top:0;
+    margin-left:0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.tx-sz-comdbproducts .form-group { margin: 1px 1px 10px; }
+
+.tx-sz-comdbproducts .product-details .icon-trusticon {
+	margin: 25px 0;
+}
+.tx-sz-comdbproducts .video-holder > div,
+.tx-sz-comdbproducts .video-holder .video-container {
+    position: relative;
+}
+.tx-sz-comdbproducts .video-holder .accessories-holder .posts {
+	margin-bottom: 0;
+}
+.tx-sz-comdbproducts .accessories-holder .posts .post a.t3colorbox-youtube {
+	color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+	.tx-sz-comdbproducts .product-details .icons-holder h2 { margin-bottom: 25px; }
+	.tx-sz-comdbproducts .product-details .icon-frames li {
+		margin: 0 25px 25px 0;
+	}
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+	position: relative;
+	width: 100%;
+}
+
+.tx-sz-comdbproducts .facet-form-filter .container {
+    padding-top: 0;
+}
+.tx-sz-comdbproducts .facet-form-filter .checkbox-holder {
+    padding-bottom: 15px;
+    margin: 0 -20px;
+}
+.tx-sz-comdbproducts .facet-form-filter .checkbox-holder:last-child {
+    padding-bottom: 0;
+}
+.tx-sz-comdbproducts .downloadcenter-section {
+	margin-bottom: 10px;
+	position: relative;
+}
+.tx-sz-comdbproducts .downloadcenter-section,
+.tx-sz-comdbproducts .downloadcenter-section .accordion-tags {
+	padding: 0;
+}
+.tx-sz-comdbproducts .downloadcenter-section .accordion-tags ul {
+	margin-bottom: -27px;
+}
+.tx-sz-comdbproducts .downloadcenter-section .accordion-tags li img {
+	max-width: 100%;
+	height: auto;
+}
+.tx-sz-comdbproducts .accordion-section .accordion-tags ul li {
+    /*width: 104px;*/
+    width: auto;
+}
+
+/* Comparison */
+.tx-sz-comdbproducts .comparison-view {
+    position: relative;
+}
+.listenseite-post-results .comparison-image-holder {
+    height: auto;
+}
+.comparison-post-results .row {
+    border-top: 1px solid #989898;
+}
+.comparison-post-results .row-closer,
+.comparison-post-results .row-attribute-header {
+    border-top: none;
+}
+.comparison-post-results .row-closer .icon-close {
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 700;
+    float: right;
+}
+.comparison-post-results .row .argument-selector,
+.comparison-post-results .row .column {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.comparison-post-results .row-attribute-header .column {
+    vertical-align: top;
+}
+.tx-sz-comdbproducts .carousel .pagination > li {
+    width: auto;
+}
+.tx-sz-comdbproducts .listenseite-image {
+    text-align: center;
+}
+.tx-sz-comdbproducts .listenseite-image img {
+    width: auto;
+    display: inline-block;
+}
+
+.tx-sz-comdbproducts .posts-holder .row > div.col-lg-4:nth-child(3n+1),
+.tx-sz-comdbproducts .reference-holder .posts > .post:nth-child(4n+1) {
+    clear: both;
+}
+
+/* Quickoverview */
+.tx-sz-comdbproducts .comdboverview-holder .table-legend {
+    table-layout: fixed;
+    border-spacing: 10px;
+    border-collapse: initial;
+    border-bottom: none;
+    margin: 0 -5px;
+}
+.tx-sz-comdbproducts .comdboverview-holder .research-holder {
+	margin-top: 0;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-holder {
+    font-weight: 600;
+    padding: 2px 5px;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-wrapper {
+	font-weight: 600;
+	padding: 2px 5px;
+	margin-top: 7px;
+}
+.tx-sz-comdbproducts .comdboverview-holder td {
+    padding-top: 0;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_DIPLOMAT {
+	background: #99ccff;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_MARSCHALL {
+	background: #6699cc;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_SENATOR {
+	background: #cc99cc;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_ECOLINE®_PIONIER {
+	background: #339933;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_GS17 {
+    background: #CC9999;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_X-TREME® {
+	background: #FFD22E;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_PLAZA {
+    background: #999999;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_RADIAL {
+    background: #CCCC99;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-GUMMIWABENMATTEN,
+.tx-sz-comdbproducts .comdboverview-holder .legend-RUBBER_HONEYCOMB_MATS,
+.tx-sz-comdbproducts .comdboverview-holder .legend-ALFOMBRAS_DE_GOMA_ALVEOLAR,
+.tx-sz-comdbproducts .comdboverview-holder .legend-TAPIS_ANNULAIRE,
+.tx-sz-comdbproducts .comdboverview-holder .legend-TAPPETO_TECNICO_A_NIDO_DAPE_DI_GOMMA,
+.tx-sz-comdbproducts .comdboverview-holder .legend-RUBBERRINGMATTEN,
+.tx-sz-comdbproducts .comdboverview-holder .legend-MATY_GUMOWE_TYPU_PLASTER_MIODU,
+.tx-sz-comdbproducts .comdboverview-holder .legend-_QUOT__QUOT__,
+.tx-sz-comdbproducts .comdboverview-holder .legend-ROHOE_S_GUMOVMI_PLSTVY,
+.tx-sz-comdbproducts .comdboverview-holder .legend-GUMI_PREDPRANIK_SATOVJE {
+    background: #ff9900;
+}
+.tx-sz-comdbproducts .comdboverview-holder .legend-EMCO_AVIATOR {
+	background: #FFD655;
+}
+.facet-holder .same-height-holder {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+/* Pagination */
+.tx-sz-comdbproducts .pagination-holder {
+    padding: 59px 15px;
+    background: #ffffff;
+    margin: 0 0 10px 0;
+}
+#infscr-loading > img {
+    display: none;
+}
+
+.szComdbproductSlider .posts-holder {
+    background: none;
+}
+
+.comdbproducts-terms .form-holder {
+
+}
+.comdbproducts-terms .form-holder .checkbox label {
+    padding-left: 0;
+}
+.tx-sz-comdbproducts .variant-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tx-sz-comdbproducts .variant-nav li {
+    display: inline-block;
+    padding: 0 15px 0 0;
+    margin: 0;
+}
+.tx-sz-comdbproducts .variant-nav li:last-child {
+    padding: 0;
+}
+
+.tx-sz-comdbproducts .comments a {
+    color: inherit;
+}
+.tx-sz-comdbproducts .comments a:hover {
+    color: #d32c17;
+}
+
+@media (min-width: 768px) {
+    .tx-sz-comdbproducts .accessories-holder .posts {
+        margin: 0 -15px -20px -15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .comparison-post-results .row .argument-selector {
+        text-align: left;
+    }
+    .tx-sz-comdbproducts .accessories-holder .posts {
+        margin: 0 0 -20px -37px;
+    }
+}

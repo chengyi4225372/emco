@@ -1,0 +1,104 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+            <select name="sex">
+                <option value="{if condition="$vo.sex eq 1"}selected="" {/if}">太太</option>
+                <option value="{if condition="$vo.sex eq 2"}selected="" {/if}">先生</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="names" value='{$vo.names|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">公司单位</label>
+        <div class="layui-input-block">
+            <input type="text" name="danwei" value='{$vo.danwei|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">街道</label>
+        <div class="layui-input-block">
+            <input type="text" name="street" value='{$vo.street|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">街道门牌号</label>
+        <div class="layui-input-block">
+            <input type="text" name="street_no" value='{$vo.street_no|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">邮政编码</label>
+        <div class="layui-input-block">
+            <input type="text" name="zip_code" value='{$vo.zip_code|default=""}' class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">所在城市</label>
+        <div class="layui-input-block">
+            <input type="text" name="city" value='{$vo.city|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">email</label>
+        <div class="layui-input-block">
+            <input type="text" name="email" value='{$vo.email|default=""}' class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">电话号码</label>
+        <div class="layui-input-block">
+            <input type="text" name="tel" value='{$vo.tel|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">咨询类型</label>
+        <div class="layui-input-block">
+            <input type="text" name="ss" value="{$vo.ss|default=''}" class="layui-input">
+            <span style="color: #FF0000;">*:咨询信息以，分割类型。</span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
+

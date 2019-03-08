@@ -1,0 +1,82 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">地毯垫名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="names" value='{$vo.names|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">地毯垫显示图</label>
+        <div class="layui-input-block">
+            <input type="text" name="img" value='{$vo.img|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">图纸</label>
+        <div class="layui-input-block">
+            <input type="text" name="tuizhi" value='{$vo.tuizhi|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品数据表</label>
+        <div class="layui-input-block">
+            <input type="text" name="sz_table" value='{$vo.sz_table|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='sz_table' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">手册</label>
+        <div class="layui-input-block">
+            <input type="text" name="shou_ce" value='{$vo.shou_ce|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='shou_ce' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">建筑物业信息</label>
+        <div class="layui-input-block">
+            <input type="text" name="info" value='{$vo.info|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='info' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">技术数据</label>
+        <div class="layui-input-block">
+            <textarea name="shuju" class="layui-textarea">{if isset($vo['id'])}{$vo.shuju}{/if}</textarea>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        $('form [name="tuizhi"]').uploadOneImage();
+        window.createEditor('[name="shuju"]', {height: 500});
+    });
+</script>
+
+
+{/block}
+

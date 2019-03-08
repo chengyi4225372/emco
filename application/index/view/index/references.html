@@ -1,0 +1,283 @@
+{include file="public/header" /}
+
+
+<div class="w1">
+    <div class="breadcrumb-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><span>你在这里</span></li>
+                        <li class="first"><a href="designing-clean-entrances.html">emco bau</a></li>
+                        <li class="last active"><span>参考</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div><!--TYPO3SEARCH_begin-->
+    <div id="c5617" class="csc-default">
+        <section class="lightcolor-banner ">
+            <img title="emco case studies" alt="Architectural projects with the wow factor!"
+                 src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Kunden/Architekten_und_Planer/emco-Referenzberichte.jpg"
+                 width="1280" height="580"/>
+            <div class="caption-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="caption"><h1>emco案例研究</h1>
+                                <h2>具有惊人因素的建筑项目！</h2>
+                                <p class="bodytext">
+                                    优秀产品的最佳证明是优秀项目。emco系统在世界各地都可以用于各种可想象的项目。始终，质量是决定因素。emco的入口消光系统质量上乘：设计，价格和性能都完美匹配。
+                                </p>
+                                <p class="bodytext">来自emco的入口垫系统在实际应用中：在这里找到你的灵感！
+                                </p><a href="{:url('index/case_studies')}" class='btn btn-default'><span>实例探究</span></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="c658" class="csc-default">
+        <div class="tx-sz-comdbproducts">
+            <div class="categories-holder init reference-view" style="display:;">
+                <form class="categories-form facet-form">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>产品搜索器</h2></div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="post">
+                                    <strong class="pull-right numFound-holder">
+                                        <span class="numFound">105</span> 结果</strong>
+                                    <a href="#" class="facet-reset btn-more pull-right">重置所有结果</a></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder same-height-left" style="height: 25px;">
+                                    <label>类别</label>
+                                </div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="isFirst jcf-hidden"
+                                        name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_1_SEL_BAU">
+                                    <option value="" selected="selected">请选择...</option>
+                                        {volist name="protucts" id="vo"}
+                                    <option value="{$vo.id}" data-value="Entrance matting systems">{$vo.ptitle}</option>
+                                        {/volist}
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder" style="height: 25px;">
+                                    <label>类别</label>
+                                </div>
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_2_SEL_BAU">
+                                    <option value="" selected="selected">请选择...</option>
+                                      {volist name="heres" id="vo"}
+                                    <option value="{$vo.id}" data-value="Shopping centres">{$vo.htitle}</option>
+                                        {/volist}
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder same-height-right" style="height: 25px;">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">国家</font></font></label></div>
+                                <div class="form-group"><select
+                                        data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
+                                        class="jcf-hidden" name="TITEL_6_SEL_EM_BAU">
+                                    <option value="" selected="selected">请选择...</option>
+                                    {volist name="county" id="list"}
+                                    <option value="{$list.id}" data-value="Germany">{$list.ctitle}</option>
+                                    {/volist}
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+
+<!--
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder"><label>Category</label></div>
+                                <div class="form-group"><select
+                                        data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'
+                                        class="isFirst" name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_1_SEL_BAU">
+                                    <option value="">Please select...</option>
+                                    <option value="32012" data-value="Entrance matting systems">Entrance matting
+                                        systems
+                                    </option>
+                                    <option value="32013" data-value="Swimming pool grates">Swimming pool grates
+                                    </option>
+                                </select></div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder"><label>Category</label></div>
+                                <div class="form-group">
+                                    <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class=""
+                                            name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_2_SEL_BAU">
+                                        <option value="">Please select...</option>
+                                        <option value="143444" data-value="Shopping centres">Shopping centres</option>
+                                        <option value="32015" data-value="Airports">Airports</option>
+                                        <option value="32016" data-value="Train stations">Train stations</option>
+                                        <option value="32017" data-value="Offices and administrative buildings">Offices
+                                            and administrative buildings
+                                        </option>
+                                        <option value="32018" data-value="Universities/schools and nursery schools">
+                                            Universities/schools and nursery schools
+                                        </option>
+                                        <option value="32019" data-value="Hospitals and health centres">Hospitals and
+                                            health centres
+                                        </option>
+                                        <option value="32021" data-value="Museums">Museums</option>
+                                        <option value="32022" data-value="Public buildings">Public buildings</option>
+                                        <option value="32023" data-value="Swimming pools">Swimming pools</option>
+                                        <option value="32024" data-value="Ships">Ships</option>
+                                        <option value="32025" data-value="Baden-Württemberg">Baden-Württemberg</option>
+                                        <option value="32026" data-value="Bavaria">Bavaria</option>
+                                        <option value="32027" data-value="Berlin">Berlin</option>
+                                        <option value="32028" data-value="Brandenburg">Brandenburg</option>
+                                        <option value="32029" data-value="Hesse">Hesse</option>
+                                        <option value="32030" data-value="Mecklenburg-Vorpommern">
+                                            Mecklenburg-Vorpommern
+                                        </option>
+                                        <option value="32031" data-value="Lower Saxony">Lower Saxony</option>
+                                        <option value="32032" data-value="North Rhine-Westphalia">North
+                                            Rhine-Westphalia
+                                        </option>
+                                        <option value="32033" data-value="Rhineland-Palatinate">Rhineland-Palatinate
+                                        </option>
+                                        <option value="32034" data-value="Saarland">Saarland</option>
+                                        <option value="32035" data-value="Saxony">Saxony</option>
+                                        <option value="32036" data-value="Saxony-Anhalt">Saxony-Anhalt</option>
+                                        <option value="32037" data-value="Thuringia">Thuringia</option>
+                                        <option value="89395" data-value="France">France</option>
+                                        <option value="89396" data-value="Austria">Austria</option>
+                                    </select></div>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                                <div class="same-height-holder"><label>Country</label></div>
+                                <div class="form-group"><select
+                                        data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class=""
+                                        name="TITEL_6_SEL_EM_BAU">
+                                    <option value="">Please select...</option>
+                                    <option value="89301" data-value="Germany">Germany</option>
+                                    <option value="89302" data-value="Sweden">Sweden</option>
+                                    <option value="89303" data-value="Netherlands">Netherlands</option>
+                                    <option value="89304" data-value="France">France</option>
+                                    <option value="89305" data-value="Belgium">Belgium</option>
+                                    <option value="89306" data-value="China">China</option>
+                                    <option value="89307" data-value="Austria">Austria</option>
+                                </select></div>
+                            </div>
+                        </div>
+-->
+                    </div>
+                </form>
+            </div>
+            <!--
+            <section class="listenseite-post comdbproducts-loader" style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">
+                            <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66" height="66" alt=""/>
+                            <h3>加载参考文献...</h3></div>
+                    </div>
+                </div>
+            </section>
+            -->
+            <div class="comdbproducts-holder" data-detailpid="143" data-listpid="9" data-language="1"
+                 data-category="111" data-teaser="0" data-attribute="" data-trusticon="" data-facet-name=""
+                 data-facet-value="" data-facet-multiple="" data-pictogram="">
+                {volist name="anli" id="vo"}
+                <section class="listenseite-post listenseite-post-results">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="listenseite-image">
+                                    <a href="{:url('index/schweinfurt')}?id={$vo.id}">
+                                        <img alt="ECE Stadtgalerie" src="{$vo.img}" width="555" height="336"/></a></div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>
+                                    <a href="{:url('index/schweinfurt')}?id={$vo.id}">{$vo.title}</a></h2>
+                                    <div class="meta"><strong class="comments">{$vo.heres}</strong></div>
+                                    <p>{$vo.reinfo}</p>
+                                    <div class="btn-holder">
+                                        <a class="btn btn-default"
+                                           href="{:url('index/schweinfurt')}?id={$vo.id}"><span>学到更多</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/volist}
+            </div>
+            <!-- 现在 分页-->
+            {$anli|raw}
+            <!-- 原来 分页 -->
+            <!--
+            <div class="row pagination-wrapper" >
+                <div class="col-xs-12">
+                    <div class="pagination-holder">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="active"><span></span></li>
+               <li class="page-2">
+                                    <a href="{:url('index/references')}?page=2">2</a>
+                                </li>
+             <li class="page-3"><a
+                     href="references.html?tx_szcomdbproducts_product[action]%5B%40widget_0%5D%5BcurrentPage%5D=3&amp;cHash=af3edc9b910947426f7d708cd0a8a303">3</a>
+             </li>
+   <li class="page-4"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=4&amp;cHash=4a8320768751833f100b1e07774581d1">4</a>
+   </li>
+   <li class="page-5"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=5&amp;cHash=77d501c7af02c4a978efa51d9135c38c">5</a>
+   </li>
+   <li class="page-6"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=6&amp;cHash=dff19c40ea64b1d84f99335dea2acb9f">6</a>
+   </li>
+   <li class="page-7"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=7&amp;cHash=947d66c3f56af265552f96b6f28ab085">7</a>
+   </li>
+   <li class="page-8"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=8&amp;cHash=9779b334fadfbb89557978dab74ff67e">8</a>
+   </li>
+   <li class="page-9"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=9&amp;cHash=355e5b9e5ffd552b331e8c803b92237e">9</a>
+   </li>
+   <li class="page-10"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=10&amp;cHash=e6580b22578aac59da49732370346400">10</a>
+   </li>
+   <li class="page-11"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=11&amp;cHash=ea906cb925c62dc941e96b68bdbf8740">11</a>
+   </li>
+   <li class="last next"><a
+         href="references.html?tx_szcomdbproducts_reference%5B%40widget_0%5D%5BcurrentPage%5D=2&amp;cHash=57140104a1e5e4ef6a8ae1edff9163e5">Next</a>
+   </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+                -->
+
+        </div>
+    </div><!--TYPO3SEARCH_end--></div>
+<div id="c2906" class="csc-default">
+    <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+         data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+         data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+
+        {include file="public/menu" /}
+
+
+    </div>
+</div>
+
+{include file="public/footer" /}
+</body>
+</html>

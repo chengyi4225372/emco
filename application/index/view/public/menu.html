@@ -1,0 +1,162 @@
+
+<!-- todo 联系栏-->
+
+<div class="popup-content-area">
+    <a href="#szCf-2906" class="contact-opener"><span>联系</span></a>
+    <a href="#szCf-2906" class="contact-opener zip"><span></span></a>
+    <div class="popup-content">
+        <div class="contact-form1">
+            <div class="columns">
+
+                <!--ajax 成功跳转页面-->
+                <div class="col" id="col1" style="display:none;">
+                    <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">你的联系方式</font></font></h2>
+                    <div class="contact-wrapper" data-latitude="" data-longitude=""></div>
+                    <div class="form-wrapper">
+                        <div id="" class="csc-default">
+                            <div class="tx-powermail" id="" data-title="">
+                                <div class="powermail_create" data-powermail-form="3"><h3><font
+                                        style="vertical-align: inherit;"><font
+                                        style="vertical-align: inherit;">感谢您的要求！</font></font></h3>
+                                    <p class="bodytext"><font style="vertical-align: inherit;"><font
+                                            style="vertical-align: inherit;">我们会尽快回复您的请求并向您报告。</font><font
+                                            style="vertical-align: inherit;">在此之前，我们很高兴给我们打电话。</font></font></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" id="col2"><h2>你的联系方式</span></h2>
+                    <div class="contact-wrapper" data-latitude="" data-longitude=""></div>
+                    <div class="form-wrapper">
+                        <div id="c2442" class="csc-default">
+                            <div class="tx-powermail" id="form3" data-title="">
+                                <div class="contactus-holder">
+                                    <form data-parsley-validate="data-parsley-validate" data-validate="html5" data-powermail-ajax="true"
+                                          data-powermail-form="3" enctype="multipart/form-data" name="field" class="contact-form powermail_form powermail_form_3 " id="contactForm"
+                                          action="{:url('index/index/menu_commit')}" method="post" onsubmit="return false;">
+                                        <!--
+                                     <div>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][@extension]" value="Powermail"/>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][@vendor]" value="In2code"/>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][@controller]" value="Form"/>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][@action]" value="form"/>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][arguments]" value="YTowOnt992d941e392ee730a9873a61b27721f5daf9e87db"/>
+                               <input type="hidden" name="tx_powermail_pi1[__referrer][@request]" value="a:4:{s:10:&quot;@extension&quot;;s:9:&quot;Powermail&quot;;s:11:&quot;@controller&quot;;s:4:&quot;Form&quot;;s:7:&quot;@action&quot;;s:4:&quot;form&quot;;s:7:&quot;@vendor&quot;;s:7:&quot;In2code&quot;;}a8502f07f35aaba3ccfaec2eef369c66855bacfd"/><input
+                                   type="hidden" name="tx_powermail_pi1[__trustedProperties]"
+                                   value="a:2:{s:5:&quot;field&quot;;a:6:{s:4:&quot;name&quot;;i:1;s:6:&quot;e_mail&quot;;i:1;s:7:&quot;telefon&quot;;i:1;s:9:&quot;nachricht&quot;;i:1;s:11:&quot;datenschutz&quot;;a:1:{i:0;i:1;}s:4:&quot;__hp&quot;;i:1;}s:4:&quot;mail&quot;;a:1:{s:4:&quot;form&quot;;i:1;}}5bf5593cfb0bc4ecd617908115a4a08b620c0e25"/>
+                           </div>
+                            -->
+                                        <div class="form-holder ">
+                                            <fieldset class="powermail_fieldset powermail_fieldset_3 ">
+                                                <div id="powermail_fieldwrap_26" class="form-group powermail_fieldwrap powermail_fieldwrap_input powermail_fieldwrap_26 ">
+                                                    <input placeholder="请输入您的姓名" class="form-control powermail_field powermail_input " id="powermail_field_name" type="text"
+                                                           name="names" value=""/>
+                                                </div>
+                                                <div id="powermail_fieldwrap_27" class="form-group powermail_fieldwrap powermail_fieldwrap_input powermail_fieldwrap_27 ">
+                                                    <input required="required" data-parsley-required-message="Please fill out this field" data-parsley-trigger="change"
+                                                           data-parsley-error-message="请输入您的E-Mail 地址" placeholder="请输入您的E-Mail 地址 " class="form-control powermail_field powermail_input "
+                                                           id="powermail_field_e_mail" type="email" name="email" value=""/>
+                                                </div>
+                                                <div id="powermail_fieldwrap_28"
+                                                     class="form-group powermail_fieldwrap powermail_fieldwrap_input powermail_fieldwrap_28 ">
+                                                    <input required="required"
+                                                           data-parsley-required-message="请填写这个字段"
+                                                           data-parsley-trigger="change" placeholder="请输入您的手机号码" class="form-control powermail_field powermail_input "
+                                                           id="powermail_field_telefon" type="text" name="tel" value=""/>
+                                                </div>
+                                                <div id="powermail_fieldwrap_29"
+                                                     class="form-group textarea-holder powermail_fieldwrap powermail_fieldwrap_textarea powermail_fieldwrap_29 ">
+                                                                <textarea required="required"
+                                                                          data-parsley-required-message="请填写这个字段"
+                                                                          data-parsley-trigger="change" rows="5"
+                                                                          cols="20" placeholder="请填写备注信息"
+                                                                          class="powermail_field powermail_textarea "
+                                                                          id="powermail_field_nachricht"
+                                                                          name="info"></textarea>
+                                                </div>
+
+                                                <div id="powermail_fieldwrap_4608" class="powermail_fieldwrap powermail_fieldwrap_check powermail_fieldwrap_4608 ">
+                                                    <fieldset>
+                                                        <div class="powermail_check_outer ">
+                                                            <div class="checkbox powermail_check_inner powermail_check_inner_1">
+                                                                <label for="powermail_field_datenschutz_1">
+                                                                    <input type="hidden" name="tx_powermail_pi1[field][datenschutz]" value=""/>
+                                                                    <input required="required" data-parsley-required-message="请勾选我已阅读隐私声明"
+                                                                                         data-parsley-errors-container=".powermail_field_error_container_datenschutz"
+                                                                                         data-parsley-class-handler=".powermail_fieldwrap_4608 div:first"
+                                                                                         class="powermail_checkbox powermail_checkbox_4608" id="powermail_field_datenschutz_1"
+                                                                                         type="checkbox" name="tx_powermail_pi1[field][datenschutz][]" value="我已阅读隐私声明并同意处理这些数据以处理我的查询。"/>
+                                                                    我已阅读<a href="{:url('index/private_policy')}" target="_blank">隐私声明</a>并同意处理这些数据以处理我的查询。</label>
+                                                            </div>
+                                                            <div class="powermail_field_error_container powermail_field_error_container_datenschutz"></div>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+                                                <div id="powermail_fieldwrap_30" class="powermail_fieldwrap powermail_fieldwrap_submit powermail_fieldwrap_30 ">
+                                                    <button class="powermail_field powermail_submit btn btn-default pull-right" type="submit" name="" value="">
+                                                        <span>发送</span></button>
+                                                </div>
+                                            </fieldset>
+                                            <input class="powermail_form_uid" type="hidden" name="tx_powermail_pi1[mail][form]" value="3"/>
+                                            <div style="margin-left: -99999px; position: absolute;">
+                                                <label for="powermail_hp_3">不要填写此字段</label>
+                                                <input autocomplete="off" id="powermail_hp_3" type="text" name="tx_powermail_pi1[field][__hp]" value=""/></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="hidden" style="display: none;">
+                                    <input type="hidden" id="powermailLanguage" value="1"/>
+                                    <input type="hidden" id="powermailPid" value="2"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col"><h2>找到你的联系人</h2>
+                    <p>找到您所在地区的合适联系人！</p>
+                    <form name="filter" class="szCfSearchform" id="szCfFlyoutForm"
+                          action="en/designing-clean-entrances.html?tx_szcontactfinder_flyout%5Baction%5D=ajax&amp;tx_szcontactfinder_flyout%5Bcontroller%5D=Contact&amp;cHash=c11cb90e82d727fe4887202a67677bb4"
+                          method="post">
+                        <div>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@extension]" value="SzContactfinder"/>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@vendor]" value="Sunzinet"/>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@controller]" value="Contact"/>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@action]" value="flyout"/>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][arguments]" value="YTowOnt992d941e392ee730a9873a61b27721f5daf9e87db"/>
+                            <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@request]" value="a:4:{s:10:&quot;@extension&quot;;s:15:&quot;SzContactfinder&quot;;s:11:&quot;@controller&quot;;s:7:&quot;Contact&quot;;s:7:&quot;@action&quot;;s:6:&quot;flyout&quot;;s:7:&quot;@vendor&quot;;s:8:&quot;Sunzinet&quot;;}47e1ef21462577beef61fa2d62a5f702640de5f3"/><input
+                                type="hidden" name="tx_szcontactfinder_flyout[__trustedProperties]"
+                                value="a:1:{s:6:&quot;filter&quot;;a:11:{s:10:&quot;storagePid&quot;;i:1;s:16:&quot;searchStoragePid&quot;;i:1;s:3:&quot;zip&quot;;i:1;s:3:&quot;lat&quot;;i:1;s:3:&quot;lng&quot;;i:1;s:7:&quot;country&quot;;i:1;s:7:&quot;contact&quot;;i:1;s:6:&quot;search&quot;;i:1;s:13:&quot;transnational&quot;;i:1;s:10:&quot;searchTerm&quot;;i:1;s:10:&quot;categories&quot;;i:1;}}305ae7fede60772a0ed42d6edb45c811249bf890"/>
+                        </div>
+                        <input type="hidden" name="tx_szcontactfinder_flyout[filter][storagePid]" value="72"/>
+                        <input type="hidden" name="tx_szcontactfinder_flyout[filter][searchStoragePid]" value="72"/>
+                        <input class="szCfZip" type="hidden" name="tx_szcontactfinder_flyout[filter][zip]" value=""/>
+                        <input class="szCfLat" type="hidden" name="tx_szcontactfinder_flyout[filter][lat]" value=""/>
+                        <input class="szCfLng" type="hidden" name="tx_szcontactfinder_flyout[filter][lng]" value=""/>
+                        <input class="szCfCountry" type="hidden" name="tx_szcontactfinder_flyout[filter][country]" value=""/>
+                        <input class="szCfContact" type="hidden" name="tx_szcontactfinder_flyout[filter][contact]" value=""/>
+                        <input type="hidden" name="tx_szcontactfinder_flyout[filter][search]" value="zip"/>
+                        <input type="hidden" name="tx_szcontactfinder_flyout[filter][transnational]" value="0"/>
+                        <div class="form-group">
+                            <input placeholder="Enter zip / city..." class="form-control szCfAutocomplete" id="flyout-pac" type="text" name="tx_szcontactfinder_flyout[filter][searchTerm]"/>
+                            <a class="input-group-addon szCfGeolocation" title="Find location"></a></div>
+                        <input type="hidden" name="tx_szcontactfinder_flyout[filter][categories]" value="1,2,3,4"/>
+                        <div class="form-group">
+                            <select name="filter[category]" class="form-control szCfCategory" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
+                            <option selected="selected">选择专家级别 ...</option>
+                                {volist name="zhuan" id="list"}
+                            <option value="{$list.id}" data-teaser="">{$list.title}</option>
+                                {/volist}
+                        </select></div>
+                    </form>
+                    <section class="map-area">
+                        <div class="map" id="szCfFlyoutMap"></div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

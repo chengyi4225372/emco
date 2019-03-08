@@ -1,0 +1,6 @@
+本项目修改php.ini两处参数 
+
+upload_max_filesize = 50m
+
+
+post_max_size=200m

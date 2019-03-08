@@ -1,0 +1,116 @@
+{include file="public/header" /}
+
+    <div class="w1">
+        <div class="breadcrumb-holder">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ol class="breadcrumb">
+                            <li><span>你在这里</span></li>
+                            <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                            <li><a href="{:url('index/references')}">参考</a></li>
+                            <!--<li class="last active"><span>ECE Stadtgalerie - Schweinfurt, Germany</span></li>-->
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div><!--TYPO3SEARCH_begin-->
+        <div id="c659" class="csc-default">
+            <div class="tx-sz-comdbproducts">
+                <section class="product-area" data-product="1394" data-variant="2362">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="carousel">
+                                    <div class="mask">
+                                        <div class="slideset">
+                                            <!-- 大图 -->
+                                            {volist name="tu" id="vo"}
+                                            <div class="slide">
+                                                <a href="{$vo.imgs}"
+                                                    class="t3colorbox-products animation" data-rel="slider"
+                                                    onclick="return false;">
+                                                <img alt="Schweinfurt, Germany"
+                                                     src="{$vo.img}"
+                                                     width="555" height="336"/></a>
+                                            </div>
+                                           {/volist}
+                                        </div>
+                                    </div>
+                                    <!-- 缩略图-->
+                                    <ul class="pagination">
+                                        {volist name="tu" id="vo"}
+                                        <li><a href="#">
+                                            <img alt="Schweinfurt, Germany" src="{$vo.imgs}" width="124" height="75"/></a>
+                                        </li>
+                                        {/volist}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="product-details"><h2>{$table.title}</h2>
+                                    <div class="meta"><strong class="comments">{$table.heres}</strong></div>
+                                    <p>{$table.reinfo}</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="categories-holder">
+                    <form action="#" class="categories-form">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-right"><a
+                                        class="btn-overview btn btn-default"
+                                        href="{:url('index/references')}"><span>概述</span></a></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <section class="accordion-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="heading-1"><h4 class="panel-title"><a
+                                                role="button" class="collapsed" data-toggle="collapse"
+                                                data-parent="#accordion" href="#collapse-1" aria-expanded="true"
+                                                aria-controls="collapse-1">综合产品</a></h4></div>
+                                        <div id="collapse-1" class="panel-collapse collapse in" role="tabpanel"
+                                             aria-labelledby="heading-1">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="accessories-holder reference-holder">
+                                                            <div class="posts">
+                                                                {volist name="zhanshi" id="vo"}
+                                                                <div class="post">
+                                                                    <a href="#">
+                                                                        <img src="{$vo.img}" width="240" height="180" alt=""/>
+                                                                    <p>{$vo.title}</p>
+                                                                </a></div>
+                                                                {/volist}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div><!--TYPO3SEARCH_end--></div>
+    <div id="c2906" class="csc-default">
+        <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+             data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+             data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+            {include file="public/menu" /}
+        </div>
+    </div>
+{include file="public/footer" /}
+</body>
+</html>

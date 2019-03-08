@@ -1,0 +1,251 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">所属清洁类别</label>
+        <div class="layui-input-inline">
+            <select name="id">
+                <option value=""></option>
+                {volist name="clear" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.cid"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title" value='{$vo.title|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">小标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="small_title" value='{$vo.small_title|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">预览图</label>
+        <div class="layui-input-block">
+            <input type="text" name="img" value='{$vo.img|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">施工</label>
+        <div class="layui-input-block">
+            <input type="text" name="shigong" value='{$vo.shigong|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">堆在基板上面</label>
+        <div class="layui-input-block">
+            <input type="text" name="jiban" value='{$vo.jiban|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">基材材料</label>
+        <div class="layui-input-block">
+            <input type="text" name="jicai" value='{$vo.jicai|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">背衬材料</label>
+        <div class="layui-input-block">
+            <input type="text" name="beichun" value='{$vo.beichun|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">桩重/纤维重量</label>
+        <div class="layui-input-block">
+            <input type="text" name="zhuangkg" value='{$vo.zhuangkg|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">总重量</label>
+        <div class="layui-input-block">
+            <input type="text" name="zongkg" value='{$vo.zongkg|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">总高</label>
+        <div class="layui-input-block">
+            <input type="text" name="height" value='{$vo.height|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">簇密度</label>
+        <div class="layui-input-block">
+            <input type="text" name="cuimi" value='{$vo.cuimi|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">燃烧</label>
+        <div class="layui-input-block">
+            <input type="text" name="shao" value='{$vo.shao|default=""}'   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">舒适价值</label>
+        <div class="layui-input-block">
+            <input type="text" name="shushi" value='{$vo.shushi|default=""}'   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">防滑性</label>
+        <div class="layui-input-block">
+            <input type="text" name="fanghua" value='{$vo.fanghua|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">证书</label>
+        <div class="layui-input-block">
+            <input type="text" name="zhengshu" value='{$vo.zhengshu|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">作为卷提供</label>
+        <div class="layui-input-block">
+            <input type="text" name="juan" value='{$vo.juan|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">作为垫子提供</label>
+    <div class="layui-input-block">
+        <input type="text" name="dian" value='{$vo.dian|default=""}'   class="layui-input">
+    </div>
+     </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品特性</label>
+        <div class="layui-input-block">
+            <input type="text" name="chanp" value='{$vo.chanp|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">铺设</label>
+        <div class="layui-input-block">
+            <input type="text" name="pushe" value='{$vo.pushe|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">清洁的</label>
+        <div class="layui-input-block">
+            <input type="text" name="tetra" value='{$vo.tetra|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">牌子</label>
+    <div class="layui-input-block">
+        <input type="text" name="shigong" value='{$vo.shigong|default=""}'   class="layui-input">
+    </div>
+   </div>
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">模型</label>
+    <div class="layui-input-block">
+        <input type="text" name="model" value='{$vo.model|default=""}'   class="layui-input">
+    </div>
+   </div>
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">联系</label>
+    <div class="layui-input-block">
+        <textarea name="lianxi" class="layui-textarea">{if isset($vo['id'])}{$vo.lianxi}{/if}</textarea>
+    </div>
+   </div>
+
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">文书PDF</label>
+        <div class="layui-input-block">
+            <input type="text" name="wenshu_pdf" value='{$vo.wenshu_pdf|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='wenshu_pdf' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">招标文书PDF</label>
+        <div class="layui-input-block">
+            <input type="text" name="zhanpiao_pdf" value='{$vo.zhanpiao_pdf|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='zhanpiao_pdf' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">3区清洁PDF</label>
+        <div class="layui-input-block">
+            <input type="text" name="clear_pdf" value='{$vo.clear_pdf|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='clear_pdf' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">手册PDF</label>
+        <div class="layui-input-block">
+            <input type="text" name="shouce_pdf" value='{$vo.shouce_pdf|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='shouce_pdf' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+
+    <!--
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">技术数据内容</label>
+        <div class="layui-input-block">
+            <textarea name="shuju" class="layui-textarea">{if isset($vo['id'])}{$vo.shuju}{/if}</textarea>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">招标文书数据内容</label>
+        <div class="layui-input-block">
+            <textarea name="wenshu" class="layui-textarea">{if isset($vo['id'])}{$vo.wenshu}{/if}</textarea>
+        </div>
+    </div>
+     -->
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--        <button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img"]').uploadOneImage();
+        window.createEditor('[name="shuju"]', {height: 500});
+        window.createEditor('[name="wenshu"]', {height: 500});
+    });
+</script>
+
+{/block}
+
