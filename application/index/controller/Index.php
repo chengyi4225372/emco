@@ -120,10 +120,20 @@ class Index extends Common
        return $this->view->fetch();
     }
 
-    //site_map 地图
+    //todo site_map 地图
     public function site_map(){
         return $this->view->fetch();
     }
+
+    public function senator_outdoor(){
+      return $this->view->fetch();
+    }
+
+    // 自动门
+    public function door_systems(){
+        return $this->view->fetch();
+    }
+
    //研究与开发
     public function research_and_development(){
         return $this->view->fetch();
