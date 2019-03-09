@@ -95,10 +95,7 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //todo 清理系统  页面存在问题 待解决
-    public function clean_off_system(){
-        return $this->view->fetch();
-    }
+
    //todo 功能
     public function functions(){
         return $this->view->fetch();
@@ -120,7 +117,11 @@ class Index extends Common
        return $this->view->fetch();
     }
 
+    //todo 清理系统  页面存在问题 待解决
+    public function clean_off_system(){
 
+        return $this->view->fetch();
+    }
 
 
 
@@ -250,7 +251,7 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //todo 地毯垫
+    // 地毯垫
     public function  carpet_mats(){
         //地毯垫
         $dtmats= $this->ditan();

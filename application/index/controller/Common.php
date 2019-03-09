@@ -69,6 +69,9 @@ class Common extends Controller {
         //脚步声
         $holder =Db::name('foots')->select();
         $this->assign('holder',$holder);
+        //清理类别
+        $clean = Db::name('clear_title')->select();
+        $this->assign('clean',$clean);
 
     }
 

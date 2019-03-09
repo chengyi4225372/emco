@@ -43,7 +43,7 @@
     <div id="c806" class="csc-default">
         <div class="tx-sz-comdbproducts">
             <div class="categories-holder init product-view" style="">
-                <form class="categories-form facet-form">
+                <!--<form class="categories-form facet-form">-->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>产品搜索</h2></div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                <!--</form>-->
             </div>
             <!-- todo 显示图片加载-->
              <!--<section class="listenseite-post comdbproducts-loader" style="display:none;">-->
@@ -80,7 +80,6 @@
                     <!--</div>-->
                 <!--</div>-->
             <!--</section>-->
-
             <!-- end -->
             <div class="comdbproducts-holder" data-detailpid="213" data-listpid="37" data-language="1" data-category="99" data-teaser="398" data-attribute="" data-trusticon="" data-facet-name=""
                  data-facet-value="" data-facet-multiple="0" data-facet-stepbystep="" data-pictogram="">
@@ -123,20 +122,16 @@
 
 {include file="public/footer" /}
 <script>
-        $("#ditan_id").change(function(){
-            var id= $('#ditan_id').val();
-               console.log(id);
-             $("#row_"+id).css('color','#f00');
-             $("#row_"+id).siblings('section').hide();
-            //$("section#row_"+id).height('auto');
-            //$("div.comdbproducts-holder section").height(0);
-            //$('section'+'#'+id).find('div.listenseite-image').html("<h3>1111</h3>");
-            //$('section'+'#'+id).show();
-            return true;
-            // $('section.listenseite-post.listenseite-post-results').css('color','blue');
-        })
-
-
+  $("#ditan_id").change(function(){
+          var id = $(this).children('option:selected').val();
+          if(id ==''||id=='0'){
+              window.location.href="{:url('index/carpet_mats')}";
+          }else{
+              $("section#row_"+id).show();
+              $("section#row_"+id).siblings('section').hide();
+              return false;
+          }
+        });
 </script>
 
 
