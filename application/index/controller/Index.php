@@ -128,7 +128,7 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //清理系统详情页
+    //清理系统详情页 todo 待完成 差参考表 轮播图表
     public function clean_off_system_info(){
         $id = input('get.id');
         $clean  = Db::name('clear_t')->where('id',$id)->find();
