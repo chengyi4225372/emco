@@ -120,15 +120,19 @@ class Index extends Common
        return $this->view->fetch();
     }
 
+
+
+
+
+
+
     // site_map 地图
     public function site_map(){
         return $this->view->fetch();
     }
-
     public function senator_outdoor(){
       return $this->view->fetch();
     }
-
     // 自动门
     public function door_systems(){
         return $this->view->fetch();
@@ -249,20 +253,9 @@ class Index extends Common
     //todo 地毯垫
     public function  carpet_mats(){
         //地毯垫
-        $id = input('post.id');
-        if($id !=0){
-            $dtmats= $this->ditan($id);
-            if($dtmats){
-                $this->result($dtmats,200,'ok','json');
-            }else{
-                $this->result('',400,'error','json');
-            }
-        }
         $dtmats= $this->ditan();
-        return $this->view->fetch('',
-            [
-                'dtmats'=>$dtmats,
-            ]);
+        $this->assign('dtmats',$dtmats);
+        return $this->view->fetch();
     }
     //地毯垫详情
     public function carpet_mats_info_list(){

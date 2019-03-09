@@ -346,7 +346,7 @@
                             <h2>找到你的联系人</h2>
                             <p>找到您所在地区的合适联系人！</p>
                             <form name="filter" class="szCfSearchform"
-                                  action="en/designing-clean-entrances.html?tx_szcontactfinder_flyout%5Baction%5D=ajax&amp;tx_szcontactfinder_flyout%5Bcontroller%5D=Contact&amp;cHash=c11cb90e82d727fe4887202a67677bb4"
+                                  action="designing-clean-entrances.html"
                                   method="post">
                                 <div><input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@extension]" value="SzContactfinder"/>
                                     <input type="hidden" name="tx_szcontactfinder_flyout[__referrer][@vendor]" value="Sunzinet"/>
@@ -372,10 +372,9 @@
                                 <div class="form-group">
                                     <select name="filter[category]" class="form-control szCfCategory" data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'>
                                     <option selected="selected">选择专家级别...</option>
-                                    <option value="1" data-teaser="">大型项目咨询</option>
-                                    <option value="2" data-teaser="">入口垫</option>
-                                    <option value="3" data-teaser="">地毯垫</option>
-                                    <option value="4" data-teaser="">游泳池栅格</option>
+                                        {volist name="zhuan" id="vo" }
+                                    <option value="{$vo.id}" data-teaser="">{$vo.title}</option>
+                                        {/volist}
                                 </select></div>
                             </form>
                             <div class="results-holder"></div>

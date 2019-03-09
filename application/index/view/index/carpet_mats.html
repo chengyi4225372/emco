@@ -7,8 +7,8 @@
                 <div class="col-xs-12">
                     <ol class="breadcrumb">
                         <li><span>你在这里</span></li>
-                        <li class="first"><a href="designing-clean-entrances.html">emco bau</a></li>
-                        <li><a href="products/entrance-mats.html">制品</a></li>
+                        <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                        <li><a href="{:url('index/entrance_mats')}">制品</a></li>
                         <li class="last active">地毯垫<span></span></li>
                     </ol>
                 </div>
@@ -70,25 +70,25 @@
                 </form>
             </div>
             <!-- todo 显示图片加载-->
-             <section class="listenseite-post comdbproducts-loader" style="display:none;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">
-                            <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
-                                height="66" alt=""/>
-                            <h3>加载产品 ...</h3></div>
-                    </div>
-                </div>
-            </section>
+             <!--<section class="listenseite-post comdbproducts-loader" style="display:none;">-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">-->
+                            <!--<img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"-->
+                                <!--height="66" alt=""/>-->
+                            <!--<h3>加载产品 ...</h3></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</section>-->
 
             <!-- end -->
             <div class="comdbproducts-holder" data-detailpid="213" data-listpid="37" data-language="1" data-category="99" data-teaser="398" data-attribute="" data-trusticon="" data-facet-name=""
                  data-facet-value="" data-facet-multiple="0" data-facet-stepbystep="" data-pictogram="">
                 <!-- todo 显示样式-->
                 {volist name="dtmats" id="vo"}
-                <section class="listenseite-post listenseite-post-results">
+                <section class="listenseite-post listenseite-post-results" id="row_{$vo.id}">
                     <div class="container">
-                        <div class="row">
+                        <div class="row" >
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="listenseite-image">
                                     <a class="animation-neg" href="{:url('index/carpet_mats_info_list')}?id={$vo.id}">
@@ -113,7 +113,7 @@
             </div>
         </div>
     </div><!--TYPO3SEARCH_end--></div>
-<div id="c2906" class="csc-default">
+   <div id="c2906" class="csc-default">
     <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
          data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
          data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
@@ -123,24 +123,20 @@
 
 {include file="public/footer" /}
 <script>
-   $("#ditan_id").change(function(){
-       var id= $('#ditan_id').val();
+        $("#ditan_id").change(function(){
+            var id= $('#ditan_id').val();
+               console.log(id);
+             $("#row_"+id).css('color','#f00');
+             $("#row_"+id).siblings('section').hide();
+            //$("section#row_"+id).height('auto');
+            //$("div.comdbproducts-holder section").height(0);
+            //$('section'+'#'+id).find('div.listenseite-image').html("<h3>1111</h3>");
+            //$('section'+'#'+id).show();
+            return true;
+            // $('section.listenseite-post.listenseite-post-results').css('color','blue');
+        })
 
-       $.ajax({
-           type:'post',
-           url:"{:url('index/carpet_mats')}",
-           data:{id:id},
-           dataType:'json',
-           success:function(result){
-              if(result.code ==400){
-                  alert('请求失败')
-              }
-             if(result.code==200){
 
-             }
-           }
-       })
-   })
 </script>
 
 
