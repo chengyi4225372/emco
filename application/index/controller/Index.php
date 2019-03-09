@@ -136,13 +136,17 @@ class Index extends Common
         $clean['dian'] =explode(',',$clean['dian']);
         $clean['color'] =explode(',',$clean['color']);
 
-      // $banner = Db::name()->where()->select();
-       //$color  = Db::name()->where()->select();
+        //对应的颜色
+        $color  = Db::name('clear_color')->where('ltid',$id)->select();
+        //轮博图
+         $banner = Db::name('clear_banner')->where('cid',$id)->select();
+         //饰品表
+        $shiping =  Db::name('clear_shiping')->where('ltid',$id)->select();
+        //参考表
        //$cankao = Db::name()->where()->select();
        //$this->assign();
-       //$this->assign();
-       //$this->assign();
-
+       $this->assign('shiping',$shiping);
+       $this->assign('color',$color);
        $this->assign('clean',$clean);
 
         return$this->view->fetch();
