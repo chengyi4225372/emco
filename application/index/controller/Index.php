@@ -88,8 +88,12 @@ class Index extends Common
         // halt($email);
         return $this->view->fetch('',['email'=>$email]);
     }
-    //todo 游泳池栅格
+    //todo 游泳池栅格 
     public function swimming(){
+        return $this->view->fetch();
+    }
+    //todo 游泳池详情页面 未完成
+    public function swing_info(){
         return $this->view->fetch();
     }
 
@@ -129,10 +133,12 @@ class Index extends Common
        $this->assign('shiping',$shiping);
        $this->assign('color',$color);
        $this->assign('clean',$clean);
-
         return$this->view->fetch();
     }
-
+   
+    
+    
+    
     //实例探究 pdf 完成
     public function case_studies(){
         return  $this->view->fetch();

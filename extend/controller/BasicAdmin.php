@@ -97,6 +97,12 @@ class BasicAdmin extends Controller {
                 //参考模块中的所有案例名称
                 $cankao = Db::name('anli_table')->field('id,title')->select();
                 $this->assign('cankao',$cankao);
+                //游泳池产品分类
+                $swingcates = Db::name('swing_pro_cates')->select();
+                $this->assign('swingcates',$swingcates);
+                //游泳池所有产品
+                $swingprotucts = Db::name('swing_protucts')->field('id,title')->select();
+                $this->assign('swingprotucts',$swingprotucts);
 
 
 
