@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-03-08 19:10:41
+Date: 2019-03-09 18:10:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -188,6 +188,25 @@ INSERT INTO `category_es` VALUES ('0000000004', 'emco MARSCHALL带橡胶嵌件�
 INSERT INTO `category_es` VALUES ('0000000005', 'emco PLAZA带橡胶嵌件');
 
 -- ----------------------------
+-- Table structure for `clear_banner`
+-- ----------------------------
+DROP TABLE IF EXISTS `clear_banner`;
+CREATE TABLE `clear_banner` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `cid` int(10) unsigned NOT NULL COMMENT '关联清理产品id',
+  `img` varchar(255) NOT NULL,
+  `small_img` varchar(255) NOT NULL COMMENT '轮播图下方的小图',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='清理产品轮播图';
+
+-- ----------------------------
+-- Records of clear_banner
+-- ----------------------------
+INSERT INTO `clear_banner` VALUES ('0000000001', '2', '/static/upload/c854ee6158914b09/de0f7810c3515c28.jpg', '');
+INSERT INTO `clear_banner` VALUES ('0000000002', '2', '/static/upload/f099dea7178bf82e/82f14378325ebce6.jpg', '');
+INSERT INTO `clear_banner` VALUES ('0000000003', '2', '/static/upload/5b88e0955ee70ae1/972987e84d4fbcc3.jpg', '');
+
+-- ----------------------------
 -- Table structure for `clear_color`
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_color`;
@@ -197,26 +216,13 @@ CREATE TABLE `clear_color` (
   `img` varchar(255) NOT NULL COMMENT '颜色图',
   `title` varchar(255) NOT NULL COMMENT '名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
 
 -- ----------------------------
 -- Records of clear_color
 -- ----------------------------
-
--- ----------------------------
--- Table structure for `clear_image`
--- ----------------------------
-DROP TABLE IF EXISTS `clear_image`;
-CREATE TABLE `clear_image` (
-  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `cid` int(10) unsigned NOT NULL COMMENT '关联产品id',
-  `img` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of clear_image
--- ----------------------------
+INSERT INTO `clear_color` VALUES ('0000000001', '2', '/static/upload/88bb60bbab7f582f/3d6936310ca50161.jpg', '第一个');
+INSERT INTO `clear_color` VALUES ('0000000002', '2', '/static/upload/d5b89f41a09fc439/4189be0ae1c2aac2.jpg', 'f第二个');
 
 -- ----------------------------
 -- Table structure for `clear_shiping`
@@ -228,11 +234,13 @@ CREATE TABLE `clear_shiping` (
   `img` varchar(255) NOT NULL COMMENT '颜色图',
   `title` varchar(255) NOT NULL COMMENT '名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='清理产品颜色表';
 
 -- ----------------------------
 -- Records of clear_shiping
 -- ----------------------------
+INSERT INTO `clear_shiping` VALUES ('0000000001', '2', '/static/upload/2a1c344ae3af5a51/2867fe4cd4596871.jpg', '第一个视频');
+INSERT INTO `clear_shiping` VALUES ('0000000002', '2', '/static/upload/2e28acd057277c36/65099a1599f00ac9.jpg', '第二个饰品');
 
 -- ----------------------------
 -- Table structure for `clear_t`
@@ -260,8 +268,9 @@ CREATE TABLE `clear_t` (
   `dian` varchar(255) NOT NULL COMMENT '作为垫子提供	',
   `chanp` varchar(100) NOT NULL COMMENT '产品特性	',
   `pushe` varchar(255) NOT NULL COMMENT '铺设',
+  `color` varchar(255) NOT NULL COMMENT '颜色信息',
   `tetra` varchar(255) NOT NULL COMMENT '清洁的',
-  `pai` varchar(100) CHARACTER SET utf8 COLLATE utf8_roman_ci NOT NULL COMMENT '牌子',
+  `pai` varchar(100) NOT NULL COMMENT '牌子',
   `wenshu_pdf` varchar(255) NOT NULL COMMENT '文书pdf',
   `zhanpiao_pdf` varchar(255) NOT NULL COMMENT '招标文件文本',
   `clear_pdf` varchar(255) NOT NULL COMMENT '3区清洁pdf ',
@@ -271,11 +280,12 @@ CREATE TABLE `clear_t` (
   `lianxi` varchar(255) NOT NULL COMMENT '联系',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of clear_t
 -- ----------------------------
+INSERT INTO `clear_t` VALUES ('0000000002', '1', 'maximus', 'maximus', '/static/upload/1dc0fe95263d4b0e/60debc97bb439db0.jpg', '111', '22', '2222', '222222', '22222', '2222', '222', '2222', '222', '2222', '11111111', '122222', '22,3,44', '454，889,888', '胡思思就是', '如法网乳房烦人付付吧吧吧v', '第一个额颜色,第二个颜色,点歌,当个讲', '用强力刷式真空吸尘器去除污垢。建议将喷雾提取过程定期进行基本清洁。用大量水清洗绝对没问题，水温不应高于40°C。不要使用氯化碳氢化合物（Tetra）。', '', '', '', '', '', '', 'MAXIMUS®', '8778988989', '2019-03-09 15:13:59');
 
 -- ----------------------------
 -- Table structure for `clear_title`
@@ -1088,7 +1098,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=252 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=254 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -1344,6 +1354,8 @@ INSERT INTO `system_log` VALUES ('248', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('249', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-07 18:23:44');
 INSERT INTO `system_log` VALUES ('250', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-08 09:58:59');
 INSERT INTO `system_log` VALUES ('251', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-08 15:02:59');
+INSERT INTO `system_log` VALUES ('252', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 09:18:21');
+INSERT INTO `system_log` VALUES ('253', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 14:02:03');
 
 -- ----------------------------
 -- Table structure for `system_menu`
