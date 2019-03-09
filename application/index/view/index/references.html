@@ -41,8 +41,8 @@
     </div>
     <div id="c658" class="csc-default">
         <div class="tx-sz-comdbproducts">
-            <div class="categories-holder init reference-view" style="display:;">
-                <form class="categories-form facet-form">
+            <div class="categories-holder init reference-view" >
+                <!--<form class="categories-form facet-form">-->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"><h2>产品搜索器</h2></div>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="isFirst jcf-hidden"
-                                        name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_1_SEL_BAU">
+                                        name="protucts" id="protucts">
                                     <option value="" selected="selected">请选择...</option>
                                         {volist name="protucts" id="vo"}
                                     <option value="{$vo.id}" data-value="Entrance matting systems">{$vo.ptitle}</option>
@@ -73,7 +73,7 @@
                                     <label>类别</label>
                                 </div>
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_2_SEL_BAU">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="here" id="heres">
                                     <option value="" selected="selected">请选择...</option>
                                       {volist name="heres" id="vo"}
                                     <option value="{$vo.id}" data-value="Shopping centres">{$vo.htitle}</option>
@@ -84,9 +84,8 @@
                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                 <div class="same-height-holder same-height-right" style="height: 25px;">
                                     <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">国家</font></font></label></div>
-                                <div class="form-group"><select
-                                        data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
-                                        class="jcf-hidden" name="TITEL_6_SEL_EM_BAU">
+                                <div class="form-group">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="county" id="county">
                                     <option value="" selected="selected">请选择...</option>
                                     {volist name="county" id="list"}
                                     <option value="{$list.id}" data-value="Germany">{$list.ctitle}</option>
@@ -95,85 +94,8 @@
                                 </div>
                             </div>
                         </div>
-
-<!--
-                        <div class="row">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
-                                <div class="same-height-holder"><label>Category</label></div>
-                                <div class="form-group"><select
-                                        data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'
-                                        class="isFirst" name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_1_SEL_BAU">
-                                    <option value="">Please select...</option>
-                                    <option value="32012" data-value="Entrance matting systems">Entrance matting
-                                        systems
-                                    </option>
-                                    <option value="32013" data-value="Swimming pool grates">Swimming pool grates
-                                    </option>
-                                </select></div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
-                                <div class="same-height-holder"><label>Category</label></div>
-                                <div class="form-group">
-                                    <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class=""
-                                            name="PRODUKTGRUPPPE_INTERNET_REFERENZ_EBENE_2_SEL_BAU">
-                                        <option value="">Please select...</option>
-                                        <option value="143444" data-value="Shopping centres">Shopping centres</option>
-                                        <option value="32015" data-value="Airports">Airports</option>
-                                        <option value="32016" data-value="Train stations">Train stations</option>
-                                        <option value="32017" data-value="Offices and administrative buildings">Offices
-                                            and administrative buildings
-                                        </option>
-                                        <option value="32018" data-value="Universities/schools and nursery schools">
-                                            Universities/schools and nursery schools
-                                        </option>
-                                        <option value="32019" data-value="Hospitals and health centres">Hospitals and
-                                            health centres
-                                        </option>
-                                        <option value="32021" data-value="Museums">Museums</option>
-                                        <option value="32022" data-value="Public buildings">Public buildings</option>
-                                        <option value="32023" data-value="Swimming pools">Swimming pools</option>
-                                        <option value="32024" data-value="Ships">Ships</option>
-                                        <option value="32025" data-value="Baden-Württemberg">Baden-Württemberg</option>
-                                        <option value="32026" data-value="Bavaria">Bavaria</option>
-                                        <option value="32027" data-value="Berlin">Berlin</option>
-                                        <option value="32028" data-value="Brandenburg">Brandenburg</option>
-                                        <option value="32029" data-value="Hesse">Hesse</option>
-                                        <option value="32030" data-value="Mecklenburg-Vorpommern">
-                                            Mecklenburg-Vorpommern
-                                        </option>
-                                        <option value="32031" data-value="Lower Saxony">Lower Saxony</option>
-                                        <option value="32032" data-value="North Rhine-Westphalia">North
-                                            Rhine-Westphalia
-                                        </option>
-                                        <option value="32033" data-value="Rhineland-Palatinate">Rhineland-Palatinate
-                                        </option>
-                                        <option value="32034" data-value="Saarland">Saarland</option>
-                                        <option value="32035" data-value="Saxony">Saxony</option>
-                                        <option value="32036" data-value="Saxony-Anhalt">Saxony-Anhalt</option>
-                                        <option value="32037" data-value="Thuringia">Thuringia</option>
-                                        <option value="89395" data-value="France">France</option>
-                                        <option value="89396" data-value="Austria">Austria</option>
-                                    </select></div>
-                            </div>
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
-                                <div class="same-height-holder"><label>Country</label></div>
-                                <div class="form-group"><select
-                                        data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class=""
-                                        name="TITEL_6_SEL_EM_BAU">
-                                    <option value="">Please select...</option>
-                                    <option value="89301" data-value="Germany">Germany</option>
-                                    <option value="89302" data-value="Sweden">Sweden</option>
-                                    <option value="89303" data-value="Netherlands">Netherlands</option>
-                                    <option value="89304" data-value="France">France</option>
-                                    <option value="89305" data-value="Belgium">Belgium</option>
-                                    <option value="89306" data-value="China">China</option>
-                                    <option value="89307" data-value="Austria">Austria</option>
-                                </select></div>
-                            </div>
-                        </div>
--->
                     </div>
-                </form>
+                <!--</form>-->
             </div>
             <!--
             <section class="listenseite-post comdbproducts-loader" style="display: none;">
@@ -264,20 +186,19 @@
                 </div>
             </div>
                 -->
-
         </div>
     </div><!--TYPO3SEARCH_end--></div>
 <div id="c2906" class="csc-default">
     <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
          data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
          data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
-
         {include file="public/menu" /}
-
-
     </div>
 </div>
 
 {include file="public/footer" /}
+<script>
+
+</script>
 </body>
 </html>

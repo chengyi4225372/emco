@@ -19,7 +19,7 @@ class Clearimage extends BasicAdmin {
 
 
     public function index() {
-        $this->title = '清洁产品的小图片';
+        $this->title = '清洁产品图标';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {

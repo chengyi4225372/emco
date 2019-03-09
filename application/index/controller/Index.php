@@ -117,12 +117,36 @@ class Index extends Common
        return $this->view->fetch();
     }
 
-    //todo 清理系统  页面存在问题 待解决
+    //todo 清理系统  分页未解决
     public function clean_off_system(){
-
+        //所有产品 关联图标
+           $clean = Db::name('clear_t')->select();
+        foreach($clean as $k =>$val){
+            $clean[$k]['imgs']=Db::name('clear_image')->where('cid',$clean[$k]['id'])->field('img')->select();
+        }
+        $this->assign('clean',$clean);
         return $this->view->fetch();
     }
 
+    //清理系统详情页
+    public function clean_off_system_info(){
+        $id = input('get.id');
+        $clean  = Db::name('clear_t')->where('id',$id)->find();
+        $clean['juan'] =explode(',',$clean['juan']);
+        $clean['dian'] =explode(',',$clean['dian']);
+        $clean['color'] =explode(',',$clean['color']);
+
+      // $banner = Db::name()->where()->select();
+       //$color  = Db::name()->where()->select();
+       //$cankao = Db::name()->where()->select();
+       //$this->assign();
+       //$this->assign();
+       //$this->assign();
+
+       $this->assign('clean',$clean);
+
+        return$this->view->fetch();
+    }
 
 
 

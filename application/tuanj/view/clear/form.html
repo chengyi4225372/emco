@@ -6,7 +6,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">所属清洁类别</label>
         <div class="layui-input-inline">
-            <select name="id">
+            <select name="cid">
                 <option value=""></option>
                 {volist name="clear" id="list"}
                 {if isset($vo['id'])}
@@ -20,7 +20,7 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">标题</label>
+        <label class="layui-form-label">一级标题</label>
         <div class="layui-input-block">
             <input type="text" name="title" value='{$vo.title|default=""}'   class="layui-input">
         </div>
@@ -127,6 +127,7 @@
         <label class="layui-form-label">作为卷提供</label>
         <div class="layui-input-block">
             <input type="text" name="juan" value='{$vo.juan|default=""}'   class="layui-input">
+            <span style="color: #ff2600;">多个信息请以英文,号来分割。</span>
         </div>
     </div>
 
@@ -135,6 +136,7 @@
     <label class="layui-form-label">作为垫子提供</label>
     <div class="layui-input-block">
         <input type="text" name="dian" value='{$vo.dian|default=""}'   class="layui-input">
+        <span style="color: #ff2600;">多个信息请以英文,号来分割。</span>
     </div>
      </div>
 
@@ -180,6 +182,13 @@
     </div>
    </div>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">颜色信息</label>
+        <div class="layui-input-block">
+            <textarea name="color" class="layui-textarea">{if isset($vo['id'])}{$vo.color}{/if}</textarea>
+            <span style="color: #ff2600;">多个信息请以英文,号来分割。</span>
+        </div>
+    </div>
 
 
     <div class="layui-form-item">
@@ -214,21 +223,6 @@
     </div>
 
 
-    <!--
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">技术数据内容</label>
-        <div class="layui-input-block">
-            <textarea name="shuju" class="layui-textarea">{if isset($vo['id'])}{$vo.shuju}{/if}</textarea>
-        </div>
-    </div>
-
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">招标文书数据内容</label>
-        <div class="layui-input-block">
-            <textarea name="wenshu" class="layui-textarea">{if isset($vo['id'])}{$vo.wenshu}{/if}</textarea>
-        </div>
-    </div>
-     -->
 
     <div class="hr-line-dashed"></div>
 

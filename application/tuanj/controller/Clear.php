@@ -23,9 +23,6 @@ class Clear extends BasicAdmin {
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('name', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-//            $start_time = strtotime("{$start} 00:00:00");
-//            $end_time = strtotime("{$end} 23:59:59");
-//            $db->whereBetween('create_at', [$start_time, $end_time]);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id asc'));
@@ -35,7 +32,7 @@ class Clear extends BasicAdmin {
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
             if($val['cid'] != 0){
-                $data[$key]['clear_cates'] = Db::name('clear_title')->where('id', '=', $val['cid'])->value('title');
+                $data[$key]['clear_cates'] = Db::name('clear_title')->where('id',$data[$key]['cid'])->value('title');
             }
         }
     }

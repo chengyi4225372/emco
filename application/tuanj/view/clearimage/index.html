@@ -59,10 +59,10 @@
                 {$vo.id}
             </td>
             <td class='text-left nowrap'>
-                {$vo.title|default=''}
+                <img data-tips-image src="{$vo.img|default=''}" height="50"/>
             </td>
             <td class='text-left nowrap'>
-                {$vo.clear_title|default=''}
+                {$vo.clear_titles|default=''}
             </td>
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
