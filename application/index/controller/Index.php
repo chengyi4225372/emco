@@ -14,6 +14,15 @@ class Index extends Common
         return $this->view->fetch();
     }
 
+    //404 页面
+    public function x_treme(){
+        return $this->view->fetch();
+    }
+
+
+
+
+
     /*     产品   products         */
     //todo 入口垫
     public function entrance_mats(){
@@ -43,15 +52,8 @@ class Index extends Common
     public function presse(){
         return $this->view->fetch();
     }
+
     /* company 公司  */
-    //todo 关于我们
-    public function emco_bau(){
-        return $this->view->fetch();
-    }
-    //todo 专业知识
-    public function expertise(){
-        return $this->view->fetch();
-    }
 
     public function entrance_mats_range()
     {
@@ -137,10 +139,17 @@ class Index extends Common
        return$this->view->fetch();
 
     }
-   
-    
-    
-    
+
+
+    //关于我们
+    public function emco_bau(){
+        return $this->view->fetch();
+    }
+
+    // 专业知识
+    public function expertise(){
+        return $this->view->fetch();
+    }
     //实例探究 pdf 完成
     public function case_studies(){
         return  $this->view->fetch();
