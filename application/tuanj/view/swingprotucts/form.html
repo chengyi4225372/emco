@@ -6,13 +6,13 @@
     <div class="layui-form-item">
         <label class="layui-form-label">所属产品分类</label>
         <div class="layui-input-inline">
-            <select name="lid">
+            <select name="s_id">
                 <option value=""></option>
-                {volist name="lists" id="list"}
+                {volist name="swingcates" id="list"}
                 {if isset($vo['id'])}
-                <option value="{$list.id}" {if condition="$list.id eq $vo.lid"} selected="" {/if}>{$list.name}</option>
+                <option value="{$list.id}" {if condition="$list.id eq $vo.s_id"} selected="" {/if}>{$list.title}</option>
                 {else /}
-                <option value="{$list.id}">{$list.name}</option>
+                <option value="{$list.id}">{$list.title}</option>
                 {/if}
                 {/volist}
             </select>

@@ -3,15 +3,14 @@
 {block name="content"}
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
-
     <div class="layui-form-item">
-        <label class="layui-form-label">关联游泳池产品分类</label>
+        <label class="layui-form-label">关联清理产品</label>
         <div class="layui-input-inline">
-            <select name="s_id">
+            <select name="ltid">
                 <option value=""></option>
-                {volist name="swingprotucts" id="list"}
+                {volist name="cleartitle" id="list"}
                 {if isset($vo['id'])}
-                <option value="{$list.id}" {if condition="$list.id eq $vo.s_id"} selected="" {/if}>{$list.title}</option>
+                <option value="{$list.id}" {if condition="$list.id eq $vo.ltid"} selected="" {/if}>{$list.title}</option>
                 {else /}
                 <option value="{$list.id}">{$list.title}</option>
                 {/if}
@@ -20,17 +19,18 @@
         </div>
     </div>
 
+
     <div class="layui-form-item">
-        <label class="layui-form-label">大图</label>
+        <label class="layui-form-label">清理颜色图</label>
         <div class="layui-input-block">
-            <input type="text" name="img" value='{$vo.img|default=""}' required="required"  class="layui-input">
+            <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">小图</label>
+        <label class="layui-form-label">清理名称</label>
         <div class="layui-input-block">
-            <input type="text" name="small_img" value='{$vo.small_img|default=""}' required="required"  class="layui-input">
+            <input type="text" name="title" value='{$vo.title|default=""}' class="layui-input">
         </div>
     </div>
 
@@ -46,7 +46,6 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
-        $('form [name="small_img"]').uploadOneImage();
         window.createEditor('[name="content"]', {height: 500});
     });
 </script>

@@ -27,6 +27,10 @@ class Protuctswing extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+  
+
+
+
     /**
      * 添加
      * @return type
@@ -49,7 +53,7 @@ class Protuctswing extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingdang/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/protuctswing/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

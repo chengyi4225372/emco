@@ -28,6 +28,15 @@ class Swingbanner extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
+    //对应产品
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+            $data[$key]['swing_pro'] = Db::name('swing_protucts')->where('id', '=', $val['s_id'])->value('title');
+        }
+    }
+    
+
+
     /**
      * 添加
      * @return type
@@ -50,7 +59,7 @@ class Swingbanner extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingprotucts/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingbanner/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

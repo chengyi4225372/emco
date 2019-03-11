@@ -42,7 +42,8 @@
             <th class='list-table-check-td'>
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
-            <th class='text-left nowrap'>产品类别</th>
+            <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>产品类别标题</th>
             <th class='text-left nowrap'>分类展示图片</th>
             <th class='text-left nowrap'></th>
         </tr>
@@ -57,8 +58,12 @@
                 {$vo.id|}
             </td>
             <td class='text-left nowrap'>
-                {$vo.ptitle|default=''}
+                {$vo.title|default=''}
             </td>
+            <td class='text-left nowrap'>
+                <img data-tips-image src="{$vo.img|default=''}" height="50"/>
+            </td>
+
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>

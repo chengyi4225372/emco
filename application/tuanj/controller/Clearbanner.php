@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/3/8
- * Time: 10:36
+ * Date: 2019/3/9 0009
+ * Time: 23:17
  */
 
 namespace app\tuanj\controller;
@@ -12,29 +12,33 @@ use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Swingprotucts extends BasicAdmin {
+class Clearbanner extends BasicAdmin {
 
-    private $dataform = 'swing_protucts';
+    private $dataform = 'clear_banner';
+
 
     public function index() {
-        $this->title = '游泳池产品设置';
+        $this->title = '设置清理产品轮播图';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('name', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
+//            $start_time = strtotime("{$start} 00:00:00");
+//            $end_time = strtotime("{$end} 23:59:59");
+//            $db->whereBetween('create_at', [$start_time, $end_time]);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
     }
-    //关联游泳池产品一级分类
+
+    //关联清理产品
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['swing_cates'] = Db::name('swing_pro_cates')->where('id', '=', $val['s_id'])->value('title');
+            $data[$key]['clear_cates'] = Db::name('clear_t')->where('id', '=', $val['ltid'])->value('title');
         }
     }
-    
-    
-    
+
+
     /**
      * 添加
      * @return type
@@ -57,7 +61,7 @@ class Swingprotucts extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingprotucts/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/aninfo/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

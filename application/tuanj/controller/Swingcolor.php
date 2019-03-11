@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/3/8
- * Time: 10:36
+ * Date: 2019/3/10 0010
+ * Time: 0:01
  */
 
 namespace app\tuanj\controller;
@@ -12,12 +12,12 @@ use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Swingprotucts extends BasicAdmin {
+class Swingcolor extends BasicAdmin {
 
-    private $dataform = 'swing_protucts';
+    private $dataform = 'swing_color';
 
     public function index() {
-        $this->title = '游泳池产品设置';
+        $this->title = '游泳池产品颜色设置';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -26,15 +26,16 @@ class Swingprotucts extends BasicAdmin {
         }
         return parent::_list($db->order('id desc'));
     }
-    //关联游泳池产品一级分类
+
+    //对应产品
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['swing_cates'] = Db::name('swing_pro_cates')->where('id', '=', $val['s_id'])->value('title');
+            $data[$key]['swing_pro'] = Db::name('swing_protucts')->where('id', '=', $val['s_id'])->value('title');
         }
     }
-    
-    
-    
+
+
+
     /**
      * 添加
      * @return type
@@ -57,7 +58,7 @@ class Swingprotucts extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingprotucts/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/swingcolor/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

@@ -5,8 +5,6 @@ namespace app\index\controller;
 use think\Db;
 use app\index\controller\Common;
 use think\Request;
-
-
 class Index extends Common
 {
 
@@ -54,7 +52,7 @@ class Index extends Common
     public function expertise(){
         return $this->view->fetch();
     }
-    /*todo career 原网站的招聘信息，等后期  */
+
     public function entrance_mats_range()
     {
         return $this->view->fetch();
@@ -90,30 +88,19 @@ class Index extends Common
         // halt($email);
         return $this->view->fetch('',['email'=>$email]);
     }
-    //todo 游泳池栅格
+    //todo 游泳池栅格 
     public function swimming(){
         return $this->view->fetch();
     }
 
-   //todo 功能
-    public function functions(){
+    //todo 游泳池详情页面 未完成
+    public function swing_info(){
         return $this->view->fetch();
     }
+
     //todo  产品查询
     public function product_enquiry(){
         return  $this->view->fetch();
-    }
-    //todo 实例探究 pdf 好像未完成
-    public function case_studies(){
-        return  $this->view->fetch();
-    }
-    //todo 更多开发人员信息
-    public function building_contractors(){
-        return $this->view->fetch();
-    }
-    //todo 家用垫信息
-    public function emco_domestic_mats(){
-       return $this->view->fetch();
     }
 
     //todo 清理系统  分页未解决
@@ -127,7 +114,7 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //清理系统详情页 todo 待完成 差参考表 轮播图表
+    //清理系统详情页 todo 待完成 两张表已经建立 待测试 参考表 轮播图表
     public function clean_off_system_info(){
         $id = input('get.id');
         $clean  = Db::name('clear_t')->where('id',$id)->find();
@@ -146,12 +133,32 @@ class Index extends Common
        $this->assign('shiping',$shiping);
        $this->assign('color',$color);
        $this->assign('clean',$clean);
+
        return$this->view->fetch();
+
+    }
+   
+    
+    
+    
+    //实例探究 pdf 完成
+    public function case_studies(){
+        return  $this->view->fetch();
     }
 
+    // 家用垫信息
+    public function emco_domestic_mats(){
+        return $this->view->fetch();
+    }
 
-
-
+    //更多开发人员信息
+    public function building_contractors(){
+        return $this->view->fetch();
+    }
+    // 功能
+    public function functions(){
+        return $this->view->fetch();
+    }
     // site_map 地图
     public function site_map(){
         return $this->view->fetch();
@@ -163,17 +170,14 @@ class Index extends Common
     public function door_systems(){
         return $this->view->fetch();
     }
-
    //研究与开发
     public function research_and_development(){
         return $this->view->fetch();
     }
-
     //设计723
     public function emco_723_design(){
         return $this->view->fetch();
     }
-
     //现代化
     public function modernise(){
         return $this->view->fetch();

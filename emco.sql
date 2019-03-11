@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-03-09 18:10:18
+Date: 2019-03-10 23:48:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `aninfo`
+-- Table structure for aninfo
 -- ----------------------------
 DROP TABLE IF EXISTS `aninfo`;
 CREATE TABLE `aninfo` (
@@ -36,7 +36,7 @@ INSERT INTO `aninfo` VALUES ('0000000002', '2', '/static/upload/ceaa85920523799f
 INSERT INTO `aninfo` VALUES ('0000000003', '1', '/static/upload/9661549dfeee96f4/968df3e83f1a40f2.jpg', '/static/upload/a579bef1eb351eae/25180dc592a9fb81.jpg', '2019-03-06 11:26:22');
 
 -- ----------------------------
--- Table structure for `anli`
+-- Table structure for anli
 -- ----------------------------
 DROP TABLE IF EXISTS `anli`;
 CREATE TABLE `anli` (
@@ -67,7 +67,7 @@ INSERT INTO `anli` VALUES ('2', '戴德梁行团建方案', '/static/upload/c78f
 INSERT INTO `anli` VALUES ('3', '灿锐科技新员工拓展培训', '/static/upload/ec5cbc6944cd34c2/fa09afbc400f3e19.jpg', '/static/upload/77d1ada462101d3e/a366febcc6ae09aa.jpg', '新员工拓展', '', '4', '3', '4', '80', '1', '2', '拓展培训一天行程', '七星湾游艇会', '<p>拓展+野炊+烧烤+趣味运动会+羽毛球PK</p>', '2018-12-25 15:21:39');
 
 -- ----------------------------
--- Table structure for `anli_table`
+-- Table structure for anli_table
 -- ----------------------------
 DROP TABLE IF EXISTS `anli_table`;
 CREATE TABLE `anli_table` (
@@ -90,7 +90,7 @@ INSERT INTO `anli_table` VALUES ('0000000001', '1', '1', '1', '/static/upload/9a
 INSERT INTO `anli_table` VALUES ('0000000002', '1', '1', '2', '/static/upload/ceaa85920523799f/09801e47d81e140a.jpg', '恩波里亚', '瑞典马尔默', '恩波里亚不仅仅是任何购物中心。这里有三个楼层的200家商店，销售面积68,000平方米，平均每天25,000名游客，是斯堪的纳维亚最大的购物中心之一。', '2019-03-06 10:26:57');
 
 -- ----------------------------
--- Table structure for `banner`
+-- Table structure for banner
 -- ----------------------------
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE `banner` (
@@ -115,7 +115,7 @@ INSERT INTO `banner` VALUES ('11', '标题2', '', 'http://www.baidu.com', '0', '
 INSERT INTO `banner` VALUES ('12', '百度', '', 'http://www.baidu.com', '0', '3', '2018-12-28 11:28:48');
 
 -- ----------------------------
--- Table structure for `brochures`
+-- Table structure for brochures
 -- ----------------------------
 DROP TABLE IF EXISTS `brochures`;
 CREATE TABLE `brochures` (
@@ -138,7 +138,7 @@ INSERT INTO `brochures` VALUES ('0000000004', '游泳池光栅', '/static/upload
 INSERT INTO `brochures` VALUES ('0000000005', '推广', '/static/upload/aa7901493fadf28b/bf1d8d8ad29cc59b.jpg', '有效的广告', '/static/upload/c4d27fb5457f88d2/91f0732092cf12e6.pdf', '2019-03-01 17:40:06');
 
 -- ----------------------------
--- Table structure for `category`
+-- Table structure for category
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
@@ -169,7 +169,7 @@ INSERT INTO `category` VALUES ('16', '204', '4', '团队魔训', '2018-12-29 10:
 INSERT INTO `category` VALUES ('17', '205', '4', '海岛生存', '2018-12-29 10:15:25');
 
 -- ----------------------------
--- Table structure for `category_es`
+-- Table structure for category_es
 -- ----------------------------
 DROP TABLE IF EXISTS `category_es`;
 CREATE TABLE `category_es` (
@@ -188,12 +188,12 @@ INSERT INTO `category_es` VALUES ('0000000004', 'emco MARSCHALL带橡胶嵌件�
 INSERT INTO `category_es` VALUES ('0000000005', 'emco PLAZA带橡胶嵌件');
 
 -- ----------------------------
--- Table structure for `clear_banner`
+-- Table structure for clear_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_banner`;
 CREATE TABLE `clear_banner` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `cid` int(10) unsigned NOT NULL COMMENT '关联清理产品id',
+  `ltid` int(10) unsigned NOT NULL COMMENT '关联清理产品id',
   `img` varchar(255) NOT NULL,
   `small_img` varchar(255) NOT NULL COMMENT '轮播图下方的小图',
   PRIMARY KEY (`id`)
@@ -207,7 +207,7 @@ INSERT INTO `clear_banner` VALUES ('0000000002', '2', '/static/upload/f099dea717
 INSERT INTO `clear_banner` VALUES ('0000000003', '2', '/static/upload/5b88e0955ee70ae1/972987e84d4fbcc3.jpg', '');
 
 -- ----------------------------
--- Table structure for `clear_color`
+-- Table structure for clear_color
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_color`;
 CREATE TABLE `clear_color` (
@@ -225,7 +225,38 @@ INSERT INTO `clear_color` VALUES ('0000000001', '2', '/static/upload/88bb60bbab7
 INSERT INTO `clear_color` VALUES ('0000000002', '2', '/static/upload/d5b89f41a09fc439/4189be0ae1c2aac2.jpg', 'f第二个');
 
 -- ----------------------------
--- Table structure for `clear_shiping`
+-- Table structure for clear_image
+-- ----------------------------
+DROP TABLE IF EXISTS `clear_image`;
+CREATE TABLE `clear_image` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `cid` int(10) unsigned NOT NULL COMMENT '关联产品id',
+  `img` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of clear_image
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for clear_ress
+-- ----------------------------
+DROP TABLE IF EXISTS `clear_ress`;
+CREATE TABLE `clear_ress` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `ltid` int(10) unsigned NOT NULL,
+  `title` varchar(255) NOT NULL COMMENT '清理参考标题',
+  `img` varchar(255) NOT NULL COMMENT '清理参考图',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of clear_ress
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for clear_shiping
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_shiping`;
 CREATE TABLE `clear_shiping` (
@@ -243,7 +274,7 @@ INSERT INTO `clear_shiping` VALUES ('0000000001', '2', '/static/upload/2a1c344ae
 INSERT INTO `clear_shiping` VALUES ('0000000002', '2', '/static/upload/2e28acd057277c36/65099a1599f00ac9.jpg', '第二个饰品');
 
 -- ----------------------------
--- Table structure for `clear_t`
+-- Table structure for clear_t
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_t`;
 CREATE TABLE `clear_t` (
@@ -288,7 +319,7 @@ CREATE TABLE `clear_t` (
 INSERT INTO `clear_t` VALUES ('0000000002', '1', 'maximus', 'maximus', '/static/upload/1dc0fe95263d4b0e/60debc97bb439db0.jpg', '111', '22', '2222', '222222', '22222', '2222', '222', '2222', '222', '2222', '11111111', '122222', '22,3,44', '454，889,888', '胡思思就是', '如法网乳房烦人付付吧吧吧v', '第一个额颜色,第二个颜色,点歌,当个讲', '用强力刷式真空吸尘器去除污垢。建议将喷雾提取过程定期进行基本清洁。用大量水清洗绝对没问题，水温不应高于40°C。不要使用氯化碳氢化合物（Tetra）。', '', '', '', '', '', '', 'MAXIMUS®', '8778988989', '2019-03-09 15:13:59');
 
 -- ----------------------------
--- Table structure for `clear_title`
+-- Table structure for clear_title
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_title`;
 CREATE TABLE `clear_title` (
@@ -317,7 +348,7 @@ INSERT INTO `clear_title` VALUES ('0000000014', 'emcoAttachéRS');
 INSERT INTO `clear_title` VALUES ('0000000015', '饰品');
 
 -- ----------------------------
--- Table structure for `condition`
+-- Table structure for condition
 -- ----------------------------
 DROP TABLE IF EXISTS `condition`;
 CREATE TABLE `condition` (
@@ -339,7 +370,7 @@ INSERT INTO `condition` VALUES ('5', '0', '拓展天数', '0', '2018-12-19 17:14
 INSERT INTO `condition` VALUES ('6', '0', '团队凝聚力', '1', '2018-12-19 17:19:44');
 
 -- ----------------------------
--- Table structure for `contact`
+-- Table structure for contact
 -- ----------------------------
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
@@ -368,7 +399,7 @@ INSERT INTO `contact` VALUES ('0000000129', '江苏南京', '2', null, '', '', '
 INSERT INTO `contact` VALUES ('0000000128', '湖北武汉', '1', null, '', '', '', '', '0', null, '', '732345907@qq.com', '186725558999', '', '2019-03-05 10:34:21');
 
 -- ----------------------------
--- Table structure for `county`
+-- Table structure for county
 -- ----------------------------
 DROP TABLE IF EXISTS `county`;
 CREATE TABLE `county` (
@@ -389,7 +420,7 @@ INSERT INTO `county` VALUES ('0000000006', '中国');
 INSERT INTO `county` VALUES ('0000000007', '奥地利');
 
 -- ----------------------------
--- Table structure for `dingzhi`
+-- Table structure for dingzhi
 -- ----------------------------
 DROP TABLE IF EXISTS `dingzhi`;
 CREATE TABLE `dingzhi` (
@@ -416,7 +447,7 @@ CREATE TABLE `dingzhi` (
 INSERT INTO `dingzhi` VALUES ('1', '出发地', '目的地', '10', '1', '20', '500', '特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求', '10086', '女士', '10010', '4845', '0', '2018-12-27 11:43:31');
 
 -- ----------------------------
--- Table structure for `dt_banner`
+-- Table structure for dt_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_banner`;
 CREATE TABLE `dt_banner` (
@@ -436,7 +467,7 @@ INSERT INTO `dt_banner` VALUES ('0000000005', '4', '/static/upload/23e1467c8bf83
 INSERT INTO `dt_banner` VALUES ('0000000006', '1', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg');
 
 -- ----------------------------
--- Table structure for `dt_color`
+-- Table structure for dt_color
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_color`;
 CREATE TABLE `dt_color` (
@@ -454,7 +485,7 @@ INSERT INTO `dt_color` VALUES ('0000000001', '1', '/static/upload/ab46fa13f55b2d
 INSERT INTO `dt_color` VALUES ('0000000002', '1', '/static/upload/8ac360ead2a1253d/3a5730ed6291b6f0.jpg', '2222');
 
 -- ----------------------------
--- Table structure for `dt_dian`
+-- Table structure for dt_dian
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_dian`;
 CREATE TABLE `dt_dian` (
@@ -478,7 +509,7 @@ INSERT INTO `dt_dian` VALUES ('0000000003', '图片样式', '/static/upload/5e0c
 INSERT INTO `dt_dian` VALUES ('0000000004', '图像户外', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `fanche`
+-- Table structure for fanche
 -- ----------------------------
 DROP TABLE IF EXISTS `fanche`;
 CREATE TABLE `fanche` (
@@ -499,7 +530,7 @@ INSERT INTO `fanche` VALUES ('0000000006', '托盘搬运车');
 INSERT INTO `fanche` VALUES ('0000000007', 'HGV（最高7.5吨）');
 
 -- ----------------------------
--- Table structure for `foots`
+-- Table structure for foots
 -- ----------------------------
 DROP TABLE IF EXISTS `foots`;
 CREATE TABLE `foots` (
@@ -519,7 +550,7 @@ INSERT INTO `foots` VALUES ('0000000005', '每日足迹达5000或以上');
 INSERT INTO `foots` VALUES ('0000000006', '每日客流量高达800');
 
 -- ----------------------------
--- Table structure for `goods`
+-- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -575,7 +606,7 @@ INSERT INTO `goods` VALUES ('23', '帆船竞速体验团建', '/static/upload/b3
 INSERT INTO `goods` VALUES ('25', '团建实验', '/static/upload/80b76c70f20fea26/f208f687dd420f23.jpg', '/static/upload/bcd6d7d48fcd48a2/859afeebff4d0925.jpg|/static/upload/88b2f08df0d7c3c9/a3032ab0e8498fd0.jpg', '5', '5', '5', '亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，', '体育团建，活力团队，户外体育', '80', '1', '2', 'jjty20190101', '350', '', '', '', '', '3', '1', '2019-01-04 17:00:19');
 
 -- ----------------------------
--- Table structure for `heights`
+-- Table structure for heights
 -- ----------------------------
 DROP TABLE IF EXISTS `heights`;
 CREATE TABLE `heights` (
@@ -597,7 +628,7 @@ INSERT INTO `heights` VALUES ('0000000007', '12毫米');
 INSERT INTO `heights` VALUES ('0000000008', '14.5毫米');
 
 -- ----------------------------
--- Table structure for `heres`
+-- Table structure for heres
 -- ----------------------------
 DROP TABLE IF EXISTS `heres`;
 CREATE TABLE `heres` (
@@ -636,7 +667,7 @@ INSERT INTO `heres` VALUES ('0000000024', '法国');
 INSERT INTO `heres` VALUES ('0000000025', '奥地利');
 
 -- ----------------------------
--- Table structure for `list`
+-- Table structure for list
 -- ----------------------------
 DROP TABLE IF EXISTS `list`;
 CREATE TABLE `list` (
@@ -666,7 +697,7 @@ INSERT INTO `list` VALUES ('9', '0', '新闻中心', 'News center', '', '', '', 
 INSERT INTO `list` VALUES ('10', '0', '联系我们', 'Contact us', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `new`
+-- Table structure for new
 -- ----------------------------
 DROP TABLE IF EXISTS `new`;
 CREATE TABLE `new` (
@@ -687,7 +718,7 @@ INSERT INTO `new` VALUES ('3', '新闻二', '/static/upload/c2ffc38238c06cab/b10
 INSERT INTO `new` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a35ed0db2a16.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '2018-12-25 15:15:24');
 
 -- ----------------------------
--- Table structure for `order_contact`
+-- Table structure for order_contact
 -- ----------------------------
 DROP TABLE IF EXISTS `order_contact`;
 CREATE TABLE `order_contact` (
@@ -712,7 +743,7 @@ CREATE TABLE `order_contact` (
 INSERT INTO `order_contact` VALUES ('0000000004', '0', '杨不悔', '光明顶45号', '光明顶45号', '520仿', '438200', '湖北武汉', '732345907@qq.com', '186725558999', 'Architects文件夹,入口垫系统,emco清理,地毯垫,游泳池栅格,滚动和线性网格,', '2019-03-05 10:42:51');
 
 -- ----------------------------
--- Table structure for `partner`
+-- Table structure for partner
 -- ----------------------------
 DROP TABLE IF EXISTS `partner`;
 CREATE TABLE `partner` (
@@ -737,7 +768,7 @@ INSERT INTO `partner` VALUES ('14', '中海地产', '/static/upload/2b49a556d02a
 INSERT INTO `partner` VALUES ('15', '万科地产', '/static/upload/1ed56a82ec0c36d3/dc5fb272c5f1353d.jpg', '#', '0', '1', '2018-12-25 15:30:06');
 
 -- ----------------------------
--- Table structure for `protucts`
+-- Table structure for protucts
 -- ----------------------------
 DROP TABLE IF EXISTS `protucts`;
 CREATE TABLE `protucts` (
@@ -753,7 +784,7 @@ INSERT INTO `protucts` VALUES ('0000000001', '入口消光系统');
 INSERT INTO `protucts` VALUES ('0000000002', '游泳池格栅');
 
 -- ----------------------------
--- Table structure for `protuct_cates`
+-- Table structure for protuct_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_cates`;
 CREATE TABLE `protuct_cates` (
@@ -769,7 +800,7 @@ INSERT INTO `protuct_cates` VALUES ('0000000001', '户外区域的入口垫系�
 INSERT INTO `protuct_cates` VALUES ('0000000002', '室内区域的入口垫系统');
 
 -- ----------------------------
--- Table structure for `protuct_image`
+-- Table structure for protuct_image
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_image`;
 CREATE TABLE `protuct_image` (
@@ -784,7 +815,7 @@ CREATE TABLE `protuct_image` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `protuct_info`
+-- Table structure for protuct_info
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_info`;
 CREATE TABLE `protuct_info` (
@@ -830,7 +861,7 @@ CREATE TABLE `protuct_info` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `shi_cates`
+-- Table structure for shi_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `shi_cates`;
 CREATE TABLE `shi_cates` (
@@ -844,7 +875,7 @@ CREATE TABLE `shi_cates` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `shi_info`
+-- Table structure for shi_info
 -- ----------------------------
 DROP TABLE IF EXISTS `shi_info`;
 CREATE TABLE `shi_info` (
@@ -873,7 +904,403 @@ CREATE TABLE `shi_info` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `swingcates`
+-- Table structure for store_express
+-- ----------------------------
+DROP TABLE IF EXISTS `store_express`;
+CREATE TABLE `store_express` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `express_title` varchar(50) DEFAULT '' COMMENT '快递公司名称',
+  `express_code` varchar(50) DEFAULT '' COMMENT '快递公司代码',
+  `express_desc` text COMMENT '快递公司描述',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态(0.无效,1.有效)',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '排序',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COMMENT='商城快递配置';
+
+-- ----------------------------
+-- Records of store_express
+-- ----------------------------
+INSERT INTO `store_express` VALUES ('5', 'AAE全球专递', 'aae', '顺丰快递公司', '0', '0', '0', '2017-09-12 11:53:40');
+INSERT INTO `store_express` VALUES ('6', '安捷快递', 'anjie', '', '0', '0', '0', '2017-09-13 15:27:26');
+INSERT INTO `store_express` VALUES ('7', '安信达快递', 'anxindakuaixi', null, '0', '0', '0', '2017-09-13 16:05:19');
+INSERT INTO `store_express` VALUES ('8', '彪记快递', 'biaojikuaidi', null, '0', '0', '0', '2017-09-13 16:05:26');
+INSERT INTO `store_express` VALUES ('9', 'BHT', 'bht', '', '0', '0', '0', '2017-09-13 16:05:37');
+INSERT INTO `store_express` VALUES ('10', '百福东方国际物流', 'baifudongfang', null, '0', '0', '0', '2017-09-13 16:05:41');
+INSERT INTO `store_express` VALUES ('11', '中国东方（COE）', 'coe', null, '0', '0', '0', '2017-09-13 16:05:48');
+INSERT INTO `store_express` VALUES ('12', '长宇物流', 'changyuwuliu', null, '0', '0', '0', '2017-09-13 16:05:58');
+INSERT INTO `store_express` VALUES ('13', '大田物流', 'datianwuliu', null, '0', '0', '0', '2017-09-13 16:06:06');
+INSERT INTO `store_express` VALUES ('14', '德邦物流', 'debangwuliu', null, '1', '1', '0', '2017-09-13 16:06:14');
+INSERT INTO `store_express` VALUES ('15', 'DHL', 'dhl', null, '0', '0', '0', '2017-09-13 16:06:24');
+INSERT INTO `store_express` VALUES ('16', 'DPEX', 'dpex', null, '0', '0', '0', '2017-09-13 16:06:29');
+INSERT INTO `store_express` VALUES ('17', 'd速快递', 'dsukuaidi', null, '0', '0', '0', '2017-09-13 16:06:34');
+INSERT INTO `store_express` VALUES ('18', '递四方', 'disifang', null, '0', '0', '0', '2017-09-13 16:06:40');
+INSERT INTO `store_express` VALUES ('19', 'EMS快递', 'ems', '', '1', '0', '0', '2017-09-13 16:06:47');
+INSERT INTO `store_express` VALUES ('20', 'FEDEX（国外）', 'fedex', null, '0', '0', '0', '2017-09-13 16:06:56');
+INSERT INTO `store_express` VALUES ('21', '飞康达物流', 'feikangda', null, '0', '0', '0', '2017-09-13 16:07:03');
+INSERT INTO `store_express` VALUES ('22', '凤凰快递', 'fenghuangkuaidi', null, '0', '0', '0', '2017-09-13 16:07:10');
+INSERT INTO `store_express` VALUES ('23', '飞快达', 'feikuaida', null, '0', '0', '0', '2017-09-13 16:07:16');
+INSERT INTO `store_express` VALUES ('24', '国通快递', 'guotongkuaidi', null, '0', '0', '0', '2017-09-13 16:07:27');
+INSERT INTO `store_express` VALUES ('25', '港中能达物流', 'ganzhongnengda', null, '0', '0', '0', '2017-09-13 16:07:33');
+INSERT INTO `store_express` VALUES ('26', '广东邮政物流', 'guangdongyouzhengwuliu', null, '0', '0', '0', '2017-09-13 16:08:22');
+INSERT INTO `store_express` VALUES ('27', '共速达', 'gongsuda', null, '0', '0', '0', '2017-09-13 16:08:48');
+INSERT INTO `store_express` VALUES ('28', '汇通快运', 'huitongkuaidi', null, '0', '0', '0', '2017-09-13 16:08:56');
+INSERT INTO `store_express` VALUES ('29', '恒路物流', 'hengluwuliu', null, '0', '0', '0', '2017-09-13 16:09:02');
+INSERT INTO `store_express` VALUES ('30', '华夏龙物流', 'huaxialongwuliu', null, '0', '0', '0', '2017-09-13 16:09:12');
+INSERT INTO `store_express` VALUES ('31', '海红', 'haihongwangsong', null, '0', '0', '0', '2017-09-13 16:09:20');
+INSERT INTO `store_express` VALUES ('32', '海外环球', 'haiwaihuanqiu', null, '0', '0', '0', '2017-09-13 16:09:27');
+INSERT INTO `store_express` VALUES ('33', '佳怡物流', 'jiayiwuliu', null, '0', '0', '0', '2017-09-13 16:09:35');
+INSERT INTO `store_express` VALUES ('34', '京广速递', 'jinguangsudikuaijian', null, '0', '0', '0', '2017-09-13 16:09:42');
+INSERT INTO `store_express` VALUES ('35', '急先达', 'jixianda', null, '0', '0', '0', '2017-09-13 16:09:49');
+INSERT INTO `store_express` VALUES ('36', '佳吉物流', 'jjwl', null, '0', '0', '0', '2017-09-13 16:10:01');
+INSERT INTO `store_express` VALUES ('37', '加运美物流', 'jymwl', null, '0', '0', '0', '2017-09-13 16:10:13');
+INSERT INTO `store_express` VALUES ('38', '金大物流', 'jindawuliu', null, '0', '0', '0', '2017-09-13 16:10:22');
+INSERT INTO `store_express` VALUES ('39', '嘉里大通', 'jialidatong', null, '0', '0', '0', '2017-09-13 16:10:33');
+INSERT INTO `store_express` VALUES ('40', '晋越快递', 'jykd', null, '0', '0', '0', '2017-09-13 16:10:40');
+INSERT INTO `store_express` VALUES ('41', '快捷速递', 'kuaijiesudi', null, '0', '0', '0', '2017-09-13 16:10:49');
+INSERT INTO `store_express` VALUES ('42', '联邦快递（国内）', 'lianb', null, '0', '0', '0', '2017-09-13 16:10:58');
+INSERT INTO `store_express` VALUES ('43', '联昊通物流', 'lianhaowuliu', null, '0', '0', '0', '2017-09-13 16:11:07');
+INSERT INTO `store_express` VALUES ('44', '龙邦物流', 'longbanwuliu', null, '0', '0', '0', '2017-09-13 16:11:15');
+INSERT INTO `store_express` VALUES ('45', '立即送', 'lijisong', null, '0', '0', '0', '2017-09-13 16:11:25');
+INSERT INTO `store_express` VALUES ('46', '乐捷递', 'lejiedi', null, '0', '0', '0', '2017-09-13 16:11:36');
+INSERT INTO `store_express` VALUES ('47', '民航快递', 'minghangkuaidi', null, '0', '0', '0', '2017-09-13 16:11:45');
+INSERT INTO `store_express` VALUES ('48', '美国快递', 'meiguokuaidi', null, '0', '0', '0', '2017-09-13 16:11:53');
+INSERT INTO `store_express` VALUES ('49', '门对门', 'menduimen', null, '0', '0', '0', '2017-09-13 16:12:01');
+INSERT INTO `store_express` VALUES ('50', 'OCS', 'ocs', null, '0', '0', '0', '2017-09-13 16:12:10');
+INSERT INTO `store_express` VALUES ('51', '配思货运', 'peisihuoyunkuaidi', null, '0', '0', '0', '2017-09-13 16:12:18');
+INSERT INTO `store_express` VALUES ('52', '全晨快递', 'quanchenkuaidi', null, '0', '0', '0', '2017-09-13 16:12:26');
+INSERT INTO `store_express` VALUES ('53', '全峰快递', 'quanfengkuaidi', null, '0', '0', '0', '2017-09-13 16:12:34');
+INSERT INTO `store_express` VALUES ('54', '全际通物流', 'quanjitong', null, '0', '0', '0', '2017-09-13 16:12:41');
+INSERT INTO `store_express` VALUES ('55', '全日通快递', 'quanritongkuaidi', null, '0', '0', '0', '2017-09-13 16:12:49');
+INSERT INTO `store_express` VALUES ('56', '全一快递', 'quanyikuaidi', null, '0', '0', '0', '2017-09-13 16:12:56');
+INSERT INTO `store_express` VALUES ('57', '如风达', 'rufengda', null, '0', '0', '0', '2017-09-13 16:13:03');
+INSERT INTO `store_express` VALUES ('58', '三态速递', 'santaisudi', null, '0', '0', '0', '2017-09-13 16:13:15');
+INSERT INTO `store_express` VALUES ('59', '盛辉物流', 'shenghuiwuliu', null, '0', '0', '0', '2017-09-13 16:13:22');
+INSERT INTO `store_express` VALUES ('60', '申通', 'shentong', null, '0', '0', '0', '2017-09-13 16:13:34');
+INSERT INTO `store_express` VALUES ('61', '顺丰', 'shunfeng', '', '1', '0', '0', '2017-09-13 16:13:41');
+INSERT INTO `store_express` VALUES ('62', '速尔物流', 'sue', null, '0', '0', '0', '2017-09-13 16:13:48');
+INSERT INTO `store_express` VALUES ('63', '盛丰物流', 'shengfeng', null, '0', '0', '0', '2017-09-13 16:13:55');
+INSERT INTO `store_express` VALUES ('64', '赛澳递', 'saiaodi', null, '0', '0', '0', '2017-09-13 16:14:02');
+INSERT INTO `store_express` VALUES ('65', '天地华宇', 'tiandihuayu', null, '0', '0', '0', '2017-09-13 16:14:11');
+INSERT INTO `store_express` VALUES ('66', '天天快递', 'tiantian', null, '0', '0', '0', '2017-09-13 16:14:19');
+INSERT INTO `store_express` VALUES ('67', 'TNT', 'tnt', null, '0', '0', '0', '2017-09-13 16:14:26');
+INSERT INTO `store_express` VALUES ('68', 'UPS', 'ups', null, '0', '0', '0', '2017-09-13 16:14:29');
+INSERT INTO `store_express` VALUES ('69', '万家物流', 'wanjiawuliu', null, '0', '0', '0', '2017-09-13 16:14:37');
+INSERT INTO `store_express` VALUES ('70', '文捷航空速递', 'wenjiesudi', null, '0', '0', '0', '2017-09-13 16:14:46');
+INSERT INTO `store_express` VALUES ('71', '伍圆', 'wuyuan', null, '0', '0', '0', '2017-09-13 16:14:52');
+INSERT INTO `store_express` VALUES ('72', '万象物流', 'wxwl', null, '0', '0', '0', '2017-09-13 16:15:00');
+INSERT INTO `store_express` VALUES ('73', '新邦物流', 'xinbangwuliu', null, '0', '0', '0', '2017-09-13 16:15:06');
+INSERT INTO `store_express` VALUES ('74', '信丰物流', 'xinfengwuliu', null, '0', '0', '0', '2017-09-13 16:15:15');
+INSERT INTO `store_express` VALUES ('75', '亚风速递', 'yafengsudi', null, '0', '0', '0', '2017-09-13 16:15:23');
+INSERT INTO `store_express` VALUES ('76', '一邦速递', 'yibangwuliu', null, '0', '0', '0', '2017-09-13 16:15:30');
+INSERT INTO `store_express` VALUES ('77', '优速物流', 'youshuwuliu', null, '0', '0', '0', '2017-09-13 16:15:36');
+INSERT INTO `store_express` VALUES ('78', '邮政包裹挂号信', 'youzhengguonei', null, '0', '3', '0', '2017-09-13 16:15:44');
+INSERT INTO `store_express` VALUES ('79', '邮政国际包裹挂号信', 'youzhengguoji', null, '0', '2', '0', '2017-09-13 16:15:51');
+INSERT INTO `store_express` VALUES ('80', '远成物流', 'yuanchengwuliu', null, '0', '0', '0', '2017-09-13 16:15:57');
+INSERT INTO `store_express` VALUES ('81', '圆通速递', 'yuantong', null, '1', '1', '0', '2017-09-13 16:16:03');
+INSERT INTO `store_express` VALUES ('82', '源伟丰快递', 'yuanweifeng', null, '0', '0', '0', '2017-09-13 16:16:10');
+INSERT INTO `store_express` VALUES ('83', '元智捷诚快递', 'yuanzhijiecheng', null, '0', '0', '0', '2017-09-13 16:16:17');
+INSERT INTO `store_express` VALUES ('84', '韵达快运', 'yunda', null, '0', '0', '0', '2017-09-13 16:16:24');
+INSERT INTO `store_express` VALUES ('85', '运通快递', 'yuntongkuaidi', null, '0', '0', '0', '2017-09-13 16:16:33');
+INSERT INTO `store_express` VALUES ('86', '越丰物流', 'yuefengwuliu', null, '0', '0', '0', '2017-09-13 16:16:40');
+INSERT INTO `store_express` VALUES ('87', '源安达', 'yad', null, '0', '0', '0', '2017-09-13 16:16:47');
+INSERT INTO `store_express` VALUES ('88', '银捷速递', 'yinjiesudi', null, '0', '0', '0', '2017-09-13 16:16:56');
+INSERT INTO `store_express` VALUES ('89', '宅急送', 'zhaijisong', null, '0', '0', '0', '2017-09-13 16:17:03');
+INSERT INTO `store_express` VALUES ('90', '中铁快运', 'zhongtiekuaiyun', null, '0', '0', '0', '2017-09-13 16:17:10');
+INSERT INTO `store_express` VALUES ('91', '中通速递', 'zhongtong', '', '0', '0', '0', '2017-09-13 16:17:16');
+INSERT INTO `store_express` VALUES ('92', '中邮物流', 'zhongyouwuliu', null, '0', '0', '0', '2017-09-13 16:17:27');
+INSERT INTO `store_express` VALUES ('93', '忠信达', 'zhongxinda', null, '0', '0', '0', '2017-09-13 16:17:34');
+INSERT INTO `store_express` VALUES ('94', '芝麻开门', 'zhimakaimen', null, '0', '0', '0', '2017-09-13 16:17:41');
+
+-- ----------------------------
+-- Table structure for store_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods`;
+CREATE TABLE `store_goods` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `brand_id` bigint(20) unsigned DEFAULT '0' COMMENT '品牌ID',
+  `cate_id` bigint(20) unsigned DEFAULT '0' COMMENT '商品分类id',
+  `unit_id` bigint(20) DEFAULT NULL COMMENT '商品单位ID',
+  `spec_id` bigint(20) unsigned DEFAULT '0' COMMENT '规格ID',
+  `tags_id` varchar(255) DEFAULT '' COMMENT '商品标签ID',
+  `is_code` bigint(1) DEFAULT '1' COMMENT '是否有码商品',
+  `goods_title` varchar(255) DEFAULT '' COMMENT '商品标签',
+  `goods_content` text COMMENT '商品内容',
+  `goods_logo` varchar(255) DEFAULT '' COMMENT '商品LOGO',
+  `goods_image` text COMMENT '商品图片地址',
+  `goods_video` varchar(500) DEFAULT '' COMMENT '商品视频URL',
+  `goods_desc` varchar(500) DEFAULT '' COMMENT '商品描述',
+  `package_stock` bigint(20) unsigned DEFAULT '0' COMMENT '总库存数量',
+  `package_sale` bigint(20) unsigned DEFAULT '0' COMMENT '已销售数量',
+  `favorite_num` bigint(20) unsigned DEFAULT '0' COMMENT '收藏次数',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '数据排序',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城商品主表';
+
+-- ----------------------------
+-- Records of store_goods
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_goods_brand
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods_brand`;
+CREATE TABLE `store_goods_brand` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `brand_logo` varchar(1024) DEFAULT '' COMMENT '品牌logo',
+  `brand_cover` varchar(1024) DEFAULT '' COMMENT '品牌封面',
+  `brand_title` varchar(255) DEFAULT '' COMMENT '商品品牌名称',
+  `brand_desc` text COMMENT '商品品牌描述',
+  `brand_detail` text COMMENT '品牌图文信息',
+  `sort` int(11) unsigned DEFAULT '0' COMMENT '商品分类排序',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品品牌';
+
+-- ----------------------------
+-- Records of store_goods_brand
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_goods_cate
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods_cate`;
+CREATE TABLE `store_goods_cate` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` bigint(20) unsigned DEFAULT '0' COMMENT '上级分类编号',
+  `brand_id` bigint(20) DEFAULT '0' COMMENT '品牌ID',
+  `cate_title` varchar(255) DEFAULT '' COMMENT '商品分类名称',
+  `cate_desc` text COMMENT '商品分类',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '商品分类排序',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城商品分类';
+
+-- ----------------------------
+-- Records of store_goods_cate
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_goods_list
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods_list`;
+CREATE TABLE `store_goods_list` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` bigint(20) unsigned DEFAULT '0' COMMENT '商品ID',
+  `goods_spec` varchar(255) DEFAULT '' COMMENT '商品规格名称',
+  `goods_number` bigint(20) unsigned DEFAULT '0' COMMENT '商品礼品-商品数量',
+  `market_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '销售价格',
+  `selling_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '商品价格',
+  `goods_stock` bigint(20) unsigned DEFAULT '0' COMMENT '商品库存统计',
+  `goods_sale` bigint(20) unsigned DEFAULT '0' COMMENT '已销售数量',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城商品列表';
+
+-- ----------------------------
+-- Records of store_goods_list
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_goods_spec
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods_spec`;
+CREATE TABLE `store_goods_spec` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `mch_id` bigint(20) unsigned DEFAULT '0' COMMENT '商户ID',
+  `spec_title` varchar(255) DEFAULT '' COMMENT '商品规格名称',
+  `spec_param` varchar(255) DEFAULT '' COMMENT '商品规格参数',
+  `spec_desc` varchar(255) DEFAULT '' COMMENT '商品规格描述',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '商品规格排序',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_store_goods_spec_mch_id` (`mch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城商品规格';
+
+-- ----------------------------
+-- Records of store_goods_spec
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_goods_stock
+-- ----------------------------
+DROP TABLE IF EXISTS `store_goods_stock`;
+CREATE TABLE `store_goods_stock` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` bigint(20) unsigned DEFAULT '0' COMMENT '商品ID',
+  `goods_spec` varchar(255) DEFAULT '' COMMENT '商品属性',
+  `goods_stock` bigint(20) unsigned DEFAULT '0' COMMENT '商品库存',
+  `stock_desc` varchar(255) DEFAULT '' COMMENT '商品库存描述',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '数据排序',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城商品库存';
+
+-- ----------------------------
+-- Records of store_goods_stock
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_member
+-- ----------------------------
+DROP TABLE IF EXISTS `store_member`;
+CREATE TABLE `store_member` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(100) DEFAULT '' COMMENT '会员微信OPENID',
+  `phone` varchar(16) DEFAULT '' COMMENT '会员手机号',
+  `password` varchar(64) NOT NULL DEFAULT '' COMMENT '登录密码',
+  `nickname` varchar(20) DEFAULT '' COMMENT '会员昵称',
+  `headimg` varchar(500) DEFAULT '' COMMENT '会员头像',
+  `sex` char(2) DEFAULT '' COMMENT '性别',
+  `level` tinyint(2) unsigned DEFAULT '1' COMMENT '会员级别',
+  `remark` varchar(500) DEFAULT '' COMMENT '会员个性签名',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '会员状态(1有效,0无效)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_store_member_openid` (`openid`) USING BTREE,
+  KEY `index_store_member_phone` (`phone`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城会员信息';
+
+-- ----------------------------
+-- Records of store_member
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_member_address
+-- ----------------------------
+DROP TABLE IF EXISTS `store_member_address`;
+CREATE TABLE `store_member_address` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `mid` bigint(20) unsigned DEFAULT '0' COMMENT '会员ID',
+  `username` varchar(20) DEFAULT '' COMMENT '收货人姓名',
+  `phone` varchar(16) DEFAULT '' COMMENT '收货手机号',
+  `province` varchar(50) DEFAULT '' COMMENT '收货地址省份',
+  `city` varchar(50) DEFAULT '' COMMENT '收货地址城市',
+  `area` varchar(255) DEFAULT '' COMMENT '收货地址区域',
+  `address` varchar(255) DEFAULT '' COMMENT '收货详细地址',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态(0无效, 1新快递)',
+  `is_default` tinyint(1) unsigned DEFAULT '1' COMMENT '默认收货地址',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城会员收货地址';
+
+-- ----------------------------
+-- Records of store_member_address
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_order
+-- ----------------------------
+DROP TABLE IF EXISTS `store_order`;
+CREATE TABLE `store_order` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `type` tinyint(1) unsigned DEFAULT '1' COMMENT '订单类型(1普通订单,2积分订单)',
+  `mid` bigint(20) unsigned DEFAULT '0' COMMENT '会员ID',
+  `order_no` char(10) DEFAULT '' COMMENT '订单号',
+  `freight_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '快递费',
+  `goods_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '商品总金额(不含快递费)',
+  `real_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '真实支付金额(商品金额+快递金额)',
+  `is_pay` tinyint(1) unsigned DEFAULT '0' COMMENT '订单支付状态(0.未支付,1.已支付)',
+  `pay_type` varchar(255) DEFAULT '' COMMENT '支付方式 (wechat微信支付, alipay支付宝支付)',
+  `pay_no` varchar(100) DEFAULT '' COMMENT '商户交易号',
+  `pay_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '实际支付金额',
+  `pay_at` datetime DEFAULT NULL COMMENT '支付时间',
+  `desc` text COMMENT '订单描述',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '订单状态(0.无效,1.新订单,2.待发货,3.已发货,4.已收货,5.已完成,6.已退货及退款)',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_store_order_order_no` (`order_no`) USING BTREE,
+  KEY `index_store_order_status` (`status`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城订单主表';
+
+-- ----------------------------
+-- Records of store_order
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_order_express
+-- ----------------------------
+DROP TABLE IF EXISTS `store_order_express`;
+CREATE TABLE `store_order_express` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `mid` bigint(20) unsigned DEFAULT '0' COMMENT '会员ID',
+  `type` tinyint(1) unsigned DEFAULT '0' COMMENT '快递类型(0.订单快递,1.退货快递)',
+  `order_no` char(10) DEFAULT '' COMMENT '订单编号',
+  `company_title` varchar(50) DEFAULT '' COMMENT '物流公司名称',
+  `company_code` varchar(50) DEFAULT '' COMMENT '物流公司编码',
+  `username` varchar(20) DEFAULT '' COMMENT '收货人姓名',
+  `phone` varchar(16) DEFAULT '' COMMENT '收货手机号',
+  `province` varchar(50) DEFAULT NULL COMMENT '收货地址省份',
+  `city` varchar(50) DEFAULT '' COMMENT '收货地址城市',
+  `area` varchar(255) DEFAULT '' COMMENT '收货地址区域',
+  `address` varchar(255) DEFAULT '' COMMENT '收货详细地址',
+  `send_no` varchar(50) DEFAULT '' COMMENT '实际物流公司单号',
+  `send_company_title` varchar(50) DEFAULT '' COMMENT '实际发货快递公司',
+  `send_company_code` varchar(50) DEFAULT '' COMMENT '实际发货快递代码',
+  `send_username` varchar(255) DEFAULT '' COMMENT '寄件人名称',
+  `send_phone` varchar(16) DEFAULT '' COMMENT '寄件人手机号',
+  `send_province` varchar(50) DEFAULT '' COMMENT '寄件人地址省份',
+  `send_city` varchar(50) DEFAULT '' COMMENT '寄件人地址城市',
+  `send_area` varchar(255) DEFAULT '' COMMENT '寄件人地址区域',
+  `send_address` varchar(255) DEFAULT '' COMMENT '寄件人详细地址',
+  `send_at` datetime DEFAULT NULL COMMENT '快递发货时间',
+  `desc` text COMMENT '发货描述',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态(0.无效,1.新快递,2.已签收,3.签收失败)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城订单快递';
+
+-- ----------------------------
+-- Records of store_order_express
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for store_order_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `store_order_goods`;
+CREATE TABLE `store_order_goods` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `mid` bigint(20) unsigned DEFAULT '0' COMMENT '会员ID',
+  `order_no` char(10) DEFAULT '' COMMENT '订单编号',
+  `goods_id` bigint(20) DEFAULT '0' COMMENT '商品ID',
+  `goods_title` varchar(255) DEFAULT '' COMMENT '商品标签',
+  `goods_spec` varchar(255) DEFAULT '' COMMENT '商品规格',
+  `goods_logo` varchar(255) DEFAULT '' COMMENT '商品LOGO',
+  `goods_image` text COMMENT '商品图片地址',
+  `market_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '市场价格',
+  `selling_price` decimal(20,2) unsigned DEFAULT '0.00' COMMENT '商品销售价格',
+  `price_field` varchar(20) DEFAULT 'selling_price' COMMENT '计价字段',
+  `number` bigint(20) unsigned DEFAULT '0' COMMENT '订单商品数量',
+  `status` bigint(1) unsigned DEFAULT '1' COMMENT '商品状态(1有效,0无效)',
+  `is_deleted` bigint(1) unsigned DEFAULT '0' COMMENT '删除状态(1删除,0未删除)',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_store_order_list_order_no` (`order_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商城订单关联商品';
+
+-- ----------------------------
+-- Records of store_order_goods
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for swingcates
 -- ----------------------------
 DROP TABLE IF EXISTS `swingcates`;
 CREATE TABLE `swingcates` (
@@ -892,7 +1319,7 @@ INSERT INTO `swingcates` VALUES ('0000000004', '卫生垫');
 INSERT INTO `swingcates` VALUES ('0000000005', '覆盖光栅');
 
 -- ----------------------------
--- Table structure for `swingdang`
+-- Table structure for swingdang
 -- ----------------------------
 DROP TABLE IF EXISTS `swingdang`;
 CREATE TABLE `swingdang` (
@@ -909,7 +1336,7 @@ INSERT INTO `swingdang` VALUES ('0000000002', '刚性游泳池光栅，光栅棒
 INSERT INTO `swingdang` VALUES ('0000000003', '刚性游泳池光栅，光栅棒与泳池边缘成直角');
 
 -- ----------------------------
--- Table structure for `swingother`
+-- Table structure for swingother
 -- ----------------------------
 DROP TABLE IF EXISTS `swingother`;
 CREATE TABLE `swingother` (
@@ -923,24 +1350,44 @@ CREATE TABLE `swingother` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `swing_banner`
+-- Table structure for swing_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_banner`;
 CREATE TABLE `swing_banner` (
   `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  `sid` int(10) unsigned NOT NULL COMMENT '对应产品表的产品id',
+  `s_id` int(10) unsigned NOT NULL COMMENT '对应产品表的产品id',
   `img` varchar(255) NOT NULL COMMENT '产品轮播图(大图)',
   `small_img` varchar(255) NOT NULL COMMENT '产品轮播图(小图)',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='产品轮播表';
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='产品轮播表';
 
 -- ----------------------------
 -- Records of swing_banner
 -- ----------------------------
+INSERT INTO `swing_banner` VALUES ('0000000001', '1', '/static/upload/6a53d4a756c7e9f1/97e748475eacde5c.jpg', '/static/upload/6a53d4a756c7e9f1/97e748475eacde5c.jpg', '2019-03-10 00:30:13');
 
 -- ----------------------------
--- Table structure for `swing_protucts`
+-- Table structure for swing_color
+-- ----------------------------
+DROP TABLE IF EXISTS `swing_color`;
+CREATE TABLE `swing_color` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `s_id` int(10) unsigned DEFAULT NULL COMMENT '对应游泳池产品id',
+  `img` varchar(255) DEFAULT NULL COMMENT '游泳池产品颜色',
+  `title` varchar(255) DEFAULT NULL COMMENT '游泳池产品颜色名称',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of swing_color
+-- ----------------------------
+INSERT INTO `swing_color` VALUES ('0000000001', '1', '/static/upload/6a53d4a756c7e9f1/97e748475eacde5c.jpg', '555', '2019-03-10 00:34:30');
+INSERT INTO `swing_color` VALUES ('0000000002', '1', '/static/upload/e1a24b73c1c19f1c/e0b78c5e2b0c915c.jpg', '44444444', '2019-03-10 00:35:34');
+
+-- ----------------------------
+-- Table structure for swing_protucts
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_protucts`;
 CREATE TABLE `swing_protucts` (
@@ -957,14 +1404,15 @@ CREATE TABLE `swing_protucts` (
   `jiage` varchar(255) NOT NULL COMMENT '价目表',
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of swing_protucts
 -- ----------------------------
+INSERT INTO `swing_protucts` VALUES ('0000000001', '1', '111111', '333', '3344444444', '11111', '333333333', '', '', '', '', '2019-03-10 00:03:47');
 
 -- ----------------------------
--- Table structure for `swing_pro_cates`
+-- Table structure for swing_pro_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_pro_cates`;
 CREATE TABLE `swing_pro_cates` (
@@ -972,14 +1420,16 @@ CREATE TABLE `swing_pro_cates` (
   `title` varchar(255) NOT NULL COMMENT '用泳池产品分类标题',
   `img` varchar(255) NOT NULL COMMENT '分类展示图',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of swing_pro_cates
 -- ----------------------------
+INSERT INTO `swing_pro_cates` VALUES ('0000000001', 'emco游泳池格栅角落解决方案', '/static/upload/6a53d4a756c7e9f1/97e748475eacde5c.jpg');
+INSERT INTO `swing_pro_cates` VALUES ('0000000002', 'emco游泳池格栅安装框架', '/static/upload/e1a24b73c1c19f1c/e0b78c5e2b0c915c.jpg');
 
 -- ----------------------------
--- Table structure for `swing_shi`
+-- Table structure for swing_shi
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_shi`;
 CREATE TABLE `swing_shi` (
@@ -993,7 +1443,7 @@ CREATE TABLE `swing_shi` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_auth`
+-- Table structure for system_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth`;
 CREATE TABLE `system_auth` (
@@ -1014,7 +1464,7 @@ CREATE TABLE `system_auth` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_auth_node`
+-- Table structure for system_auth_node
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth_node`;
 CREATE TABLE `system_auth_node` (
@@ -1031,7 +1481,7 @@ CREATE TABLE `system_auth_node` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_config`
+-- Table structure for system_config
 -- ----------------------------
 DROP TABLE IF EXISTS `system_config`;
 CREATE TABLE `system_config` (
@@ -1086,7 +1536,7 @@ INSERT INTO `system_config` VALUES ('86', 'storage_oss_keyid', '');
 INSERT INTO `system_config` VALUES ('87', 'storage_oss_secret', '');
 
 -- ----------------------------
--- Table structure for `system_log`
+-- Table structure for system_log
 -- ----------------------------
 DROP TABLE IF EXISTS `system_log`;
 CREATE TABLE `system_log` (
@@ -1098,7 +1548,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=254 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -1356,9 +1806,10 @@ INSERT INTO `system_log` VALUES ('250', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('251', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-08 15:02:59');
 INSERT INTO `system_log` VALUES ('252', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 09:18:21');
 INSERT INTO `system_log` VALUES ('253', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 14:02:03');
+INSERT INTO `system_log` VALUES ('254', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 22:12:59');
 
 -- ----------------------------
--- Table structure for `system_menu`
+-- Table structure for system_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `system_menu`;
 CREATE TABLE `system_menu` (
@@ -1376,7 +1827,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -1453,9 +1904,13 @@ INSERT INTO `system_menu` VALUES ('187', '154', '清理详情页饰品设置', '
 INSERT INTO `system_menu` VALUES ('188', '172', '游泳池产品分类设置', '', '', '/tuanj/protuctswing/index', '', '_self', '0', '1', '0', '2019-03-08 10:07:15');
 INSERT INTO `system_menu` VALUES ('189', '172', '游泳池产品设置', '', '', '/tuanj/swingprotucts/index', '', '_self', '0', '1', '0', '2019-03-08 10:35:23');
 INSERT INTO `system_menu` VALUES ('190', '172', '产品详情页轮播图', '', '', '/tuanj/swingbanner/index', '', '_self', '0', '1', '0', '2019-03-08 10:36:01');
+INSERT INTO `system_menu` VALUES ('192', '154', '清理产品轮播图', '', '', '/tuanj/clearbanner/index', '', '_self', '0', '1', '0', '2019-03-09 23:15:12');
+INSERT INTO `system_menu` VALUES ('193', '154', '清理产品参考', '', '', '/tuanj/clearress/index', '', '_self', '0', '1', '0', '2019-03-09 23:16:04');
+INSERT INTO `system_menu` VALUES ('194', '117', '入口垫管理', '', '', '#', '', '_self', '0', '1', '0', '2019-03-09 23:36:31');
+INSERT INTO `system_menu` VALUES ('195', '172', '游泳池产品颜色设置', '', '', '/tuanj/swingcolor/index', '', '_self', '0', '1', '0', '2019-03-10 00:00:07');
 
 -- ----------------------------
--- Table structure for `system_node`
+-- Table structure for system_node
 -- ----------------------------
 DROP TABLE IF EXISTS `system_node`;
 CREATE TABLE `system_node` (
@@ -1515,7 +1970,7 @@ INSERT INTO `system_node` VALUES ('358', 'admin/index/pass', '', '0', '1', '1', 
 INSERT INTO `system_node` VALUES ('359', 'admin/index/info', '', '0', '1', '1', '2018-06-04 09:44:02');
 
 -- ----------------------------
--- Table structure for `system_sequence`
+-- Table structure for system_sequence
 -- ----------------------------
 DROP TABLE IF EXISTS `system_sequence`;
 CREATE TABLE `system_sequence` (
@@ -1534,7 +1989,7 @@ CREATE TABLE `system_sequence` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_user`
+-- Table structure for system_user
 -- ----------------------------
 DROP TABLE IF EXISTS `system_user`;
 CREATE TABLE `system_user` (
@@ -1564,7 +2019,7 @@ CREATE TABLE `system_user` (
 INSERT INTO `system_user` VALUES ('10000', 'admin', '超级管理员', '21232f297a57a5a743894a0e4a801fc3', '', '', null, '', '', '23296', '2018-03-23 17:05:40', '1', '1', '0', null, '2015-11-13 15:14:22');
 
 -- ----------------------------
--- Table structure for `tuandui`
+-- Table structure for tuandui
 -- ----------------------------
 DROP TABLE IF EXISTS `tuandui`;
 CREATE TABLE `tuandui` (
@@ -1594,7 +2049,203 @@ INSERT INTO `tuandui` VALUES ('9', '0', '汤姆•克鲁斯', '/static/upload/19
 INSERT INTO `tuandui` VALUES ('10', '0', '尼古拉斯·凯奇', '/static/upload/efde1ce2a23c4d26/1a12ec0ec2ccba97.jpg', '团建教练', '1982年，17岁的尼古拉斯·凯奇进入电影行业，出演影片《开放的美国学府》。1984年，凯奇主演了影片《鸟人》。1988年，他出演了《吸血鬼之吻》。1992年，他凭借影片《我心狂野》中的表演，获得了第43届戛纳电影节金棕榈大奖。1996年，他主演的动作片《勇闯夺命岛》，并凭借《离开拉斯维加斯》中的酒鬼一角获得当年奥斯卡最佳男主角奖。而后出演《变脸》、《空中监狱》等动作片。', '#', '2018-12-25 15:55:30');
 
 -- ----------------------------
--- Table structure for `zhuan`
+-- Table structure for wechat_fans
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_fans`;
+CREATE TABLE `wechat_fans` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `appid` char(50) DEFAULT '' COMMENT '公众号Appid',
+  `unionid` char(100) DEFAULT '' COMMENT 'unionid',
+  `openid` char(100) DEFAULT '' COMMENT '用户的标识,对当前公众号唯一',
+  `spread_openid` char(100) DEFAULT '' COMMENT '推荐人OPENID',
+  `spread_at` datetime DEFAULT NULL COMMENT '推荐时间',
+  `tagid_list` varchar(100) DEFAULT '' COMMENT '标签id',
+  `is_black` tinyint(1) unsigned DEFAULT '0' COMMENT '是否为黑名单用户',
+  `subscribe` tinyint(1) unsigned DEFAULT '0' COMMENT '用户是否关注该公众号(0:未关注, 1:已关注)',
+  `nickname` varchar(200) DEFAULT '' COMMENT '用户的昵称',
+  `sex` tinyint(1) unsigned DEFAULT NULL COMMENT '用户的性别,值为1时是男性,值为2时是女性,值为0时是未知',
+  `country` varchar(50) DEFAULT '' COMMENT '用户所在国家',
+  `province` varchar(50) DEFAULT '' COMMENT '用户所在省份',
+  `city` varchar(50) DEFAULT '' COMMENT '用户所在城市',
+  `language` varchar(50) DEFAULT '' COMMENT '用户的语言,简体中文为zh_CN',
+  `headimgurl` varchar(500) DEFAULT '' COMMENT '用户头像',
+  `subscribe_time` bigint(20) unsigned DEFAULT '0' COMMENT '用户关注时间',
+  `subscribe_at` datetime DEFAULT NULL COMMENT '关注时间',
+  `remark` varchar(50) DEFAULT '' COMMENT '备注',
+  `expires_in` bigint(20) unsigned DEFAULT '0' COMMENT '有效时间',
+  `refresh_token` varchar(200) DEFAULT '' COMMENT '刷新token',
+  `access_token` varchar(200) DEFAULT '' COMMENT '访问token',
+  `subscribe_scene` varchar(200) DEFAULT '' COMMENT '扫码关注场景',
+  `qr_scene` varchar(100) DEFAULT '' COMMENT '二维码场景值',
+  `qr_scene_str` varchar(200) DEFAULT '' COMMENT '二维码场景内容',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_fans_spread_openid` (`spread_openid`) USING BTREE,
+  KEY `index_wechat_fans_openid` (`openid`) USING BTREE,
+  KEY `index_wechat_fans_unionid` (`unionid`),
+  KEY `index_wechat_fans_is_back` (`is_black`),
+  KEY `index_wechat_fans_subscribe` (`subscribe`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信粉丝';
+
+-- ----------------------------
+-- Records of wechat_fans
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_fans_tags
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_fans_tags`;
+CREATE TABLE `wechat_fans_tags` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '标签ID',
+  `appid` char(50) DEFAULT NULL COMMENT '公众号APPID',
+  `name` varchar(35) DEFAULT NULL COMMENT '标签名称',
+  `count` int(11) unsigned DEFAULT NULL COMMENT '总数',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建日期',
+  KEY `index_wechat_fans_tags_id` (`id`) USING BTREE,
+  KEY `index_wechat_fans_tags_appid` (`appid`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信会员标签';
+
+-- ----------------------------
+-- Records of wechat_fans_tags
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_keys
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_keys`;
+CREATE TABLE `wechat_keys` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `appid` char(100) DEFAULT '' COMMENT '公众号APPID',
+  `type` varchar(20) DEFAULT '' COMMENT '类型，text 文件消息，image 图片消息，news 图文消息',
+  `keys` varchar(100) DEFAULT NULL COMMENT '关键字',
+  `content` text COMMENT '文本内容',
+  `image_url` varchar(255) DEFAULT '' COMMENT '图片链接',
+  `voice_url` varchar(255) DEFAULT '' COMMENT '语音链接',
+  `music_title` varchar(100) DEFAULT '' COMMENT '音乐标题',
+  `music_url` varchar(255) DEFAULT '' COMMENT '音乐链接',
+  `music_image` varchar(255) DEFAULT '' COMMENT '音乐缩略图链接',
+  `music_desc` varchar(255) DEFAULT '' COMMENT '音乐描述',
+  `video_title` varchar(100) DEFAULT '' COMMENT '视频标题',
+  `video_url` varchar(255) DEFAULT '' COMMENT '视频URL',
+  `video_desc` varchar(255) DEFAULT '' COMMENT '视频描述',
+  `news_id` bigint(20) unsigned DEFAULT NULL COMMENT '图文ID',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '排序字段',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '0 禁用，1 启用',
+  `create_by` bigint(20) unsigned DEFAULT NULL COMMENT '创建人',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_keys_appid` (`appid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信关键字';
+
+-- ----------------------------
+-- Records of wechat_keys
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_menu
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_menu`;
+CREATE TABLE `wechat_menu` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `index` bigint(20) DEFAULT NULL,
+  `pindex` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父id',
+  `type` varchar(24) NOT NULL DEFAULT '' COMMENT '菜单类型 null主菜单 link链接 keys关键字',
+  `name` varchar(256) NOT NULL DEFAULT '' COMMENT '菜单名称',
+  `content` text NOT NULL COMMENT '文字内容',
+  `sort` bigint(20) unsigned DEFAULT '0' COMMENT '排序',
+  `status` tinyint(1) unsigned DEFAULT '1' COMMENT '状态(0禁用1启用)',
+  `create_by` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '创建人',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_menu_pindex` (`pindex`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信菜单配置';
+
+-- ----------------------------
+-- Records of wechat_menu
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_news
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_news`;
+CREATE TABLE `wechat_news` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `media_id` varchar(100) DEFAULT '' COMMENT '永久素材MediaID',
+  `local_url` varchar(300) DEFAULT '' COMMENT '永久素材显示URL',
+  `article_id` varchar(60) DEFAULT '' COMMENT '关联图文ID，用，号做分割',
+  `is_deleted` tinyint(1) unsigned DEFAULT '0' COMMENT '是否删除',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_by` bigint(20) DEFAULT NULL COMMENT '创建人',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_news_artcle_id` (`article_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信图文表';
+
+-- ----------------------------
+-- Records of wechat_news
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_news_article
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_news_article`;
+CREATE TABLE `wechat_news_article` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT '' COMMENT '素材标题',
+  `local_url` varchar(300) DEFAULT '' COMMENT '永久素材显示URL',
+  `show_cover_pic` tinyint(4) unsigned DEFAULT '0' COMMENT '是否显示封面 0不显示，1 显示',
+  `author` varchar(20) DEFAULT '' COMMENT '作者',
+  `digest` varchar(300) DEFAULT '' COMMENT '摘要内容',
+  `content` longtext COMMENT '图文内容',
+  `content_source_url` varchar(200) DEFAULT '' COMMENT '图文消息原文地址',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_by` bigint(20) DEFAULT NULL COMMENT '创建人',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信素材表';
+
+-- ----------------------------
+-- Records of wechat_news_article
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_news_image
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_news_image`;
+CREATE TABLE `wechat_news_image` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `md5` varchar(32) DEFAULT '' COMMENT '文件md5',
+  `local_url` varchar(300) DEFAULT '' COMMENT '本地文件链接',
+  `media_url` varchar(300) DEFAULT '' COMMENT '远程图片链接',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `index_wechat_news_image_md5` (`md5`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信服务器图片';
+
+-- ----------------------------
+-- Records of wechat_news_image
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for wechat_news_media
+-- ----------------------------
+DROP TABLE IF EXISTS `wechat_news_media`;
+CREATE TABLE `wechat_news_media` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `appid` varchar(100) DEFAULT '' COMMENT '公众号ID',
+  `md5` varchar(32) DEFAULT '' COMMENT '文件md5',
+  `type` varchar(20) DEFAULT '' COMMENT '媒体类型',
+  `media_id` varchar(100) DEFAULT '' COMMENT '永久素材MediaID',
+  `local_url` varchar(300) DEFAULT '' COMMENT '本地文件链接',
+  `media_url` varchar(300) DEFAULT '' COMMENT '远程图片链接',
+  `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='微信素材表';
+
+-- ----------------------------
+-- Records of wechat_news_media
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for zhuan
 -- ----------------------------
 DROP TABLE IF EXISTS `zhuan`;
 CREATE TABLE `zhuan` (
@@ -1612,7 +2263,7 @@ INSERT INTO `zhuan` VALUES ('0000000003', '地毯垫');
 INSERT INTO `zhuan` VALUES ('0000000004', '游泳池栅格');
 
 -- ----------------------------
--- Table structure for `zong`
+-- Table structure for zong
 -- ----------------------------
 DROP TABLE IF EXISTS `zong`;
 CREATE TABLE `zong` (
