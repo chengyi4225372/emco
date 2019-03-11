@@ -95,7 +95,6 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-
    //todo 功能
     public function functions(){
         return $this->view->fetch();
@@ -135,7 +134,6 @@ class Index extends Common
         $clean['juan'] =explode(',',$clean['juan']);
         $clean['dian'] =explode(',',$clean['dian']);
         $clean['color'] =explode(',',$clean['color']);
-
         //对应的颜色
         $color  = Db::name('clear_color')->where('ltid',$id)->select();
         //轮博图
@@ -148,8 +146,7 @@ class Index extends Common
        $this->assign('shiping',$shiping);
        $this->assign('color',$color);
        $this->assign('clean',$clean);
-
-        return$this->view->fetch();
+       return$this->view->fetch();
     }
 
 
@@ -334,7 +331,7 @@ class Index extends Common
         }
     }
     //订购材料联系
-     public function order_contact(Request $request)
+    public function order_contact(Request $request)
      {
          $order = $request->post();
          //halt($order);
