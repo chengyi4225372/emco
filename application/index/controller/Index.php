@@ -20,14 +20,7 @@ class Index extends Common
     }
 
     /*     产品   products         */
-    //todo 入口垫
-    public function entrance_mats(){
-        return $this->view->fetch('');
-    }
 
-    public function carpet_mats_info(){
-        return $this->view->fetch();
-    }
 
     /*    服务 services   */
     //todo 入口垫 服务
@@ -87,7 +80,7 @@ class Index extends Common
     public function product_comparison(){
            //区分 1室外 2 室内
           $id = input('post.cid');
-          dump($id);
+          //dump($id);
           //查询产品标题
          // $ptitle =Db::name()->where()->select();
 
@@ -95,10 +88,15 @@ class Index extends Common
     }
 
 
+    //todo 入口垫 缺少系统 产品类别 表
+    public function entrance_mats(){
+        return $this->view->fetch('');
+    }
+   
 
-
-
-
+    public function carpet_mats_info(){
+        return $this->view->fetch();
+    }
     // 游泳池栅格  最后多测试几条分类下数据
     public function swimming(){
         //以产品类型来分页

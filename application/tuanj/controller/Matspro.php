@@ -2,30 +2,28 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/2/28
- * Time: 9:46
+ * Date: 2019/3/12
+ * Time: 18:23
  */
+
 namespace app\tuanj\controller;
 
 use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Here extends BasicAdmin {
+class Matspro extends BasicAdmin {
 
-    private $dataform = 'heres';
+    private $dataform = '';
 
-//    private $cate = 'news_cate';
+
 
     public function index() {
-        $this->title = '参考地点类别设置';
+        $this->title = '入口垫产品类别';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('htitle', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-//            $start_time = strtotime("{$start} 00:00:00");
-//            $end_time = strtotime("{$end} 23:59:59");
-//            $db->whereBetween('create_at', [$start_time, $end_time]);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
@@ -95,5 +93,3 @@ class Here extends BasicAdmin {
     }
 
 }
-
-

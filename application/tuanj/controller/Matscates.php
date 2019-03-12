@@ -2,23 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/2/28
- * Time: 9:46
+ * Date: 2019/3/12
+ * Time: 18:23
  */
+
 namespace app\tuanj\controller;
 
 use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Here extends BasicAdmin {
+class Matscates extends BasicAdmin {
 
-    private $dataform = 'heres';
+    private $dataform = '';
 
 //    private $cate = 'news_cate';
 
     public function index() {
-        $this->title = '参考地点类别设置';
+        $this->title = '入口垫系统类别';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('htitle', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -95,5 +96,3 @@ class Here extends BasicAdmin {
     }
 
 }
-
-

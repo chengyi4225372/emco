@@ -778,21 +778,6 @@
             {include file="public/menu" /}
         </div>
     </div>
-
     {include file="public/footer" /}
-    <script>
-        //当默认时
-          var cid = $("#category option:first").val();
-          console.log(cid);
-           $.ajax({
-               url:"{:url('index/product_comparison')}",
-               type:'post',
-               data:{id:cid},
-               success:function(res){
-                   console.log(res.msg);
-               }
-           });
-    </script>
-
     </body>
     </html>
