@@ -67,7 +67,6 @@
                                         {volist name="clean" id="vo"}
                                        <option value="{$vo.id}">{$vo.title}</option>
                                          {/volist}
-
                                    </select>
                                     </div>
                                 </div>
@@ -90,8 +89,8 @@
                 <div class="comdbproducts-holder" data-detailpid="1050" data-listpid="1049" data-language="1"
                      data-category="77" data-teaser="0" data-attribute="" data-trusticon="" data-facet-name=""
                      data-facet-value="" data-facet-multiple="0" data-facet-stepbystep="" data-pictogram="7130">
-                     {volist name="clean" id="vo"}
-                    <section class="listenseite-post listenseite-post-results" id="{$vo.cid}">
+                     {volist name="cleans" id="vo"}
+                    <section class="listenseite-post listenseite-post-results" id="clear_{$vo.cid}">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -153,8 +152,13 @@
     //搜索
     $("#clean").change(function(){
        var cid = $(this).children("option:selected").val();
-        $("section#"+cid).show();
-        $("section#"+cid).siblings('section').hide();
+       console.log(cid);
+       if(cid!=0 || cid != ''){
+           $("section#clear_"+cid).show();
+           $("section#clear_"+cid).siblings('section').hide();
+       }else{
+          window.location.href="{:url('index/clean_off_system')}";
+       }
     });
 </script>
 </body>

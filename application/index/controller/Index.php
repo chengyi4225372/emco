@@ -113,14 +113,14 @@ class Index extends Common
     // 清理系统
     public function clean_off_system(){
         //所有产品 关联图标
-        $clean = Db::name('clear_t')->select();
-        foreach($clean as $k =>$val){
-            $clean[$k]['imgs']=Db::name('clear_image')->where('cid',$clean[$k]['id'])->field('img')->select();
+        $cleans = Db::name('clear_t')->select();
+        foreach($cleans as $k =>$val){
+            $cleans[$k]['imgs']=Db::name('clear_image')->where('cid',$cleans[$k]['id'])->field('img')->select();
         }
         $page =Db::name('clear_t')->paginate(15);
         $pages =$page->render();
         $this->assign('pages',$pages);
-        $this->assign('clean',$clean);
+        $this->assign('cleans',$cleans);
         return $this->view->fetch();
     }
     //清理系统详情页
