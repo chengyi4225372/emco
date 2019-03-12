@@ -75,6 +75,12 @@ class Common extends Controller {
         //产品对比 室内 室外
         $duibi =Db::name('protuct_cates')->select();
         $this->assign('duibi',$duibi);
+        //入口垫系统类别名称
+        $mats_cates = Db::name('mats_cates')->order('id asc')->select();
+        $this->assign('mats_cates',$mats_cates);
+        //入口垫产品类别
+        $mats_pro = Db::name('mats_pro')->order('id asc')->select();
+        $this->assign('mats_pro',$mats_pro);
     }
 
     //地毯垫 颜色

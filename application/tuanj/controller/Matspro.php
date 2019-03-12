@@ -14,14 +14,14 @@ use service\DataService;
 
 class Matspro extends BasicAdmin {
 
-    private $dataform = '';
+    private $dataform = 'mats_pro';
 
 
 
     public function index() {
         $this->title = '入口垫产品类别';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('htitle', "%{$get['keywords']}%");
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
@@ -51,7 +51,7 @@ class Matspro extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/here/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/matspro/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

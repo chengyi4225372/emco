@@ -112,6 +112,12 @@ class BasicAdmin extends Controller {
                 //全局高度类别
                 $height = Db::name('heights')->field('id,title')->select();
                 $this->assign('height',$height);
+                //入口垫产品一级分类
+                $matspro = Db::name('mats_pro')->select();
+                $this->assign('matspro',$matspro);
+                //入口垫额二级分类
+                $mats_two = Db::name('mats_two')->field('id,title')->select();
+                $this->assign('mats_two',$mats_two);
 
 
 
