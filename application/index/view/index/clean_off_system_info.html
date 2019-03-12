@@ -26,13 +26,16 @@
                             <div class="carousel gallery-js-ready autorotation-disabled">
                                 <div class="mask" style="height: 416px;">
                                     <div class="slideset" style="width: 1659px; margin-left: -1106px;">
+                                        <!-- 大图-->
+                                        {volist name="banner" id="vo"}
                                         <div class="slide" style="width: 553px;">
-                                            <a href="fileadmin/_processed_/csm_emco_bau_maximus_81_02_anthracite__68985_afe2650c2f.jpg"
-                                                class="t3colorbox-products animation cboxElement" data-rel="slider"
+                                            <a href="{$vo.img}" class="t3colorbox-products animation cboxElement" data-rel="slider"
                                                 onclick="return false;">
                                                 <img alt="MAXIMUS®"
-                                                     src="fileadmin/_processed_/csm_emco_bau_maximus_81_02_anthracite__68985_0603211de4.jpg"
-                                                     width="555" height="270"></a></div>
+                                                     src="{$vo.img}"
+                                                     width="555" height="270"></a>
+                                        </div>
+                                        {/volist}
                                         <div class="slide" style="width: 553px;"><a
                                                 href="fileadmin/_processed_/csm_emco_bau_St_Petersburg_Sestroretsky_Kurort_2__116103_39ca4ffcb5.jpg"
                                                 class="t3colorbox-products animation cboxElement" data-rel="slider"
@@ -48,15 +51,10 @@
                                     </div>
                                 </div>
                                 <ul class="pagination">
-                                    <li class=""><a href="#"><img alt="MAXIMUS®"
-                                                                  src="fileadmin/_processed_/csm_emco_bau_maximus_81_02_anthracite__68985_166c6e2f95.jpg"
-                                                                  width="155" height="75"></a></li>
-                                    <li class=""><a href="#"><img alt="MAXIMUS®"
-                                                                  src="fileadmin/_processed_/csm_emco_bau_St_Petersburg_Sestroretsky_Kurort_2__116103_ee153c7c28.jpg"
-                                                                  width="100" height="75"></a></li>
-                                    <li class="active"><a href="#"><img alt="MAXIMUS®"
-                                                                        src="fileadmin/_processed_/csm_emco_bau_Maximus_blau_Motiv__25618_b13bab2feb.jpg"
-                                                                        width="80" height="75"></a></li>
+                                    {volist name="banner" id="vo"}
+                                    <li class=""><a href="#">
+                                        <img alt="MAXIMUS®" src="{$vo.small_img}" width="155" height="75"></a></li>
+                                    {/volist}
                                 </ul>
                             </div>
                         </div>
@@ -417,29 +415,14 @@
                                             <div class="row">
                                                 <div class="col-xs-12">
                                                     <div class="accessories-holder reference-holder">
+                                                        {volist name="cankao" id="vo" }
                                                         <div class="posts">
-                                                            <div class="post"><a
-                                                                    href="en/references/detail/reference/show/gelderlandplein-2/amsterdam-netherlands-en.html"><img
-                                                                    src="fileadmin/_processed_/csm_emco_bau_Gelderlandplein_3__193077_602c5f4b50.jpg"
-                                                                    width="240" height="180" alt="">
-                                                                <p><font style="vertical-align: inherit;"><font
-                                                                        style="vertical-align: inherit;">Gelderlandplein
-                                                                    - 阿姆斯特丹，荷兰</font></font></p></a></div>
-                                                            <div class="post"><a
-                                                                    href="en/references/detail/reference/show/gerichtsgebaeude-in-breda/breda-netherlands-en-2.html"><img
-                                                                    src="fileadmin/_processed_/csm_emco_bau_Gerichtsgebaeude_Breda_emco_Eingangsmatten_1__239978_40c2318c44.jpg"
-                                                                    width="240" height="180" alt="">
-                                                                <p><font style="vertical-align: inherit;"><font
-                                                                        style="vertical-align: inherit;">*Gerichtsgebäude在布雷达
-                                                                    - 荷兰布雷达</font></font></p></a></div>
-                                                            <div class="post"><a
-                                                                    href="en/references/detail/reference/show/de-vlinderdreef-te-moerbeke-2/moerbeke-belgium-en.html"><img
-                                                                    src="fileadmin/_processed_/csm_emco_bau_Vlinderdreef_1__235780_dfc9d0e4aa.jpg"
-                                                                    width="240" height="180" alt="">
-                                                                <p><font style="vertical-align: inherit;"><font
-                                                                        style="vertical-align: inherit;">De Vlinderdreef
-                                                                    te Moerbeke - 比利时Moerbeke</font></font></p></a>
+                                                            <div class="post">
+                                                                <a href="#">
+                                                                    <img src="{$vo.img}" width="240" height="180" alt="">
+                                                                <p>{$vo.title}</p></a>
                                                             </div>
+                                                            {/volist}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -462,33 +445,36 @@
                         <div class="posts">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="post"><a href="fileadmin/comdbproducts/docxpdf/MAXIMUS®_en_364.pdf"
-                                                         class="download-icon download-icon-pdf" target="_blank"
-                                                         title="下载此文档" data-gtm-event="download"
-                                                         data-gtm-file-name="fileadmin/comdbproducts/docxpdf/MAXIMUS®_en_364.pdf">
+                                    <div class="post">
+                                        <a href="{$clean.wenshu_pdf}"
+                                       class="download-icon download-icon-pdf" target="_blank"
+                                   title="下载此文档" data-gtm-event="download"
+                                   data-gtm-file-name="{$clean.wenshu_pdf}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">招标文本</font></font></strong><span
                                                 class="file-size"><font style="vertical-align: inherit;"><font
                                                 style="vertical-align: inherit;">pdf 30 KB</font></font></span></div>
                                     </a></div>
                                 </div>
+                                <!--下载文档-->
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="post"><a href="fileadmin/comdbproducts/docxpdf/MAXIMUS®_en_364.docx"
+                                    <div class="post"><a href="{$clean.zhanpiao_pdf}"
                                                          class="download-icon download-icon-docx" target="_blank"
                                                          title="下载此文档" data-gtm-event="download"
-                                                         data-gtm-file-name="fileadmin/comdbproducts/docxpdf/MAXIMUS®_en_364.docx">
+                                                         data-gtm-file-name="{$clean.zhanpiao_pdf}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">招标文件的文本</font></font></strong><span
                                                 class="file-size"><font style="vertical-align: inherit;"><font
                                                 style="vertical-align: inherit;">25 KB</font></font></span></div>
                                     </a></div>
                                 </div>
+
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div class="post"><a
-                                            href="fileadmin/comdbproducts/emco_bau_3_zone_cleaning_en_94267.PDF"
+                                            href="{$clean.clear_pdf}"
                                             class="download-icon download-icon-pdf" target="_blank" title="下载此文档"
                                             data-gtm-event="download"
-                                            data-gtm-file-name="fileadmin/comdbproducts/emco_bau_3_zone_cleaning_en_94267.PDF">
+                                            data-gtm-file-name="{$clean.clear_pdf}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">3区清洁系统</font></font></strong><span
                                                 class="file-size"><font style="vertical-align: inherit;"><font
@@ -497,10 +483,10 @@
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                     <div class="post"><a
-                                            href="fileadmin/comdbproducts/emco_bau_emco_Clean_off_Brochure_2020_en_94290.PDF"
+                                            href="{$clean.shouce_pdf}"
                                             class="download-icon download-icon-pdf" target="_blank" title="下载此文档"
                                             data-gtm-event="download"
-                                            data-gtm-file-name="fileadmin/comdbproducts/emco_bau_emco_Clean_off_Brochure_2020_en_94290.PDF">
+                                            data-gtm-file-name="{$clean.shouce_pdf}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">手册</font></font></strong><span
                                                 class="file-size"><font style="vertical-align: inherit;"><font
@@ -508,10 +494,10 @@
                                     </a></div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                    <div class="post"><a href="fileadmin/comdbproducts/emco_bau_MAXIMUS__en_173097.PDF"
+                                    <div class="post"><a href="{$clean.clear_pdf}"
                                                          class="download-icon download-icon-pdf" target="_blank"
                                                          title="下载此文档" data-gtm-event="download"
-                                                         data-gtm-file-name="fileadmin/comdbproducts/emco_bau_MAXIMUS__en_173097.PDF">
+                                                         data-gtm-file-name="{$clean.clear_pdf}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品数据表</font></font></strong><span
                                                 class="file-size"><font style="vertical-align: inherit;"><font
@@ -526,10 +512,10 @@
         </div>
     </div>
     <div id="c3486" class="csc-default">
-        <section class="darkcolor-banner "><img title="erstklassiger Service von Emco"
-                                                alt="freundliche Servicemitarbeiterin von Emco"
-                                                src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/service-von-emco.jpg"
-                                                width="1280" height="540">
+        <section class="darkcolor-banner ">
+            <img title="erstklassiger Service von Emco"
+                 alt="freundliche Servicemitarbeiterin von Emco"
+                 src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/service-von-emco.jpg" width="1280" height="540">
             <div class="caption-holder">
                 <div class="container">
                     <div class="row">
@@ -552,7 +538,7 @@
                                         style="vertical-align: inherit;">电话：</font></font><span class="hotline-wrapper"><font
                                         style="vertical-align: inherit;"><font style="vertical-align: inherit;">+49 591/9140 0</font></font></span><br>
                                     <p>&nbsp;</p></h3>
-                                <a href="en/service/contact.html" title="Schreiben Sie uns"
+                                <a href="{:url('index/contact')}" title="Schreiben Sie uns"
                                    class="btn btn-default"><span><font style="vertical-align: inherit;"><font
                                         style="vertical-align: inherit;">Schreiben Sie uns</font></font></span></a>
                             </div>

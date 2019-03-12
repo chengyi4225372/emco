@@ -90,8 +90,14 @@ class Index extends Common
         // halt($email);
         return $this->view->fetch('',['email'=>$email]);
     }
+
+
     //todo 游泳池栅格 
     public function swimming(){
+        //产品一级分类
+        $swing =Db::name('swing_pro_cates')->paginate(15);
+        //一级分类下有没有产品
+        $this->assign('swing',$swing);
         return $this->view->fetch();
     }
 
@@ -100,23 +106,24 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //todo  产品查询
-    public function product_enquiry(){
-        return  $this->view->fetch();
-    }
 
-    //todo 清理系统  分页未解决
+
+
+
+    // 清理系统
     public function clean_off_system(){
         //所有产品 关联图标
-           $clean = Db::name('clear_t')->select();
+        $clean = Db::name('clear_t')->select();
         foreach($clean as $k =>$val){
             $clean[$k]['imgs']=Db::name('clear_image')->where('cid',$clean[$k]['id'])->field('img')->select();
         }
+        $page =Db::name('clear_t')->paginate(15);
+        $pages =$page->render();
+        $this->assign('pages',$pages);
         $this->assign('clean',$clean);
         return $this->view->fetch();
     }
-
-    //清理系统详情页 todo 待完成 两张表已经建立 待测试 参考表 轮播图表
+    //清理系统详情页
     public function clean_off_system_info(){
         $id = input('get.id');
         $clean  = Db::name('clear_t')->where('id',$id)->find();
@@ -126,18 +133,23 @@ class Index extends Common
         //对应的颜色
         $color  = Db::name('clear_color')->where('ltid',$id)->select();
         //轮博图
-         $banner = Db::name('clear_banner')->where('cid',$id)->select();
+        $banner = Db::name('clear_banner')->where('ltid',$id)->select();
          //饰品表
         $shiping =  Db::name('clear_shiping')->where('ltid',$id)->select();
         //参考表
-       //$cankao = Db::name()->where()->select();
-       //$this->assign();
+       $cankao = Db::name('clear_ress')->where('ltid',$id)->select();
+       $this->assign('cankao',$cankao);
        $this->assign('shiping',$shiping);
        $this->assign('color',$color);
        $this->assign('clean',$clean);
-
+       $this->assign('banner',$banner);
        return$this->view->fetch();
+    }
 
+
+    //todo  产品查询
+    public function product_enquiry(){
+        return  $this->view->fetch();
     }
 
 
