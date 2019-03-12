@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-03-12 17:55:21
+Date: 2019-03-12 23:10:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `aninfo`
+-- Table structure for aninfo
 -- ----------------------------
 DROP TABLE IF EXISTS `aninfo`;
 CREATE TABLE `aninfo` (
@@ -36,7 +36,7 @@ INSERT INTO `aninfo` VALUES ('0000000002', '2', '/static/upload/ceaa85920523799f
 INSERT INTO `aninfo` VALUES ('0000000003', '1', '/static/upload/9661549dfeee96f4/968df3e83f1a40f2.jpg', '/static/upload/a579bef1eb351eae/25180dc592a9fb81.jpg', '2019-03-06 11:26:22');
 
 -- ----------------------------
--- Table structure for `anli`
+-- Table structure for anli
 -- ----------------------------
 DROP TABLE IF EXISTS `anli`;
 CREATE TABLE `anli` (
@@ -67,7 +67,7 @@ INSERT INTO `anli` VALUES ('2', '戴德梁行团建方案', '/static/upload/c78f
 INSERT INTO `anli` VALUES ('3', '灿锐科技新员工拓展培训', '/static/upload/ec5cbc6944cd34c2/fa09afbc400f3e19.jpg', '/static/upload/77d1ada462101d3e/a366febcc6ae09aa.jpg', '新员工拓展', '', '4', '3', '4', '80', '1', '2', '拓展培训一天行程', '七星湾游艇会', '<p>拓展+野炊+烧烤+趣味运动会+羽毛球PK</p>', '2018-12-25 15:21:39');
 
 -- ----------------------------
--- Table structure for `anli_table`
+-- Table structure for anli_table
 -- ----------------------------
 DROP TABLE IF EXISTS `anli_table`;
 CREATE TABLE `anli_table` (
@@ -90,7 +90,7 @@ INSERT INTO `anli_table` VALUES ('0000000001', '1', '1', '1', '/static/upload/9a
 INSERT INTO `anli_table` VALUES ('0000000002', '1', '1', '2', '/static/upload/ceaa85920523799f/09801e47d81e140a.jpg', '恩波里亚', '瑞典马尔默', '恩波里亚不仅仅是任何购物中心。这里有三个楼层的200家商店，销售面积68,000平方米，平均每天25,000名游客，是斯堪的纳维亚最大的购物中心之一。', '2019-03-06 10:26:57');
 
 -- ----------------------------
--- Table structure for `banner`
+-- Table structure for banner
 -- ----------------------------
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE `banner` (
@@ -115,7 +115,7 @@ INSERT INTO `banner` VALUES ('11', '标题2', '', 'http://www.baidu.com', '0', '
 INSERT INTO `banner` VALUES ('12', '百度', '', 'http://www.baidu.com', '0', '3', '2018-12-28 11:28:48');
 
 -- ----------------------------
--- Table structure for `brochures`
+-- Table structure for brochures
 -- ----------------------------
 DROP TABLE IF EXISTS `brochures`;
 CREATE TABLE `brochures` (
@@ -138,7 +138,7 @@ INSERT INTO `brochures` VALUES ('0000000004', '游泳池光栅', '/static/upload
 INSERT INTO `brochures` VALUES ('0000000005', '推广', '/static/upload/aa7901493fadf28b/bf1d8d8ad29cc59b.jpg', '有效的广告', '/static/upload/c4d27fb5457f88d2/91f0732092cf12e6.pdf', '2019-03-01 17:40:06');
 
 -- ----------------------------
--- Table structure for `category`
+-- Table structure for category
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
@@ -169,7 +169,7 @@ INSERT INTO `category` VALUES ('16', '204', '4', '团队魔训', '2018-12-29 10:
 INSERT INTO `category` VALUES ('17', '205', '4', '海岛生存', '2018-12-29 10:15:25');
 
 -- ----------------------------
--- Table structure for `category_es`
+-- Table structure for category_es
 -- ----------------------------
 DROP TABLE IF EXISTS `category_es`;
 CREATE TABLE `category_es` (
@@ -188,7 +188,7 @@ INSERT INTO `category_es` VALUES ('0000000004', 'emco MARSCHALL带橡胶嵌件�
 INSERT INTO `category_es` VALUES ('0000000005', 'emco PLAZA带橡胶嵌件');
 
 -- ----------------------------
--- Table structure for `clear_banner`
+-- Table structure for clear_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_banner`;
 CREATE TABLE `clear_banner` (
@@ -207,7 +207,7 @@ INSERT INTO `clear_banner` VALUES ('0000000002', '2', '/static/upload/9661549dfe
 INSERT INTO `clear_banner` VALUES ('0000000003', '2', '/static/upload/9a82e073f4e82472/141f07709be58507.jpg', '/static/upload/08c56996813fb414/dfa4b54b330f45af.jpg');
 
 -- ----------------------------
--- Table structure for `clear_color`
+-- Table structure for clear_color
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_color`;
 CREATE TABLE `clear_color` (
@@ -226,7 +226,7 @@ INSERT INTO `clear_color` VALUES ('0000000002', '2', '/static/upload/d5b89f41a09
 INSERT INTO `clear_color` VALUES ('0000000003', '3', '/static/upload/fadd24a3202849d1/cda669e1394c784c.jpg', '111');
 
 -- ----------------------------
--- Table structure for `clear_image`
+-- Table structure for clear_image
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_image`;
 CREATE TABLE `clear_image` (
@@ -245,7 +245,7 @@ INSERT INTO `clear_image` VALUES ('0000000003', '2', '/static/upload/5b88e0955ee
 INSERT INTO `clear_image` VALUES ('0000000004', '3', '/static/upload/5bb28af1c8277489/5c3f1d1c1e1d2c53.jpg');
 
 -- ----------------------------
--- Table structure for `clear_ress`
+-- Table structure for clear_ress
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_ress`;
 CREATE TABLE `clear_ress` (
@@ -263,7 +263,7 @@ INSERT INTO `clear_ress` VALUES ('0000000001', '2', '11111', '/static/upload/d70
 INSERT INTO `clear_ress` VALUES ('0000000002', '3', '456654564', '/static/upload/c5759267f3a03050/ec0fc4b46b4ed981.jpg');
 
 -- ----------------------------
--- Table structure for `clear_shiping`
+-- Table structure for clear_shiping
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_shiping`;
 CREATE TABLE `clear_shiping` (
@@ -282,7 +282,7 @@ INSERT INTO `clear_shiping` VALUES ('0000000002', '2', '/static/upload/2e28acd05
 INSERT INTO `clear_shiping` VALUES ('0000000003', '3', '/static/upload/9661549dfeee96f4/968df3e83f1a40f2.jpg', '546564');
 
 -- ----------------------------
--- Table structure for `clear_t`
+-- Table structure for clear_t
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_t`;
 CREATE TABLE `clear_t` (
@@ -328,7 +328,7 @@ INSERT INTO `clear_t` VALUES ('0000000002', '1', 'maximus', 'maximus', '/static/
 INSERT INTO `clear_t` VALUES ('0000000003', '2', '图爱选哪个', '点点点', '/static/upload/ceaa85920523799f/09801e47d81e140a.jpg', '888', '1222222222', '22', '222222222222222', '3333333', '44', '55', '554', '64556', '54665', '554456', '454', '44', '55', '6565', '58', '', '888', '', '', '', '', '', '', '888', '888', '2019-03-12 10:01:03');
 
 -- ----------------------------
--- Table structure for `clear_title`
+-- Table structure for clear_title
 -- ----------------------------
 DROP TABLE IF EXISTS `clear_title`;
 CREATE TABLE `clear_title` (
@@ -357,7 +357,7 @@ INSERT INTO `clear_title` VALUES ('0000000014', 'emcoAttachéRS');
 INSERT INTO `clear_title` VALUES ('0000000015', '饰品');
 
 -- ----------------------------
--- Table structure for `condition`
+-- Table structure for condition
 -- ----------------------------
 DROP TABLE IF EXISTS `condition`;
 CREATE TABLE `condition` (
@@ -379,7 +379,7 @@ INSERT INTO `condition` VALUES ('5', '0', '拓展天数', '0', '2018-12-19 17:14
 INSERT INTO `condition` VALUES ('6', '0', '团队凝聚力', '1', '2018-12-19 17:19:44');
 
 -- ----------------------------
--- Table structure for `contact`
+-- Table structure for contact
 -- ----------------------------
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
@@ -408,7 +408,7 @@ INSERT INTO `contact` VALUES ('0000000129', '江苏南京', '2', null, '', '', '
 INSERT INTO `contact` VALUES ('0000000128', '湖北武汉', '1', null, '', '', '', '', '0', null, '', '732345907@qq.com', '186725558999', '', '2019-03-05 10:34:21');
 
 -- ----------------------------
--- Table structure for `county`
+-- Table structure for county
 -- ----------------------------
 DROP TABLE IF EXISTS `county`;
 CREATE TABLE `county` (
@@ -429,7 +429,7 @@ INSERT INTO `county` VALUES ('0000000006', '中国');
 INSERT INTO `county` VALUES ('0000000007', '奥地利');
 
 -- ----------------------------
--- Table structure for `dingzhi`
+-- Table structure for dingzhi
 -- ----------------------------
 DROP TABLE IF EXISTS `dingzhi`;
 CREATE TABLE `dingzhi` (
@@ -456,7 +456,7 @@ CREATE TABLE `dingzhi` (
 INSERT INTO `dingzhi` VALUES ('1', '出发地', '目的地', '10', '1', '20', '500', '特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求特殊要求', '10086', '女士', '10010', '4845', '0', '2018-12-27 11:43:31');
 
 -- ----------------------------
--- Table structure for `dt_banner`
+-- Table structure for dt_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_banner`;
 CREATE TABLE `dt_banner` (
@@ -476,7 +476,7 @@ INSERT INTO `dt_banner` VALUES ('0000000005', '4', '/static/upload/23e1467c8bf83
 INSERT INTO `dt_banner` VALUES ('0000000006', '1', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg');
 
 -- ----------------------------
--- Table structure for `dt_color`
+-- Table structure for dt_color
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_color`;
 CREATE TABLE `dt_color` (
@@ -494,7 +494,7 @@ INSERT INTO `dt_color` VALUES ('0000000001', '1', '/static/upload/ab46fa13f55b2d
 INSERT INTO `dt_color` VALUES ('0000000002', '1', '/static/upload/8ac360ead2a1253d/3a5730ed6291b6f0.jpg', '2222');
 
 -- ----------------------------
--- Table structure for `dt_dian`
+-- Table structure for dt_dian
 -- ----------------------------
 DROP TABLE IF EXISTS `dt_dian`;
 CREATE TABLE `dt_dian` (
@@ -518,7 +518,7 @@ INSERT INTO `dt_dian` VALUES ('0000000003', '图片样式', '/static/upload/5e0c
 INSERT INTO `dt_dian` VALUES ('0000000004', '图像户外', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '/static/upload/23e1467c8bf8330a/d555ad57a3e96c2e.jpg', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `fanche`
+-- Table structure for fanche
 -- ----------------------------
 DROP TABLE IF EXISTS `fanche`;
 CREATE TABLE `fanche` (
@@ -539,7 +539,7 @@ INSERT INTO `fanche` VALUES ('0000000006', '托盘搬运车');
 INSERT INTO `fanche` VALUES ('0000000007', 'HGV（最高7.5吨）');
 
 -- ----------------------------
--- Table structure for `foots`
+-- Table structure for foots
 -- ----------------------------
 DROP TABLE IF EXISTS `foots`;
 CREATE TABLE `foots` (
@@ -559,7 +559,7 @@ INSERT INTO `foots` VALUES ('0000000005', '每日足迹达5000或以上');
 INSERT INTO `foots` VALUES ('0000000006', '每日客流量高达800');
 
 -- ----------------------------
--- Table structure for `goods`
+-- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -615,7 +615,7 @@ INSERT INTO `goods` VALUES ('23', '帆船竞速体验团建', '/static/upload/b3
 INSERT INTO `goods` VALUES ('25', '团建实验', '/static/upload/80b76c70f20fea26/f208f687dd420f23.jpg', '/static/upload/bcd6d7d48fcd48a2/859afeebff4d0925.jpg|/static/upload/88b2f08df0d7c3c9/a3032ab0e8498fd0.jpg', '5', '5', '5', '亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，亮点是什么呢，', '体育团建，活力团队，户外体育', '80', '1', '2', 'jjty20190101', '350', '', '', '', '', '3', '1', '2019-01-04 17:00:19');
 
 -- ----------------------------
--- Table structure for `heights`
+-- Table structure for heights
 -- ----------------------------
 DROP TABLE IF EXISTS `heights`;
 CREATE TABLE `heights` (
@@ -637,7 +637,7 @@ INSERT INTO `heights` VALUES ('0000000007', '12毫米');
 INSERT INTO `heights` VALUES ('0000000008', '14.5毫米');
 
 -- ----------------------------
--- Table structure for `heres`
+-- Table structure for heres
 -- ----------------------------
 DROP TABLE IF EXISTS `heres`;
 CREATE TABLE `heres` (
@@ -676,7 +676,7 @@ INSERT INTO `heres` VALUES ('0000000024', '法国');
 INSERT INTO `heres` VALUES ('0000000025', '奥地利');
 
 -- ----------------------------
--- Table structure for `list`
+-- Table structure for list
 -- ----------------------------
 DROP TABLE IF EXISTS `list`;
 CREATE TABLE `list` (
@@ -706,7 +706,80 @@ INSERT INTO `list` VALUES ('9', '0', '新闻中心', 'News center', '', '', '', 
 INSERT INTO `list` VALUES ('10', '0', '联系我们', 'Contact us', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `new`
+-- Table structure for mats_cates
+-- ----------------------------
+DROP TABLE IF EXISTS `mats_cates`;
+CREATE TABLE `mats_cates` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) DEFAULT NULL COMMENT '入口垫系统类别名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mats_cates
+-- ----------------------------
+INSERT INTO `mats_cates` VALUES ('0000000001', '室内区域入口垫系统');
+INSERT INTO `mats_cates` VALUES ('0000000002', '室外入口垫系统');
+INSERT INTO `mats_cates` VALUES ('0000000003', '入口垫系统，用于防护细小污垢（区域2）');
+INSERT INTO `mats_cates` VALUES ('0000000004', '用于防止粗糙污垢的入口垫系统（区域1）');
+INSERT INTO `mats_cates` VALUES ('0000000005', 'C/R/O清洁系统，用户防止潮湿污垢（3区）');
+INSERT INTO `mats_cates` VALUES ('0000000006', '自动门系统的入口垫');
+INSERT INTO `mats_cates` VALUES ('0000000007', '饰品');
+
+-- ----------------------------
+-- Table structure for mats_logo
+-- ----------------------------
+DROP TABLE IF EXISTS `mats_logo`;
+CREATE TABLE `mats_logo` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned DEFAULT NULL COMMENT '关联一级分类id',
+  `img` varchar(255) DEFAULT NULL COMMENT '图标 二级分类',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mats_logo
+-- ----------------------------
+INSERT INTO `mats_logo` VALUES ('0000000001', '1', '/static/upload/6a53d4a756c7e9f1/97e748475eacde5c.jpg');
+
+-- ----------------------------
+-- Table structure for mats_pro
+-- ----------------------------
+DROP TABLE IF EXISTS `mats_pro`;
+CREATE TABLE `mats_pro` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) DEFAULT NULL COMMENT '入口垫产品类别名称',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mats_pro
+-- ----------------------------
+INSERT INTO `mats_pro` VALUES ('0000000001', 'emco DIPLOMAT');
+INSERT INTO `mats_pro` VALUES ('0000000002', 'emco MARSCHALL');
+INSERT INTO `mats_pro` VALUES ('0000000003', 'emcoSPIN®Safe');
+
+-- ----------------------------
+-- Table structure for mats_two
+-- ----------------------------
+DROP TABLE IF EXISTS `mats_two`;
+CREATE TABLE `mats_two` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned DEFAULT NULL COMMENT '对应入口垫产品id',
+  `img` varchar(255) DEFAULT NULL COMMENT '二级分类展示图',
+  `title` varchar(200) DEFAULT NULL COMMENT '二级分类名称',
+  `info` varchar(255) DEFAULT NULL COMMENT '分类介绍',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mats_two
+-- ----------------------------
+INSERT INTO `mats_two` VALUES ('0000000001', '1', '/static/upload/e1a24b73c1c19f1c/e0b78c5e2b0c915c.jpg', 'hahah', '111111111111111', '2019-03-12 22:47:44');
+
+-- ----------------------------
+-- Table structure for new
 -- ----------------------------
 DROP TABLE IF EXISTS `new`;
 CREATE TABLE `new` (
@@ -727,7 +800,7 @@ INSERT INTO `new` VALUES ('3', '新闻二', '/static/upload/c2ffc38238c06cab/b10
 INSERT INTO `new` VALUES ('4', '新闻1', '/static/upload/37938a28aa2151f2/5f92a35ed0db2a16.jpg', '<p>这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>', '2018-12-25 15:15:24');
 
 -- ----------------------------
--- Table structure for `order_contact`
+-- Table structure for order_contact
 -- ----------------------------
 DROP TABLE IF EXISTS `order_contact`;
 CREATE TABLE `order_contact` (
@@ -752,7 +825,7 @@ CREATE TABLE `order_contact` (
 INSERT INTO `order_contact` VALUES ('0000000004', '0', '杨不悔', '光明顶45号', '光明顶45号', '520仿', '438200', '湖北武汉', '732345907@qq.com', '186725558999', 'Architects文件夹,入口垫系统,emco清理,地毯垫,游泳池栅格,滚动和线性网格,', '2019-03-05 10:42:51');
 
 -- ----------------------------
--- Table structure for `partner`
+-- Table structure for partner
 -- ----------------------------
 DROP TABLE IF EXISTS `partner`;
 CREATE TABLE `partner` (
@@ -777,7 +850,7 @@ INSERT INTO `partner` VALUES ('14', '中海地产', '/static/upload/2b49a556d02a
 INSERT INTO `partner` VALUES ('15', '万科地产', '/static/upload/1ed56a82ec0c36d3/dc5fb272c5f1353d.jpg', '#', '0', '1', '2018-12-25 15:30:06');
 
 -- ----------------------------
--- Table structure for `protucts`
+-- Table structure for protucts
 -- ----------------------------
 DROP TABLE IF EXISTS `protucts`;
 CREATE TABLE `protucts` (
@@ -793,7 +866,7 @@ INSERT INTO `protucts` VALUES ('0000000001', '入口消光系统');
 INSERT INTO `protucts` VALUES ('0000000002', '游泳池格栅');
 
 -- ----------------------------
--- Table structure for `protuct_cates`
+-- Table structure for protuct_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_cates`;
 CREATE TABLE `protuct_cates` (
@@ -809,7 +882,7 @@ INSERT INTO `protuct_cates` VALUES ('0000000001', '户外区域的入口垫系�
 INSERT INTO `protuct_cates` VALUES ('0000000002', '室内区域的入口垫系统');
 
 -- ----------------------------
--- Table structure for `protuct_image`
+-- Table structure for protuct_image
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_image`;
 CREATE TABLE `protuct_image` (
@@ -824,7 +897,7 @@ CREATE TABLE `protuct_image` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `protuct_info`
+-- Table structure for protuct_info
 -- ----------------------------
 DROP TABLE IF EXISTS `protuct_info`;
 CREATE TABLE `protuct_info` (
@@ -873,7 +946,7 @@ INSERT INTO `protuct_info` VALUES ('0000000002', '1', '1', '/static/upload/96615
 INSERT INTO `protuct_info` VALUES ('0000000003', '2', '3', '/static/upload/f1fa3ee901abe983/f27bf6f2d08d7758.jpg', '/static/upload/d5b89f41a09fc439/4189be0ae1c2aac2.jpg', '550', '1111', '222', '2222222222', '33333', '4444444', '55,55,66', '54546', '554', '564546', '546564', '564546456', '564546465', '546654', '54665654', '564654', '5454', '6556', '5656', '5445', '4545564,4657,555', '', '', '', '', '', '', '', '2019-03-12 15:13:32');
 
 -- ----------------------------
--- Table structure for `shi_cates`
+-- Table structure for shi_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `shi_cates`;
 CREATE TABLE `shi_cates` (
@@ -887,7 +960,7 @@ CREATE TABLE `shi_cates` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `shi_info`
+-- Table structure for shi_info
 -- ----------------------------
 DROP TABLE IF EXISTS `shi_info`;
 CREATE TABLE `shi_info` (
@@ -916,7 +989,7 @@ CREATE TABLE `shi_info` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_express`
+-- Table structure for store_express
 -- ----------------------------
 DROP TABLE IF EXISTS `store_express`;
 CREATE TABLE `store_express` (
@@ -1026,7 +1099,7 @@ INSERT INTO `store_express` VALUES ('93', '忠信达', 'zhongxinda', null, '0', 
 INSERT INTO `store_express` VALUES ('94', '芝麻开门', 'zhimakaimen', null, '0', '0', '0', '2017-09-13 16:17:41');
 
 -- ----------------------------
--- Table structure for `store_goods`
+-- Table structure for store_goods
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods`;
 CREATE TABLE `store_goods` (
@@ -1058,7 +1131,7 @@ CREATE TABLE `store_goods` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_goods_brand`
+-- Table structure for store_goods_brand
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods_brand`;
 CREATE TABLE `store_goods_brand` (
@@ -1080,7 +1153,7 @@ CREATE TABLE `store_goods_brand` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_goods_cate`
+-- Table structure for store_goods_cate
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods_cate`;
 CREATE TABLE `store_goods_cate` (
@@ -1101,7 +1174,7 @@ CREATE TABLE `store_goods_cate` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_goods_list`
+-- Table structure for store_goods_list
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods_list`;
 CREATE TABLE `store_goods_list` (
@@ -1124,7 +1197,7 @@ CREATE TABLE `store_goods_list` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_goods_spec`
+-- Table structure for store_goods_spec
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods_spec`;
 CREATE TABLE `store_goods_spec` (
@@ -1146,7 +1219,7 @@ CREATE TABLE `store_goods_spec` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_goods_stock`
+-- Table structure for store_goods_stock
 -- ----------------------------
 DROP TABLE IF EXISTS `store_goods_stock`;
 CREATE TABLE `store_goods_stock` (
@@ -1167,7 +1240,7 @@ CREATE TABLE `store_goods_stock` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_member`
+-- Table structure for store_member
 -- ----------------------------
 DROP TABLE IF EXISTS `store_member`;
 CREATE TABLE `store_member` (
@@ -1192,7 +1265,7 @@ CREATE TABLE `store_member` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_member_address`
+-- Table structure for store_member_address
 -- ----------------------------
 DROP TABLE IF EXISTS `store_member_address`;
 CREATE TABLE `store_member_address` (
@@ -1216,7 +1289,7 @@ CREATE TABLE `store_member_address` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_order`
+-- Table structure for store_order
 -- ----------------------------
 DROP TABLE IF EXISTS `store_order`;
 CREATE TABLE `store_order` (
@@ -1246,7 +1319,7 @@ CREATE TABLE `store_order` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_order_express`
+-- Table structure for store_order_express
 -- ----------------------------
 DROP TABLE IF EXISTS `store_order_express`;
 CREATE TABLE `store_order_express` (
@@ -1284,7 +1357,7 @@ CREATE TABLE `store_order_express` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `store_order_goods`
+-- Table structure for store_order_goods
 -- ----------------------------
 DROP TABLE IF EXISTS `store_order_goods`;
 CREATE TABLE `store_order_goods` (
@@ -1312,7 +1385,7 @@ CREATE TABLE `store_order_goods` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `swingcates`
+-- Table structure for swingcates
 -- ----------------------------
 DROP TABLE IF EXISTS `swingcates`;
 CREATE TABLE `swingcates` (
@@ -1331,7 +1404,7 @@ INSERT INTO `swingcates` VALUES ('0000000004', '卫生垫');
 INSERT INTO `swingcates` VALUES ('0000000005', '覆盖光栅');
 
 -- ----------------------------
--- Table structure for `swingdang`
+-- Table structure for swingdang
 -- ----------------------------
 DROP TABLE IF EXISTS `swingdang`;
 CREATE TABLE `swingdang` (
@@ -1348,7 +1421,7 @@ INSERT INTO `swingdang` VALUES ('0000000002', '刚性游泳池光栅，光栅棒
 INSERT INTO `swingdang` VALUES ('0000000003', '刚性游泳池光栅，光栅棒与泳池边缘成直角');
 
 -- ----------------------------
--- Table structure for `swingother`
+-- Table structure for swingother
 -- ----------------------------
 DROP TABLE IF EXISTS `swingother`;
 CREATE TABLE `swingother` (
@@ -1362,7 +1435,7 @@ CREATE TABLE `swingother` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `swing_banner`
+-- Table structure for swing_banner
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_banner`;
 CREATE TABLE `swing_banner` (
@@ -1381,7 +1454,7 @@ INSERT INTO `swing_banner` VALUES ('0000000001', '1', '/static/upload/9661549dfe
 INSERT INTO `swing_banner` VALUES ('0000000002', '1', '/static/upload/9a82e073f4e82472/141f07709be58507.jpg', '/static/upload/08c56996813fb414/dfa4b54b330f45af.jpg', '2019-03-12 13:21:50');
 
 -- ----------------------------
--- Table structure for `swing_color`
+-- Table structure for swing_color
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_color`;
 CREATE TABLE `swing_color` (
@@ -1400,7 +1473,7 @@ INSERT INTO `swing_color` VALUES ('0000000001', '1', '/static/upload/6a53d4a756c
 INSERT INTO `swing_color` VALUES ('0000000002', '1', '/static/upload/e1a24b73c1c19f1c/e0b78c5e2b0c915c.jpg', '44444444', '2019-03-10 00:35:34');
 
 -- ----------------------------
--- Table structure for `swing_protucts`
+-- Table structure for swing_protucts
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_protucts`;
 CREATE TABLE `swing_protucts` (
@@ -1429,7 +1502,7 @@ CREATE TABLE `swing_protucts` (
 INSERT INTO `swing_protucts` VALUES ('0000000001', '1', '1', '0', '1', '/static/upload/a4656c517020123b/c4aa3faeff7b78bd.jpg', '111111', '333,222,111', '红色,黄色,紫色', '这是一个大红大紫的点点点', '我还记得好大夫搜我我加急是及计费点', '333,555,666', '', '', '', '2019-03-12 13:56:48');
 
 -- ----------------------------
--- Table structure for `swing_pro_cates`
+-- Table structure for swing_pro_cates
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_pro_cates`;
 CREATE TABLE `swing_pro_cates` (
@@ -1446,7 +1519,7 @@ INSERT INTO `swing_pro_cates` VALUES ('0000000001', 'emco游泳池格栅角落�
 INSERT INTO `swing_pro_cates` VALUES ('0000000002', 'emco游泳池格栅安装框架', '/static/upload/e1a24b73c1c19f1c/e0b78c5e2b0c915c.jpg');
 
 -- ----------------------------
--- Table structure for `swing_shi`
+-- Table structure for swing_shi
 -- ----------------------------
 DROP TABLE IF EXISTS `swing_shi`;
 CREATE TABLE `swing_shi` (
@@ -1460,7 +1533,7 @@ CREATE TABLE `swing_shi` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_auth`
+-- Table structure for system_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth`;
 CREATE TABLE `system_auth` (
@@ -1481,7 +1554,7 @@ CREATE TABLE `system_auth` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_auth_node`
+-- Table structure for system_auth_node
 -- ----------------------------
 DROP TABLE IF EXISTS `system_auth_node`;
 CREATE TABLE `system_auth_node` (
@@ -1498,7 +1571,7 @@ CREATE TABLE `system_auth_node` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_config`
+-- Table structure for system_config
 -- ----------------------------
 DROP TABLE IF EXISTS `system_config`;
 CREATE TABLE `system_config` (
@@ -1553,7 +1626,7 @@ INSERT INTO `system_config` VALUES ('86', 'storage_oss_keyid', '');
 INSERT INTO `system_config` VALUES ('87', 'storage_oss_secret', '');
 
 -- ----------------------------
--- Table structure for `system_log`
+-- Table structure for system_log
 -- ----------------------------
 DROP TABLE IF EXISTS `system_log`;
 CREATE TABLE `system_log` (
@@ -1565,7 +1638,7 @@ CREATE TABLE `system_log` (
   `content` text NOT NULL COMMENT '操作内容描述',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8 COMMENT='系统操作日志表';
 
 -- ----------------------------
 -- Records of system_log
@@ -1826,9 +1899,10 @@ INSERT INTO `system_log` VALUES ('253', '127.0.0.1', 'admin/login/index', 'admin
 INSERT INTO `system_log` VALUES ('254', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-09 22:12:59');
 INSERT INTO `system_log` VALUES ('255', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-12 09:15:07');
 INSERT INTO `system_log` VALUES ('256', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-12 14:35:07');
+INSERT INTO `system_log` VALUES ('257', '127.0.0.1', 'admin/login/index', 'admin', '系统管理', '用户登录系统成功', '2019-03-12 21:46:27');
 
 -- ----------------------------
--- Table structure for `system_menu`
+-- Table structure for system_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `system_menu`;
 CREATE TABLE `system_menu` (
@@ -1846,7 +1920,7 @@ CREATE TABLE `system_menu` (
   `create_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `index_system_menu_node` (`node`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8 COMMENT='系统菜单表';
 
 -- ----------------------------
 -- Records of system_menu
@@ -1927,9 +2001,13 @@ INSERT INTO `system_menu` VALUES ('193', '154', '清理产品参考', '', '', '/
 INSERT INTO `system_menu` VALUES ('194', '117', '入口垫管理', '', '', '#', '', '_self', '0', '1', '0', '2019-03-09 23:36:31');
 INSERT INTO `system_menu` VALUES ('195', '172', '游泳池产品颜色设置', '', '', '/tuanj/swingcolor/index', '', '_self', '0', '1', '0', '2019-03-10 00:00:07');
 INSERT INTO `system_menu` VALUES ('196', '154', '清理产品图标', '', '', '/tuanj/clearimage/index', '', '_self', '0', '1', '0', '2019-03-12 09:42:07');
+INSERT INTO `system_menu` VALUES ('197', '194', '入口垫系统类别', '', '', '/tuanj/matscates/index', '', '_self', '0', '1', '0', '2019-03-12 21:48:47');
+INSERT INTO `system_menu` VALUES ('198', '194', '入口垫产品类别', '', '', '/tuanj/matspro/index', '', '_self', '0', '1', '0', '2019-03-12 21:49:57');
+INSERT INTO `system_menu` VALUES ('199', '194', '入口垫产品二级类别', '', '', '/tuanj/matstwo/index', '', '_self', '0', '1', '0', '2019-03-12 22:21:19');
+INSERT INTO `system_menu` VALUES ('200', '194', '入口垫产品二级类别图标', '', '', '/tuanj/matslogo/index', '', '_self', '0', '1', '0', '2019-03-12 22:23:20');
 
 -- ----------------------------
--- Table structure for `system_node`
+-- Table structure for system_node
 -- ----------------------------
 DROP TABLE IF EXISTS `system_node`;
 CREATE TABLE `system_node` (
@@ -1989,7 +2067,7 @@ INSERT INTO `system_node` VALUES ('358', 'admin/index/pass', '', '0', '1', '1', 
 INSERT INTO `system_node` VALUES ('359', 'admin/index/info', '', '0', '1', '1', '2018-06-04 09:44:02');
 
 -- ----------------------------
--- Table structure for `system_sequence`
+-- Table structure for system_sequence
 -- ----------------------------
 DROP TABLE IF EXISTS `system_sequence`;
 CREATE TABLE `system_sequence` (
@@ -2008,7 +2086,7 @@ CREATE TABLE `system_sequence` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `system_user`
+-- Table structure for system_user
 -- ----------------------------
 DROP TABLE IF EXISTS `system_user`;
 CREATE TABLE `system_user` (
@@ -2038,7 +2116,7 @@ CREATE TABLE `system_user` (
 INSERT INTO `system_user` VALUES ('10000', 'admin', '超级管理员', '21232f297a57a5a743894a0e4a801fc3', '', '', null, '', '', '23296', '2018-03-23 17:05:40', '1', '1', '0', null, '2015-11-13 15:14:22');
 
 -- ----------------------------
--- Table structure for `tuandui`
+-- Table structure for tuandui
 -- ----------------------------
 DROP TABLE IF EXISTS `tuandui`;
 CREATE TABLE `tuandui` (
@@ -2068,7 +2146,7 @@ INSERT INTO `tuandui` VALUES ('9', '0', '汤姆•克鲁斯', '/static/upload/19
 INSERT INTO `tuandui` VALUES ('10', '0', '尼古拉斯·凯奇', '/static/upload/efde1ce2a23c4d26/1a12ec0ec2ccba97.jpg', '团建教练', '1982年，17岁的尼古拉斯·凯奇进入电影行业，出演影片《开放的美国学府》。1984年，凯奇主演了影片《鸟人》。1988年，他出演了《吸血鬼之吻》。1992年，他凭借影片《我心狂野》中的表演，获得了第43届戛纳电影节金棕榈大奖。1996年，他主演的动作片《勇闯夺命岛》，并凭借《离开拉斯维加斯》中的酒鬼一角获得当年奥斯卡最佳男主角奖。而后出演《变脸》、《空中监狱》等动作片。', '#', '2018-12-25 15:55:30');
 
 -- ----------------------------
--- Table structure for `wechat_fans`
+-- Table structure for wechat_fans
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_fans`;
 CREATE TABLE `wechat_fans` (
@@ -2111,7 +2189,7 @@ CREATE TABLE `wechat_fans` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_fans_tags`
+-- Table structure for wechat_fans_tags
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_fans_tags`;
 CREATE TABLE `wechat_fans_tags` (
@@ -2129,7 +2207,7 @@ CREATE TABLE `wechat_fans_tags` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_keys`
+-- Table structure for wechat_keys
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_keys`;
 CREATE TABLE `wechat_keys` (
@@ -2161,7 +2239,7 @@ CREATE TABLE `wechat_keys` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_menu`
+-- Table structure for wechat_menu
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_menu`;
 CREATE TABLE `wechat_menu` (
@@ -2184,7 +2262,7 @@ CREATE TABLE `wechat_menu` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_news`
+-- Table structure for wechat_news
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_news`;
 CREATE TABLE `wechat_news` (
@@ -2204,7 +2282,7 @@ CREATE TABLE `wechat_news` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_news_article`
+-- Table structure for wechat_news_article
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_news_article`;
 CREATE TABLE `wechat_news_article` (
@@ -2226,7 +2304,7 @@ CREATE TABLE `wechat_news_article` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_news_image`
+-- Table structure for wechat_news_image
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_news_image`;
 CREATE TABLE `wechat_news_image` (
@@ -2244,7 +2322,7 @@ CREATE TABLE `wechat_news_image` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `wechat_news_media`
+-- Table structure for wechat_news_media
 -- ----------------------------
 DROP TABLE IF EXISTS `wechat_news_media`;
 CREATE TABLE `wechat_news_media` (
@@ -2264,7 +2342,7 @@ CREATE TABLE `wechat_news_media` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `zhuan`
+-- Table structure for zhuan
 -- ----------------------------
 DROP TABLE IF EXISTS `zhuan`;
 CREATE TABLE `zhuan` (
@@ -2282,7 +2360,7 @@ INSERT INTO `zhuan` VALUES ('0000000003', '地毯垫');
 INSERT INTO `zhuan` VALUES ('0000000004', '游泳池栅格');
 
 -- ----------------------------
--- Table structure for `zong`
+-- Table structure for zong
 -- ----------------------------
 DROP TABLE IF EXISTS `zong`;
 CREATE TABLE `zong` (
