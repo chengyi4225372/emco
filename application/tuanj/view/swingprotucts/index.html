@@ -42,8 +42,12 @@
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
             <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>关联游泳池栅格类别</th>
+            <th class='text-left nowrap'>关联游泳池档案运行类别</th>
+            <th class='text-left nowrap'>关联高度类别</th>
             <th class='text-left nowrap'>关联产品分类</th>
             <th class='text-left nowrap'>产品名称</th>
+            <th class='text-left nowrap'>产品图纸</th>
             <th class='text-left nowrap'>创建时间</th>
             <th class='text-left nowrap'></th>
         </tr>
@@ -58,10 +62,22 @@
                 {$vo.id}
             </td>
             <td class='text-left nowrap'>
+                {$vo.shange}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.dangan}
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.height}
+            </td>
+            <td class='text-left nowrap'>
                {$vo.swing_cates}
             </td>
             <td class='text-left nowrap'>
                 {$vo.title|default=''}
+            </td>
+            <td class='text-left nowrap'>
+                <img data-tips-image src="{$vo.tuzhi|default=''}" height="50"/>
             </td>
             <td class='text-left nowrap'>
                 {$vo.time|date='Y-m-d,h:i:s'}

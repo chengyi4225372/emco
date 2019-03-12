@@ -118,19 +118,22 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="listenseite-image">
                                     <a class="animation-neg"
-                                       href="">
+                                       href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">
                                         <img alt="emco swimming pool grates Corner solution"
                                              src="{$vo.img}"
                                              width="475" height="336"/></a></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="product-details"><h2>
-                                    <a href="">{$vo.title}</a></h2>
+                                    <a href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">{$vo.title}</a></h2>
                                     <p></p>
-                                    <div class="meta"><strong class="comments">有4种产品可供选择</strong></div>
+                                     {if condition="$vo.count gt 0" }
+                                    <div class="meta"><strong class="comments">有{$vo.count}种产品可供选择</strong></div>
+                                    {else /}
+                                    <div class="meta"><strong class="comments">{$vo.cates.title}</strong></div>
+                                    {/if}
                                     <div class="btn-holder">
-                                        <a class="btn btn-default"
-                                           href="">
+                                        <a class="btn btn-default" href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">
                                             <span>发现产品变体</span></a>
                                     </div>
                                     <div class="icons-holder">
@@ -143,7 +146,7 @@
                 </section>
                 {/volist}
             </div>
-            {$swing|raw}
+            {$pages|raw}
              <!--原分页-->
             <div class="row pagination-wrapper" style="display: none;">
                 <div class="col-xs-12">

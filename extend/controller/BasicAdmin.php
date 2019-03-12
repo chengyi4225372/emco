@@ -103,6 +103,15 @@ class BasicAdmin extends Controller {
                 //游泳池所有产品
                 $swingprotucts = Db::name('swing_protucts')->field('id,title')->select();
                 $this->assign('swingprotucts',$swingprotucts);
+                //游泳池栅格类别
+                $shange = Db::name('swingcates')->field('id,title')->select();
+                $this->assign('shange',$shange);
+                //游泳池档案运行
+                $dangan = Db::name('swingdang')->field('id,title')->select();
+                $this->assign('dangan',$dangan);
+                //全局高度类别
+                $height = Db::name('heights')->field('id,title')->select();
+                $this->assign('height',$height);
 
 
 

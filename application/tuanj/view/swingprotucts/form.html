@@ -4,6 +4,55 @@
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
     <div class="layui-form-item">
+        <label class="layui-form-label">关联游泳池栅格类别</label>
+        <div class="layui-input-inline">
+            <select name="sid">
+                <option value=""></option>
+                {volist name="shange" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.sid"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联游泳池档案运行类别</label>
+        <div class="layui-input-inline">
+            <select name="did">
+                <option value=""></option>
+                {volist name="dangan" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.did"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">关联高度类别</label>
+        <div class="layui-input-inline">
+            <select name="hid">
+                <option value=""></option>
+                {volist name="height" id="list"}
+                {if isset($vo['id'])}
+                <option value="{$list.id}" {if condition="$list.id eq $vo.hid"} selected="" {/if}>{$list.title}</option>
+                {else /}
+                <option value="{$list.id}">{$list.title}</option>
+                {/if}
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
         <label class="layui-form-label">所属产品分类</label>
         <div class="layui-input-inline">
             <select name="s_id">
@@ -28,6 +77,13 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label">产品图纸</label>
+        <div class="layui-input-block">
+            <input type="text" name="tuzhi" value='{$vo.tuzhi|default=""}' required="required"  class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label">'描述</label>
         <div class="layui-input-block">
             <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}' required="required"  class="layui-input">
@@ -38,7 +94,7 @@
         <label class="layui-form-label">颜色</label>
         <div class="layui-input-block">
             <input type="text" name="color" value='{$vo.color|default=""}' required="required"  class="layui-input">
-            <span style="color: #ff2600;">*多个颜色请以 ,割开</span>
+            <span style="color: #ff2600;">*多个服务信息以英文的,分割。</span>
         </div>
     </div>
 
@@ -50,17 +106,10 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">'联系</label>
-        <div class="layui-input-block">
-            <input type="text" name="lianxi" value='{$vo.lianxi|default=""}' required="required"  class="layui-input">
-        </div>
-    </div>
-
-    <div class="layui-form-item">
         <label class="layui-form-label">'服务信息</label>
         <div class="layui-input-block">
-
-            <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}' required="required"  class="layui-input">
+            <input type="text" name="fuwu" value='{$vo.fuwu|default=""}' required="required"  class="layui-input">
+            <span style="color: #FF0000;">*多个服务信息以英文的,分割。</span>
         </div>
     </div>
 
@@ -68,7 +117,6 @@
         <label class="layui-form-label">联系</label>
         <div class="layui-input-block">
             <textarea name="lianxi" class="layui-textarea">{if isset($vo['id'])}{$vo.lianxi}{/if}</textarea>
-            <span style="color: #FF0000;">*多个服务信息以，分割。</span>
         </div>
     </div>
 
@@ -108,6 +156,7 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
+        $('form [name="tuzhi"]').uploadOneImage();
         window.createEditor('[name="content"]', {height: 500});
     });
 </script>

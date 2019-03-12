@@ -30,11 +30,12 @@ class Swingprotucts extends BasicAdmin {
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
             $data[$key]['swing_cates'] = Db::name('swing_pro_cates')->where('id', '=', $val['s_id'])->value('title');
+            $data[$key]['shange'] = Db::name('swingcates')->where('id', '=', $val['sid'])->value('title');
+            $data[$key]['dangan'] = Db::name('swingdang')->where('id', '=', $val['did'])->value('title');
+            $data[$key]['height'] = Db::name('heights')->where('id', '=', $val['hid'])->value('title');
         }
     }
-    
-    
-    
+
     /**
      * 添加
      * @return type

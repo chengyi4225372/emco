@@ -19,10 +19,6 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-
-
-
-
     /*     产品   products         */
     //todo 入口垫
     public function entrance_mats(){
@@ -48,11 +44,6 @@ class Index extends Common
     }
 
     /*  news 新闻 */
-    //todo 404 页面 后期可能去掉
-    public function presse(){
-        return $this->view->fetch();
-    }
-
     /* company 公司  */
 
     public function entrance_mats_range()
@@ -91,24 +82,57 @@ class Index extends Common
         return $this->view->fetch('',['email'=>$email]);
     }
 
+    //todo  产品查询
+    public function product_enquiry(){
+        return  $this->view->fetch();
+    }
 
-    //todo 游泳池栅格 
+
+
+
+    // 游泳池栅格  最后多测试几条分类下数据
     public function swimming(){
+        //以产品类型来分页
+         $pages= Db::name('swing_pro_cates')->paginate(15);
         //产品一级分类
-        $swing =Db::name('swing_pro_cates')->paginate(15);
-        //一级分类下有没有产品
+        $swing =Db::name('swing_pro_cates')->select();
+        foreach($swing as $key =>$val){
+            //产品分类下第一个产品
+            $swing[$key]['cates'] = Db::name('swing_protucts')->where('s_id',$swing[$key]['id'])->limit(1)->find();
+            //取出与产品类型所关联的数目
+            $swing[$key]['count'] = Db::name('swing_protucts')->where('s_id',$swing[$key]['id'])->count();
+        }
+        $pages= $pages->render();
+        $this->assign('pages',$pages);
         $this->assign('swing',$swing);
         return $this->view->fetch();
     }
 
-    //todo 游泳池详情页面 未完成
+    // 游泳池详情页面
     public function swing_info(){
-        return $this->view->fetch();
+           //游泳池产品分类 pid
+           //当前产品cid
+          $cid=input('get.cid');
+          $pid = input('get.pid');
+          //游泳池产品一级分类标题
+          $title = Db::name('swing_pro_cates')->where('id',$pid)->value('title');
+          $cates = Db::name('swing_protucts')->where('s_id',$pid)->field('id,s_id,title')->select();
+          //当前游泳池产品
+          $protucts = Db::name('swing_protucts')->where('id',$cid)->find();
+          $protucts['color'] = explode(',',$protucts['color']);
+          $protucts['fuwu']  = explode(',',$protucts['fuwu']);
+          //颜色
+          $color = Db::name('swing_color')->where('s_id',$cid)->select();
+          //轮播图
+          $banner = Db::name('swing_banner')->where('s_id',$cid)->select();
+          $this->assign('cates',$cates);
+          $this->assign('pid',$pid);
+          $this->assign('protucts',$protucts);
+          $this->assign('color',$color);
+          $this->assign('banner',$banner);
+          $this->assign('title',$title);
+          return $this->view->fetch();
     }
-
-
-
-
 
     // 清理系统
     public function clean_off_system(){
@@ -145,13 +169,6 @@ class Index extends Common
        $this->assign('banner',$banner);
        return$this->view->fetch();
     }
-
-
-    //todo  产品查询
-    public function product_enquiry(){
-        return  $this->view->fetch();
-    }
-
 
     //关于我们
     public function emco_bau(){
