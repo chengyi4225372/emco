@@ -26,6 +26,16 @@ class Protuctinfo extends BasicAdmin
         return parent::_list($db->order('id desc '));
     }
 
+    //关联产品系列和产品类别
+    protected function _data_filter(&$data) {
+        foreach ($data as $key => $val) {
+            $data[$key]['pro_cates'] = Db::name('protuct_cates')->where('id', '=', $val['pid'])->value('title');
+            $data[$key]['cates'] = Db::name('category_es')->where('id', '=', $val['cid'])->value('title');
+        }
+    }
+
+
+
     /**
      * 添加
      * @return type

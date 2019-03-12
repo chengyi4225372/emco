@@ -24,10 +24,6 @@ class Index extends Common
     public function entrance_mats(){
         return $this->view->fetch('');
     }
-    //todo 产品
-    public function product_comparison(){
-        return $this->view->fetch();
-    }
 
     public function carpet_mats_info(){
         return $this->view->fetch();
@@ -86,6 +82,19 @@ class Index extends Common
     public function product_enquiry(){
         return  $this->view->fetch();
     }
+
+    //todo 产品对比 后期删掉招标文本text 这个字段
+    public function product_comparison(){
+           //区分 1室外 2 室内
+          $id = input('post.cid');
+          dump($id);
+          //查询产品标题
+         // $ptitle =Db::name()->where()->select();
+
+          return $this->view->fetch();
+    }
+
+
 
 
 

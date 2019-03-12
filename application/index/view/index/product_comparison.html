@@ -35,27 +35,27 @@
     <div id="c6159" class="csc-default">
         <div class="tx-sz-comdbproducts">
             <div class="categories-holder init comparison-view powermail_form">
+                <!--
                 <div class="comdbproducts-loader" style="display: none;">
                     <div class="image-wrapper">
-                        <img src="typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66" height="66" alt=""></div>
+                        <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66" height="66" alt=""></div>
                 </div>
-                <form name="comparison" enctype="multipart/form-data" class="categories-form facet-form">
+                 -->
+                <!--<form name="comparison" enctype="multipart/form-data" class="categories-form facet-form">-->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="category" class="group-selector jcf-hidden">
-                                    <option data-comparison="4" value="8"><font style="vertical-align: inherit;"><font
-                                            style="vertical-align: inherit;">户外区域的入口垫系统</font></font></option>
-                                    <option data-comparison="16" value="22"><font style="vertical-align: inherit;"><font
-                                            style="vertical-align: inherit;">室内区域的入口垫系统</font></font></option>
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="category" id ="category" class="group-selector jcf-hidden">
+                                    {volist name="duibi" id="vo"}
+                                     <option data-comparison="4" value="{$vo.id}">{$vo.title}</option>
+                                     {/volist}
                                 </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
-                                        name="variant[]" class="variant-selector jcf-hidden" data-column="1">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="1">
                                     <option value="" selected="selected"><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">请选择...</font></font></option>
                                         <ul>
@@ -232,63 +232,12 @@
                                                     style="vertical-align: inherit;">emco GS17带橡胶嵌件 -  GS 17 G.</font></font></font></font></span>
                                             </li>
                                         </ul>
-                                        <!--
-                                      <option value="212">emco DIPLOMAT With rubber insert - 522 G</option>
-                                      <option value="210">emco DIPLOMAT With rubber insert - 510 G</option>
-                                      <option value="211">emco DIPLOMAT With rubber insert - 517 G</option>
-                                      <option value="213">emco DIPLOMAT With rubber insert - 527 G</option>
-                                      <option value="214">emco DIPLOMAT With rubber insert - 522 TLS G</option>
-                                      <option value="216">emco DIPLOMAT With rubber insert and brush strip - 522 GB
-                                      </option>
-                                      <option value="215">emco DIPLOMAT With rubber insert and brush strip - 517 GB
-                                      </option>
-                                      <option value="219">emco DIPLOMAT With rubber insert and scraper bar - 522 GK
-                                      </option>
-                                      <option value="217">emco DIPLOMAT With rubber insert and scraper bar - 510 GK
-                                      </option>
-                                      <option value="218">emco DIPLOMAT With rubber insert and scraper bar - 517 GK
-                                      </option>
-                                      <option value="220">emco DIPLOMAT With rubber insert and scraper bar - 527 GK
-                                      </option>
-                                      <option value="223">emco DIPLOMAT With cassette brush - 522 CB</option>
-                                      <option value="221">emco DIPLOMAT With cassette brush - 510 CB</option>
-                                      <option value="222">emco DIPLOMAT With cassette brush - 517 CB</option>
-                                      <option value="224">emco DIPLOMAT With cassette brush - 527 CB</option>
-                                      <option value="227">emco DIPLOMAT With rubber insert and cassette brush - 522 GCB
-                                      </option>
-                                      <option value="225">emco DIPLOMAT With rubber insert and cassette brush - 510 GCB
-                                      </option>
-                                      <option value="226">emco DIPLOMAT With rubber insert and cassette brush - 517 GCB
-                                      </option>
-                                      <option value="228">emco DIPLOMAT With rubber insert and cassette brush - 527 GCB
-                                      </option>
-                                      <option value="229">emco MARSCHALL With rubber insert - 517 SG</option>
-                                      <option value="230">emco MARSCHALL With rubber insert - 522 SG</option>
-                                      <option value="231">emco MARSCHALL With rubber insert - 522 TLS S/G</option>
-                                      <option value="232">emco MARSCHALL With cassette brush - 517 SCB</option>
-                                      <option value="233">emco MARSCHALL With cassette brush - 522 SCB</option>
-                                      <option value="234">emco MARSCHALL With rubber insert and cassette brush - 517
-                                          SGCB
-                                      </option>
-                                      <option value="235">emco MARSCHALL With rubber insert and cassette brush - 522
-                                          SGCB
-                                      </option>
-                                      <option value="236">emco PLAZA With rubber insert - 542 SG</option>
-                                      <option value="237">emco PLAZA With cassette brush - 542 SCB</option>
-                                      <option value="238">emco PLAZA With rubber insert and cassette brush - 542 SGCB
-                                      </option>
-                                      <option value="239">emco SENATOR With outdoor insert - 522 W-Outdoor</option>
-                                      <option value="240">emco SENATOR (WS) With outdoor insert - 522 WS-Outdoor</option>
-                                      <option value="4684">emco TWINGUARD with solid rubber (G) - 18 G</option>
-                                      <option value="241">emco GS17 With rubber insert - GS 17 G</option>
-                                      -->
                                 </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
-                                        name="variant[]" class="variant-selector jcf-hidden" data-column="2">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="2">
                                     <option value="" selected="selected"><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">请选择...</font></font></option>
                                     <option value="212">emco DIPLOMAT With rubber insert - 522 G</option>
@@ -344,8 +293,7 @@
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
-                                        name="variant[]" class="variant-selector jcf-hidden" data-column="3">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="3">
                                     <option value="" selected="selected"><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">请选择...</font></font></option>
                                     <option value="212">emco DIPLOMAT With rubber insert - 522 G</option>
@@ -401,38 +349,32 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                <!--</form>-->
             </div>
             <div class="comdbcomparison-holder" data-storage="157" data-detailpid="205" data-category="5">
-                <section id="comparison-4" data-counter="0"
-                         class="listenseite-post listenseite-post-results comparison-post-results active" style="">
+                <section id="comparison-4" data-counter="0" class="listenseite-post listenseite-post-results comparison-post-results active" style="">
                     <div class="container">
                         <div class="row row-closer">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><a href="#" class="btn btn-download"
-                                                                                  style="display: none;">Download as
-                                PDF</a>
-                                <form id="printform" action="en/products/product-comparison.html" method="post"
-                                      target="_blank"><input type="hidden" name="type" value="1444646286"><input
-                                        type="hidden" name="tx_szcomdbproducts_comparison[pluginName]"
-                                        value="Comparison"><input type="hidden"
-                                                                  name="tx_szcomdbproducts_comparison[controller]"
-                                                                  value="Comparison"><input type="hidden"
-                                                                                            name="tx_szcomdbproducts_comparison[action]"
-                                                                                            value="print"><input
-                                        type="hidden" id="printcontent" name="tx_szcomdbproducts_comparison[html]"
-                                        value=""></form>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <!--
+                                <a href="#" class="btn btn-download" style="display: none;">Download as PDF</a>
+                                <form id="printform" action="en/products/product-comparison.html" method="post" target="_blank">
+                                    <input type="hidden" name="type" value="1444646286">
+                                    <input type="hidden" name="tx_szcomdbproducts_comparison[pluginName]" value="Comparison">
+                                    <input type="hidden" name="tx_szcomdbproducts_comparison[controller]" value="Comparison">
+                                    <input type="hidden" name="tx_szcomdbproducts_comparison[action]" value="print">
+                                    <input type="hidden" id="printcontent" name="tx_szcomdbproducts_comparison[html]" value="">
+                                </form>
+                                -->
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column"><a href="#" class="icon-close"
-                                                                                         data-column="1"
-                                                                                         style="display: none;"></a>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column">
+                                <a href="#" class="icon-close" data-column="1" style="display: none;"></a>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column"><a href="#" class="icon-close"
-                                                                                         data-column="2"
-                                                                                         style="display: none;"></a>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column">
+                                <a href="#" class="icon-close" data-column="2" style="display: none;"></a>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column"><a href="#" class="icon-close"
-                                                                                         data-column="3"
-                                                                                         style="display: none;"></a>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column">
+                                <a href="#" class="icon-close" data-column="3" style="display: none;"></a>
                             </div>
                         </div>
                         <div class="row row-attribute-header">
@@ -631,8 +573,8 @@
                          style="display: none;">
                     <div class="container">
                         <div class="row row-closer">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><a href="#" class="btn btn-download"
-                                                                                  style="display: none;">Download as
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <a href="#" class="btn btn-download" style="display: none;">Download as
                                 PDF</a>
                                 <form id="printform" action="en/products/product-comparison.html" method="post"
                                       target="_blank"><input type="hidden" name="type" value="1444646286"><input
@@ -838,6 +780,19 @@
     </div>
 
     {include file="public/footer" /}
+    <script>
+        //当默认时
+          var cid = $("#category option:first").val();
+          console.log(cid);
+           $.ajax({
+               url:"{:url('index/product_comparison')}",
+               type:'post',
+               data:{id:cid},
+               success:function(res){
+                   console.log(res.msg);
+               }
+           });
+    </script>
 
     </body>
     </html>
