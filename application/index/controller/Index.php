@@ -83,7 +83,6 @@ class Index extends Common
           //dump($id);
           //查询产品标题
          // $ptitle =Db::name()->where()->select();
-
           return $this->view->fetch();
     }
 
