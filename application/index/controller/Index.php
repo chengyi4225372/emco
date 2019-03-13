@@ -87,11 +87,18 @@ class Index extends Common
     }
 
 
-    //todo 入口垫 缺少系统 产品类别 表
+    //todo 入口垫 缺少系统 产品类别 表已经完成
     public function entrance_mats(){
         return $this->view->fetch('');
     }
-   
+
+    //todo 入口垫详情页面  待完成 已经抓取页面
+    public function entrance_mats_info(){
+        return $this->view->fetch();
+    }
+
+
+
 
     public function carpet_mats_info(){
         return $this->view->fetch();

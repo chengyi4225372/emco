@@ -63,47 +63,12 @@
                                     <div class="form-group">
                                         <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'
                                             class="isFirst" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU">
-                                        <option value="">Please select...</option>
-                                        <option value="2158" data-value="Function">Function</option>
-                                        <option value="91265" data-value="Entrance mat systems for indoor areas">
-                                            Entrance mat systems for indoor areas
-                                        </option>
-                                        <option value="91266" data-value="Entrance mat systems for outdoor areas">
-                                            Entrance mat systems for outdoor areas
-                                        </option>
-                                        <option value="2161" data-value="Short overview">Short overview</option>
-                                        <option value="41616" data-value="Cleaning &amp; care tips">Cleaning & care
-                                            tips
-                                        </option>
-                                        <option value="2163" data-value="Benefits">Benefits</option>
-                                        <option value="91267"
-                                                data-value="Entrance mat systems for protection against fine dirt (zone 2)">
-                                            Entrance mat systems for protection against fine dirt (zone 2)
-                                        </option>
-                                        <option value="91268"
-                                                data-value="Entrance mat systems for protection against coarse dirt (zone 1)">
-                                            Entrance mat systems for protection against coarse dirt (zone 1)
-                                        </option>
-                                        <option value="91269"
-                                                data-value="C/R/O clean-off system for protection against damp dirt (zone 3)">
-                                            C/R/O clean-off system for protection against damp dirt (zone 3)
-                                        </option>
-                                        <option value="2167" data-value="Entrance mats for automatic door systems">
-                                            Entrance mats for automatic door systems
-                                        </option>
-                                        <option value="2168" data-value="Accessories">Accessories</option>
-                                        <option value="2169" data-value="emco Classic">emco Classic</option>
-                                        <option value="2170" data-value="emco Image">emco Image</option>
-                                        <option value="2171" data-value="emco Image Style">emco Image Style</option>
-                                        <option value="2172" data-value="emco Image Outdoor (design mats)">emco Image
-                                            Outdoor (design mats)
-                                        </option>
-                                        <option value="2173" data-value="Swimming pool grates">Swimming pool grates
-                                        </option>
-                                        <option value="2174" data-value="Floor gratings">Floor gratings</option>
-                                        <option value="2175" data-value="Hygiene mats">Hygiene mats</option>
-                                        <option value="2176" data-value="Covering gratings">Covering gratings</option>
-                                    </select></div>
+                                        <option value="">请选择...</option>
+                                            {volist name="mats_cates" id="vo" }
+                                        <option value="{$vo.id}" data-value="{$vo.title}">{$vo.title}</option>
+                                            {/volist}
+                                       </select>
+                                    </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                     <div class="same-height-holder"><label>脚步声</label></div>
@@ -140,61 +105,10 @@
                                     <div class="same-height-holder"><label>请选择...</label></div>
                                     <div class="form-group">
                                         <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class="" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU">
-                                        <option value="">Please select...</option>
-                                        <option value="2177" data-value="emco DIPLOMAT">emco DIPLOMAT</option>
-                                        <option value="2178" data-value="emco MARSCHALL">emco MARSCHALL</option>
-                                        <option value="86785" data-value="emco SPIN®Safe">emco SPIN®Safe</option>
-                                        <option value="2180" data-value="emco PLAZA">emco PLAZA</option>
-                                        <option value="2186" data-value="emco ECOLINE® PIONEER">emco ECOLINE® PIONEER
-                                        </option>
-                                        <option value="2181" data-value="emco SENATOR">emco SENATOR</option>
-                                        <option value="2182" data-value="emco RADIAL">emco RADIAL</option>
-                                        <option value="2183" data-value="emco GS17">emco GS17</option>
-                                        <option value="2184" data-value="emco KADETT">emco KADETT</option>
-                                        <option value="143732" data-value="emco TWINGUARD">emco TWINGUARD</option>
-                                        <option value="2188" data-value="emco ASSISTENT 560">emco ASSISTENT 560</option>
-                                        <option value="2185" data-value="Rubber honeycomb mats">Rubber honeycomb mats
-                                        </option>
-                                        <option value="2191" data-value="MAXIMUS®">MAXIMUS®</option>
-                                        <option value="2192" data-value="MAXIMUS® Image">MAXIMUS® Image</option>
-                                        <option value="86786" data-value="CARE">CARE</option>
-                                        <option value="88947" data-value="MAXIMUS® ASSISTANCE">MAXIMUS® ASSISTANCE
-                                        </option>
-                                        <option value="86787" data-value="INNOVA">INNOVA</option>
-                                        <option value="86788" data-value="PRESTIGE">PRESTIGE</option>
-                                        <option value="86789" data-value="CONTURA">CONTURA</option>
-                                        <option value="2193" data-value="SCRATCH">SCRATCH</option>
-                                        <option value="2194" data-value="CONFORM">CONFORM</option>
-                                        <option value="2195" data-value="CONFORM SE">CONFORM SE</option>
-                                        <option value="2197" data-value="FOCUS">FOCUS</option>
-                                        <option value="2200" data-value="TRAFFIC">TRAFFIC</option>
-                                        <option value="2202" data-value="PREMIUM">PREMIUM</option>
-                                        <option value="2189" data-value="emco Attaché RS">emco Attaché RS</option>
-                                        <option value="2205" data-value="Accessories">Accessories</option>
-                                        <option value="2207" data-value="emco installation frame 500">emco installation
-                                            frame 500
-                                        </option>
-                                        <option value="2208" data-value="Installation frames in standard sizes">
-                                            Installation frames in standard sizes
-                                        </option>
-                                        <option value="2209" data-value="Lumina installation frame">Lumina installation
-                                            frame
-                                        </option>
-                                        <option value="2210" data-value="Ramp edge">Ramp edge</option>
-                                        <option value="2211" data-value="T-profile">T-profile</option>
-                                        <option value="2212" data-value="Cover strip">Cover strip</option>
-                                        <option value="2213"
-                                                data-value="Stainless steel profile with individual lettering">Stainless
-                                            steel profile with individual lettering
-                                        </option>
-                                        <option value="2214" data-value="Replacement product">Replacement product
-                                        </option>
-                                        <option value="2215" data-value="Dirt collection well">Dirt collection well
-                                        </option>
-                                        <option value="2216" data-value="Substructure">Substructure</option>
-                                        <option value="2217" data-value="emco Sales aids">emco Sales aids</option>
-                                        <option value="2218" data-value="Mat joining brackets">Mat joining brackets
-                                        </option>
+                                        <option value="">请选择...</option>
+                                            {volist name="mats_pro" id="vo" }
+                                        <option value="{$vo.id}" data-value="{$vo.title}">{$vo.title}</option>
+                                            {/volist}
                                     </select></div>
                                 </div>
                             </div>
