@@ -19,9 +19,6 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    /*     产品   products         */
-
-
     /*    服务 services   */
     //todo 入口垫 服务
     public function entrance_mats_service(){
@@ -87,9 +84,28 @@ class Index extends Common
     }
 
 
-    //todo 入口垫 缺少系统 产品类别 表已经完成
+    //todo 入口垫  此处需要关联入口垫系统类别 后台设置的时候
     public function entrance_mats(){
-        return $this->view->fetch('');
+         //2级产品分类标题 关联一级分类 标题
+        $mats_two =Db::name('mats_two')
+                    ->alias('a')
+                    ->field('a.*,b.title as ptitle')
+                    ->leftJoin('mats_pro b','a.pid = b.id')
+                    ->paginate(15);
+          //展示分页
+           $page = $mats_two->render();
+           //对象转数组 分割图标
+           $mats_two = $mats_two->toArray();
+           foreach ($mats_two['data'] as $k =>$val){
+               $mats_two['data'][$k]['tubiao'] = explode('|', $mats_two['data'][$k]['tubiao']);
+           }
+           //二级分类下 有多少产品
+
+           // 二级分类下 第一个产品
+
+           $this->assign('mats_two',$mats_two['data']);
+           $this->assign('page',$page);
+           return $this->view->fetch();
     }
 
     //todo 入口垫详情页面  待完成 已经抓取页面

@@ -35,6 +35,14 @@
         </div>
     </div>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">二级分类图标</label>
+        <div class="layui-input-inline">
+            <input type="text" name="tubiao" value='{$vo.tubiao|default=""}' class="layui-input">
+
+        </div>
+    </div>
+
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">二级分类内容</label>
         <div class="layui-input-block">
@@ -55,6 +63,7 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
+        $('form [name="tubiao"]').uploadMultipleImage();
         window.createEditor('[name="content"]', {height: 500});
     });
 </script>
