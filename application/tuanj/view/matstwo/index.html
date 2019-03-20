@@ -35,9 +35,9 @@
 <!-- 表单搜索 结束 -->
 
 <form onsubmit="return false;" data-auto="true" method="post">
-    <!--{empty name='list'}-->
+    {empty name='list'}
     <p class="help-block text-center well">没 有 记 录 哦！</p>
-    <!--{else}-->
+    {else}
     <input type="hidden" value="resort" name="action">
     <table class="layui-table" lay-skin="line">
         <thead>
@@ -48,13 +48,14 @@
             <th class='text-left nowrap'>ID</th>
             <th class='text-left nowrap'>二级分类标题</th>
             <th class='text-left nowrap'>二级分类展示图</th>
-            <th class='text-left nowrap'>关联一级分类</th>
+            <th class='text-left nowrap'>关联入口垫系统类别</th>
+            <th class='text-left nowrap'>关联一级产品类别分类</th>
             <th class='text-left nowrap'>创建时间</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
         <tbody>
-        <!--{foreach $list as $key=>$vo}-->
+        {foreach $list as $key=>$vo}
         <tr>
             <td class='list-table-check-td'>
                 <input class="list-check-box" value='{$vo.id}' type='checkbox'>
@@ -67,6 +68,9 @@
             </td>
             <td class='text-left nowrap'>
                 <img data-tips-image src="{$vo.img|default=''}" height="50"/>
+            </td>
+            <td class='text-left nowrap'>
+                {$vo.mats_cates|default=''}
             </td>
             <td class='text-left nowrap'>
                 {$vo.mats_pro|default=''}
@@ -90,16 +94,18 @@
                 {/if}
             </td>
         </tr>
-        <!--{/foreach}-->
+        {/foreach}
         </tbody>
     </table>
     {if isset($page)}<p>{$page|raw}</p>{/if}
-    <!--{/empty}-->
+    {/empty}
 </form>
 <script>
-    (function() {
+    require(['jquery', 'ckeditor'], function() {
         window.form.render();
-        window.laydate.render({range: true, elem: '#create_at'});
-    })();
+        $('form [name="img"]').uploadOneImage();
+        $('form [name="tubiao"]').uploadMultipleImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
 </script>
 {/block}

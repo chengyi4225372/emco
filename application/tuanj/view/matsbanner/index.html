@@ -15,9 +15,9 @@
 <form class="layui-form layui-form-pane form-search" action="{:request()->url()}" onsubmit="return false" method="get">
 
     <div class="layui-form-item layui-inline">
-        <label class="layui-form-label">关键字</label>
+        <label class="layui-form-label">创建时间</label>
         <div class="layui-input-inline">
-            <input name="keywords" value="{$Think.get.keywords|default=''}" placeholder="请输入关键字" class="layui-input">
+            <input name="date" id="create_at" value="{$Think.get.date}" placeholder="请选择创建时间" class="layui-input">
         </div>
     </div>
 
@@ -42,9 +42,10 @@
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
             <th class='text-left nowrap'>ID</th>
-            <th class='text-left nowrap'>关联一级级分类名称</th>
-            <th class='text-left nowrap'>关联二级分类名称</th>
-            <th class='text-left nowrap'>产品型号</th>
+            <th class='text-left nowrap'>大图</th>
+            <th class='text-left nowrap'>小图</th>
+            <th class='text-left nowrap'>所属入口垫三级产品</th>
+            <th class='text-left nowrap'>创建时间</th>
             <th class='text-left nowrap'></th>
         </tr>
         </thead>
@@ -55,17 +56,21 @@
                 <input class="list-check-box" value='{$vo.id}' type='checkbox'>
             </td>
             <td class='text-left nowrap'>
-                {$vo.id|}
+                {$vo.id}
             </td>
             <td class='text-left nowrap'>
-                {$vo.mats_one}
+                <img data-tips-image src="{$vo.img|default=''}" height="50"/>
             </td>
             <td class='text-left nowrap'>
-              {$vo.mats_two}
+                <img data-tips-image src="{$vo.small_img|default=''}" height="50"/>
             </td>
             <td class='text-left nowrap'>
-                {$vo.title|default=''}
+
             </td>
+            <td class='text-left nowrap'>
+              {$vo.time}
+            </td>
+
             <td class='text-left nowrap'>
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>

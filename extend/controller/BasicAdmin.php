@@ -112,14 +112,18 @@ class BasicAdmin extends Controller {
                 //全局高度类别
                 $height = Db::name('heights')->field('id,title')->select();
                 $this->assign('height',$height);
+                //入口垫系统类别
+                $mats_cates =Db::name('mats_cates')->select();
+                $this->assign('mats_cates',$mats_cates);
                 //入口垫产品一级分类
                 $matspro = Db::name('mats_pro')->select();
                 $this->assign('matspro',$matspro);
-                //入口垫额二级分类
+                //入口垫二级分类
                 $mats_two = Db::name('mats_two')->field('id,title')->select();
                 $this->assign('mats_two',$mats_two);
-
-
+                //入口垫 三级产品 标题
+                $mats_three = Db::name('mats_info')->field('id,title')->select();
+                $this->assign('mats_three',$mats_three);
 
 //                $conditions = Db::name('condition')->where('conid',0)->select();
 //                $this->assign('conditions',$conditions);

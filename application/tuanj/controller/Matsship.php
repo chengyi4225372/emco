@@ -17,7 +17,7 @@ class Matsship extends BasicAdmin {
 
 
     public function index() {
-        $this->title = '入口垫产品饰品设置';
+        $this->title = '入口垫三级产品饰品设置';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -33,7 +33,7 @@ class Matsship extends BasicAdmin {
     //关联 案例id 名称
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['anames'] = Db::name('anli_table')->where('id', '=', $val['a_id'])->value('title');
+            $data[$key]['three_names'] = Db::name('mats_info')->where('id', '=', $val['mid'])->value('title');
         }
     }
 

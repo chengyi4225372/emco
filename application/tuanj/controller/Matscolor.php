@@ -17,14 +17,11 @@ class Matscolor extends BasicAdmin {
 
 
     public function index() {
-        $this->title = '入口垫产品颜色';
+        $this->title = '入口垫三级产品颜色';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-//            $start_time = strtotime("{$start} 00:00:00");
-//            $end_time = strtotime("{$end} 23:59:59");
-//            $db->whereBetween('create_at', [$start_time, $end_time]);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
@@ -33,7 +30,7 @@ class Matscolor extends BasicAdmin {
     //关联 案例id 名称
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['anames'] = Db::name('anli_table')->where('id', '=', $val['a_id'])->value('title');
+            $data[$key]['three_names'] = Db::name('mats_info')->where('id', '=', $val['mid'])->value('title');
         }
     }
 

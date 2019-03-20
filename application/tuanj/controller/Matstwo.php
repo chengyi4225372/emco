@@ -29,9 +29,10 @@ class Matstwo extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
-    //关联一级分类
+    //关联一级产品分类 和系统类别
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
+            $data[$key]['mats_cates'] = Db::name('mats_cates')->where('id', '=', $val['cid'])->value('title');
             $data[$key]['mats_pro'] = Db::name('mats_pro')->where('id', '=', $val['pid'])->value('title');
         }
     }

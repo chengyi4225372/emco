@@ -43,7 +43,6 @@ class Goods extends BasicAdmin {
             $vol['name'] = $v['name'];
             $data[] = $vol;
         }
-     
         return $data;
       
     }

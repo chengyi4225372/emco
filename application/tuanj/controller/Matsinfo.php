@@ -30,12 +30,28 @@ class Matsinfo extends BasicAdmin {
         return parent::_list($db->order('id desc'));
     }
 
-    //关联 案例id 名称
+    //关联入口垫二级分类名称
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['anames'] = Db::name('anli_table')->where('id', '=', $val['a_id'])->value('title');
+            $data[$key]['mats_one'] = Db::name('mats_pro')->where('id', '=', $val['p_id'])->value('title');
+            $data[$key]['mats_two'] = Db::name('mats_two')->where('id', '=', $val['pid'])->value('title');
         }
     }
+
+    //寻找二级分类
+    public function linkage(){
+        $id = input('post.id');
+        $categorys = Db::name('mats_two')->where('pid',$id)->select();
+        $data =[];
+        $vol =[];
+        foreach ($categorys as $v){
+            $vol['id'] = $v['id'];
+            $vol['title'] = $v['title'];
+            $data[] = $vol;
+        }
+        return $data;
+    }
+
 
 
     /**

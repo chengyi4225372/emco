@@ -2,38 +2,36 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/3/13 0013
- * Time: 21:46
+ * Date: 2019/3/20
+ * Time: 11:49
  */
+
 namespace app\tuanj\controller;
 
 use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Matsress extends BasicAdmin {
+class Matsbanner extends BasicAdmin {
 
-    private $dataform = 'mats_ress';
+    private $dataform = 'mats_banner';
 
 
     public function index() {
-        $this->title = '入口垫三级产品详情参考设置';
+        $this->title = '入口垫三级产品详情设置';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
-        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title', "%{$get['keywords']}%");
+        (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
             list($start, $end) = explode(' - ', $get['date']);
-//            $start_time = strtotime("{$start} 00:00:00");
-//            $end_time = strtotime("{$end} 23:59:59");
-//            $db->whereBetween('create_at', [$start_time, $end_time]);
             $db->whereBetween('time', ["{$start} 00:00:00", "{$end} 23:59:59"]);
         }
         return parent::_list($db->order('id desc'));
     }
 
-    //关联 案例id 名称
+    //关联 三级产品名称
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['anames'] = Db::name('anli_table')->where('id', '=', $val['a_id'])->value('title');
+            $data[$key]['three_name'] = Db::name('mats_info')->where('id', '=', $val['mid'])->value('title');
         }
     }
 
@@ -60,7 +58,7 @@ class Matsress extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/matsress/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/matsbanner/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }
