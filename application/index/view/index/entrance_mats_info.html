@@ -76,21 +76,9 @@
                                 <div class="form-group">
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
                                         onchange="window.location.href=this.value; return false;" class="jcf-hidden">
-                                    <option value="https://emco.emco-bau.com/en/products/entrance-mats/detail/product/show/emco-diplomat-with-ribbed-carpet-insert-1/510-r-en.html">
-                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">510
-                                            R</font></font></option>
-                                    <option value="https://emco.emco-bau.com/en/products/entrance-mats/detail/product/show/emco-diplomat-with-ribbed-carpet-insert-1/517-r-en.html">
-                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">517
-                                            R</font></font></option>
-                                    <option value="https://emco.emco-bau.com/en/products/entrance-mats/detail/product/show/emco-diplomat-with-ribbed-carpet-insert-1/522-r-en.html"
-                                            selected="selected"><font style="vertical-align: inherit;"><font
-                                            style="vertical-align: inherit;">522 R.</font></font></option>
-                                    <option value="https://emco.emco-bau.com/en/products/entrance-mats/detail/product/show/emco-diplomat-with-ribbed-carpet-insert-1/527-r-en.html">
-                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">527
-                                            R.</font></font></option>
-                                    <option value="https://emco.emco-bau.com/en/products/entrance-mats/detail/product/show/emco-diplomat-with-ribbed-carpet-insert-1/522-tls-r-en.html">
-                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">522
-                                            TLS R.</font></font></option>
+                                        {volist name="mats_cates" id="vo"}
+                                    <option value="{:url('index/entrance_mats_info')}?pid={$vo.pid}&id={$vo.id}">{$vo.title}</option>
+                                        {/volist}
                                 </select>
                                </div>
                             </div>

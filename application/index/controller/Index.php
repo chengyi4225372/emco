@@ -114,7 +114,8 @@ class Index extends Common
           $pid = input('get.pid');//二级id
           $id = input('get.id'); //三级第一个产品
           $mats_info = Db::name('mats_info')->where('id',$id)->find();
-          $mats_cates =  Db::name('mats_info')->where('pid',$pid)->select();
+          //二级分类下的 三级分类
+          $mats_cates =  Db::name('mats_info')->where('pid',$pid)->field('id,p_id,pid,title')->select();
           $mats_info['fanche'] = explode(',', $mats_info['fanche']);
           $mats_info['color'] = explode(',', $mats_info['color']);
           $mats_info['fuwu'] = explode(',', $mats_info['fuwu']);
