@@ -33,7 +33,7 @@ class Matsress extends BasicAdmin {
     //关联 案例id 名称
     protected function _data_filter(&$data) {
         foreach ($data as $key => $val) {
-            $data[$key]['anames'] = Db::name('anli_table')->where('id', '=', $val['a_id'])->value('title');
+            $data[$key]['three_names'] = Db::name('mats_info')->where('id', '=', $val['mid'])->value('title');
         }
     }
 

@@ -44,6 +44,14 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label">入口垫三级产品图纸</label>
+        <div class="layui-input-block">
+            <input type="text" name="tuzhi" value='{$vo.tuzhi|default=""}'  class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
         <label class="layui-form-label">入口垫三级产品图标</label>
         <div class="layui-input-block">
             <input type="text" name="tubiao" value='{$vo.tubiao|default=""}'  class="layui-input">
@@ -69,6 +77,7 @@
         <label class="layui-form-label">入口垫三级产品翻车和翻车功能</label>
         <div class="layui-input-block">
             <input type="text" name="fanche" value='{$vo.fanche|default=""}'  class="layui-input">
+            <span style="color: #ff2600;">多个信息请以英文,号来分割。</span>
         </div>
     </div>
 
@@ -210,7 +219,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">服务</label>
         <div class="layui-input-block">
-            <textarea name="color" class="layui-textarea">{if isset($vo['id'])}{$vo.fuwu}{/if}</textarea>
+            <textarea name="fuwu" class="layui-textarea">{if isset($vo['id'])}{$vo.fuwu}{/if}</textarea>
             <span style="color: #ff2600;">多个信息请以英文,号来分割。</span>
         </div>
     </div>
@@ -279,6 +288,7 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
+        $('form [name="tuzhi"]').uploadOneImage();
         $('form [name="tubiao"]').uploadMultipleImage();
         window.createEditor('[name="content"]', {height: 500});
     });

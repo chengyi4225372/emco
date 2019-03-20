@@ -42,6 +42,7 @@
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
             </th>
             <th class='text-left nowrap'>ID</th>
+            <th class='text-left nowrap'>图纸</th>
             <th class='text-left nowrap'>关联一级级分类名称</th>
             <th class='text-left nowrap'>关联二级分类名称</th>
             <th class='text-left nowrap'>产品型号</th>
@@ -55,7 +56,10 @@
                 <input class="list-check-box" value='{$vo.id}' type='checkbox'>
             </td>
             <td class='text-left nowrap'>
-                {$vo.id|}
+                {$vo.id}
+            </td>
+            <td class='text-left nowrap'>
+                <img data-tips-image src="{$vo.tuzhi|default=''}" height="50"/>
             </td>
             <td class='text-left nowrap'>
                 {$vo.mats_one}

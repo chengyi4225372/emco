@@ -138,16 +138,16 @@
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="listenseite-image">
-                                        <a class="animation-neg" href="">
+                                        <a class="animation-neg" href="{:url('index/entrance_mats_info')}?pid={$vo.id}&id={$vo.three_id}">
                                             <img alt="emco DIPLOMAT With ribbed carpet insert" src="{$vo.img}" width="555" height="294"/></a></div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="product-details"><h2>
-                                        <a href="">{$vo.ptitle}-{$vo.title}</a></h2>
+                                        <a href="{:url('index/entrance_mats_info')}?pid={$vo.id}&id={$vo.three_id}">{$vo.ptitle}-{$vo.title}</a></h2>
                                         <p>{$vo.info}</p>
-                                        <div class="meta"><strong class="comments">有五种产品可供选择</strong></div>
+                                        <div class="meta"><strong class="comments">有{$vo.count>1?$vo.count:'1'}种产品可供选择</strong></div>
                                         <div class="btn-holder">
-                                            <a class="btn btn-default" href="">
+                                            <a class="btn btn-default" href="{:url('index/entrance_mats_info')}?pid={$vo.id}&id={$vo.three_id}">
                                                 <span>发现产品变体</span></a>
                                         </div>
                                         <div class="icons-holder">

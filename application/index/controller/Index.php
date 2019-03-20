@@ -98,11 +98,11 @@ class Index extends Common
            $mats_two = $mats_two->toArray();
            foreach ($mats_two['data'] as $k =>$val){
                $mats_two['data'][$k]['tubiao'] = explode('|', $mats_two['data'][$k]['tubiao']);
+               //三级分类下 有多少产品
+               $mats_two['data'][$k]['count'] = Db::name('mats_info')->where('pid',$mats_two['data'][$k]['id'])->count();
+               //三级分类下第一个产品
+               $mats_two['data'][$k]['three_id']  = Db::name('mats_info')->where('pid',$mats_two['data'][$k]['id'])->order('id asc')->limit(1)->value('id');
            }
-           //二级分类下 有多少产品
-
-           // 二级分类下 第一个产品
-
            $this->assign('mats_two',$mats_two['data']);
            $this->assign('page',$page);
            return $this->view->fetch();
@@ -110,7 +110,34 @@ class Index extends Common
 
     //todo 入口垫详情页面  待完成 已经抓取页面
     public function entrance_mats_info(){
-        return $this->view->fetch();
+         //获取二级id 找到关联二级的三级第一个 进去
+          $pid = input('get.pid');//二级id
+          $id = input('get.id'); //三级第一个产品
+          $mats_info = Db::name('mats_info')->where('id',$id)->find();
+          $mats_cates =  Db::name('mats_info')->where('pid',$pid)->select();
+          $mats_info['fanche'] = explode(',', $mats_info['fanche']);
+          $mats_info['color'] = explode(',', $mats_info['color']);
+          $mats_info['fuwu'] = explode(',', $mats_info['fuwu']);
+          $mats_info['tubiao'] = explode('|', $mats_info['tubiao']);
+          //三级产品颜色
+         $color = Db::name('mats_color')->where('mid',$id)->select();
+          //三级产品饰品
+         $shiping = Db::name('mats_ship')->where('mid',$id)->select();
+          //三级产品参考
+         $ress = Db::name('mats_ress')->where('mid',$id)->select();
+         //轮播图
+         $banner =Db::name('mats_banner')->where('mid',$id)->select();
+         //一级分类名称 二级分类名称和介绍
+           $info =Db::name('mats_two')->where('id',$pid)->field('pid,title,info')->find();
+           $info['one'] =Db::name('mats_pro')->where('id',$info['pid'])->field('title')->find();
+          $this->assign('mats_info',$mats_info);
+          $this->assign('mats_cates',$mats_cates);
+          $this->assign('color',$color);
+          $this->assign('shiping',$shiping);
+          $this->assign('ress',$ress);
+          $this->assign('banner',$banner);
+          $this->assign('info',$info);
+          return $this->view->fetch();
     }
 
 
