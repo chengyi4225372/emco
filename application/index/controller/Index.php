@@ -87,11 +87,16 @@ class Index extends Common
     //todo 入口垫  此处需要关联入口垫系统类别 后台设置的时候
     public function entrance_mats(){
          //2级产品分类标题 关联一级分类 标题
-        $mats_two =Db::name('mats_two')
-                    ->alias('a')
-                    ->field('a.*,b.title as ptitle')
-                    ->leftJoin('mats_pro b','a.pid = b.id')
-                    ->paginate(15);
+        $pid = input('get.pid','');
+        $cid = input('get.cid','');
+         if(empty($cid) && empty($pid)){
+             $mats_two =Db::name('mats_two')->order('id asc')->paginate(10);
+         }else if(empty($pid)){
+             $mats_two =Db::name('mats_two')->where(['cid'=>$cid])->order('id asc')->paginate(10);
+         }else{
+             $mats_two =Db::name('mats_two')->where(['cid'=>$cid,'pid'=>$pid])->order('id asc')->paginate(10);
+         }
+
           //展示分页
            $page = $mats_two->render();
            //对象转数组 分割图标
@@ -102,11 +107,29 @@ class Index extends Common
                $mats_two['data'][$k]['count'] = Db::name('mats_info')->where('pid',$mats_two['data'][$k]['id'])->count();
                //三级分类下第一个产品
                $mats_two['data'][$k]['three_id']  = Db::name('mats_info')->where('pid',$mats_two['data'][$k]['id'])->order('id asc')->limit(1)->value('id');
+               //一级分类标题
+               $mats_two['data'][$k]['ptitle'] =  Db::name('mats_pro')->where('id',$mats_two['data'][$k]['pid'])->value('title');
+
            }
            $this->assign('mats_two',$mats_two['data']);
            $this->assign('page',$page);
            return $this->view->fetch();
     }
+
+    //查询入口垫一级分类
+    public function mats_cates_one(){
+         //$cid =input('post.cid');
+         $data = Db::name('mats_pro')->field('id,title')->select();
+         if($data){
+             $this->result($data,'200','ok','json');
+         }else{
+             $this->result('','400','error','json');
+         }
+
+    }
+
+
+
 
     //todo 入口垫详情页面  待完成 已经抓取页面
     public function entrance_mats_info(){

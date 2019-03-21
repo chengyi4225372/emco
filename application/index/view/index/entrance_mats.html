@@ -62,14 +62,15 @@
                                     <div class="same-height-holder"><label>请选择 ...</label></div>
                                     <div class="form-group">
                                         <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}'
-                                            class="isFirst" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU">
+                                            class="isFirst" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU" id="pro">
                                         <option value="">请选择...</option>
                                             {volist name="mats_cates" id="vo" }
-                                        <option value="{$vo.id}" data-value="{$vo.title}">{$vo.title}</option>
+                                        <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.cid eq $vo.id"} selected=""{/if}>{$vo.title}</option>
                                             {/volist}
                                        </select>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                     <div class="same-height-holder"><label>脚步声</label></div>
                                     <div class="form-group">
@@ -101,15 +102,17 @@
                                             {/volist}
                                     </select></div>
                                 </div>
+                                  -->
                                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                     <div class="same-height-holder"><label>请选择...</label></div>
                                     <div class="form-group">
-                                        <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class="" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU">
+                                        <select data-jcf='{"wrapNative": false, "wrapNativeOnMobile": false}' class="istwo" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU" id="two">
                                         <option value="">请选择...</option>
                                             {volist name="mats_pro" id="vo" }
-                                        <option value="{$vo.id}" data-value="{$vo.title}">{$vo.title}</option>
+                                        <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.pid eq $vo.id"} selected=""{/if}>{$vo.title}</option>
                                             {/volist}
-                                    </select></div>
+                                    </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -210,8 +213,33 @@
 
         </div>
     </div>
-
-
 {include file="public/footer" /}
+
+ <script>
+     $("#pro").change(function(){
+         var cid = $(this).val();
+         console.log(cid);
+         if(cid =='null' || cid==undefined){
+             return false;
+         }
+         window.location.href="{:url('index/entrance_mats')}?cid="+cid;
+     })
+
+
+     $("#two").change(function(){
+         var pid = $(this).val();
+         var cid = $('#pro').val();
+         if(pid =='null' || pid==undefined){
+             return false;
+         }
+         window.location.href="{:url('index/entrance_mats')}?pid="+pid+"&cid="+cid;
+     })
+
+
+
+
+
+ </script>
+
 </body>
 </html>

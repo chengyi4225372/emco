@@ -38,20 +38,6 @@ class Matsinfo extends BasicAdmin {
         }
     }
 
-    //寻找二级分类
-    public function linkage(){
-        $id = input('post.id');
-        $categorys = Db::name('mats_two')->where('pid',$id)->select();
-        $data =[];
-        $vol =[];
-        foreach ($categorys as $v){
-            $vol['id'] = $v['id'];
-            $vol['title'] = $v['title'];
-            $data[] = $vol;
-        }
-        return $data;
-    }
-
 
 
     /**
