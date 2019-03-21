@@ -154,11 +154,9 @@ class Index extends Common
     public function carpet_mats_info(){
         return $this->view->fetch();
     }
-    //游泳池栅格
+    //todo 游泳池栅格 需要修改
     public function swimming(){
         //以产品类型来分页
-
-
 
           $swing= Db::name('swing_pro_cates')->order('id asc')->paginate(10);
           $pages= $swing->render();
@@ -355,8 +353,17 @@ class Index extends Common
 
     // 参考
     public function references(){
+        $pid =input('get.pid');
+        $hid =input('get.hid');
+        $cid =input('get.cid');
         $table= Db::name('anli_table');
-        $anli = $table->field('id,img,title,heres,reinfo')->paginate(10);
+        if(empty($pid)|| empty($hid)||empty($cid)){
+            $anli = $table->field('id,img,title,heres,reinfo')->paginate(10);
+        }else if(!empty($pid) || !empty($hid)||!empty($cid)){
+            $anli = $table->field('id,img,title,heres,reinfo')->where(['p_id'=>$pid,'h_id'=>$hid,'c_id'=>$cid])->paginate(10);
+        }else{
+            $anli = $table->field('id,img,title,heres,reinfo')->where(['p_id'=>$pid,'h_id'=>$hid,'c_id'=>$cid])->paginate(10);
+        }
         $this->assign('anli',$anli);
         return $this->view->fetch();
     }

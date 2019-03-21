@@ -8,7 +8,7 @@
                 <div class="col-xs-12">
                     <ol class="breadcrumb">
                         <li><span>你在这里</span></li>
-                        <li class="first"><a href="designing-clean-entrances.html">emco bau</a></li>
+                        <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
                         <li class="last active"><span>参考</span></li>
                     </ol>
                 </div>
@@ -63,7 +63,7 @@
                                         name="protucts" id="protucts">
                                     <option value="" selected="selected">请选择...</option>
                                         {volist name="protucts" id="vo"}
-                                    <option value="{$vo.id}" data-value="Entrance matting systems">{$vo.ptitle}</option>
+                                    <option value="{$vo.id}" data-value="Entrance matting systems" {if condition="$Think.get.pid eq $vo.id"}selected=""{/if} >{$vo.ptitle}</option>
                                         {/volist}
                                 </select>
                                 </div>
@@ -76,7 +76,7 @@
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="here" id="heres">
                                     <option value="" selected="selected">请选择...</option>
                                       {volist name="heres" id="vo"}
-                                    <option value="{$vo.id}" data-value="Shopping centres">{$vo.htitle}</option>
+                                    <option value="{$vo.id}" data-value="Shopping centres" {if condition="$Think.get.hid eq $vo.id"}selected=""{/if}>{$vo.htitle}</option>
                                         {/volist}
                                 </select>
                                 </div>
@@ -88,7 +88,7 @@
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="county" id="county">
                                     <option value="" selected="selected">请选择...</option>
                                     {volist name="county" id="list"}
-                                    <option value="{$list.id}" data-value="Germany">{$list.ctitle}</option>
+                                    <option value="{$list.id}" data-value="Germany" {if condition="$Think.get.cid eq $list.id"}selected=""{/if}>{$list.ctitle}</option>
                                     {/volist}
                                 </select>
                                 </div>
@@ -198,6 +198,27 @@
 
 {include file="public/footer" /}
 <script>
+  //参考一级
+   $("#protucts").change(function(){
+          var pid = $(this).val();
+          if(pid=='null' || pid ==undefined){return false;}
+         window.location.href="{:url('index/references')}?pid="+pid;
+   });
+    //参考二级
+  $("#heres").change(function(){
+      var pid = $("#protucts").val();
+      var hid = $(this).val();
+      if(hid=='null' || hid ==undefined){return false;}
+      window.location.href="{:url('index/references')}?pid="+pid+"&hid="+hid;
+  });
+  //参考国家
+  $("#county").change(function(){
+      var pid = $("#protucts").val();
+      var hid = $("#heres").val();
+      var cid = $(this).val();
+      if(cid=='null' || cid ==undefined){return false;}
+      window.location.href="{:url('index/references')}?pid="+pid+"&hid="+hid+"&cid="+cid;
+  });
 
 </script>
 </body>
