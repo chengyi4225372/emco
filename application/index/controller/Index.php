@@ -84,19 +84,20 @@ class Index extends Common
     }
 
 
-    //todo 入口垫  此处需要关联入口垫系统类别 后台设置的时候
+    //入口垫
     public function entrance_mats(){
          //2级产品分类标题 关联一级分类 标题
-        $pid = input('get.pid','');
-        $cid = input('get.cid','');
+        $pid = input('get.pid','','intval');
+        $cid = input('get.cid','','intval');
          if(empty($cid) && empty($pid)){
              $mats_two =Db::name('mats_two')->order('id asc')->paginate(10);
          }else if(empty($pid)){
              $mats_two =Db::name('mats_two')->where(['cid'=>$cid])->order('id asc')->paginate(10);
+         }else if (empty($cid)){
+             $mats_two =Db::name('mats_two')->where(['pid'=>$pid])->order('id asc')->paginate(10);
          }else{
              $mats_two =Db::name('mats_two')->where(['cid'=>$cid,'pid'=>$pid])->order('id asc')->paginate(10);
          }
-
           //展示分页
            $page = $mats_two->render();
            //对象转数组 分割图标
@@ -116,22 +117,8 @@ class Index extends Common
            return $this->view->fetch();
     }
 
-    //查询入口垫一级分类
-    public function mats_cates_one(){
-         //$cid =input('post.cid');
-         $data = Db::name('mats_pro')->field('id,title')->select();
-         if($data){
-             $this->result($data,'200','ok','json');
-         }else{
-             $this->result('','400','error','json');
-         }
 
-    }
-
-
-
-
-    //todo 入口垫详情页面  待完成 已经抓取页面
+    //入口垫详情页面
     public function entrance_mats_info(){
          //获取二级id 找到关联二级的三级第一个 进去
           $pid = input('get.pid');//二级id
@@ -164,27 +151,26 @@ class Index extends Common
           return $this->view->fetch();
     }
 
-
-
-
     public function carpet_mats_info(){
         return $this->view->fetch();
     }
-    // 游泳池栅格  最后多测试几条分类下数据
+    //游泳池栅格
     public function swimming(){
         //以产品类型来分页
-         $pages= Db::name('swing_pro_cates')->paginate(15);
-        //产品一级分类
-        $swing =Db::name('swing_pro_cates')->select();
-        foreach($swing as $key =>$val){
+
+
+
+          $swing= Db::name('swing_pro_cates')->order('id asc')->paginate(10);
+          $pages= $swing->render();
+          $swing = $swing ->toArray();
+        foreach($swing['data'] as $key =>$val){
             //产品分类下第一个产品
-            $swing[$key]['cates'] = Db::name('swing_protucts')->where('s_id',$swing[$key]['id'])->limit(1)->find();
+            $swing['data'][$key]['cates'] = Db::name('swing_protucts')->where('s_id',$swing['data'][$key]['id'])->limit(1)->find();
             //取出与产品类型所关联的数目
-            $swing[$key]['count'] = Db::name('swing_protucts')->where('s_id',$swing[$key]['id'])->count();
+            $swing['data'][$key]['count'] = Db::name('swing_protucts')->where('s_id',$swing['data'][$key]['id'])->count();
         }
-        $pages= $pages->render();
         $this->assign('pages',$pages);
-        $this->assign('swing',$swing);
+        $this->assign('swing',$swing['data']);
         return $this->view->fetch();
     }
 
@@ -199,8 +185,8 @@ class Index extends Common
           $cates = Db::name('swing_protucts')->where('s_id',$pid)->field('id,s_id,title')->select();
           //当前游泳池产品
           $protucts = Db::name('swing_protucts')->where('id',$cid)->find();
-          $protucts['color'] = explode(',',$protucts['color']);
-          $protucts['fuwu']  = explode(',',$protucts['fuwu']);
+          $protucts['color'] = isset($protucts['color'])?explode(',',$protucts['color']):'';
+          $protucts['fuwu']  =isset($protucts['fuwu'])?explode(',',$protucts['fuwu']):'';
           //颜色
           $color = Db::name('swing_color')->where('s_id',$cid)->select();
           //轮播图

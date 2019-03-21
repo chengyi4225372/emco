@@ -38,18 +38,21 @@
 
                                     </div>
                                 </div>
+
                                 <ul class="pagination">
                                     {volist name="banner" id="vo" }
-                                    <li><a href="#"><img
-                                            src="{$vo.small_img}"
-                                            width="107" height="75" alt=""></a></li>
+                                    {empty name="vo.small_img"}
+
+                                    {else /}
+                                    <li><a href="#"><img src="{$vo.small_img}" width="107" height="75" alt=""></a></li>
+                                    {/empty}
                                     {/volist}
                                 </ul>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="product-details"><h2>{$title}</h2>
-                                <div class="meta"><strong class="comments">{$protucts.title}</strong></div>
+                                <div class="meta"><strong class="comments">{$protucts.title?$protucts.title:''}</strong></div>
                                 <p></p>
                                 <div class="icons-holder">
                                     <ul class="icon-frames"></ul>
@@ -94,6 +97,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                 {notempty name="protucts.tuzhi" }
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="heading-x"><h4 class="panel-title"><a
                                             role="button" class="collapsed" data-toggle="collapse"
@@ -117,6 +121,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                {else /}
+
+                                {/notempty}
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="heading-1"><h4 class="panel-title"><a
                                             role="button" class="collapsed" data-toggle="collapse"
@@ -158,9 +166,14 @@
                                                     <td>{$title}</td>
                                                 </tr>
                                                 <tr>
+                                                    <td data-uid="431"><font style="vertical-align: inherit;"><font
+                                                            style="vertical-align: inherit;">径向布局</font></font></td>
+                                                    <td>{$protucts.buju?$protucts.buju:''}</td>
+                                                </tr>
+                                                <tr>
                                                     <td data-uid="743"><font style="vertical-align: inherit;"><font
                                                             style="vertical-align: inherit;">描述</font></font></td>
-                                                    <td>{$protucts.miaoshu}</td>
+                                                    <td>{$protucts.miaoshu?$protucts.miaoshu:''}</td>
                                                 </tr>
                                                 <tr>
                                                     <td data-uid="745"><font style="vertical-align: inherit;"><font
@@ -176,16 +189,20 @@
                                                     <td data-uid="749"><font style="vertical-align: inherit;"><font
                                                             style="vertical-align: inherit;">特殊颜色</font></font></td>
                                                     <td><font style="vertical-align: inherit;"><font
-                                                            style="vertical-align: inherit;">{$protucts.te_color}</font></font>
+                                                            style="vertical-align: inherit;">{$protucts.te_color?$protucts.te_color:''}</font></font>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td data-uid="750"><font style="vertical-align: inherit;"><font
                                                             style="vertical-align: inherit;">服务和服务</font></font></td>
-                                                    <td>{volist name="$protucts.fuwu" id="v2" }
+                                                    <td>
+                                                        {empty name="$protucts.fuwu"}
+                                                        {else /}
+                                                        {volist name="$protucts.fuwu" id="v2" }
                                                          {$v2}
                                                         <br>
                                                         {/volist}
+                                                        {/empty}
                                                        </td>
                                                 </tr>
                                                 <tr>
@@ -236,8 +253,7 @@
                                                          data-gtm-file-name="{$protucts.zhanbiao}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">招标文本</font></font></strong><span
-                                                class="file-size"><font style="vertical-align: inherit;"><font
-                                                style="vertical-align: inherit;">pdf 29 KB</font></font></span></div>
+                                                class="file-size"></span></div>
                                     </a></div>
                                 </div>
                                 <!--
@@ -261,8 +277,7 @@
                                             data-gtm-file-name="{$protucts.shouce}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">手册</font></font></strong><span
-                                                class="file-size"><font style="vertical-align: inherit;"><font
-                                                style="vertical-align: inherit;">pdf 4 MB</font></font></span></div>
+                                                class="file-size"></span></div>
                                     </a></div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -273,10 +288,23 @@
                                             data-gtm-file-name="{$protucts.jiage}">
                                         <div class="text"><strong class="title"><font
                                                 style="vertical-align: inherit;"><font style="vertical-align: inherit;">价目表</font></font></strong><span
-                                                class="file-size"><font style="vertical-align: inherit;"><font
-                                                style="vertical-align: inherit;">pdf 202 KB</font></font></span></div>
+                                                class="file-size"></span></div>
                                     </a></div>
                                 </div>
+                                {notempty name="$protucts.chanp"}
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="post">
+                                        <a href="{$protucts.chanp}"
+                                           class="download-icon download-icon-pdf" target="_blank" title="下载此文档"
+                                           data-gtm-event="download"
+                                           data-gtm-file-name="{$protucts.chanp}">
+                                            <div class="text"><strong class="title"><font
+                                                    style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品数据表</font></font></strong><span
+                                                    class="file-size"></span></div>
+                                        </a></div>
+                                </div>
+                                {else /}
+                                {/notempty}
                             </div>
                         </div>
                     </div>

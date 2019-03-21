@@ -72,28 +72,29 @@
     <div class="layui-form-item">
         <label class="layui-form-label">游泳池产品名称</label>
         <div class="layui-input-block">
-            <input type="text" name="title" value='{$vo.title|default=""}' required="required"  class="layui-input">
+            <input type="text" name="title" value='{$vo.title|default=""}' class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">产品图纸</label>
         <div class="layui-input-block">
-            <input type="text" name="tuzhi" value='{$vo.tuzhi|default=""}' required="required"  class="layui-input">
+            <input type="text" name="tuzhi" value='{$vo.tuzhi|default=""}'  class="layui-input">
+            <span style="color:#ff2600;">*某些产品没有图纸，可以选择不上传;</span>
         </div>
     </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">'描述</label>
         <div class="layui-input-block">
-            <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}' required="required"  class="layui-input">
+            <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}'  class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">颜色</label>
+        <label class="layui-form-label">标准颜色</label>
         <div class="layui-input-block">
-            <input type="text" name="color" value='{$vo.color|default=""}' required="required"  class="layui-input">
+            <input type="text" name="color" value='{$vo.color|default=""}'   class="layui-input">
             <span style="color: #ff2600;">*多个服务信息以英文的,分割。</span>
         </div>
     </div>
@@ -101,14 +102,21 @@
     <div class="layui-form-item">
         <label class="layui-form-label">'特殊颜色</label>
         <div class="layui-input-block">
-            <input type="text" name="te_color" value='{$vo.te_color|default=""}' required="required"  class="layui-input">
+            <input type="text" name="te_color" value='{$vo.te_color|default=""}'   class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">'径向布局</label>
+        <div class="layui-input-block">
+            <input type="text" name="buju" value='{$vo.buju|default=""}'   class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">'服务信息</label>
         <div class="layui-input-block">
-            <input type="text" name="fuwu" value='{$vo.fuwu|default=""}' required="required"  class="layui-input">
+            <input type="text" name="fuwu" value='{$vo.fuwu|default=""}'   class="layui-input">
             <span style="color: #FF0000;">*多个服务信息以英文的,分割。</span>
         </div>
     </div>
@@ -141,6 +149,14 @@
         <div class="layui-input-block">
             <input type="text" name="jiamu" value='{$vo.jiamu|default=""}'  class="layui-input">
             <button type='button' data-file='one' data-field='jiamu' data-type='pdf'>上传文件</button>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">产品数据表pdf</label>
+        <div class="layui-input-block">
+            <input type="text" name="chanp" value='{$vo.chanp|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='chanp' data-type='pdf'>上传文件</button>
         </div>
     </div>
 
