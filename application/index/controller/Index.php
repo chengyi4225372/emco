@@ -204,7 +204,7 @@ class Index extends Common
         $pages =$cleans->render();
         $cleans = $cleans->toArray();
         foreach($cleans['data'] as $k =>$val){
-            $cleans['data'][$k]['imgs']=Db::name('clear_image')->where('cid',$cleans['data'][$k]['id'])->field('img')->select();
+            $cleans['data'][$k]['tubiao'] = explode('|',$cleans['data'][$k]['tubiao']);
         }
         $this->assign('pages',$pages);
         $this->assign('cleans',$cleans['data']);

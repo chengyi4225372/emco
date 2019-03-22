@@ -41,6 +41,14 @@
     </div>
 
     <div class="layui-form-item">
+        <label class="layui-form-label">产品图标</label>
+        <div class="layui-input-block">
+            <input type="text" name="tubiao" value='{$vo.tubiao|default=""}'   class="layui-input">
+        </div>
+        <span style="color:#ff2600;">*产品最多只能上传6张图！</span>
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label">施工</label>
         <div class="layui-input-block">
             <input type="text" name="shigong" value='{$vo.shigong|default=""}'   class="layui-input">
@@ -236,6 +244,7 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
+        $('form [name="tubiao"]').uploadMultipleImage();
         window.createEditor('[name="shuju"]', {height: 500});
         window.createEditor('[name="wenshu"]', {height: 500});
     });
