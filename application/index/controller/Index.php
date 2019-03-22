@@ -116,8 +116,7 @@ class Index extends Common
            $this->assign('page',$page);
            return $this->view->fetch();
     }
-
-
+    
     //入口垫详情页面
     public function entrance_mats_info(){
          //获取二级id 找到关联二级的三级第一个 进去
@@ -201,14 +200,14 @@ class Index extends Common
     // 清理系统
     public function clean_off_system(){
         //所有产品 关联图标
-        $cleans = Db::name('clear_t')->select();
-        foreach($cleans as $k =>$val){
-            $cleans[$k]['imgs']=Db::name('clear_image')->where('cid',$cleans[$k]['id'])->field('img')->select();
+        $cleans = Db::name('clear_t')->paginate(10);
+        $pages =$cleans->render();
+        $cleans = $cleans->toArray();
+        foreach($cleans['data'] as $k =>$val){
+            $cleans['data'][$k]['imgs']=Db::name('clear_image')->where('cid',$cleans['data'][$k]['id'])->field('img')->select();
         }
-        $page =Db::name('clear_t')->paginate(15);
-        $pages =$page->render();
         $this->assign('pages',$pages);
-        $this->assign('cleans',$cleans);
+        $this->assign('cleans',$cleans['data']);
         return $this->view->fetch();
     }
     //清理系统详情页
