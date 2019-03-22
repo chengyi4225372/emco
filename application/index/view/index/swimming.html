@@ -60,7 +60,7 @@
                                     <label>请选择...</label></div>
                                 <div class="form-group">
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}"
-                                        class="isFirst jcf-hidden" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU">
+                                        class="isFirst jcf-hidden" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU" id="sid">
                                     <option value="">请选择...</option>
                                         {volist name="swings" id="vo"}
                                     <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.sid eq $vo.id"}selected=""{/if}>{$vo.title}</option>
@@ -72,10 +72,10 @@
                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                 <div class="same-height-holder" style="height: 25px;"><label>档案运行</label></div>
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="STABVERLAUF_SEL_SR_BAU">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="did" class="jcf-hidden" name="STABVERLAUF_SEL_SR_BAU">
                                         <option value="">请选择...</option>
-                                        {volist name="swing" id="vos"}
-                                        <option value="{$vos.id}" data-value="{$vos.title}" {if condition="$Think.get.did eq $vo.id"}selected=""{/if}>{$vos.title}</option>
+                                        {volist name="swing_dang" id="vos"}
+                                        <option value="{$vos.id}" data-value="{$vos.title}" {if condition="$Think.get.did eq $vos.id"}selected=""{/if}>{$vos.title}</option>
                                         {/volist}
                                     </select>
                                 </div>
@@ -83,10 +83,10 @@
                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                                 <div class="same-height-holder same-height-right" style="height: 25px;"><label>高度（mm）</label></div>
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" class="jcf-hidden" name="HOEHE_SEL_SR_BAU">
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="hid" class="jcf-hidden" name="HOEHE_SEL_SR_BAU">
                                         <option value="">请选择...</option>
                                         {volist name="heights" id="gao" }
-                                        <option value="{$gao.id}" data-value="{$gao.title}" {if condition="$Think.get.hid eq $vo.id"}selected=""{/if}>{$gao.title}</option>
+                                        <option value="{$gao.id}" data-value="{$gao.title}" {if condition="$Think.get.hid eq $gao.id"}selected=""{/if}>{$gao.title}</option>
                                         {/volist}
                                     </select>
                                 </div>
@@ -117,15 +117,11 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="listenseite-image">
-                                    <a class="animation-neg"
-                                       href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">
-                                        <img alt="emco swimming pool grates Corner solution"
-                                             src="{$vo.img}"
-                                             width="475" height="336"/></a></div>
+                                    <a class="animation-neg" href="{:url('index/swing_info')}?pid={$vo.s_id}&cid={$vo.id}">
+                                        <img alt="emco swimming pool grates Corner solution" src="{$vo.cates.img}" width="475" height="336"/></a></div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="product-details"><h2>
-                                    <a href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">{$vo.title}</a></h2>
+                                <div class="product-details"><h2><a href="{:url('index/swing_info')}?pid={$vo.s_id}&cid={$vo.id}">{$vo.cates.title}</a></h2>
                                     <p></p>
                                      {if condition="$vo.count gt 0" }
                                     <div class="meta"><strong class="comments">有{$vo.count}种产品可供选择</strong></div>
@@ -133,7 +129,7 @@
                                     <div class="meta"><strong class="comments">{$vo.cates.title}</strong></div>
                                     {/if}
                                     <div class="btn-holder">
-                                        <a class="btn btn-default" href="{:url('index/swing_info')}?pid={$vo.cates.s_id}&cid={$vo.cates.id}">
+                                        <a class="btn btn-default" href="{:url('index/swing_info')}?pid={$vo.s_id}&cid={$vo.id}">
                                             <span>发现产品变体</span></a>
                                     </div>
                                     <div class="icons-holder">
@@ -175,11 +171,38 @@
     </div>
 </div>
 
-<script>
-
-
-</script>
-
 {include file="public/footer" /}
+<script>
+ $("#sid").change(function() {
+     var sid = $(this).val();
+     if (sid == 'null' || sid == undefined) {
+         return false;
+     }
+       window.location.href="{:url('index/swimming')}?sid="+sid;
+
+ });
+
+ $("#did").change(function() {
+     var sid = $("#sid").val();
+     var did = $(this).val();
+     if (did == 'null' || did == undefined) {
+         return false;
+     }
+     window.location.href="{:url('index/swimming')}?sid="+sid+"&did="+did;
+
+ });
+
+
+ $("#hid").change(function() {
+     var sid = $("#sid").val();
+     var did = $("#did").val();
+     var hid = $(this).val();
+     if (hid == 'null' || hid == undefined) {
+         return false;
+     }
+      window.location.href="{:url('index/swimming')}?sid="+sid+"&did="+did+"&hid="+hid;
+
+ });
+</script>
 </body>
 </html>

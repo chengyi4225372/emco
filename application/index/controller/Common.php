@@ -58,8 +58,8 @@ class Common extends Controller {
         $heights = Db::name('heights')->select();
         $this->assign('heights',$heights);
         //游泳池运行档案
-        $swing = Db::name('swingdang')->select();
-        $this->assign('swing',$swing);
+        $swing_dang = Db::name('swingdang')->select();
+        $this->assign('swing_dang',$swing_dang);
         //游泳池产品类别
         $swings = Db::name('swingcates')->select();
         $this->assign('swings',$swings);

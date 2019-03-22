@@ -153,16 +153,26 @@ class Index extends Common
     public function carpet_mats_info(){
         return $this->view->fetch();
     }
-    //todo 游泳池栅格 需要修改
+    //游泳池栅格 需要修改
     public function swimming(){
-        //以产品类型来分页
-
-          $swing= Db::name('swing_pro_cates')->order('id asc')->paginate(10);
-          $pages= $swing->render();
-          $swing = $swing ->toArray();
+        //以产品来分页 以产品类型来分组
+        $sid =input('get.sid');
+        $did =input('get.did');
+        $hid =input('get.hid');
+        if(empty($sid)&&empty($did)&&empty($hid)){
+            $swing= Db::name('swing_protucts')->field('id,sid,did,hid,s_id')->group('s_id')->paginate(10);
+        }else if(!empty($sid) && (empty($did)||empty($hid))){
+            $swing= Db::name('swing_protucts')->field('id,sid,did,hid,s_id')->where(['sid'=>$sid,'did'=>$did])->group('s_id')->paginate(10);
+        }else if(!empty($sid)&&!empty($did &&!empty($hid))){
+            $swing= Db::name('swing_protucts')->field('id,sid,did,hid,s_id')->where(['sid'=>$sid,'did'=>$did,'hid'=>$hid])->group('s_id')->paginate(10);
+        }else {
+            $swing= Db::name('swing_protucts')->field('id,sid,did,hid,s_id')->where(['sid'=>$sid,'did'=>$did,'hid'=>$hid])->group('s_id')->paginate(10);
+        }
+        $pages= $swing->render();
+        $swing = $swing ->toArray();
         foreach($swing['data'] as $key =>$val){
             //产品分类下第一个产品
-            $swing['data'][$key]['cates'] = Db::name('swing_protucts')->where('s_id',$swing['data'][$key]['id'])->limit(1)->find();
+            $swing['data'][$key]['cates'] = Db::name('swing_pro_cates')->where('id',$swing['data'][$key]['s_id'])->limit(1)->find();
             //取出与产品类型所关联的数目
             $swing['data'][$key]['count'] = Db::name('swing_protucts')->where('s_id',$swing['data'][$key]['id'])->count();
         }
