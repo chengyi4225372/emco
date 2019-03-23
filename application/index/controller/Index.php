@@ -24,11 +24,6 @@ class Index extends Common
     public function entrance_mats_service(){
         return $this->view->fetch();
     }
-    //todo 下载
-    public function downloads(){
-        return $this->view->fetch();
-    }
-
     /*  news 新闻 */
     /* company 公司  */
 
@@ -73,7 +68,16 @@ class Index extends Common
         return  $this->view->fetch();
     }
 
-    //产品对比是关联入口垫的产品  todo 缺少标题
+
+    //todo 下载
+    public function downloads(){
+
+        return $this->view->fetch();
+    }
+
+
+
+    //产品对比是关联入口垫的产品
     public function product_comparison(){
            //区分 1室外 2 室
           $p_id = input('get.p_id'); //系统类别 id
@@ -114,11 +118,6 @@ class Index extends Common
            $this->assign('mats_three',$mats_three);
            return $this->view->fetch();
     }
-
-
-
-
-
 
     //入口垫
     public function entrance_mats(){
@@ -242,7 +241,6 @@ class Index extends Common
           $this->assign('title',$title);
           return $this->view->fetch();
     }
-
     // 清理系统
     public function clean_off_system(){
         //所有产品 关联图标
