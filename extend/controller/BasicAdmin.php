@@ -85,15 +85,6 @@ class BasicAdmin extends Controller {
                 //咨询专家类别
                 $zhuan = Db::name('zhuan')->select();
                 $this->assign('zhuan',$zhuan);
-                //产品对比类别
-                $protuct = Db::name('protuct_cates')->select();
-                $this->assign('protuct',$protuct);
-                //产品对比系列
-                $cates =Db::name('category_es')->select();
-                $this->assign('cates',$cates);
-                //产品对比所有产品
-                $allprotuct =Db::name('protuct_info')->select();
-                $this->assign('allprotuct',$allprotuct);
                 //参考模块中的所有案例名称
                 $cankao = Db::name('anli_table')->field('id,title')->select();
                 $this->assign('cankao',$cankao);

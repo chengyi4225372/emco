@@ -72,9 +72,6 @@ class Common extends Controller {
         //清理类别
         $clean = Db::name('clear_title')->select();
         $this->assign('clean',$clean);
-        //产品对比 室内 室外
-        $duibi =Db::name('protuct_cates')->select();
-        $this->assign('duibi',$duibi);
         //入口垫系统类别名称
         $mats_cates = Db::name('mats_cates')->order('id asc')->select();
         $this->assign('mats_cates',$mats_cates);
