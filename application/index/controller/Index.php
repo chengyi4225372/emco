@@ -73,15 +73,51 @@ class Index extends Common
         return  $this->view->fetch();
     }
 
-    //todo 产品对比 后期删掉招标文本text 这个字段
+    //产品对比是关联入口垫的产品  todo 缺少标题
     public function product_comparison(){
-           //区分 1室外 2 室内
-          $id = input('post.cid');
-          //dump($id);
-          //查询产品标题
-         // $ptitle =Db::name()->where()->select();
-          return $this->view->fetch();
+           //区分 1室外 2 室
+          $p_id = input('get.p_id'); //系统类别 id
+          $mats_id_1= input('get.column1');
+          $mats_id_2= input('get.column2');
+          $mats_id_3= input('get.column3');
+          //通过分类id 找出 一级和二级分类 id
+          $matstwo =Db::name('mats_two')
+                              ->alias('a')
+                              ->Join('mats_pro b','b.id = a.pid')
+                              ->join('mats_info c','c.pid = a.id ')
+                              ->field('a.id,a.pid,a.cid,b.id,a.title,b.title as btitle,c.id as c_id ,c.title as ctitle')
+                              ->where('cid',$p_id) //根据系统类别 分组
+                              ->limit(3)
+                              ->select();
+           //产品对比数据
+           $mats_one= Db::name('mats_info')
+                           ->alias('a')
+                           ->Join('mats_two b','a.pid =b.id')
+                           ->field('a.*,b.img,b.title as btitle')
+                           ->where('a.id',$mats_id_1)
+                           ->find();
+          $mats_two= Db::name('mats_info')
+                            ->alias('a')
+                            ->Join('mats_two b','a.pid =b.id')
+                            ->field('a.*,b.img,b.title as btitle')
+                            ->where('a.id',$mats_id_2)
+                            ->find();
+          $mats_three= Db::name('mats_info')
+                          ->alias('a')
+                          ->Join('mats_two b','a.pid =b.id')
+                          ->field('a.*,b.img,b.title as btitle')
+                          ->where('a.id',$mats_id_3)
+                          ->find();
+           $this->assign('matstwo',$matstwo);
+           $this->assign('mats_one',$mats_one);
+           $this->assign('mats_two',$mats_two);
+           $this->assign('mats_three',$mats_three);
+           return $this->view->fetch();
     }
+
+
+
+
 
 
     //入口垫

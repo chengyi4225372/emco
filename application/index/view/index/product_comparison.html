@@ -35,203 +35,32 @@
     <div id="c6159" class="csc-default">
         <div class="tx-sz-comdbproducts">
             <div class="categories-holder init comparison-view powermail_form">
-                <!--
+
                 <div class="comdbproducts-loader" style="display: none;">
                     <div class="image-wrapper">
                         <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66" height="66" alt=""></div>
                 </div>
-                 -->
-                <!--<form name="comparison" enctype="multipart/form-data" class="categories-form facet-form">-->
+
+                <form name="comparison" enctype="multipart/form-data" class="categories-form facet-form">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="category" id ="category" class="group-selector jcf-hidden">
-                                    {volist name="duibi" id="vo"}
-                                     <option data-comparison="4" value="{$vo.id}">{$vo.title}</option>
-                                     {/volist}
+                                    <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="category" id ="pid" class="group-selector jcf-hidden">
+                                        <option value="">请选择...</option>
+                                        {volist name="mats_cates" id="vo"  offset="0" length='2'}
+                                     <option data-comparison="4" value="{$vo.id}" {if condition="$Think.get.p_id eq $vo.id" }selected=""{/if}>{$vo.title}</option>
+                                         {/volist}
                                 </select>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="1">
-                                    <option value="" selected="selected"><font style="vertical-align: inherit;"><font
-                                            style="vertical-align: inherit;">请选择...</font></font></option>
-                                        <ul>
-                                            <li><span class="jcf-option jcf-selected jcf-hover" data-index="0"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">请选择...</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="1"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫 -  522 G</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="2"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫 -  510 G</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="3"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫 -  517 G.</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="4"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫 -  527 G</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="5"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫 -  522 TLS G.</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="6"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刷条 -  522 GB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="7"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刷条 -  517 GB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="8"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刮刀杆 -  522 GK</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="9"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刮刀杆 -  510 GK</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="10"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刮刀杆 -  517 GK</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="11"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和刮刀杆 -  527 GK</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="12"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带卡式刷 -  522 CB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="13"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带卡式刷 -  510 CB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="14"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带卡式刷 -  517 CB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="15"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带卡式刷 -  527 CB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="16"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫和卡式刷 -  522 GCB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="17"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和卡式刷 -  510 GCB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="18"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶嵌件和卡式刷 -  517 GCB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="19"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco DIPLOMAT带橡胶衬垫和卡式刷 -  527 GCB</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="20"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带橡胶嵌件 -  517 SG</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="21"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带橡胶衬垫 -  522 SG</font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="22"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带橡胶嵌件 -  522 TLS S / G.</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="23"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带卡式刷 -  517 SCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="24"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带卡式刷 -  522 SCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="25"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带橡胶嵌件和卡式刷 -  517 SGCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="26"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco MARSCHALL带橡胶嵌件和卡式刷 -  522 SGCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="27"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco PLAZA带橡胶嵌件 -  542 SG</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="28"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco PLAZA带卡式刷 -  542 SCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="29"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco PLAZA带橡胶嵌件和卡式刷 -  542 SGCB</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="30"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco SENATOR户外插入式 -  522 W-Outdoor</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="31"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco SENATOR（WS）户外插入式 -  522 WS-Outdoor</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="32"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">带有固体橡胶（G）的emco TWINGUARD  -  18 G.</font></font></font></font></span>
-                                            </li>
-                                            <li><span class="jcf-option" data-index="33"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;"><font
-                                                    style="vertical-align: inherit;">emco GS17带橡胶嵌件 -  GS 17 G.</font></font></font></font></span>
-                                            </li>
-                                        </ul>
+                                    <option value="" selected="selected">请选择...</option>
+                                        {volist name="matstwo" id="vo"}
+                                        <option value="{$vo.c_id}" {if condition="$Think.get.column1 eq $vo.c_id" }selected=""{/if}>{$vo.btitle}-{$vo.title}-{$vo.ctitle}</option>
+                                        {/volist}
                                 </select>
                                 </div>
                             </div>
@@ -240,54 +69,9 @@
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="2">
                                     <option value="" selected="selected"><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">请选择...</font></font></option>
-                                    <option value="212">emco DIPLOMAT With rubber insert - 522 G</option>
-                                    <option value="210">emco DIPLOMAT With rubber insert - 510 G</option>
-                                    <option value="211">emco DIPLOMAT With rubber insert - 517 G</option>
-                                    <option value="213">emco DIPLOMAT With rubber insert - 527 G</option>
-                                    <option value="214">emco DIPLOMAT With rubber insert - 522 TLS G</option>
-                                    <option value="216">emco DIPLOMAT With rubber insert and brush strip - 522 GB
-                                    </option>
-                                    <option value="215">emco DIPLOMAT With rubber insert and brush strip - 517 GB
-                                    </option>
-                                    <option value="219">emco DIPLOMAT With rubber insert and scraper bar - 522 GK
-                                    </option>
-                                    <option value="217">emco DIPLOMAT With rubber insert and scraper bar - 510 GK
-                                    </option>
-                                    <option value="218">emco DIPLOMAT With rubber insert and scraper bar - 517 GK
-                                    </option>
-                                    <option value="220">emco DIPLOMAT With rubber insert and scraper bar - 527 GK
-                                    </option>
-                                    <option value="223">emco DIPLOMAT With cassette brush - 522 CB</option>
-                                    <option value="221">emco DIPLOMAT With cassette brush - 510 CB</option>
-                                    <option value="222">emco DIPLOMAT With cassette brush - 517 CB</option>
-                                    <option value="224">emco DIPLOMAT With cassette brush - 527 CB</option>
-                                    <option value="227">emco DIPLOMAT With rubber insert and cassette brush - 522 GCB
-                                    </option>
-                                    <option value="225">emco DIPLOMAT With rubber insert and cassette brush - 510 GCB
-                                    </option>
-                                    <option value="226">emco DIPLOMAT With rubber insert and cassette brush - 517 GCB
-                                    </option>
-                                    <option value="228">emco DIPLOMAT With rubber insert and cassette brush - 527 GCB
-                                    </option>
-                                    <option value="229">emco MARSCHALL With rubber insert - 517 SG</option>
-                                    <option value="230">emco MARSCHALL With rubber insert - 522 SG</option>
-                                    <option value="231">emco MARSCHALL With rubber insert - 522 TLS S/G</option>
-                                    <option value="232">emco MARSCHALL With cassette brush - 517 SCB</option>
-                                    <option value="233">emco MARSCHALL With cassette brush - 522 SCB</option>
-                                    <option value="234">emco MARSCHALL With rubber insert and cassette brush - 517
-                                        SGCB
-                                    </option>
-                                    <option value="235">emco MARSCHALL With rubber insert and cassette brush - 522
-                                        SGCB
-                                    </option>
-                                    <option value="236">emco PLAZA With rubber insert - 542 SG</option>
-                                    <option value="237">emco PLAZA With cassette brush - 542 SCB</option>
-                                    <option value="238">emco PLAZA With rubber insert and cassette brush - 542 SGCB
-                                    </option>
-                                    <option value="239">emco SENATOR With outdoor insert - 522 W-Outdoor</option>
-                                    <option value="240">emco SENATOR (WS) With outdoor insert - 522 WS-Outdoor</option>
-                                    <option value="4684">emco TWINGUARD with solid rubber (G) - 18 G</option>
-                                    <option value="241">emco GS17 With rubber insert - GS 17 G</option>
+                                        {volist name="matstwo" id="vo"}
+                                        <option value="{$vo.c_id}" {if condition="$Think.get.column2 eq $vo.c_id" }selected=""{/if}>{$vo.btitle}-{$vo.title}-{$vo.ctitle}</option>
+                                        {/volist}
                                 </select>
                                 </div>
                             </div>
@@ -296,67 +80,22 @@
                                     <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="variant[]" class="variant-selector jcf-hidden" data-column="3">
                                     <option value="" selected="selected"><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">请选择...</font></font></option>
-                                    <option value="212">emco DIPLOMAT With rubber insert - 522 G</option>
-                                    <option value="210">emco DIPLOMAT With rubber insert - 510 G</option>
-                                    <option value="211">emco DIPLOMAT With rubber insert - 517 G</option>
-                                    <option value="213">emco DIPLOMAT With rubber insert - 527 G</option>
-                                    <option value="214">emco DIPLOMAT With rubber insert - 522 TLS G</option>
-                                    <option value="216">emco DIPLOMAT With rubber insert and brush strip - 522 GB
-                                    </option>
-                                    <option value="215">emco DIPLOMAT With rubber insert and brush strip - 517 GB
-                                    </option>
-                                    <option value="219">emco DIPLOMAT With rubber insert and scraper bar - 522 GK
-                                    </option>
-                                    <option value="217">emco DIPLOMAT With rubber insert and scraper bar - 510 GK
-                                    </option>
-                                    <option value="218">emco DIPLOMAT With rubber insert and scraper bar - 517 GK
-                                    </option>
-                                    <option value="220">emco DIPLOMAT With rubber insert and scraper bar - 527 GK
-                                    </option>
-                                    <option value="223">emco DIPLOMAT With cassette brush - 522 CB</option>
-                                    <option value="221">emco DIPLOMAT With cassette brush - 510 CB</option>
-                                    <option value="222">emco DIPLOMAT With cassette brush - 517 CB</option>
-                                    <option value="224">emco DIPLOMAT With cassette brush - 527 CB</option>
-                                    <option value="227">emco DIPLOMAT With rubber insert and cassette brush - 522 GCB
-                                    </option>
-                                    <option value="225">emco DIPLOMAT With rubber insert and cassette brush - 510 GCB
-                                    </option>
-                                    <option value="226">emco DIPLOMAT With rubber insert and cassette brush - 517 GCB
-                                    </option>
-                                    <option value="228">emco DIPLOMAT With rubber insert and cassette brush - 527 GCB
-                                    </option>
-                                    <option value="229">emco MARSCHALL With rubber insert - 517 SG</option>
-                                    <option value="230">emco MARSCHALL With rubber insert - 522 SG</option>
-                                    <option value="231">emco MARSCHALL With rubber insert - 522 TLS S/G</option>
-                                    <option value="232">emco MARSCHALL With cassette brush - 517 SCB</option>
-                                    <option value="233">emco MARSCHALL With cassette brush - 522 SCB</option>
-                                    <option value="234">emco MARSCHALL With rubber insert and cassette brush - 517
-                                        SGCB
-                                    </option>
-                                    <option value="235">emco MARSCHALL With rubber insert and cassette brush - 522
-                                        SGCB
-                                    </option>
-                                    <option value="236">emco PLAZA With rubber insert - 542 SG</option>
-                                    <option value="237">emco PLAZA With cassette brush - 542 SCB</option>
-                                    <option value="238">emco PLAZA With rubber insert and cassette brush - 542 SGCB
-                                    </option>
-                                    <option value="239">emco SENATOR With outdoor insert - 522 W-Outdoor</option>
-                                    <option value="240">emco SENATOR (WS) With outdoor insert - 522 WS-Outdoor</option>
-                                    <option value="4684">emco TWINGUARD with solid rubber (G) - 18 G</option>
-                                    <option value="241">emco GS17 With rubber insert - GS 17 G</option>
+                                        {volist name="matstwo" id="vo"}
+                                        <option value="{$vo.c_id}" {if condition="$Think.get.column3 eq $vo.c_id" }selected=""{/if}>{$vo.btitle}-{$vo.title}-{$vo.ctitle}</option>
+                                        {/volist}
                                 </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                <!--</form>-->
+                </form>
             </div>
             <div class="comdbcomparison-holder" data-storage="157" data-detailpid="205" data-category="5">
                 <section id="comparison-4" data-counter="0" class="listenseite-post listenseite-post-results comparison-post-results active" style="">
                     <div class="container">
                         <div class="row row-closer">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <!--
+                                <!-- todo
                                 <a href="#" class="btn btn-download" style="display: none;">Download as PDF</a>
                                 <form id="printform" action="en/products/product-comparison.html" method="post" target="_blank">
                                     <input type="hidden" name="type" value="1444646286">
@@ -379,81 +118,148 @@
                         </div>
                         <div class="row row-attribute-header">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                <!-- tupian -->
+                              {notempty name="mats_one.img"}
+                                <div class="image-holder comparison-image-holder">
+                                    <a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_one.pid}&id={$mats_one.id}">
+                                        <img src="{$mats_one.img}" width="255" height="180">
+                                    </a>
+                                </div>
+                                <h3 ><a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_one.pid}&id={$mats_one.id}" >{$mats_one.btitle}-{$mats_one.title}</a></h3>
+                                {else /}
+                                {/notempty}
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {notempty name="mats_two.img"}
+                                <div class="image-holder comparison-image-holder">
+                                    <a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_two.pid}&id={$mats_two.id}">
+                                        <img src="{$mats_two.img}" width="255" height="180">
+                                    </a>
+                                </div>
+                                <h3><a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_two.pid}&id={$mats_two.id}">{$mats_two.btitle}-{$mats_two.title}</a></h3>
+                                {else /}
+                                {/notempty}
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {notempty name="mats_three.img"}
+                                <div class="image-holder comparison-image-holder">
+                                    <a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_three.pid}&id={$mats_three.id}">
+                                        <img src="{$mats_three.img}" width="255" height="180">
+                                    </a>
+                                </div>
+                                <h3><a target="_blank" href="{:url('index/entrance_mats_info')}?pid={$mats_three.pid}&id={$mats_three.id}" >{$mats_three.btitle}-{$mats_three.title}</a></h3>
+                                {else /}
+                                {/notempty}
+                            </div>
                         </div>
+
                         <div class="row row-attribute-410">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="TYP_STR_EM_BAU" data-attribute="410"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">模型</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
-                        </div>
-                        <div class="row row-attribute-412">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
-                                 data-attributename="BESCHREIBUNG_DIC_EM_BAU" data-attribute="412"><strong><font
-                                    style="vertical-align: inherit;"><font
-                                    style="vertical-align: inherit;">描述</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.model?$mats_one.model:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.model?$mats_two.model:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.model?$mats_three.model:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-406">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="EMPFEHLUNG_DIC_EM_BAU" data-attribute="406"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">建议</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.jianyi?$mats_one.jianyi:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.jianyi?$mats_two.jianyi:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.jianyi?$mats_three.jianyi:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-428">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="BELASTUNG_DIC_EM_BAU" data-attribute="428"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">加载</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.jiazai?$mats_one.jiazai:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.jiazai?$mats_two.jiazai:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.jiazai?$mats_three.jiazai:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-414">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="BEGEHUNG_SEL_EM_BAU" data-attribute="414"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">脚步声</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.jiaobu?$mats_one.jiaobu:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.jiazai?$mats_two.jiazai:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.jiazai?$mats_three.jiazai:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-415">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="BEROLL_BEFAHRBARKEIT2_SEL_EM_BAU" data-attribute="415">
                                 <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">翻车和翻车功能：</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.fanche?$mats_one.fanche:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.fanche?$mats_two.fanche:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.fanche?$mats_three.fanche:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-425">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="TRAEGERPROFIL_DIC_EM_BAU" data-attribute="425"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持机箱</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.jixiang?$mats_one.jixiang:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.jixiang?$mats_two.jixiang:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.jixiang?$mats_three.jixiang:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-418">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="VERBINDUNG_DIC_EM_BAU" data-attribute="418"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">连接</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.lianjie?$mats_one.lianjie:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.lianjie?$mats_two.lianjie:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.lianjie?$mats_three.lianjie:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-413">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
@@ -461,9 +267,15 @@
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">约。</font><font style="vertical-align: inherit;">高度（mm）</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.height?$mats_one.height:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.height?$mats_two.height:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.height?$mats_three.height:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-420">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
@@ -471,54 +283,90 @@
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">最大。</font><font style="vertical-align: inherit;">单个部分的宽度/轮廓长度（mm）：</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.max?$mats_one.max:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.max?$mats_two.max:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.max?$mats_three.max:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-421">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="GEHTIEFE_SEL_EM_BAU" data-attribute="421"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">各个部分的深度/行走深度（mm）：</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.shengdu?$mats_one.shengdu:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.shengdu?$mats_two.shengdu:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.shengdu?$mats_three.shengdu:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-422">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="GEWICHT_SEL_EM_BAU" data-attribute="422"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">重量（kg
                                 /m²）</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.zhongkg?$mats_one.zhongkg:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.zhongkg?$mats_two.zhongkg:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.zhongkg?$mats_three.zhongkg:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-423">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="MATTENTEILUNG_SEL_EM_BAU" data-attribute="423"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">垫子按工厂标准或客户规格划分</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.guige?$mats_one.guige:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.guige?$mats_two.guige:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.guige?$mats_three.guige:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-424">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="RUHENDE_BELASTUNG_SEL_EM_BAU" data-attribute="424"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">固定载荷，单位为kg
                                 /100cm²</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.zaihe?$mats_one.zaihe:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.zaihe?$mats_two.zaihe:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.zaihe?$mats_three.zaihe:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-426">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="TRITTFLAECHE_DIC_EM_BAU" data-attribute="426"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">胎面</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.taimian?$mats_one.taimian:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.taimian?$mats_two.taimian:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.taimian?$mats_three.taimian:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-416">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
@@ -526,49 +374,64 @@
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">标准型材间隙约。</font><font
                                     style="vertical-align: inherit;">（毫米）</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.jianxi?$mats_one.jianxi:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.jianxi?$mats_two.jianxi:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.jianxi?$mats_three.jianxi:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-417">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="AUTOM_TUERSYSTEME_DIC_EM_BAU" data-attribute="417"><strong><font
                                     style="vertical-align: inherit;"><font style="vertical-align: inherit;">自动门系统</font></font></strong>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.door?$mats_one.door:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.door?$mats_two.door:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.door?$mats_three.door:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-427">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="RUTSCHSICHERHEIT_DIC_EM_BAU" data-attribute="427"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">防滑性</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.fanghua?$mats_one.fanghua:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.fanghua?$mats_two.fanghua:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.fanghua?$mats_three.fanghua:''}
+                            </div>
                         </div>
                         <div class="row row-attribute-437">
                             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
                                  data-attributename="BRANDSCHUTZ_DIC_EM_BAU" data-attribute="437"><strong><font
                                     style="vertical-align: inherit;"><font
                                     style="vertical-align: inherit;">防火</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
-                        </div>
-                        <div class="row row-attribute-429">
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 argument-selector"
-                                 data-attributename="FARBEN_DIC_EM_BAU" data-attribute="429"><strong><font
-                                    style="vertical-align: inherit;"><font
-                                    style="vertical-align: inherit;">颜色</font></font></strong></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2"></div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-1">
+                                {$mats_one.fanghuo?$mats_one.fanghuo:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-2">
+                                {$mats_two.fanghuo?$mats_two.fanghuo:''}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 column column-3">
+                                {$mats_three.fanghuo?$mats_three.fanghuo:''}
+                            </div>
                         </div>
                     </div>
                 </section>
-                <!-- 暂时 注释 todo
+                <!-- todo 暂时注释
                 <section id="comparison-16" data-counter="0" class="listenseite-post listenseite-post-results comparison-post-results" style="display: none;">
                     <div class="container">
                         <div class="row row-closer">
@@ -774,5 +637,40 @@
         </div>
     </div>
     {include file="public/footer" /}
+    <script>
+        //
+     $("#pid").change(function(){
+         var  pid = $(this).val();
+         if(pid=='null'|| pid==undefined){return false;}
+          window.location.href="{:url('index/product_comparison')}?p_id="+pid;
+     })
+
+    $("select[data-column='1']").change(function(){
+         var pid = $("#pid").val();
+         var column1 = $("select[data-column='1']").val();
+         var column2 = $("select[data-column='2']").val();
+         var column3 = $("select[data-column='3']").val();
+        location.href="{:url('index/product_comparison')}?p_id="+pid+"&column1="+column1+"&column2="+column2+"&column3="+column3;
+    })
+
+        $("select[data-column='2']").change(function(){
+            var pid = $("#pid").val();
+            var column1 = $("select[data-column='1']").val();
+            var column2 = $("select[data-column='2']").val();
+            var column3 = $("select[data-column='3']").val();
+            location.href="{:url('index/product_comparison')}?p_id="+pid+"&column1="+column1+"&column2="+column2+"&column3="+column3;
+        })
+
+        $("select[data-column='3']").change(function(){
+            var column3 = $(this).val();
+            var pid = $("#pid").val();
+            var column1 = $("select[data-column='1']").val();
+            var column2 = $("select[data-column='2']").val();
+            location.href="{:url('index/product_comparison')}?p_id="+pid+"&column1="+column1+"&column2="+column2+"&column3="+column3;
+        })
+
+    </script>
+
+
     </body>
     </html>
