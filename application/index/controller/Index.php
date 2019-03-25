@@ -72,6 +72,61 @@ class Index extends Common
     //todo 下载
     public function downloads(){
 
+        //产品类别id
+        $cid = input('get.cid');
+        //产二级id
+        $pid = input('get.pid');
+        //分类id
+        $did = input('get.did');
+
+
+        if(!empty($cid)){
+            $downs = Db::name('mats_two')
+                ->alias('a')
+                ->field('a.id as aid ,a.title as atitle,b.id as bid,b.title as btitle ,c.id as cid ,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
+                ->join('mats_cates b','b.id = a.cid')
+                ->join('mats_pro c','c.id = a.pid')
+                ->join('mats_info d','d.pid = a.id')
+                ->where('b.id',$cid)
+                ->paginate(10);
+        }else if(!empty($pid)){
+            $downs = Db::name('mats_two')
+                ->alias('a')
+                ->field('a.id as aid ,a.title as atitle,b.id as bid ,b.title as btitle ,c.id as cid,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
+                ->join('mats_cates b','b.id = a.cid')
+                ->join('mats_pro c','c.id = a.pid')
+                ->join('mats_info d','d.pid = a.id')
+                ->where('c.id',$pid)
+                ->paginate(10);
+        }else if(!empty($cid)&&!empty($pid)){
+            $downs = Db::name('mats_two')
+                ->alias('a')
+                ->field('a.id as aid ,a.title as atitle,b.id as bid ,b.title as btitle ,c.id as cid,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
+                ->join('mats_cates b','b.id = a.cid')
+                ->join('mats_pro c','c.id = a.pid')
+                ->join('mats_info d','d.pid = a.id')
+                ->where('c.id',$pid,'AND','b.id',$cid)
+                ->paginate(10);
+        }else{
+            $downs = Db::name('mats_two')
+                ->alias('a')
+                ->field('a.id as aid ,a.title as atitle,b.id as bid,b.title as btitle ,c.id as cid ,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
+                ->join('mats_cates b','b.id = a.cid')
+                ->join('mats_pro c','c.id = a.pid')
+                ->join('mats_info d','d.pid = a.id')
+                ->paginate(10);
+        }
+
+
+        $page = $downs->render();
+        $downs  = $downs->toArray();
+       dump($downs['data']);
+        exit();
+        foreach ($downs['data'] as $k =>$val){
+            $downs['data'][$k]['img'] = Db::name('mats_banner')->field('img')->where('mid',$downs['data'][$k]['id'])->select();
+        }
+        $this->assign('downs',$downs['data']);
+        $this->assign('page',$page);
         return $this->view->fetch();
     }
 

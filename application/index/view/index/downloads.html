@@ -1,5 +1,6 @@
 {include file="public/header" /}
 
+
     <div class="w1">
         <div class="breadcrumb-holder">
             <div class="container">
@@ -42,7 +43,7 @@
     <div id="c849" class="csc-default">
     <div class="tx-sz-comdbproducts">
         <div class="categories-holder download-view" style="">
-            <form class="categories-form facet-form post">
+            <!--<form class="categories-form facet-form post">-->
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><h2><font style="vertical-align: inherit;"><font
@@ -63,7 +64,7 @@
                          -->
                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                             <div class="form-group">
-                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU" class="jcf-hidden">
+                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="cid" name="PRODUKTGRUPPPE_INTERNET_EBENE_2_SEL_BAU" class="jcf-hidden">
                                 <option value="">请选择 ...</option>
                                 {volist name="mats_cates" id="vo" }
                                 <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.cid eq $vo.id"} selected=""{/if}>{$vo.title}</option>
@@ -73,7 +74,7 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                             <div class="form-group">
-                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU" class="jcf-hidden">
+                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="pid" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU" class="jcf-hidden">
                                 <option value="">请选择 ...</option>
                                 {volist name="mats_pro" id="vo" }
                                 <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.pid eq $vo.id"} selected=""{/if}>{$vo.title}</option>
@@ -81,9 +82,20 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
+                            <div class="form-group">
+                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="did" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU"  class="jcf-hidden">
+                                    <option value="">请选择 ...</option>
+                                    {volist name="downloads" id="vo" }
+                                    <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.did eq $vo.id"} selected=""{/if}>{$vo.title}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="facet-form-filter">
+                    <!--
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -91,26 +103,25 @@
                                     <div class="col-xs-12"><h3><font style="vertical-align: inherit;"><font
                                             style="vertical-align: inherit;">文件</font></font></h3></div>
                                     <div class="col-xs-12 checkbox-holder">
-                                        <div class="row"><input type="hidden" name="SZ_DOCUMENT_TYPE" value="">
+                                        <div class="row">
+                                            <input type="hidden" name="SZ_DOCUMENT_TYPE" value="">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="checkbox"><label>
-                                                    <span class="jcf-checkbox jcf-unchecked"><span>
-                                                    </span>
-                                                        <input type="checkbox" class="checkbox" name="SZ_DOCUMENT_TYPE" data-value="AUSSCHREIBUNGSTEXTE" value="33727"
-                                                        style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;">
+                                                <div class="checkbox">
+                                                    <label><span class="jcf-checkbox jcf-unchecked">
+                                                        <span></span>
+                                                        <input type="checkbox" class="checkbox" name="" data-value="" value="" style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;">
                                                     </span>
                                                     <span class="checkbox-text">招标文本</span></label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                <div class="checkbox"><label><span
-                                                        class="jcf-checkbox jcf-unchecked"><span></span><input
-                                                        type="checkbox" class="checkbox" name="SZ_DOCUMENT_TYPE"
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <span class="jcf-checkbox jcf-unchecked"><span></span>
+                                                    <input type="checkbox" class="checkbox" name="SZ_DOCUMENT_TYPE"
                                                         data-value="PRODUCT_DATA_SHEET" value="33721"
-                                                        style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;"></span><span
-                                                        class="checkbox-text"><font
-                                                        style="vertical-align: inherit;"><font
-                                                        style="vertical-align: inherit;">产品数据表</font></font></span></label>
+                                                        style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;"></span>
+                                                    <span class="checkbox-text">产品数据表</span></label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -148,7 +159,8 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                 <div class="checkbox"><label><span
-                                                        class="jcf-checkbox jcf-unchecked"><span></span><input
+                                                        class="jcf-checkbox jcf-unchecked"><span></span>
+                                                    <input
                                                         type="checkbox" class="checkbox" name="SZ_DOCUMENT_TYPE"
                                                         data-value="RENOVATIONMODERNISATION" value="33725"
                                                         style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;"></span><span
@@ -166,17 +178,6 @@
                                                         class="checkbox-text"><font
                                                         style="vertical-align: inherit;"><font
                                                         style="vertical-align: inherit;">3区清洁系统</font></font></span></label>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="display: none;">
-                                                <div class="checkbox"><label><span
-                                                        class="jcf-checkbox jcf-unchecked"><span></span><input
-                                                        type="checkbox" class="checkbox" name="SZ_DOCUMENT_TYPE"
-                                                        data-value="INOX_PROSPEKT" value="143395"
-                                                        style="position: absolute; height: 100%; width: 100%; opacity: 0; margin: 0px;"></span><span
-                                                        class="checkbox-text"><font
-                                                        style="vertical-align: inherit;"><font
-                                                        style="vertical-align: inherit;">Inox Prospekt</font></font></span></label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -225,29 +226,31 @@
                             </div>
                         </div>
                     </div>
+                    -->
                 </div>
-            </form>
+            <!--</form>-->
         </div>
         <section class="listenseite-post comdbproducts-downloader">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper"><img
-                            src="typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
+                            src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
                             height="66" alt="">
                         <h3>正在创建ZIP存档...</h3></div>
                 </div>
             </div>
         </section>
+
         <div class="comdbproducts-holder" data-detailpid="" data-language="1" data-category="5">
 
 
-
+     {volist name="downs" id="vo"}
     <div class="listenseite-post-results" style="">
         <div class="research-holder dark">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">510 R  -  emco DIPLOMAT带罗纹地毯插件</font></font></h3>
+                        <h3>{$vo.title} -{$vo.ctitle}{$vo.btitle}</h3>
                     </div>
                 </div>
             </div>
@@ -259,22 +262,23 @@
                     <div class="posts">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 downloadcenter-filelist">
-
+                                  {notempty name="vo.zhaobiao_text"}
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-AUSSCHREIBUNGSTEXTE visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/docxpdf/510_R_en_251.pdf" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/docxpdf/510_R_en_251.pdf" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/docxpdf/510_R_en_251.pdf" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.zhaobiao_text}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.zhaobiao_text}" data-gtm-event="download" >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">招标文本</font></font></strong>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
+                                  {else /}
+                                  {/notempty}
 
-
-
+                                  {notempty name="vo.wuye"}
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-INFO_FOR_BUILDING_OWNERS visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/emco_bau_EM_Info__91954.PDF" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/emco_bau_EM_Info__91954.PDF" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/emco_bau_EM_Info__91954.PDF" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.wuye}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.wuye}" data-gtm-event="download" >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">建筑物业主的信息</font></font></strong>
 
@@ -282,12 +286,13 @@
                                         </a>
                                     </div>
                                 </div>
+                                  {else /}
+                                  {/notempty}
 
-
-
+                                  {notempty name="vo.clear"}
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-3-ZONE_CLEANING_SYSTEM visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/emco_bau_3_zone_cleaning_en_94267.PDF" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/emco_bau_3_zone_cleaning_en_94267.PDF" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/emco_bau_3_zone_cleaning_en_94267.PDF" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.clear}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.clear}" data-gtm-event="download" >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3区清洁系统</font></font></strong>
 
@@ -295,12 +300,13 @@
                                         </a>
                                     </div>
                                 </div>
+                                  {else /}
+                                  {/notempty}
 
-
-
+                                  {notempty name="vo.shouce" }
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-BROCHURE visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/emco_bau_EM_Brochure_en_94280.PDF" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/emco_bau_EM_Brochure_en_94280.PDF" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/emco_bau_EM_Brochure_en_94280.PDF" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.shouce}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.shouce}" data-gtm-event="download" >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">手册</font></font></strong>
 
@@ -308,38 +314,40 @@
                                         </a>
                                     </div>
                                 </div>
+                                    {else /}
+                                  {/notempty}
 
-
-
+                                  {notempty name="vo.zhuangxiu"}
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-RENOVATIONMODERNISATION visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/emco_bau_EM_for_renovations_en_94256.PDF" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/emco_bau_EM_for_renovations_en_94256.PDF" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/emco_bau_EM_for_renovations_en_94256.PDF" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.zhuangxiu}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.zhuangxiu}" data-gtm-event="download" >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">装修/现代化</font></font></strong>
-
                                             </div>
                                         </a>
                                     </div>
                                 </div>
+                                   {else /}
+                                   {/notempty}
 
+                                  {notempty name="vo.chanp"}
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-PRODUCT_DATA_SHEET visible">
                                     <div class="post">
-                                        <a href="fileadmin/comdbproducts/emco_bau_510_R_en_172873.PDF" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="fileadmin/comdbproducts/emco_bau_510_R_en_172873.PDF" data-gtm-event="download" data-gtm-file-name="fileadmin/comdbproducts/emco_bau_510_R_en_172873.PDF" onclick="fireTagManagerEvent(this);">
+                                        <a href="{$vo.chanp}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.chanp}" data-gtm-event="download"  >
                                             <div class="text">
                                                 <strong class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品数据表</font></font></strong>
-
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-
+                                   {else /}
+                                {/notempty}
 
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="post">
-                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                        下载为ZIP文件
-                                    </font></font></a>
+                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);">
+                                        下载为ZIP文件</a>
                                 </div>
                             </div>
                         </div>
@@ -348,50 +356,32 @@
             </div>
         </section>
         <!-- 产品图 -->
+        {notempty name="vo.img" }
         <section class="downloads-section downloadcenter-section facet-form-filter- visible">
             <div class="container">
                 <div class="row">
                     <div class="posts">
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3 class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                    产品图片
-                                </font></font></h3>
+                                <h3 class="title">产品图片</h3>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                 <div class="accordion-tags">
                                     <ul class="downloadcenter-filelist">
-                                        <li class="downloadcenter-files imagesVariant" data-url="fileadmin/comdbproducts/emco_bau_510_R__62118.jpg">
-                                            <a href="fileadmin/comdbproducts/emco_bau_510_R__62118.jpg" target="_blank">
-                                                <img src="fileadmin/_processed_/csm_emco_bau_510_R__62118_cd960aa906.jpg" width="105" height="105" alt="">
+                                        {volist name="$vo.img" id="v1" }
+                                        <li class="downloadcenter-files imagesVariant" data-url="{$v1.img}">
+                                            <a href="{$v1.img}" target="_blank">
+                                                <img src="{$v1.img}"  style="width:105px;height:105px;" alt="">
                                             </a>
                                         </li>
-
-
-                                        <li class="downloadcenter-files imagesDetail" data-url="fileadmin/_processed_/csm_emco_bau_Empora_matting_8658__85973_9f142b9e17.jpg">
-                                            <a href="fileadmin/_processed_/csm_emco_bau_Empora_matting_8658__85973_9f142b9e17.jpg" target="_blank">
-                                                <img src="fileadmin/_processed_/csm_emco_bau_Empora_matting_8658__85973_365af5338c.jpg" width="105" height="105" alt="">
-                                            </a>
-                                        </li>
-
-                                        <li class="downloadcenter-files imagesDetail" data-url="fileadmin/comdbproducts/emco_bau_Auditorium_AZ_Groeninge_7__150366.jpg">
-                                            <a href="fileadmin/comdbproducts/emco_bau_Auditorium_AZ_Groeninge_7__150366.jpg" target="_blank">
-                                                <img src="fileadmin/_processed_/csm_emco_bau_Auditorium_AZ_Groeninge_7__150366_79248cb404.jpg" width="105" height="105" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="downloadcenter-files imagesDetail" data-url="fileadmin/_processed_/csm_emco_bau_Bank_Eutin_R__34674_a03bdc92c8.jpg">
-                                            <a href="fileadmin/_processed_/csm_emco_bau_Bank_Eutin_R__34674_a03bdc92c8.jpg" target="_blank">
-                                                <img src="fileadmin/_processed_/csm_emco_bau_Bank_Eutin_R__34674_52101e1f56.jpg" width="105" height="105" alt="">
-                                            </a>
-                                        </li>
+                                        {/volist}
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="accordion-tags">
-                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                        下载为ZIP文件
-                                    </font></font></a>
+                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);">
+                                        下载为ZIP文件</a>
                                 </div>
                             </div>
                         </div>
@@ -399,36 +389,35 @@
                 </div>
             </div>
         </section>
+        {else /}
+        {/notempty}
         <!-- 技术图纸 -->
+         {notempty name="vo.tuzhi"}
         <section class="downloads-section downloadcenter-section facet-form-filter-TECHNICAL_DRAWING visible">
             <div class="container">
                 <div class="row">
                     <div class="posts">
                         <div class="row">
                             <div class="col-xs-12">
-                                <h3 class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                                    技术图纸
-                                </font></font></h3>
+                                <h3 class="title">技术图纸</h3>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                 <div class="accordion-tags">
                                     <ul class="downloadcenter-filelist">
 
-                                        <li class="downloadcenter-files" data-url="fileadmin/comdbproducts/emco_bau_510R__67911.jpg">
-                                            <a href="fileadmin/comdbproducts/emco_bau_510R__67911.jpg" target="_blank">
-                                                <img src="fileadmin/_processed_/csm_emco_bau_510R__67911_f1b68228c1.jpg" width="105" height="105" alt="">
+                                        <li class="downloadcenter-files" data-url="{$vo.tuzhi}">
+                                            <a href="{$vo.tuzhi}" target="_blank">
+                                                <img src="{$vo.tuzhi}"  alt="">
                                             </a>
                                         </li>
-
-
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="accordion-tags">
-                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);">
                                         下载为ZIP文件
-                                    </font></font></a>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -436,7 +425,10 @@
                 </div>
             </div>
         </section>
+        {/notempty}
     </div>
+      {/volist}
+            {$page|raw}
     </div>
 
     <div id="c2906" class="csc-default">
@@ -449,6 +441,31 @@
         </div>
     </div>
 
+
+
+
 {include file="public/footer" /}
+<script>
+    $("#cid").change(function(){
+        var cid = $(this).val();
+        if(cid =='null'|| cid==undefined){return false;}
+        window.location.href="{:url('index/downloads')}?cid="+cid;
+    })
+
+    $("#pid").change(function(){
+        var pid = $(this).val();
+        var cid = $("#cid").val();
+        console.log(pid);
+        window.location.href="{:url('index/downloads')}?cid="+cid+"&pid="+pid;
+    })
+
+
+</script>
+
+
+
+
+
+
 </body>
 </html>

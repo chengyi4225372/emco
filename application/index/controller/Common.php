@@ -78,6 +78,9 @@ class Common extends Controller {
         //入口垫产品类别
         $mats_pro = Db::name('mats_pro')->order('id asc')->select();
         $this->assign('mats_pro',$mats_pro);
+        //文件下载类型
+        $downloads = Db::name('down_title')->select();
+        $this->assign('downloads',$downloads);
     }
 
     //地毯垫 颜色
