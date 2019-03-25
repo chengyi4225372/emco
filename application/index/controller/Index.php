@@ -69,7 +69,7 @@ class Index extends Common
     }
 
 
-    //todo 下载
+    //todo 下载  搜索存在问题
     public function downloads(){
 
         //产品类别id
@@ -78,8 +78,6 @@ class Index extends Common
         $pid = input('get.pid');
         //分类id
         $did = input('get.did');
-
-
         if(!empty($cid)){
             $downs = Db::name('mats_two')
                 ->alias('a')
@@ -120,8 +118,8 @@ class Index extends Common
 
         $page = $downs->render();
         $downs  = $downs->toArray();
-       dump($downs['data']);
-        exit();
+        //dump($downs['data']);
+        //exit();
         foreach ($downs['data'] as $k =>$val){
             $downs['data'][$k]['img'] = Db::name('mats_banner')->field('img')->where('mid',$downs['data'][$k]['id'])->select();
         }
