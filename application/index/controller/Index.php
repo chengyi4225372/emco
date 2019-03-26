@@ -73,15 +73,25 @@ class Index extends Common
     public function downloads(){
 
         //产品类别id
-        $cid = input('get.cid');
+        $cid = input('get.cid','','intval');
         //产二级id
-        $pid = input('get.pid');
+        $pid = input('get.pid','','intval');
         //分类id
-        $did = input('get.did');
-        if(!empty($cid)){
+        $did = input('get.did'); //todo 此处加在静态页面中选择
+        if(!empty($cid) && !empty($pid)){
             $downs = Db::name('mats_two')
                 ->alias('a')
                 ->field('a.id as aid ,a.title as atitle,b.id as bid,b.title as btitle ,c.id as cid ,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
+                ->join('mats_cates b','b.id = a.cid')
+                ->join('mats_pro c','c.id = a.pid')
+                ->join('mats_info d','d.pid = a.id')
+                ->where('b.id',$cid)
+                ->where('c.id',$pid)
+                ->paginate(10);
+        }else if(!empty($cid)){
+            $downs = Db::name('mats_two')
+                ->alias('a')
+                ->field('a.id as aid ,a.title as atitle,b.id as bid ,b.title as btitle ,c.id as cid,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
                 ->join('mats_cates b','b.id = a.cid')
                 ->join('mats_pro c','c.id = a.pid')
                 ->join('mats_info d','d.pid = a.id')
@@ -96,15 +106,6 @@ class Index extends Common
                 ->join('mats_info d','d.pid = a.id')
                 ->where('c.id',$pid)
                 ->paginate(10);
-        }else if(!empty($cid)&&!empty($pid)){
-            $downs = Db::name('mats_two')
-                ->alias('a')
-                ->field('a.id as aid ,a.title as atitle,b.id as bid ,b.title as btitle ,c.id as cid,c.title as ctitle ,d.zhaobiao_text,d.tuzhi,d.clear,d.zhuangxiu,d.title,d.shouce,d.chanp,d.wuye,d.id')
-                ->join('mats_cates b','b.id = a.cid')
-                ->join('mats_pro c','c.id = a.pid')
-                ->join('mats_info d','d.pid = a.id')
-                ->where('c.id',$pid,'AND','b.id',$cid)
-                ->paginate(10);
         }else{
             $downs = Db::name('mats_two')
                 ->alias('a')
@@ -114,7 +115,6 @@ class Index extends Common
                 ->join('mats_info d','d.pid = a.id')
                 ->paginate(10);
         }
-
 
         $page = $downs->render();
         $downs  = $downs->toArray();

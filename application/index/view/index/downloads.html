@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 facet-holder">
                             <div class="form-group">
-                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="did" name="PRODUKTGRUPPPE_INTERNET_EBENE_3_SEL_BAU"  class="jcf-hidden">
+                                <select data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}" id="did" name="PRODUKTGRUPPPE_INTERNET_EBENE_4_SEL_BAU"  class="jcf-hidden">
                                     <option value="">请选择 ...</option>
                                     {volist name="downloads" id="vo" }
                                     <option value="{$vo.id}" data-value="{$vo.title}" {if condition="$Think.get.did eq $vo.id"} selected=""{/if}>{$vo.title}</option>
@@ -450,13 +450,27 @@
         var cid = $(this).val();
         if(cid =='null'|| cid==undefined){return false;}
         window.location.href="{:url('index/downloads')}?cid="+cid;
-    })
+    });
 
     $("#pid").change(function(){
-        var pid = $(this).val();
         var cid = $("#cid").val();
-        console.log(pid);
-        window.location.href="{:url('index/downloads')}?cid="+cid+"&pid="+pid;
+        var pid = $(this).val();
+        if(cid =='null'|| cid==undefined){
+            window.location.href="{:url('index/downloads')}?cid="+"&pid="+pid;
+        }else{
+            window.location.href="{:url('index/downloads')}?cid="+cid+"&pid="+pid;
+        }
+    });
+
+    $("#did").change(function(){
+        var cid = $("#cid").val();
+        var pid = $("#pid").val();
+        var did = $(this).val();
+        if((cid=='null'&& pid=='null')|| (cid==undefined && pid==undefined)){
+            window.location.href="{:url('index/downloads')}?cid="+"&pid="+"&did="+did;
+        }else{
+            window.location.href="{:url('index/downloads')}?cid="+cid+"&pid="+pid+"&did="+did;
+        }
     })
 
 
