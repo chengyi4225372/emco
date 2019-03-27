@@ -3,37 +3,20 @@
 {block name="content"}
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
-    <div class="layui-form-item">
-        <label class="layui-form-label">关联三级产品</label>
-        <div class="layui-input-inline">
-            <select name="mid">
-                <option value=""></option>
-                {volist name="mats_three" id="list"}
-                {if isset($vo['mid'])}
-                <option value="{$list.id}" {if condition="$list.id eq $vo.mid"} selected="" {/if}>{$list.title}</option>
-                {else /}
-                <option value="{$list.id}">{$list.title}</option>
-                {/if}
-                {/volist}
-            </select>
-        </div>
-    </div>
-
 
     <div class="layui-form-item">
-        <label class="layui-form-label">颜色图</label>
+        <label class="layui-form-label">图片</label>
         <div class="layui-input-block">
             <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">颜色标题</label>
+        <label class="layui-form-label">描述</label>
         <div class="layui-input-block">
             <input type="text" name="title" value='{$vo.title|default=""}' class="layui-input">
         </div>
     </div>
-
     <div class="hr-line-dashed"></div>
 
     <div class="layui-form-item text-center">
@@ -46,7 +29,6 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
-        $('form [name="small_img"]').uploadOneImage();
         window.createEditor('[name="content"]', {height: 500});
     });
 </script>

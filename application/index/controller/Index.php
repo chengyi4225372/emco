@@ -130,7 +130,7 @@ class Index extends Common
     public function down_pdf(){
         $id = input('post.id');
         $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
-        //文件生成zip todo
+        //  todo 文件生成zip
     }
 
     //产品对比是关联入口垫的产品

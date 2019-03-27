@@ -1,0 +1,200 @@
+{extend name='admin@public/content'}
+
+{block name="content"}
+<form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第一张图设置</legend>
+    </fieldset>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">图1</label>
+        <div class="layui-input-block">
+            <input type="text" name="img1" value='{$vo.img1|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title1" value='{$vo.small_img|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">二级标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="s_title1" value='{$vo.s_title2|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图1内容</label>
+        <div class="layui-input-block">
+            <textarea name="content1" class="layui-textarea">{if isset($vo['id'])}{$vo.content1}{/if}</textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第二张图设置</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图2</label>
+        <div class="layui-input-block">
+            <input type="text" name="img2" value='{$vo.img2|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title2" value='{$vo.title2|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">二级标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="s_title2" value='{$vo.s_title2|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图2内容</label>
+        <div class="layui-input-block">
+            <textarea name="content2" class="layui-textarea">{if isset($vo['id'])}{$vo.content2}{/if}</textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第三张图设置</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图3</label>
+        <div class="layui-input-block">
+            <input type="text" name="img3" value='{$vo.img3|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title3" value='{$vo.title3|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">二级标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="s_title3" value='{$vo.s_title3|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图3内容</label>
+        <div class="layui-input-block">
+            <textarea name="content3" class="layui-textarea">{if isset($vo['id'])}{$vo.content3}{/if}</textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第四张图设置</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图4</label>
+        <div class="layui-input-block">
+            <input type="text" name="img4" value='{$vo.img4|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title4" value='{$vo.title4|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">二级标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="s_title4" value='{$vo.s_title4|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图4内容</label>
+        <div class="layui-input-block">
+            <textarea name="content4" class="layui-textarea">{if isset($vo['id'])}{$vo.content4}{/if}</textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第五张图设置</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图5</label>
+        <div class="layui-input-block">
+            <input type="text" name="img5" value='{$vo.img5|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title5" value='{$vo.title5|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图2内容</label>
+        <div class="layui-input-block">
+            <textarea name="content5" class="layui-textarea">{if isset($vo['id'])}{$vo.content5}{/if}</textarea>
+        </div>
+    </div>
+
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>入口垫服务第六张图设置</legend>
+    </fieldset>
+    <div class="layui-form-item">
+        <label class="layui-form-label">图6</label>
+        <div class="layui-input-block">
+            <input type="text" name="img6" value='{$vo.img6|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="title6" value='{$vo.title6|default=""}' class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">图6内容</label>
+        <div class="layui-input-block">
+            <textarea name="content6" class="layui-textarea">{if isset($vo['id'])}{$vo.content6}{/if}</textarea>
+        </div>
+    </div>
+
+    <div class="hr-line-dashed"></div>
+
+    <div class="layui-form-item text-center">
+        {if isset($vo['id'])}<input type='hidden' value='{$vo.id}' name='id'>{/if}
+        <button class="layui-btn" type='submit'>保存数据</button>
+        <!--<button class="layui-btn layui-btn-danger" type='button' data-confirm="确定要取消编辑吗？" data-close>取消编辑</button>-->
+    </div>
+</form>
+<script>
+    require(['jquery', 'ckeditor'], function() {
+        window.form.render();
+        $('form [name="img1"]').uploadOneImage();
+        $('form [name="img2"]').uploadOneImage();
+        $('form [name="img3"]').uploadOneImage();
+        $('form [name="img4"]').uploadOneImage();
+        $('form [name="img5"]').uploadOneImage();
+        $('form [name="img6"]').uploadOneImage()
+        $('form [name="small_img"]').uploadOneImage();
+        window.createEditor('[name="content"]', {height: 500});
+    });
+</script>
+{/block}
