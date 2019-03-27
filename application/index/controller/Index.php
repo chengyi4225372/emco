@@ -5,6 +5,7 @@ namespace app\index\controller;
 use think\Db;
 use app\index\controller\Common;
 use think\Request;
+use service\FileService;
 class Index extends Common
 {
 
@@ -24,7 +25,6 @@ class Index extends Common
     public function entrance_mats_service(){
         return $this->view->fetch();
     }
-    /*  news 新闻 */
     /* company 公司  */
 
     public function entrance_mats_range()
@@ -77,7 +77,7 @@ class Index extends Common
         //产二级id
         $pid = input('get.pid','','intval');
         //分类id
-        $did = input('get.did'); //todo 此处加在静态页面中选择
+        $did = input('get.did'); // 此处加在静态页面中选择
         if(!empty($cid) && !empty($pid)){
             $downs = Db::name('mats_two')
                 ->alias('a')
@@ -118,8 +118,6 @@ class Index extends Common
 
         $page = $downs->render();
         $downs  = $downs->toArray();
-        //dump($downs['data']);
-        //exit();
         foreach ($downs['data'] as $k =>$val){
             $downs['data'][$k]['img'] = Db::name('mats_banner')->field('img')->where('mid',$downs['data'][$k]['id'])->select();
         }
@@ -128,7 +126,12 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-
+    //下载 文件pdf
+    public function down_pdf(){
+        $id = input('post.id');
+        $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
+        //文件生成zip todo
+    }
 
     //产品对比是关联入口垫的产品
     public function product_comparison(){

@@ -114,12 +114,6 @@ class Common extends Controller {
         return $arr;
     }
 
-   function fenge($name){
-        $name=explode('|',$name);
-        dump($name);
-        exit();
-   }
-
 
 
 

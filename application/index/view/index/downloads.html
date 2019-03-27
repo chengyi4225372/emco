@@ -233,8 +233,8 @@
         <section class="listenseite-post comdbproducts-downloader">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper"><img
-                            src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 image-wrapper">
+                        <img src="__STATIC__/index/typo3conf/ext/sz_comdbproducts/Resources/Public/Icons/loader.gif" width="66"
                             height="66" alt="">
                         <h3>正在创建ZIP存档...</h3></div>
                 </div>
@@ -256,14 +256,14 @@
             </div>
         </div>
         <!-- 产品pdf 文件 -->
-        <section class="downloads-section downloadcenter-section document-holder">
+        <section class="downloads-section downloadcenter-section document-holder" {if condition=" $Think.get.did gt 2"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
             <div class="container">
                 <div class="row">
                     <div class="posts">
                         <div class="row">
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 downloadcenter-filelist">
                                   {notempty name="vo.zhaobiao_text"}
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-AUSSCHREIBUNGSTEXTE visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-AUSSCHREIBUNGSTEXTE visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 3"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.zhaobiao_text}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.zhaobiao_text}" data-gtm-event="download" >
                                             <div class="text">
@@ -276,7 +276,7 @@
                                   {/notempty}
 
                                   {notempty name="vo.wuye"}
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-INFO_FOR_BUILDING_OWNERS visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-INFO_FOR_BUILDING_OWNERS visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 6"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.wuye}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.wuye}" data-gtm-event="download" >
                                             <div class="text">
@@ -290,7 +290,7 @@
                                   {/notempty}
 
                                   {notempty name="vo.clear"}
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-3-ZONE_CLEANING_SYSTEM visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-3-ZONE_CLEANING_SYSTEM visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 7"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.clear}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.clear}" data-gtm-event="download" >
                                             <div class="text">
@@ -304,7 +304,7 @@
                                   {/notempty}
 
                                   {notempty name="vo.shouce" }
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-BROCHURE visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-BROCHURE visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 5"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.shouce}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.shouce}" data-gtm-event="download" >
                                             <div class="text">
@@ -318,7 +318,7 @@
                                   {/notempty}
 
                                   {notempty name="vo.zhuangxiu"}
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-RENOVATIONMODERNISATION visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-RENOVATIONMODERNISATION visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 9"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.zhuangxiu}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.zhuangxiu}" data-gtm-event="download" >
                                             <div class="text">
@@ -331,7 +331,7 @@
                                    {/notempty}
 
                                   {notempty name="vo.chanp"}
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-PRODUCT_DATA_SHEET visible">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 facet-form-filter-PRODUCT_DATA_SHEET visible" {if condition=" $Think.get.did gt 2  &&  $Think.get.did eq 4"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
                                     <div class="post">
                                         <a href="{$vo.chanp}" class="downloadcenter-files download-icon download-icon-pdf" target="_blank" title="" data-url="{$vo.chanp}" data-gtm-event="download"  >
                                             <div class="text">
@@ -346,7 +346,7 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                 <div class="post">
-                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="emco DIPLOMAT With ribbed carpet insert.zip" onclick="fireTagManagerEvent(this);">
+                                    <a href="#" class="btn btn-download pull-right" data-download="emco DIPLOMAT With ribbed carpet insert.zip" data-gtm-event="download" data-gtm-file-name="{$vo.title}.zip" onclick ="down_text('{$vo.id}')" >
                                         下载为ZIP文件</a>
                                 </div>
                             </div>
@@ -357,7 +357,7 @@
         </section>
         <!-- 产品图 -->
         {notempty name="vo.img" }
-        <section class="downloads-section downloadcenter-section facet-form-filter- visible">
+        <section class="downloads-section downloadcenter-section facet-form-filter- visible" {if condition=" $Think.get.did eq 1"} style="" {elseif condition="$Think.get.did eq null" /}style=""{else /} style="display:none;" {/if}>
             <div class="container">
                 <div class="row">
                     <div class="posts">
@@ -393,7 +393,7 @@
         {/notempty}
         <!-- 技术图纸 -->
          {notempty name="vo.tuzhi"}
-        <section class="downloads-section downloadcenter-section facet-form-filter-TECHNICAL_DRAWING visible">
+        <section class="downloads-section downloadcenter-section facet-form-filter-TECHNICAL_DRAWING visible" {if condition=" $Think.get.did eq 2"} style="" {elseif condition="$Think.get.did eq null" /}style="" {else /} style="display:none;" {/if}>
             <div class="container">
                 <div class="row">
                     <div class="posts">
@@ -425,7 +425,7 @@
                 </div>
             </div>
         </section>
-        {/notempty}
+         {/notempty}
     </div>
       {/volist}
             {$page|raw}
@@ -435,14 +435,9 @@
         <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
              data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
              data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
-
             {include file="public/menu" /}
-
         </div>
     </div>
-
-
-
 
 {include file="public/footer" /}
 <script>
@@ -473,9 +468,23 @@
         }
     })
 
-
 </script>
 
+<script>
+  function down_text(id){
+      if(id != 0){
+          $.ajax({
+              url:"{:url('index/down_pdf')}",
+              type:'post',
+              data:{id:id},
+              success:function(){
+
+              }
+          })
+      }
+  }
+
+</script>
 
 
 
