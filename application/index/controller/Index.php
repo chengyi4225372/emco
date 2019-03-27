@@ -424,6 +424,16 @@ class Index extends Common
 
     // 新闻页面
     public function events(){
+         $new_info =Db::name('new')->select();
+         $this->assign('new_info',$new_info);
+         return $this->view->fetch();
+    }
+
+    //新闻详情页面
+    public function event_info(){
+        $id  = input('get.id');
+        $info = Db::name('new')->where('id',$id)->find();
+        $this->assign('info',$info);
         return $this->view->fetch();
     }
 

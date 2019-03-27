@@ -1,0 +1,47 @@
+{include file="public/header" /}
+
+<div class="w1">
+    <div class="breadcrumb-holder">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><span>你在这里</span></li>
+                        <li class="first"><a href="{:url('index/index')}">emco bau</a></li>
+                        <li class="last active"><span>新闻详情</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--TYPO3SEARCH_begin-->
+    <section class="posts-holder" id="c6404">
+        <div class="container">
+            <div class="posts">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div id="c6403" class="csc-default">
+                            <div class="csc-header csc-header-n1">
+                                <h1 class="csc-firstHeader">{$info.title}</h1></div>
+                                <p class="bodytext">{$info.content|raw}</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--TYPO3SEARCH_end-->
+</div>
+<div id="c2906" class="csc-default">
+    <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
+         data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
+         data-map="1" data-maptype="dynamic" data-categories="1,2,3,4" data-latitude="" data-longitude="">
+
+
+        {include file="public/menu" /}
+
+    </div>
+</div>
+{include file="public/footer" /}
+</body>
+</html>

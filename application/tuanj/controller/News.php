@@ -10,7 +10,6 @@ class News extends BasicAdmin {
 
     private $dataform = 'new';
 
-//    private $cate = 'news_cate';
 
     public function index() {
         $this->title = '新闻中心';
