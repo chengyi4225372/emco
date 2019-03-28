@@ -8,6 +8,7 @@
         <label class="layui-form-label">案例图</label>
         <div class="layui-input-block">
             <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
+            <span style="color:#ff2600;">*图片建议上传尺寸为1280x540;</span>
         </div>
     </div>
 
@@ -38,6 +39,9 @@
             <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}' class="layui-input">
         </div>
     </div>
+
+    <span style="color:#ff2600;">*如果没有跳转地址，描述信息和 url链接 可以不用填写;</span>
+
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">内容</label>
         <div class="layui-input-block">
@@ -58,7 +62,7 @@
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
         $('form [name="img"]').uploadOneImage();
-        window.createEditor('[name=""]', {height: 500});
+        window.createEditor('[name="content"]', {height: 500});
     });
 </script>
 {/block}

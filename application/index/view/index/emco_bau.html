@@ -15,100 +15,29 @@
                 </div>
             </div>
         </div><!--TYPO3SEARCH_begin-->
-        <div id="c1467" class="csc-default">
-            <section class="darkcolor-banner ">
-                <img title="Entrance mats with tradition" alt="High quality and safe: for over 50 years"
-                     src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/emco-Entrance-mats-with-tradition_EN.jpg" width="1280" height="540"/>
-                <div class="caption-holder">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>入口垫与传统</h1>
-                                    <h2>高品质和安全：50多年</h2>
-                                    <p class="bodytext">
-                                        50多年来，emco一直致力于为商业建筑开发和生产定制的入口消光系统。该公司的高质量和安全标准使emco成为德国市场的领导者和世界上最畅销的供应商。
-                                        </p>
-                                    <p class="bodytext">
-                                        除了先进的入口垫系统，清洁地板覆盖物和地毯垫外，产品系列还包括用于游泳池和管道应用的高质量炉排。
-                                    </p>
-                                    <p class="bodytext">
-                                        emco也有优质服务的传统：我们从一开始就为世界各地的客户提供最佳产品选择方面的建议，我们也可以在安装后使用专业知识和专业设备。质量传统 - 与emco！
-                                    </p></div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div id="c1460" class="csc-default">
-            <section class="darkcolor-banner ">
-                <img title="Market leader in dirt-retention solutions emco: high standards &amp; bespoke solutions"
-                    alt="Market leader in dirt-retention solutions emco: high standards &amp; bespoke solutions"
-                    src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/emco-Marktfuehrer-bei-Schmutzfangloesungen.jpg"
-                    width="1280" height="580"/>
-                <div class="caption-holder">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>污垢保留解决方案的市场领导者</h1>
-                                    <h2>emco：高标准和定制解决方案</h2>
-                                    <p class="bodytext">
-                                        Lingen的入口垫系统面向全世界：为了质量和品种，emco的入口垫解决方案是独一无二的！初始材料选择和工艺都体现了高品质，直至最细微的细节。
-                                    </p>
-                                    <p class="bodytext">
-                                        emco有着多样化的传统：我们的使命是填补市场上的每一个空白，以满足客户的需求。除了经过时间考验的系统标准外，我们还可以为每个要求提供高度专业化的系统。
-                                    </p>
-                                    <p class="bodytext">
-                                        通过3区清洁，emco率先开发了一个多级，完美协调的系统，用于清洁入口区域。使用emco入口垫：保持入口区域清洁！
-                                    </p><a href="{:url('index/entrance_mats')}" class='btn btn-default'>
-                                        <span>有关EMCO污垢保持解决方案的更多信息</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <section class="darkcolor-banner ">
-            <img title="emco designing clean entrances" alt="emco designing clean entrances"
-                 src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/Entrees-sauber-gestalten-mit-emco.jpg" width="1280" height="540"/>
-            <div class="caption-holder">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                            <div class="caption"><h1>emco <span style="font-weight: bold; ">设计干净的入口</span></h1>
-                                <p class="bodytext">
-                                    迈出洁净度的第一步 - 在我们的入口消光系统上。我们是世界领先的入口垫系统制造商之一，旨在减少建筑物中的污垢和潮湿。
-                                </p>
-                                <p class="bodytext">
-                                    我们的系统不仅可以保护建筑物及其用户。结合定制设计和高品质的工艺，他们帮助任何入口区域自己的大门。
-                                </p></div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        {volist name="info" id="vo" }
         <div id="c1462" class="csc-default">
             <section class="darkcolor-banner ">
                 <img title="Your solution providers Service and product quality in harmony" alt="Your solution providers Service and product quality in harmony"
-                    src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/emco-Ihr-Problemloeser.jpg" width="1280" height="540"/>
+                    src="{$vo.img}" width="1280" height="540"/>
                 <div class="caption-holder">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>您的解决方案提供</h1>
+                                <div class="caption">
+                                    <h1>{$vo.title}</h1>
+                                    {empty name="vo.s_title"}
+                                    {else /}
                                     <h2>服务与产品质量和谐相处</h2>
-                                    <p class="bodytext">
-                                        emco提供高品质的产品和独特的一站式服务：从购买前的入口垫系统的建议和设计到一流的清洁和维护工作：我们随时为您服务！
-                                    </p>
-                                    <p class="bodytext">
-                                        作为优质入口垫系统的专家，emco结合专业知识和尖端设备，定期超越您的要求：我们解决您的问题，以便您快速获得其他任务。
-                                    </p>
-                                    <div></div>
-                                    <a href="{:url('index/expertise')}" class='btn btn-default'><span>了解emco的专业知识 </span></a>
+                                    {/empty}
+                                    <p class="bodytext">{$vo.content|raw}</p>
+                                    <div>
+
+                                    </div>
+                                    {if condition="$vo.miaoshu neq null and $vo.url neq null"}
+                                    <a href="" class='btn btn-default'><span>了解emco的专业知识 </span></a>
+                                    {else /}
+                                    {/if}
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
@@ -117,33 +46,9 @@
                 </div>
             </section>
         </div>
-        <div id="c1464" class="csc-default">
-            <section class="darkcolor-banner ">
-                <img title="Entrance mats as design elements Take our word for it: keeping entrance areas clean" alt="Entrance mats as design elements Take our word for it: keeping entrance areas clean"
-                    src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/emco-Eingangsmatten-als-Designelement.jpg"
-                    width="1280" height="540"/>
-                <div class="caption-holder">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>入口垫作为设计元素</h1>
-                                    <h2>请相信我们：保持入口区域清洁</h2>
-                                    <p class="bodytext">
-                                        学习以不同的方式看待入口垫：使用emco，比“仅仅”减少污垢系统更有可能。emco入口垫可以无数种变化和组合集成到您的建筑中，几乎任何形状都可以。
-                                    </p>
-                                    <p class="bodytext">
-                                        凭借特殊形状，配色方案，插入组合，附加型材和框架解决方案，emco入口垫将功能与设计结合在一起，为着名的入口提供了便利！
-                                    </p>
-                                    <div></div>
-                                    <a href="{:url('index/entrance_mats_range')}"
-                                       class='btn btn-default'><span>emco 入口垫品种</span></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div><!--TYPO3SEARCH_end--></div>
+        {/volist}
+        <!--TYPO3SEARCH_end-->
+    </div>
     <div id="c2906" class="csc-default">
         <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
              data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""

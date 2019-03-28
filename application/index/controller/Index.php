@@ -12,6 +12,13 @@ class Index extends Common
     // 首页 入口
     public function index()
     {
+        //todo 轮播图 页面 有问题
+        $banner = Db::name('home_banner')->select();
+        //系统类别
+        $info  = Db::name('home_mats')->select();
+         //todo 其他图片 待完成
+        $this->assign('info',$info);
+        $this->assign('banner',$banner);
         return $this->view->fetch();
     }
 
@@ -335,6 +342,8 @@ class Index extends Common
 
     //关于我们
     public function emco_bau(){
+        $info = Db::name('about_emco')->select();
+        $this->assign('info',$info);
         return $this->view->fetch();
     }
 
@@ -449,6 +458,8 @@ class Index extends Common
     }
     // contacts 往来
     public function contacts(){
+        $contacts = Db::name('service_contacts')->find();
+        $this->assign('contacts',$contacts);
         return $this->view->fetch();
     }
     // 订购信息材料
