@@ -81,6 +81,13 @@ class Common extends Controller {
         //文件下载类型
         $downloads = Db::name('down_title')->select();
         $this->assign('downloads',$downloads);
+        //底部管理
+        $chanping = Db::name('foot_url')->where('fid',1)->select();
+        $guke = Db::name('foot_url')->where('fid',2)->select();
+        $kuaisu = Db::name('foot_url')->where('fid',3)->select();
+        $this->assign('chanping',$chanping);
+        $this->assign('guke',$guke);
+        $this->assign('kuaisu',$kuaisu);
     }
 
     //地毯垫 颜色

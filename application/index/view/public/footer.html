@@ -6,16 +6,9 @@
                     <div class="col">
                         <ul class="footer-nav">
                             <li><strong class="title">产品</strong></li>
-                            <li><a href="{:url('index/entrance_mats')}">emco 入口垫</a></li>
-                            <li><a href="{:url('index/carpet_mats')}">emco 地毯垫</a></li>
-                            <li><a href="{:url('index/clean_off')}">emco 净化系统</a></li>
-                            <li><a href="{:url('index/swimming')}">emco 游泳池格栅</a></li>
-                            <li><a href="{:url('index/entrance_mats_range')}">入口垫范围</a></li>
-                            <li><a href="{:url('index/zone_cleaning')}">3区的清洁</a></li>
-                            <li><a href="{:url('index/ecolinerpioneer')}">ECOLINE®PIONEER</a></li>
-                            <li><a href="{:url('index/tactile_guidance_system')}">emco 触觉引导系统</a></li>
-                            <li><a href="{:url('index/inox')}">emco INOX®</a></li>
-                            <li><a href="{:url('index/entrance_mat_accessories')}">入口垫配件</a></li>
+                               {volist name="chanping" id="vo"}
+                            <li><a href="{$vo.url}">{$vo.title}</a></li>
+                                {/volist}
                             <ul>
                     </div>
                 </div>
@@ -23,10 +16,9 @@
                     <div class="col">
                         <ul class="footer-nav">
                             <li><strong class="title">顾客</strong></li>
-                            <li><a href="{:url('index/architects')}">建筑师和规划师</a></li>
-                            <li><a href="{:url('index/building_contractors')}">物业投资者和开发商</a></li>
-                            <li><a href="{:url('index/floor_fitters')}">贸易和工匠</a></li>
-                            <li><a href="{:url('index/commercial_laundries')}">洗衣店</a></li>
+                            {volist name="guke" id="vo" }
+                            <li><a href="{$vo.url}">{$vo.title}</a></li>
+                            {/volist}
                             <ul>
                     </div>
                 </div>
@@ -35,12 +27,9 @@
                         <ul class="footer-nav">
                             <li><strong class="title">快速访问</strong></li>
                             <li><a href="/designing-clean-entrances.html#top" onclick="jQuery('html, body').animate({scrollTop: 0}, 'fast'); return false;">回到顶部</a></li>
-                            <li><a href="{:url('index/index')}">首页</a></li>
-                            <li><a href="{:url('index/contact')}">联系</a></li>
-                            <li><a href="{:url('index/press_contact')}">按联系人</a></li>
-                            <li><a href="{:url('index/credits')}">积分</a></li>
-                            <li><a href="{:url('index/private_policy')}">数据保护</a></li>
-                            <li><a href="{:url('index/general_terms_and_conditions')}">服务条款</a></li>
+                            {volist name="kuaisu" id="vo"}
+                            <li><a href="{$vo.url}">{$vo.title}</a></li>
+                            {/volist}
                             <ul>
                     </div>
                 </div>
