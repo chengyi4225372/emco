@@ -14,6 +14,9 @@ class Index extends Common
     {
         //todo 轮播图 页面 有问题
         $banner = Db::name('home_banner')->select();
+         foreach($banner as $k =>$val){
+             $banner[$k]['content'] =explode('。',$banner[$k]['content']);
+         }
         //系统类别
         $info  = Db::name('home_mats')->select();
          //todo 其他图片 待完成
@@ -22,6 +25,39 @@ class Index extends Common
         $this->assign('info',$info);
         $this->assign('banner',$banner);
         return $this->view->fetch();
+    }
+
+
+
+    //todo  产品查询
+    public function product_enquiry(){
+        return  $this->view->fetch();
+    }
+
+
+    //下载 文件pdf todo
+    public function down_pdf(){
+        $id = input('post.id');
+        $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
+        //  todo 文件生成zip
+    }
+
+
+
+    /*todo 暂时完成  */
+
+    //通讯联系
+    public function newsletter($email=''){
+         if(\request()->isPost()){
+             $data =input('post.');
+             $res= Db::table('tongxun_contact')->data(array('sex'=>$data['gender'],'name'=>$data['first_name'],'email'=>$data['email']))->insert();
+             if($res){
+                 echo "<script>alert('提交成功!')</script>";
+             }else{
+                 echo "<script>alert('提交失败!')</script>";
+             }
+         }
+        return $this->view->fetch('',['email'=>$email]);
     }
 
     //404 页面
@@ -64,33 +100,7 @@ class Index extends Common
     public function cleaning_and_maintenance(){
         return $this->view->fetch();
     }
-
-
-
- /*todo 暂时完成  */
-
-    //通讯联系 todo newsletter 订阅实时简报 , 后续页面提交未完成
-    public function newsletter($email=''){
-         if(\request()->isPost()){
-             $data =input('post.');
-             $res= Db::table('tongxun_contact')->data(array('sex'=>$data['gender'],'name'=>$data['first_name'],'email'=>$data['email']))->insert();
-             if($res){
-                 echo "<script>alert('提交成功!')</script>";
-             }else{
-                 echo "<script>alert('提交失败!')</script>";
-             }
-         }
-        return $this->view->fetch('',['email'=>$email]);
-    }
-
-
-    //todo  产品查询
-    public function product_enquiry(){
-        return  $this->view->fetch();
-    }
-
-
-    //todo 下载  搜索存在问题
+    // 下载
     public function downloads(){
 
         //产品类别id
@@ -145,13 +155,6 @@ class Index extends Common
         $this->assign('downs',$downs['data']);
         $this->assign('page',$page);
         return $this->view->fetch();
-    }
-
-    //下载 文件pdf
-    public function down_pdf(){
-        $id = input('post.id');
-        $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
-        //  todo 文件生成zip
     }
 
     //产品对比是关联入口垫的产品

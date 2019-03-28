@@ -7,44 +7,38 @@
                 <div class="fullwidthbanner-container">
                     <div class="tp-banner rev_slider fullwidthabanner">
                         <ul>
-                            <li data-transition="fade" data-delay="11000" data-target="_self">
+                            {volist name="banner" id="vo" key ='k'}
+                            <li data-transition="fade"  data-target="_self">
                                 <img class="rev-slidebg" src="__STATIC__/index/typo3conf/ext/revoslider/Resources/Public/Images/dummy.png" data-bgfit="100"
                                  data-bgrepeat="no-repeat" data-bgposition="top left" data-kenburns="on" data-duration="12000" data-bgpositionend="bottom right"
-                                     data-bgfitend="120" data-lazyload="__STATIC__/index/fileadmin/user_upload/Startseite/01-Entrees-sauber-gestalten-mit-emco.jpg"/>
-
-                                <div class="tp-caption rs-image fade fadeout dark" data-x="center" data-y="center"
-                                     data-speed="1400" data-easing="Linear.easeNone" data-endspeed="6000"
-                                     data-endeasing="Linear.easeNone" data-dottedoverlay="none" style="z-index: 1;">
-                                    <img src="__STATIC__/index/fileadmin/user_upload/Startseite/emco-white-overlay-right.png" width="1280"
-                                        height="585" alt=""/>
-                                </div>
+                                     data-bgfitend="120" data-lazyload="{$vo.img}"/>
 
                                 <div class="tp-caption rs-headline fade fadeout dark" data-x="left" data-y="top"
                                      data-speed="700" data-hoffset="120" data-voffset="85" data-start="500"
-                                     data-easing="Linear.easeNone" data-endspeed="700" data-endeasing="Linear.easeNone"
+                                     data-easing="Linear.easeNone"  data-endeasing="Linear.easeNone"
                                      data-dottedoverlay="none" style="z-index: 2;">
-                                    <strong class="headline"><b>emco</b> </strong>
+                                    <strong class="headline"><b>{$vo.title}</b> </strong>
                                 </div>
                                 <div class="tp-caption ts-text sfb str dark" data-x="left" data-y="top" data-speed="700"
                                      data-hoffset="120" data-voffset="155" data-start="1000"
-                                     data-easing="Linear.easeNone" data-endspeed="700" data-endeasing="Linear.easeNone"
+                                     data-easing="Linear.easeNone"  data-endeasing="Linear.easeNone"
                                      data-dottedoverlay="none" style="z-index: 3;"><strong class="title">
-                                    <p class="bodytext">迈向清洁的第一步——在我们的进入系统上。</p>
-                                    <p class="bodytext">我们是世界领先的进口垫制造商之一</p>
-                                    <p class="bodytext">旨在减少建筑内部污垢和潮湿的系统。.</p></strong></div>
-                                <div class="tp-caption ts-text sfb str dark" data-x="left" data-y="top" data-speed="700"
-                                     data-hoffset="120" data-voffset="255" data-start="1000"
-                                     data-easing="Linear.easeNone" data-endspeed="700" data-endeasing="Linear.easeNone"
-                                     data-dottedoverlay="none" style="z-index: 4;"><strong class="title">
-                                    <p class=“BodyText”>我们的系统不仅仅是保护建筑物及其使用者。</p>
-                                    <p class="bodytext">结合定制设计和高品质工艺，</p>
-                                    <p class="bodytext">他们帮助任何一个入口区形成一个宏伟的入口。</p></strong></div>
+                                      {volist name="$vo.content" id="vw"}
+                                    <p class="bodytext">{$vw}</p>
+                                      {/volist}
+                                   </strong></div>
                                 <div class="tp-caption btn rs-button sfr stb light" data-x="left" data-y="top"
                                      data-speed="700" data-hoffset="120" data-voffset="355" data-start="3000"
-                                     data-easing="Linear.easeNone" data-endspeed="700" data-endeasing="Linear.easeNone"
+                                     data-easing="Linear.easeNone"  data-endeasing="Linear.easeNone"
                                      data-dottedoverlay="none">
-                                    <a href="{:url('index/emco_bau')}"><span>更多关于EMCO</span></a></div>
+                                    {if condition="$vo.url neq null  and $vo.miaoshu neq null"}
+                                    <a href="{:url('index/emco_bau')}"><span>{$vo.miaoshu}</span></a>
+                                    {else /}
+                                     {/if}
+                                </div>
                             </li>
+                            {/volist}
+                            <!--
                             <li data-transition="fade" data-delay="9000" data-target="_self">
                                 <img class="rev-slidebg" src="__STATIC__/index/fileadmin/user_upload/Startseite/05-emco-teppichmatten.jpg" data-bgfit="100"
                                  data-bgrepeat="no-repeat" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-bgpositionend="top center" data-bgfitend="107"/>
@@ -72,12 +66,12 @@
                                     <a href="{:url('index/carpet_mats')}"><span>关于地毯垫的更多信息</span></a>
                                 </div>
                             </li>
-
+                              -->
                         </ul>
                         <div class="tp-bannertimer"></div>
                         <script type="text/javascript">
                        var rsConfiguration = new Object();
-                        rsConfiguration.delay = 5000;
+                       // rsConfiguration.delay = 5000;
                         rsConfiguration.startwidth = 1280;
                         rsConfiguration.startheight = 585;
                         rsConfiguration.onHoverStop = 'on';
