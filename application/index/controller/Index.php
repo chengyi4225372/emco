@@ -29,7 +29,6 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    /*    服务 services   */
     // 入口垫 服务
     public function entrance_mats_service(){
         //页头大图
@@ -40,7 +39,6 @@ class Index extends Common
         $this->assign('mats_img',$mats_img);
         return $this->view->fetch();
     }
-    /* company 公司  */
 
     public function entrance_mats_range()
     {
@@ -72,11 +70,19 @@ class Index extends Common
  /*todo 暂时完成  */
 
     //通讯联系 todo newsletter 订阅实时简报 , 后续页面提交未完成
-    public function newsletter($email=""){
-        $email =input('post.email');
-        // halt($email);
+    public function newsletter($email=''){
+         if(\request()->isPost()){
+             $data =input('post.');
+             $res= Db::table('tongxun_contact')->data(array('sex'=>$data['gender'],'name'=>$data['first_name'],'email'=>$data['email']))->insert();
+             if($res){
+                 echo "<script>alert('提交成功!')</script>";
+             }else{
+                 echo "<script>alert('提交失败!')</script>";
+             }
+         }
         return $this->view->fetch('',['email'=>$email]);
     }
+
 
     //todo  产品查询
     public function product_enquiry(){

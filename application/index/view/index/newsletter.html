@@ -22,29 +22,25 @@
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="col-left"><h2>订阅emco时事通讯</h2>
                                     <div class="tx-sznlsubscribers-pi1">
-                                        <form id="tt_address_form" name="tt_address_form" method="post"
-                                              action="https://emco.emco-bau.com/en/service/newsletter.html?"
-                                              class="form contact-form directmail-subscribe"
-                                              data-parsley-validate="data-parsley-validate" data-validate="html5">
+                                        <span style="diplay:none;"></span>
+                                        <form id="tt_address_form" name="tt_address_form" method="post" action=""
+                                              class="form contact-form directmail-subscribe" data-parsley-validate="data-parsley-validate" data-validate="html5">
+
                                             <fieldset class="ir_form">
                                                 <div class="formWrap tx-powermail">
                                                     <div class="powermail_fieldwrap form-group">
-                                                        <select id="anrede" name="FE[tt_address][gender]" class="select_bestellform"
+                                                        <select id="anrede" name="gender" class="select_bestellform"
                                                                 data-jcf="{&quot;wrapNative&quot;: false, &quot;wrapNativeOnMobile&quot;: false}">
                                                         <option value="">招呼</option>
-                                                        <option value="m">先生.</option>
-                                                        <option value="f">太太.</option>
+                                                        <option value="1">先生.</option>
+                                                        <option value="2">太太.</option>
                                                     </select></div>
                                                     <div class="powermail_fieldwrap form-group">
-                                                        <input type="text" name="FE[tt_address][first_name]" class="form-control powermail_field powermail_input" placeholder="名字"/>
+                                                        <input type="text" name="first_name" class="form-control powermail_field powermail_input" placeholder="姓名"/>
                                                     </div>
                                                     <div class="powermail_fieldwrap form-group">
-                                                        <input type="text" name="FE[tt_address][last_name]" class="form-control powermail_field powermail_input" placeholder="姓氏"/>
-                                                    </div>
-                                                    <div class="powermail_fieldwrap form-group">
-                                                        <input required="required" type="email" data-parsley-required-message="Please fill out this field!"
-                                                               data-parsley-type-message="请已填写邮箱地址！"
-                                                            name="FE[tt_address][email]" value="{$email}"
+                                                        <input required="required" type="email" data-parsley-required-message="请填写这个字段!" data-parsley-type-message="请已填写邮箱地址！"
+                                                            name="email" value="{$email}"
                                                             class="form-control powermail_field powermail_input"
                                                             placeholder="Email *"/></div>
                                                     <p class="required">标有*的所有字段均为必填项。</p>
@@ -56,13 +52,12 @@
                                                                 class="internal-link">隐私声明</a> 了解更多.</p>
                                                     <div class="powermail_fieldwrap">
                                                         <div class="checkbox"><label>
-                                                            <input type="checkbox" name="privacy" required="required" data-parsley-required-message="Please fill out this field!" value="1"/>
+                                                            <input type="checkbox" name="privacy" required="required" data-parsley-required-message="请填写这个字段!" value="1"/>
                                                             我已阅读隐私声明并同意处理这些数据以处理我的查询。
                                                         </label></div>
                                                     </div>
                                                     <div class="powermail_fieldwrap powermail_fieldwrap_submit">
-                                                        <button type="submit"
-                                                                class="btn powermail_field powermail_submit"><span>现在订阅</span>
+                                                        <button type="submit" class="btn powermail_field powermail_submit"><span>现在订阅</span>
                                                         </button>
                                                     </div>
                                                     <input type="hidden" id="html"
@@ -75,10 +70,14 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <div class="col-right">
+                                    <!-- 注释
                                     <div class="editNewsletter"><h2>编辑简报简介</h2>
                                         <p>如果您想编辑您的新闻简报或取消订阅，请单击
                                             <a href="https://emco.emco-bau.com/en/service/newsletter.html?&cmd=infomail&backURL=https%3A%2F%2Femco.emco-bau.com%2Fen%2Fservice%2Fnewsletter.html%3F"
-                                               class="internal-link" title="Edit newsletter profile">此处</a>.</p></div>
+                                               class="internal-link" title="Edit newsletter profile">此处</a>
+                                               </p>
+                                        </div>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -110,6 +109,7 @@
             updateForm('tt_address_form', 'FE[tt_address][country]', '');
             updateForm('tt_address_form', 'FE[tt_address][image]', '');
             updateForm('tt_address_form', 'FE[tt_address][description]', '');/*]]>*/</script>
+
         </div><!--TYPO3SEARCH_end--></div>
     <div id="c2906" class="csc-default">
         <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
@@ -119,5 +119,26 @@
         </div>
     </div>
 {include file="public/footer" /}
+<script>
+$("div.powermail_fieldwrap powermail_fieldwrap_submit").click(function(){
+      var zhaohu = $("#anrede").val();
+      var name = $("input[name='first_name']").val();
+      var email = $("input[name='email']").val();
+      if(email =='null'|| email==undefined){
+          $("input[name='email']").html("<span>请填写这个字段</span>").append();
+      }
+      $.ajax({
+          url:"{:url('index/new_letter')}",
+          type:'post',
+          data:{zhaohu:zhaohu,name:name},
+          success:function (res) {
+
+          }
+      })
+})
+
+</script>
+
+
 </body>
 </html>
