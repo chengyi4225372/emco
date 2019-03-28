@@ -2,16 +2,16 @@
 
 {block name="button"}
 
-<button data-open='{:url("$classuri/add")}' class='layui-btn layui-btn-sm'>添加</button>
+<!--<button data-open='{:url("$classuri/add")}' class='layui-btn layui-btn-sm'>添加</button>-->
 <!--{/if}-->
 <!--{if auth("$classuri/del")}-->
-<button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-sm layui-btn-danger'>删除</button>
+<!--<button data-update data-field='delete' data-action='{:url("$classuri/del")}' class='layui-btn layui-btn-sm layui-btn-danger'>删除</button>-->
 
 {/block}
 
 {block name="content"}
 <!-- 表单搜索 结束 -->
-
+<span style="color: #ff2600;">*该页面只有一条数据，如果需要修改，可点击编辑修改！</span>
 <form onsubmit="return false;" data-auto="true" method="post">
     <!--{empty name='list'}-->
     <p class="help-block text-center well">没 有 记 录 哦！</p>
@@ -22,9 +22,6 @@
         <tr>
             <th class='list-table-check-td'>
                 <input data-auto-none="" data-check-target='.list-check-box' type='checkbox'>
-            </th>
-            <th class='list-table-sort-td'>
-                <button type="submit" class="layui-btn layui-btn-normal layui-btn-xs">排 序</button>
             </th>
             <th class='text-left nowrap'>ID</th>
             <th class='text-left nowrap'>标题</th>
@@ -40,7 +37,7 @@
                 <input class="list-check-box" value='{$vo.id}' type='checkbox'>
             </td>
             <td class='list-table-sort-td'>
-                <input name="_{$vo.id}" value="{$vo.sort}" class="list-sort-input">
+              {$vo.id}
             </td>
             <td class='text-left nowrap'>
                 {$vo.title|default=''}
@@ -50,10 +47,9 @@
             </td>
 
             <td class='text-left nowrap'>
-
                 {if auth("$classuri/edit")}
                 <span class="text-explode">|</span>
-                <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>详情编辑</a>
+                <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
                 {/if}
 
             </td>

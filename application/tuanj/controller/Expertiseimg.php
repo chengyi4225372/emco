@@ -3,20 +3,21 @@
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2019/3/28
- * Time: 9:55
+ * Time: 14:30
  */
+
 namespace app\tuanj\controller;
 
 use think\Db;
 use controller\BasicAdmin;
 use service\DataService;
 
-class Homeother extends BasicAdmin {
+class Expertiseimg extends BasicAdmin {
 
-    private $dataform = 'home_other';
+    private $dataform = 'about_img';
 
     public function index() {
-        $this->title = '首页其他设置';
+        $this->title = '公司-专业知识-底部小图设置';
         list($get, $db) = [$this->request->get(), Db::name($this->dataform)];
         (isset($get['keywords']) && $get['keywords'] !== '') && $db->whereLike('title|id', "%{$get['keywords']}%");
         if (isset($get['date']) && $get['date'] !== '') {
@@ -48,7 +49,7 @@ class Homeother extends BasicAdmin {
      */
     protected function _form_result($result) {
         if ($result !== false) {
-            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/homeother/index')];
+            list($base, $spm, $url) = [url('@admin'), $this->request->get('spm'), url('tuanj/expertiseimg/index')];
             $this->success('数据保存成功！', "{$base}#{$url}?spm={$spm}");
         }
     }

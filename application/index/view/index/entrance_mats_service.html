@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div><!--TYPO3SEARCH_begin-->
+        <!--
         <section class="lightcolor-banner ">
             <img title="emco entrance mats – service Simple, quick &amp; easy"
                  alt="emco entrance mats – service Simple, quick &amp; easy"
@@ -63,6 +64,34 @@
                 </div>
             </div>
         </section>
+        -->
+
+     {volist name="mats" id="vo" }
+        <section class="darkcolor-banner ">
+            <img title="wir übernehmen Ihren Reipswechsel: emco" alt="emco bietet einen einzigartigen Ripswechsel-Service" src="{$vo.img}" width="1280" height="520"/>
+            <div class="caption-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="caption">
+                                <h1>{$vo.title}</h1>
+                                {notempty name="vo.s_title" }
+                                <h2>{$vo.s_title}</h2>
+                                {/notempty}
+                                <p class="bodytext">{$vo.content|raw}</p>
+                                {if condition="$vo.miaoshu neq null and $vo.url neq null"}
+                                <a href="{$vo.url}" class="btn btn-default t3colorbox-youtube hidden-xs"><span> {$vo.miaoshu} </span></a>
+                                {else /}
+                                {/if}
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {/volist}
+          <!-- 视频-->
         <div class="research-holder dark">
             <div class="container">
                 <div class="row">
@@ -101,54 +130,20 @@
                 </div>
             </div>
         </section>
-        <section class="darkcolor-banner "><img title="wir übernehmen Ihren Reipswechsel: emco"
-                                                alt="emco bietet einen einzigartigen Ripswechsel-Service"
-                                                src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Eingangsmattensysteme/eingangsmatten-service/Ripswechsel-mit-emco.jpg"
-                                                width="1280" height="520"/>
-            <div class="caption-holder">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="caption"><h1>罗纹地毯更换：优点</h1>
-                                <h2>充分利用我们的入口垫翻新服务</h2>
-                                <p class="bodytext">
-                                    更换刀片可显着提高emco入口垫的经济效益！
-                                </p>
-                                <p class="bodytext">
-                                    整个金属结构保持不变; 只有罗纹地毯条系统地更新。因此，您可以避免不必要的成本并保护环境：资源得到保护并以环保的方式使用。
-                                </p>
-                                <p class="bodytext">
-                                    经济效益和环保：使用emco的入口垫系统！
-                                </p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <section class="posts-holder ">
             <div class="container col-2-layout">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <article class="post"><img
-                                src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Eingangsmattensysteme/eingangsmatten-service/Das-mobile-emco-Reinigungssystem.jpg"
-                                width="555" height="270" alt=""/>
-                            <div class="text-block"><strong class="promotion-h2">移动式emco清洁系统</strong>
-                                <p class="bodytext">
-                                    我们的特殊清洁车是独一无二的！因此，我们可以快速彻底地清洁和预干燥您的emco入口垫。我们直接在现场完成所有操作，无需任何额外的水或电源连接。更重要的是，我们确保以环保的方式处理污水。
-                                </p></div>
-                        </article>
-                    </div>
+                    {volist name="mats_img" id="vo"}
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <article class="post">
-                            <img src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Eingangsmattensysteme/eingangsmatten-service/emco-Eingangsmatten-Massaufnahme.jpg"
-                                width="555" height="270" alt=""/>
-                            <div class="text-block"><strong class="promotion-h2">入口垫 - 测量</strong>
-                                <p class="bodytext">
-                                    我们的入口垫专家也会为您准备入口区域。凭借我们的激光测量设备和技术专长，我们非常乐意为您服务。立即联系我们的服务部门。
-                                </p></div>
+                            <img src="{$vo.img}" width="555" height="270" alt=""/>
+                            <div class="text-block"><strong class="promotion-h2">{$vo.title}</strong>
+                                <p class="bodytext">{$vo.content|raw}</p>
+                            </div>
                         </article>
                     </div>
+                    {/volist}
                 </div>
             </div>
         </section><!--TYPO3SEARCH_end--></div>

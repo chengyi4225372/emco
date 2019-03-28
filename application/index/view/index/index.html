@@ -105,6 +105,7 @@
             <div class="container col-2-layout">
                 <div class="row">
                     {volist name="info" id="vo"}
+
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <article class="post">
                             <a href="{$vo.url}" class=animation>
@@ -122,6 +123,7 @@
                 </div>
             </div>
         </section>
+        <!--
         <div id="c7423" class="csc-default">
             <section class="lightcolor-banner ">
                 <img title="Architects' Darling® 2018 for emco" alt="Voted favourite manufacturer for clean-off zones"
@@ -168,25 +170,27 @@
                 </div>
             </div>
         </section>
+        -->
+        {volist name="other" id="vo"}
         <div id="c3387" class="csc-default">
             <section class="darkcolor-banner ">
                 <img title="emco product enquiry"
                      alt="Get a quote for an entrance mat: it's quick and simple"
-                     src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Kunden/Teaser_XXL/emco-Produktanfrage.jpg" width="1280" height="585"/>
+                     src="{$vo.img}" width="1280" height="585"/>
                 <div class="caption-holder">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>emco 产品查询</h1>
-                                    <h2>得到一个入口垫的报价：它快速而简单</h2>
-                                    <p class="bodytext">
-                                        只需两步即可轻松完成：选择您想要的emco入口垫并添加配件。发送给emco以及您的联系方式。完成！
-                                    </p>
-                                    <p class="bodytext">
-                                        我们会及时处理您的产品查询，如果我们有任何疑问，请尽快与您联系。为您量身定制的emco入口垫提供最快捷的方式！
-                                    </p>
-                                    <a href="{:url('index/product_enquiry')}" class='btn btn-default'><span>立即咨询产品!</span></a>
+                                <div class="caption"><h1>{$vo.title}</h1>
+                                    {notempty name="vo.s_title"}
+                                    <h2>{$vo.s_title}</h2>
+                                    {/notempty}
+                                    <p class="bodytext">{$vo.content|raw}</p>
+                                     {if condition="$vo.url neq null and  $vo.miaoshu neq null"}
+                                    <a href="{$vo.url}" class='btn btn-default'><span>{$vo.miaoshu}</span></a>
+                                    {else /}
+                                     {/if}
                                 </div>
                             </div>
                         </div>
@@ -194,6 +198,37 @@
                 </div>
             </section>
         </div>
+        {/volist}
+        <!-- todo  下面的视频处 需要判断 后期优化 -->
+        <section class="darkcolor-banner ">
+            <video loop="" muted="" autoplay="" class="teaserBackgroundVideo-video">
+                <source src="__STATIC__/index/fileadmin/user_upload/Startseite/16_03_22_Hintergrund_Markenfilm.mp4" type="video/mp4">
+            </video>
+            <div class="caption-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                            <div class="caption"><h1>emco Bau: 看看是什么驱使我们!</h1>
+                                <h2>入口垫, 地毯垫, 游泳池栅格</h2>
+                                <p class="bodytext">高质量的入口垫系统，地毯垫和游泳池格栅 - 由我们位于德国林根的全球总部提供给全球各地。我们使用选定的材料和精密工艺创造出色的产品，以满足客户要求的最高质量标准。
+                                    <br/><br/>emco Bautechnik既是系统提供商，也是问题解决者。我们的目标是在任何情况下提供完全正确的产品意味着我们必须不断扩展和优化我们的产品组合，就像我们在过去50年和未来一样。
+                                    <br/><br/>看看是什么让emco成为高品质品牌产品的杰出供应商和找出驱动我们的动力！
+                                </p>
+                                <a href="#youtube-ruOkuaw5V6s" class="btn btn-default t3colorbox-youtube hidden-xs" title="Watch the video now">
+                                    <span>立即观看视频</span></a>
+                                <div style="display: none;">
+                                    <div id="youtube-ruOkuaw5V6s">
+                                        <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/ruOkuaw5V6s?rel=0" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
         <section class="darkcolor-banner ">
             <video loop="" muted="" autoplay="" class="teaserBackgroundVideo-video">
                 <source src="__STATIC__/index/fileadmin/user_upload/Startseite/16_03_22_Hintergrund_Markenfilm.mp4" type="video/mp4">
@@ -336,7 +371,9 @@
                 </div>
             </div>
         </div>
-        <section class="darkcolor-banner "><img src="__STATIC__/index/fileadmin/user_upload/Startseite/iconset.png" width="1280" height="164" alt=""/>
+        -->
+        <section class="darkcolor-banner ">
+            <img src="__STATIC__/index/fileadmin/user_upload/Startseite/iconset.png" width="1280" height="164" alt=""/>
             <div class="caption-holder">
                 <div class="container">
                     <div class="row">

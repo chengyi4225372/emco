@@ -3,53 +3,31 @@
 {block name="content"}
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
+
     <div class="layui-form-item">
         <label class="layui-form-label">展示图</label>
         <div class="layui-input-block">
             <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
         </div>
-        <span style="color:#FF5722;">*图片建议上传尺寸为555x240;</span>
     </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">标题</label>
         <div class="layui-input-block">
-            <input type="text" name="title" value='{$vo.title|default=""}' class="layui-input">
+            <input type="text" name="title" value='{$vo.title|default=""}' required="required" title="请输入标题" placeholder="请输入标题" class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">二级标题</label>
+        <label class="layui-form-label">url链接地址</label>
         <div class="layui-input-block">
-            <input type="text" name="s_title" value='{$vo.s_title|default=""}' class="layui-input">
+            <input type="text" name="url" value='{$vo.url|default=""}'  class="layui-input">
         </div>
     </div>
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">url跳转路径</label>
-        <div class="layui-input-block">
-            <input type="text" name="url" value='{$vo.url|default=""}' class="layui-input">
-        </div>
-    </div>
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">文字描述</label>
-        <div class="layui-input-block">
-            <input type="text" name="miaoshu" value='{$vo.miaoshu|default=""}' class="layui-input">
-        </div>
-    </div>
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">视频地址链接</label>
-        <div class="layui-input-block">
-            <input type="text" name="video_url" value='{$vo.video_url|default=""}' class="layui-input">
-        </div>
-    </div>
-
 
 
     <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">介绍内容</label>
+        <label class="layui-form-label">内容</label>
         <div class="layui-input-block">
             <textarea name="content" class="layui-textarea">{if isset($vo['id'])}{$vo.content}{/if}</textarea>
         </div>

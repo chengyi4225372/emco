@@ -17,6 +17,8 @@ class Index extends Common
         //系统类别
         $info  = Db::name('home_mats')->select();
          //todo 其他图片 待完成
+        $other = Db::name('home_other')->select();
+        $this->assign('other',$other);
         $this->assign('info',$info);
         $this->assign('banner',$banner);
         return $this->view->fetch();
@@ -28,8 +30,14 @@ class Index extends Common
     }
 
     /*    服务 services   */
-    //todo 入口垫 服务
+    // 入口垫 服务
     public function entrance_mats_service(){
+        //页头大图
+        $mats =Db::name('mats_services')->select();
+        //页尾底部图片
+        $mats_img =Db::name('service_img')->select();
+        $this->assign('mats',$mats);
+        $this->assign('mats_img',$mats_img);
         return $this->view->fetch();
     }
     /* company 公司  */
@@ -339,7 +347,6 @@ class Index extends Common
        $this->assign('banner',$banner);
        return$this->view->fetch();
     }
-
     //关于我们
     public function emco_bau(){
         $info = Db::name('about_emco')->select();
@@ -349,6 +356,12 @@ class Index extends Common
 
     // 专业知识
     public function expertise(){
+         //专业知识大图
+        $info = Db::name('about_expertise')->select();
+        //底部小图
+        $info_img = Db::name('about_img')->select();
+        $this->assign('info_img',$info_img);
+        $this->assign('info',$info);
         return $this->view->fetch();
     }
     //实例探究 pdf 完成
@@ -468,6 +481,11 @@ class Index extends Common
     }
     // questions 经常遇到的问题
     public function questions(){
+         //顶部图片
+        $que = Db::name('question_img')->find();
+        $wenti = Db::name('questions_lists')->select();
+        $this->assign('que',$que);
+        $this->assign('wenti',$wenti);
         return $this->view->fetch();
     }
 

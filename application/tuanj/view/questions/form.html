@@ -3,6 +3,14 @@
 {block name="content"}
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">图片</label>
+        <div class="layui-input-block">
+            <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
+        </div>
+    </div>
+
     <div class="layui-form-item">
         <label class="layui-form-label">标题</label>
         <div class="layui-input-block">
@@ -14,13 +22,6 @@
         <label class="layui-form-label">二级标题</label>
         <div class="layui-input-block">
             <input type="text" name="s_title" value='{$vo.s_title|default=""}'  class="layui-input">
-        </div>
-    </div>
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">图片</label>
-        <div class="layui-input-block">
-            <input type="text" name="img" value='{$vo.img|default=""}' class="layui-input">
         </div>
     </div>
 

@@ -52,7 +52,7 @@
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">内容</label>
         <div class="layui-input-block">
-            <textarea name="content1" class="layui-textarea">{if isset($vo['id'])}{$vo.content1}{/if}</textarea>
+            <textarea name="content" class="layui-textarea">{if isset($vo['id'])}{$vo.content}{/if}</textarea>
         </div>
     </div>
 
@@ -70,12 +70,7 @@
 <script>
     require(['jquery', 'ckeditor'], function() {
         window.form.render();
-        $('form [name="img1"]').uploadOneImage();
-        $('form [name="img2"]').uploadOneImage();
-        $('form [name="img3"]').uploadOneImage();
-        $('form [name="img4"]').uploadOneImage();
-        $('form [name="img5"]').uploadOneImage();
-        $('form [name="img6"]').uploadOneImage()
+        $('form [name="img"]').uploadOneImage();
         $('form [name="small_img"]').uploadOneImage();
         window.createEditor('[name="content"]', {height: 500});
     });

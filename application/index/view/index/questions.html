@@ -19,20 +19,15 @@
         </div><!--TYPO3SEARCH_begin-->
         <section class="darkcolor-banner ">
             <img title="Frequently asked questions" alt="Read the questions that emco customers ask"
-                 src="__STATIC__/index/fileadmin/user_upload/Service/emco-FAQs.jpg" width="1280" height="540"/>
+                 src="{$que.img}" width="1280" height="540"/>
             <div class="caption-holder">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                            <div class="caption"><h1>经常问的问题</h1>
-                                <h2>阅读emco客户提出的问题</h2>
-                                <p class="bodytext">
-                                    我们的目标是在我们的网站上为您提供所需的所有信息。但是，如果您仍然有一个尚未回答的问题，您可以阅读其他emco客户在此处提出的问题。
-                                </p>
-                                <p class="bodytext">
-                                    在这里找不到你的答案？请联系我们：我们很乐意快速有效地回答您的问题！
-                                </p>
-                                <a href="{:url('index/contact')}" class='btn btn-default'><span>现在就联系我们</span></a></div>
+                            <div class="caption"><h1>{$que.title}</h1>
+                                <h2>{$que.s_title}</h2>
+                                <p class="bodytext">{$que.content|raw}</p>
+                                <a href="{$que.url}" class='btn btn-default'><span>{$que.miaoshu}</span></a></div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
                     </div>
@@ -44,21 +39,23 @@
             <div class="container">
                 <div class="posts">
                     <div class="panel-group" id="accordion-729">
+                          {volist name="wenti" id="bo" key='k'}
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4 class="panel-title">
-                                <a class="accordion-toggle" data-parent="#accordion-729" href="#collapse-711" data-toggle="collapse">
-                                    哪里有emco土木工程产品（入口地板系统，游泳池网格）？
+                                <a class="accordion-toggle" data-parent="#accordion-729" href="#collapse-71{$k}" data-toggle="collapse">
+                                        {$bo.title}
                                 </a></h4></div>
-                            <div id="collapse-711" class="panel-collapse collapse in">
+                            <div id="collapse-71{$k}" class="panel-collapse collapse in">
                                 <div class="panel-body">
-                                    <div id="c711" class="csc-default">
+                                    <div id="c71{$k}" class="csc-default">
                                         <p class="bodytext">
-                                            您可以在我们的合作伙伴和专业瓷砖经销商的展示厅中找到我们的产品。
-                                            有关德国地点的信息可由我们的现场服务办事处提供有关在国外购买emco产品的信息，可从我们列出的国际分销合作伙伴处获取。
+                                           {$bo.content|raw}
                                         </p></div>
                                 </div>
                             </div>
                         </div>
+                           {/volist}
+                        <!--
                         <div class="panel panel-default">
                             <div class="panel-heading"><h4 class="panel-title">
                                 <a class="accordion-toggle collapsed" data-parent="#accordion-729" href="#collapse-712" data-toggle="collapse">
@@ -277,6 +274,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>

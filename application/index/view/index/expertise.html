@@ -15,11 +15,13 @@
                     </div>
                 </div>
             </div>
-        </div><!--TYPO3SEARCH_begin-->
+        </div>
+        <!--TYPO3SEARCH_begin-->
+        <!--
         <div id="c1527" class="csc-default">
-            <section class="darkcolor-banner "><img title="emco – designing clean entrances"
-                                                    alt="emco – designing clean entrances"
-                                                    src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/Entrees-sauber-gestalten-mit-emco.jpg"
+            <section class="darkcolor-banner ">
+                <img title="emco – designing clean entrances" alt="emco – designing clean entrances"
+                     src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/Entrees-sauber-gestalten-mit-emco.jpg"
                                                     width="1280" height="540"/>
                 <div class="caption-holder">
                     <div class="container">
@@ -108,80 +110,26 @@
                 </div>
             </section>
         </div>
-        <section class="posts-holder ">
-            <div class="container col-3-layout">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <article class="post">
-                            <a href="{:url('index/research_and_development')}" title="Proven quality" class=animation>
-                            <img src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/geprueft-zertifiziert-eingangsmatte-emco.png"
-                                width="720" height="360" alt=""/></a>
-                            <div class="text-block"><strong class="promotion-h2">
-                                <a href="{:url('index/research_and_development')}" title="Proven quality">
-                                    经过测试和认证
-                                </a></strong>
-                                <p class="bodytext">
-                                    emco入口垫定期接受质量控制和认证，从开发到交付。这确保了每个入口垫符合我们的高质量标准。
-                                </p>
-                                <!--
-                                <a href="competences/company/research-and-development.html" title="Proven quality" class='btn-more'>了解更多</a>
-                                -->
-                                </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <article class="post">
-                            <a href="{:url('index/research_and_development')}"
-                               target="_top" class=animation><img
-                                src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/eingangsmatte-umweltschutz-kompetenz-emco.png"
-                                width="720" height="360" alt=""/></a>
-                            <div class="text-block"><strong class="promotion-h2">
-                                <a href="{:url('index/research_and_development')}" target="_top">可持续产品</a></strong>
-                                <p class="bodytext">
-                                    德国可持续建筑委员会（DGNB）的成员：高质量的工艺，长久的使用寿命以及整个产品生命周期中生态方面的整合确保了我们产品的可持续性。
-                                </p>
-                                <!--
-                                <a href="http://www.emco-bau.com/aktuelles/presse/detail/news/umwelt-engagement-durch-dgnb-mitgliedschaft-bekraeftigt.html"
-                                        target="_top" class='btn-more'>了解更多</a>
-                                  -->
-                                </div>
-                        </article>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        <article class="post"><a href="{:url('index/research_and_development')}" title="Safe and reliable entrance mats from emco" class=animation>
-                            <img src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Unternehmen/sicher-resistent-eingangsmatte-emco.png"
-                                width="720" height="360" alt=""/></a>
-                            <div class="text-block"><strong class="promotion-h2">
-                                <a href="{:url('index/research_and_development')}"title="Safe and reliable entrance mats from emco">安全耐用</a></strong>
-                                <p class="bodytext">
-                                    我们的入口垫防滑，降低了发生事故的风险。它们通过减少污垢来改善卫生条件。根据欧盟标准，许多产品也有防火版本。
-                                <!--
-                                </p><a href="competences/company/research-and-development.html#c6370" title="Safe and reliable entrance mats from emco" class='btn-more'>
-                                了解更多
-                                </a>
-                                -->
-                                </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
+          -->
+
+       {volist name="info" id="vo" }
         <div id="c3073" class="csc-default">
             <section class="lightcolor-banner ">
                 <img title="Swimming pool grates safe, hygienic and durable" alt="Swimming pool grates safe, hygienic and durable"
-                     src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Teaser_XXL/schwimmbadroste-von-emco.jpg" width="1280" height="600"/>
+                     src="{$vo.img}" width="1280" height="600"/>
                 <div class="caption-holder">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="caption"><h1>游泳池格栅</h1>
-                                    <h2>安全，卫生，耐用</h2>
-                                    <p class="bodytext">
-                                        emco游泳池格栅有效收集溢出的水，脚部温和，并提供卓越的安全和卫生标准。
-                                        实际上每种形状都是可能的。我们的格栅具有安全型密封和安全认证。emco代表着“德国制造”的优质产品和专业技术。
-                                    </p>
-                                    <a href="{:url('index/swimming')}"
-                                       class='btn btn-default'><span>更多关于游泳池栅格</span></a>
+                                <div class="caption"><h1>{$vo.title}</h1>
+                                    {notempty name="vo.s_title"}
+                                    <h2>{$vo.s_title}</h2>
+                                    {/notempty}
+                                    <p class="bodytext">{$vo.content|raw}</p>
+                                     {if condition="$vo.miaoshu neq null and $vo.url neq null" }
+                                    <a href="{$vo.url}" class='btn btn-default'><span>{$vo.miaoshu}</span></a>
+                                     {else /}
+                                     {/if}
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
@@ -190,6 +138,27 @@
                 </div>
             </section>
         </div>
+         {/volist}
+        <section class="posts-holder ">
+            <div class="container col-3-layout">
+                <div class="row">
+                     {volist name="info_img" id="vo" }
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <article class="post">
+                            <a href="{$vo.url}" title="Proven quality" class=animation>
+                                <img src="{$vo.img}" width="720" height="360" alt=""/></a>
+                            <div class="text-block"><strong class="promotion-h2">
+                                <a href="$vo.url}" title="Proven quality">{$vo.title}</a></strong>
+                                <p class="bodytext">{$vo.content|raw}</p>
+                                <a href="{$vo.url}" title="Proven quality" class='btn-more'>了解更多</a>
+                            </div>
+                        </article>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+        </section>
+        <!--
         <div id="c3072" class="csc-default">
             <section class="lightcolor-banner ">
                 <img title="emco carpet mats bespoke shape and motif" alt="emco carpet mats bespoke shape and motif"
@@ -240,7 +209,10 @@
                     </div>
                 </div>
             </section>
-        </div><!--TYPO3SEARCH_end--></div>
+        </div>
+        -->
+        <!--TYPO3SEARCH_end-->
+    </div>
     <div id="c2906" class="csc-default">
         <div class="contact-popup szCfFlyout szCfTriggerUpdate szCfTriggerInit" id="szCf-2906" data-storage="72"
              data-searchStorage="72" data-geolocation="1" data-search="zip" data-transnational="0" data-sortby=""
