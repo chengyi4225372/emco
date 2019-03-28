@@ -9,9 +9,9 @@
             <select name="fid">
                 <option value=""></option>
                 {if isset($vo['fid'])}
-                <option value="1" {if condition="$list.id eq $vo.fid"} selected="" {/if}>产品</option>
-                <option value="2" {if condition="$list.id eq $vo.fid"} selected="" {/if}>顾客</option>
-                <option value="3" {if condition="$list.id eq $vo.fid"} selected="" {/if}>快速访问</option>
+                <option value="1" {if condition=" 1 eq $vo.fid"} selected="" {/if}>产品</option>
+                <option value="2" {if condition=" 2 eq $vo.fid"} selected="" {/if}>顾客</option>
+                <option value="3" {if condition=" 3 eq $vo.fid"} selected="" {/if}>快速访问</option>
                 {else /}
                 <option value="1" >产品</option>
                 <option value="2" >顾客</option>
