@@ -8,7 +8,6 @@ use think\Request;
 use service\FileService;
 class Index extends Common
 {
-
     // 首页 入口
     public function index()
     {
@@ -19,7 +18,7 @@ class Index extends Common
          }
         //系统类别
         $info  = Db::name('home_mats')->select();
-         //todo 其他图片 待完成
+         //todo 尾部 视频待解决
         $other = Db::name('home_other')->select();
         $this->assign('other',$other);
         $this->assign('info',$info);
@@ -27,15 +26,17 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-
-
     //todo  产品查询
     public function product_enquiry(){
         return  $this->view->fetch();
     }
 
+    //todo 建议删除
+    public function press_contact(){
+        return $this->view->fetch();
+    }
 
-    
+
     /*todo 暂时完成  */
 
     //通讯联系
@@ -81,9 +82,7 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    public function press_contact(){
-        return $this->view->fetch();
-    }
+
     //入口垫 2
     public function entrance_mats_2(){
         return $this->view->fetch();
@@ -157,7 +156,6 @@ class Index extends Common
         header('Content-Length: ' . filesize($fileName)); //下载文件大小
         readfile($fileName);  //读取文件内容
     }
-
 
     //产品对比是关联入口垫的产品
     public function product_comparison(){
