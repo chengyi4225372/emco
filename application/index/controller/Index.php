@@ -12,7 +12,7 @@ class Index extends Common
     // 首页 入口
     public function index()
     {
-        //todo 轮播图  后台需要标注下
+        //轮播图  后台需要标注下
         $banner = Db::name('home_banner')->select();
          foreach($banner as $k =>$val){
              $banner[$k]['content'] =explode('。',$banner[$k]['content']);
@@ -35,15 +35,7 @@ class Index extends Common
     }
 
 
-    //下载 文件pdf todo
-    public function down_pdf(){
-        $id = input('post.id');
-        $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
-        //  todo 文件生成zip
-    }
-
-
-
+    
     /*todo 暂时完成  */
 
     //通讯联系
@@ -100,39 +92,8 @@ class Index extends Common
     public function cleaning_and_maintenance(){
         return $this->view->fetch();
     }
-<<<<<<< HEAD
-    // 下载
-=======
-
-
-
- /*todo 暂时完成  */
-
-
-    //todo  产品查询
-    public function product_enquiry(){
-        return  $this->view->fetch();
-    }
-    
-
-    //通讯联系
-    public function newsletter($email=''){
-         if(\request()->isPost()){
-             $data =input('post.');
-             $res= Db::table('tongxun_contact')->data(array('sex'=>$data['gender'],'name'=>$data['first_name'],'email'=>$data['email']))->insert();
-             if($res){
-                 echo "<script>alert('提交成功!')</script>";
-             }else{
-                 echo "<script>alert('提交失败!')</script>";
-             }
-         }
-        return $this->view->fetch('',['email'=>$email]);
-    }
-
-
 
     //下载  搜索完成
->>>>>>> company
     public function downloads(){
 
         //产品类别id
@@ -189,8 +150,6 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-<<<<<<< HEAD
-=======
     //todo 下载 文件pdf 不使用
     public function down_file(){
         $fileName = input('get.filename'); //得到文件名
@@ -199,7 +158,7 @@ class Index extends Common
         readfile($fileName);  //读取文件内容
     }
 
->>>>>>> company
+
     //产品对比是关联入口垫的产品
     public function product_comparison(){
            //区分 1室外 2 室
