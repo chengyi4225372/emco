@@ -12,7 +12,7 @@ class Index extends Common
     // 首页 入口
     public function index()
     {
-        //todo 轮播图 页面 有问题
+        //todo 轮播图  后台需要标注下
         $banner = Db::name('home_banner')->select();
         //系统类别
         $info  = Db::name('home_mats')->select();
@@ -69,7 +69,14 @@ class Index extends Common
 
  /*todo 暂时完成  */
 
-    //通讯联系 todo newsletter 订阅实时简报 , 后续页面提交未完成
+
+    //todo  产品查询
+    public function product_enquiry(){
+        return  $this->view->fetch();
+    }
+    
+
+    //通讯联系
     public function newsletter($email=''){
          if(\request()->isPost()){
              $data =input('post.');
@@ -84,13 +91,8 @@ class Index extends Common
     }
 
 
-    //todo  产品查询
-    public function product_enquiry(){
-        return  $this->view->fetch();
-    }
 
-
-    //todo 下载  搜索存在问题
+    //下载  搜索完成
     public function downloads(){
 
         //产品类别id
@@ -147,11 +149,12 @@ class Index extends Common
         return $this->view->fetch();
     }
 
-    //下载 文件pdf
-    public function down_pdf(){
-        $id = input('post.id');
-        $content = Db::name('mats_info')->field('zhaobiao_text,chanp,clear')->where('id',$id)->find();
-        //  todo 文件生成zip
+    //todo 下载 文件pdf 不使用
+    public function down_file(){
+        $fileName = input('get.filename'); //得到文件名
+        header( "Content-Disposition:  attachment;  filename=".$fileName); //告诉浏览器通过附件形式来处理文件
+        header('Content-Length: ' . filesize($fileName)); //下载文件大小
+        readfile($fileName);  //读取文件内容
     }
 
     //产品对比是关联入口垫的产品
