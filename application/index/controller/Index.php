@@ -77,11 +77,9 @@ class Index extends Common
     public function zone_cleaning(){
         return $this->view->fetch();
     }
-
     public function entrance_mat_accessories(){
         return $this->view->fetch();
     }
-
 
     //入口垫 2
     public function entrance_mats_2(){
