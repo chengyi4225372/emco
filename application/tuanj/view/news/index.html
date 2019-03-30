@@ -37,6 +37,7 @@
 </script>
 <!-- 表单搜索 结束 -->
 
+<span style="color: #ff2600;">*id 为6 的是 底部积分 id为7 的是底部数据保护 id为8 的是隐私政策，如需修改，可以自行编辑，请不要删除！</span>
 <form onsubmit="return false;" data-auto="true" method="post">
     <!--{empty name='list'}-->
     <p class="help-block text-center well">没 有 记 录 哦！</p>
@@ -78,9 +79,12 @@
                     <span class="text-explode">|</span>
                     <a data-open='{:url("$classuri/edit")}?id={$vo.id}'>编辑</a>
                     {/if}
+                    {if condition="$vo.id eq 6 or $vo.id eq 7 or $vo.id eq 8" }
+                    {else  /}
                     {if auth("$classuri/del")}
                     <span class="text-explode">|</span>
                     <a data-update="{$vo.id}" data-field='delete' data-action='{:url("$classuri/del")}'>删除</a>
+                    {/if}
                     {/if}
                 </td>
             </tr>

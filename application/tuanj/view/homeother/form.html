@@ -1,6 +1,7 @@
 {extend name='admin@public/content'}
 
 {block name="content"}
+<span style="color:#ff2600;">* 当上传视频的时候url跳转路径可以不用填写！上传路径就是点击视频跳转的路径！</span>
 <form class="layui-form layui-box modal-form-box" action="{:request()->url()}" data-auto="true" method="post">
 
     <div class="layui-form-item">
@@ -40,12 +41,13 @@
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">视频地址链接</label>
+        <label class="layui-form-label">视频地址</label>
         <div class="layui-input-block">
-            <input type="text" name="video_url" value='{$vo.video_url|default=""}' class="layui-input">
+            <input type="text" name="video_url" value='{$vo.video_url|default=""}'  class="layui-input">
+            <button type='button' data-file='one' data-field='video_url' data-type='mp4,avi'>上传视频</button>
         </div>
+        <span style="color:#ff2600;">*请注意视频文件请不要过大！</span>
     </div>
-
 
 
     <div class="layui-form-item layui-form-text">

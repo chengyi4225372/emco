@@ -165,7 +165,9 @@
             </div>
         </section>
         -->
+
         {volist name="other" id="vo"}
+        {if condition="$vo.video_url eq null"}
         <div id="c3387" class="csc-default">
             <section class="darkcolor-banner ">
                 <img title="emco product enquiry"
@@ -192,27 +194,25 @@
                 </div>
             </section>
         </div>
-        {/volist}
-        <!-- todo  下面的视频处 需要判断 后期优化 -->
+         {else /}
         <section class="darkcolor-banner ">
             <video loop="" muted="" autoplay="" class="teaserBackgroundVideo-video">
-                <source src="__STATIC__/index/fileadmin/user_upload/Startseite/16_03_22_Hintergrund_Markenfilm.mp4" type="video/mp4">
+                <source src="{$vo.video_url}" type="video/mp4">
             </video>
             <div class="caption-holder">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-                            <div class="caption"><h1>emco Bau: 看看是什么驱使我们!</h1>
+                            <div class="caption"><h1>{$vo.title}</h1>
+                                {notempty name="vo.s_title"}
                                 <h2>入口垫, 地毯垫, 游泳池栅格</h2>
-                                <p class="bodytext">高质量的入口垫系统，地毯垫和游泳池格栅 - 由我们位于德国林根的全球总部提供给全球各地。我们使用选定的材料和精密工艺创造出色的产品，以满足客户要求的最高质量标准。
-                                    <br/><br/>emco Bautechnik既是系统提供商，也是问题解决者。我们的目标是在任何情况下提供完全正确的产品意味着我们必须不断扩展和优化我们的产品组合，就像我们在过去50年和未来一样。
-                                    <br/><br/>看看是什么让emco成为高品质品牌产品的杰出供应商和找出驱动我们的动力！
-                                </p>
-                                <a href="#youtube-ruOkuaw5V6s" class="btn btn-default t3colorbox-youtube hidden-xs" title="Watch the video now">
-                                    <span>立即观看视频</span></a>
+                                {/notempty}
+                                <p class="bodytext">{$vo.content|raw}</p>
+                                <a href="#{$vo.id}" class="btn btn-default t3colorbox-youtube hidden-xs" title="Watch the video now">
+                                    <span>{$vo.miaoshu}</span></a>
                                 <div style="display: none;">
-                                    <div id="youtube-ruOkuaw5V6s">
-                                        <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/ruOkuaw5V6s?rel=0" frameborder="0" allowfullscreen></iframe>
+                                    <div id="{$vo.id}">
+                                        <iframe width="640" height="360" src="{$vo.video_url}" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -222,6 +222,9 @@
                 </div>
             </div>
         </section>
+         {/if}
+        {/volist}
+
         <!--
         <section class="darkcolor-banner ">
             <video loop="" muted="" autoplay="" class="teaserBackgroundVideo-video">

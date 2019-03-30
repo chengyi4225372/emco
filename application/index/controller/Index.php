@@ -18,7 +18,7 @@ class Index extends Common
          }
         //系统类别
         $info  = Db::name('home_mats')->select();
-         //todo 尾部 视频待解决
+         // 尾部 视频解决
         $other = Db::name('home_other')->select();
         $this->assign('other',$other);
         $this->assign('info',$info);
@@ -412,8 +412,10 @@ class Index extends Common
     public function modernise(){
         return $this->view->fetch();
     }
+    /*
     //积分
     public function credits(){
+        $id  =
         return $this->view->fetch();
     }
     //服务 条款
@@ -424,6 +426,7 @@ class Index extends Common
     public function private_policy(){
         return $this->view->fetch();
     }
+    */
     //洗衣店
     public function commercial_laundries(){
         return   $this->view->fetch();

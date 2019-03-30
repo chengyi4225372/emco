@@ -67,6 +67,7 @@
         -->
 
      {volist name="mats" id="vo" }
+        {if condition="$vo.video_url eq null "}
         <section class="darkcolor-banner ">
             <img title="wir übernehmen Ihren Reipswechsel: emco" alt="emco bietet einen einzigartigen Ripswechsel-Service" src="{$vo.img}" width="1280" height="520"/>
             <div class="caption-holder">
@@ -90,37 +91,37 @@
                 </div>
             </div>
         </section>
-        {/volist}
+          {else  /}
           <!-- 视频-->
-        <div class="research-holder dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12"><h1>从emco Bau分三步更换罗纹地毯：这就是它的工作原理</h1></div>
-                </div>
-            </div>
-        </div>
+        <!--<div class="research-holder dark">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-12"><h1>从emco Bau分三步更换罗纹地毯：这就是它的工作原理</h1></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
         <section class="darkcolor-banner ">
             <video loop="" muted="" autoplay="" class="teaserBackgroundVideo-video">
-                <source src="__STATIC__/index/fileadmin/user_upload/Kompetenzseiten/Eingangsmattensysteme/eingangsmatten-service/Ripswechsel.mp4"
-                        type="video/mp4">
+                <source src="{$vo.video_url}" type="video/mp4">
             </video>
             <div class="caption-holder">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                            <div class="caption"><h1>emco Bau罗纹地毯更换服务</h1>
-                                <h2>我们为您的入口垫提供服务</h2>
+                            <div class="caption">
+                                <h1>{$vo.title}</h1>
+                                {notempty name="vo.s_title" }
+                                <h2>{$vo.s_title}</h2>
+                                {/notempty}
                                 <p class="bodytext">
                                     <span style="line-height: 20px; ">
-                                        通过我们的移动罗纹地毯更换机，我们的服务团队随时可以更换刀片。观看我们的视频，了解我们如何进行罗纹地毯更换。
+                                       {$vo.content|raw}
                                     </span>
-                                </p><a href="#youtube-c1W8EPSt7fs" class="btn btn-default t3colorbox-youtube hidden-xs"
+                                </p><a href="#{$vo.id}" class="btn btn-default t3colorbox-youtube hidden-xs"
                                        title="Watch the ribbed carpet replacement video now"><span> 现在观看罗纹地毯替换视频 </span></a>
                                 <div style="display: none;">
-                                    <div id="youtube-c1W8EPSt7fs">
-                                        <iframe width="640" height="360"
-                                                src="https://www.youtube-nocookie.com/embed/c1W8EPSt7fs?rel=0"
-                                                frameborder="0" allowfullscreen></iframe>
+                                    <div id="{$vo.id}">
+                                        <iframe width="640" height="360" src="{$vo.video_url}" frameborder="0" allowfullscreen></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -130,6 +131,8 @@
                 </div>
             </div>
         </section>
+        {/if}
+        {/volist}
 
         <section class="posts-holder ">
             <div class="container col-2-layout">
