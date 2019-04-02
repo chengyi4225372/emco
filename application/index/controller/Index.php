@@ -18,7 +18,6 @@ class Index extends Common
          }
         //系统类别
         $info  = Db::name('home_mats')->select();
-         // 尾部 视频解决
         $other = Db::name('home_other')->select();
         $this->assign('other',$other);
         $this->assign('info',$info);
@@ -28,14 +27,14 @@ class Index extends Common
 
     //todo  产品查询
     public function product_enquiry(){
-        return  $this->view->fetch();
+      $this->redirect('index/contact');
     }
 
     //todo 建议删除
+    /*
     public function press_contact(){
         return $this->view->fetch();
-    }
-
+    }*/
 
     /*todo 暂时完成  */
 
@@ -459,7 +458,11 @@ class Index extends Common
 
     // 新闻页面
     public function events(){
-         $new_info =Db::name('new')->select();
+         $new_info =Db::name('new')
+             ->where('id','neq',6)
+             ->where('id','neq',7)
+             ->where('id','neq',8)
+             ->select();
          $this->assign('new_info',$new_info);
          return $this->view->fetch();
     }
